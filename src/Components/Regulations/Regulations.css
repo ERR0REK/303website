@@ -1,0 +1,264 @@
+/* --- Zmienne CSS --- */
+:root {
+  --reg-bg-color: #0a0a0f;
+  --reg-surface-color: rgba(20, 20, 30, 0.9);
+  --reg-border-color: rgba(0, 255, 76, 0.3);
+  --reg-text-primary: #e0e0e0;
+  --reg-text-secondary: #b0b0b0;
+  --reg-accent-color: var(--military-green-primary);
+  --reg-cyan-color: #00d4ff;
+}
+
+/* --- Główny kontener strony --- */
+.regulations-page {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--reg-bg-color) 50%);
+  color: var(--reg-text-primary);
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.reg-main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Część przewijana (Hero i Warning) --- */
+.reg-scrollable-part {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Sekcja Hero --- */
+.reg-hero {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reg-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--reg-accent-color);
+  text-shadow: 0 0 15px var(--reg-accent-color), 0 0 30px rgba(0, 255, 76, 0.5);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.reg-hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: var(--reg-text-secondary);
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- Panel Ostrzegawczy --- */
+.reg-warning-panel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(185, 28, 28, 0.1));
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-left: 5px solid #ff4d4d;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 900px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.reg-warning-icon {
+  color: #ff4d4d;
+  flex-shrink: 0;
+}
+
+.reg-warning-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--reg-text-primary);
+  font-weight: 500;
+}
+
+/* --- WIZUALNY SEPARATOR (nowość!) --- */
+.reg-scrollable-part::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--reg-accent-color), transparent);
+  animation: separator-pulse 3s ease-in-out infinite;
+}
+
+@keyframes separator-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* --- Część "lepka" (STICKY) --- */
+.reg-sticky-part {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(10, 10, 15, 0.85), rgba(20, 20, 30, 0.95)); /* Przyciemnienie do dołu */
+  backdrop-filter: blur(20px) saturate(1.2); /* Glassmorphism */
+  border-top: 1px solid var(--reg-border-color);
+  z-index: 10;
+  animation: sticky-fade-in 1s ease-out; /* Animacja wejścia */
+}
+
+@keyframes sticky-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Wrapper dla zawartości lepki --- */
+.reg-sticky-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1rem;
+}
+
+/* --- Karta z Zasadami (lepsza wersja) --- */
+.rules-container {
+  display: grid; /* Używamy grid dla lepszego ułożenia */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsywne kolumny */
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.reg-rule-card {
+  background: rgba(30, 30, 40, 0.8); /* Ciemniejszy surface */
+  border: 1px solid var(--reg-border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Lepszy efekt "świecącej krawędzi" */
+.reg-rule-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--reg-cyan-color), var(--reg-accent-color), var(--reg-cyan-color));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.reg-rule-card:hover::before {
+  opacity: 1;
+}
+
+.reg-rule-card:hover {
+  transform: translateY(-8px) scale(1.02); /* Delikatne powiększenie */
+  border-color: var(--reg-accent-color);
+  box-shadow: 0 15px 50px rgba(0, 255, 76, 0.2);
+}
+
+.reg-rule-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--reg-accent-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.reg-rule-list {
+  list-style: none;
+  padding: 0;
+}
+
+.reg-rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.reg-rule-item:hover {
+  transform: translateX(10px);
+  color: var(--reg-cyan-color);
+}
+
+.reg-rule-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--reg-accent-color);
+  border-radius: 50%;
+  margin-top: 8px;
+  box-shadow: 0 0 10px var(--reg-accent-color);
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.reg-rule-item:hover .reg-rule-bullet {
+  background-color: var(--reg-cyan-color);
+}
+
+/* --- Stopka --- */
+.reg-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  color: var(--reg-text-secondary);
+  font-size: 0.8rem;
+}
+
+.reg-footer p {
+  margin: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.reg-footer p:hover {
+  color: var(--reg-accent-color);
+}
+
+/* --- Resposywność --- */
+@media (max-width: 1100px) {
+  .rules-container {
+    grid-template-columns: 1fr; /* Na mniejszych ekranach jedna kolumna */
+  }
+}
+
+@media (max-width: 768px) {
+  .reg-scrollable-part {
+    padding: 1rem;
+  }
+
+  .reg-sticky-content {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .reg-rule-card {
+    padding: 1.5rem;
+  }
+}

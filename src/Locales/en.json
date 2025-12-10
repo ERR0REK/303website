@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "What's 303rd Division?",
+    "regulations": "Regulations",
+    "qa": "Q&A",
+    "staff": "Staff"
+  },
+  "hero": {
+    "title": "303rd Division",
+    "welcome": "Welcome to the official website of the 303rd Division. Explore our history, missions, and more.",
+    "discord_button": "Join Discord"
+  },
+  "langDropdown": {
+    "helpTranslate": "Help Translate"
+  },
+  "loadingScreen": {
+    "status1": "Initializing systems...",
+    "status2": "Loading assets...",
+    "status3": "Establishing secure connection...",
+    "status4": "Preparing interface...",
+    "status5": "Almost ready...",
+    "statusReady": "System ready"
+  },
+  "regulations": {
+    "title": "Regulations of 303rd Division Server",
+    "warning": "Anyone who breaks rules will face consequences, such as being muted for a certain number of hours, banned, or kicked off server. If you give out someone else's personal information, you can expect to receive a permanent ban and be added to ⁠𝙺𝙾𝚂.",
+    "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.", 
+    "generalRulesTitle": "Section 1: General Rules",
+    "voiceChatRulesTitle": "Section 2: General rules in voice chat",
+    "rules": {
+      "general": [
+        "Respect others: Behave respectfully toward all members of server, regardless of their age, gender, background or views.",
+        "Do not insult higher ranks, because there will be consequences. <-- This applies to both administrators and members.",
+        "Do not insult whole administration and others as well as each other. <-- This applies to both administrators and members.",
+        "Do not report faction members without a reason (in Roblox).",
+        "Do not use offensive language: Avoid vulgarities, offensive words, hate speech and discriminatory statements.",
+        "Don't spam: Don't send excessive messages, share unnecessary links or use capital letters unnecessarily.",
+        "Don't share personal information: Don't share information that could identify you or other users, such as phone number, email address or bank details.",
+        "Don't share NSFW content: Do not share sexual, violent or offensive content.",
+        "Don't advertise: Don't advertise your products, services or other websites without permission from administrators.",
+        "Don't share copyrighted content: Don't share content that infringes on the copyrights of others.",
+        "Don't impersonate others: Do not impersonate other users or administrators."
+      ],
+      "voice": [
+        "Respect others: Be respectful to all members of server, regardless of their age, gender, background, or views.",
+        "Do not use offensive language: Avoid profanity, offensive words, hate speech, and discriminatory statements.",
+        "Do not shout: Speak calmly and clearly so that everyone can hear you well.",
+        "Do not spam with sounds: Do not continuously play music, sounds, or other recordings without the consent of others.",
+        "Do not interrupt conversations: If someone is speaking, wait for your turn to speak.",
+        "Don't use microphone unnecessarily: If you don't want to participate in the conversation, turn off your microphone.",
+        "Don't play NSFW content: Don't play sexual, violent, or offensive content.",
+        "Don't interrupt someone before they have finished speaking.",
+        "Do not record conversations without consent: Do not record conversations without the consent of all participants.",
+        "Do not record a conversation without another person's consent."
+      ]
+    },
+    "footer": {
+      "author": "Author of DSX server regulations: @polonia.errorglitchtv (✝ DSX_EX0T1C ✝)",
+      "updateDate": "Regulations update: 12.10.2025"
+    }
+  }
+}

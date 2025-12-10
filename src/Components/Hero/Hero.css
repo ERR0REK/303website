@@ -1,0 +1,29 @@
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(8,0,58,0.7),rgba(8,0,58,0.7)), url('../../Assets/976320.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text{
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-text h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: "Orbitron", sans-serif;
+    color: var(--military-green-primary);
+    text-shadow: 0 0 10px var(--military-green-primary), 0 0 20px rgba(0, 255, 76, 0.5);
+}
+
+.hero-text p{
+    font-size: 1.5rem;
+    line-height: 1.6;
+}

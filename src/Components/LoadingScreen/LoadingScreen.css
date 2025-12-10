@@ -1,0 +1,262 @@
+/* --- Zmienne CSS --- */
+:root {
+  --loading-bg-color: #0a0a0f;
+  --loading-surface: rgba(22, 30, 20, 0.9);
+  --loading-text: #0dff00ff;
+  --loading-warning: #0dff00ff;
+  --glow-color: rgba(0, 255, 76, 1);
+}
+
+/* --- Główny kontener --- */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--loading-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    font-family: "Orbitron", monospace;
+}
+
+/* --- Tło z animowaną siatką --- */
+.loading-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 76, 0) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 76, 0) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: bg-move 10s linear infinite;
+}
+
+@keyframes bg-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+/* --- Kontener z zawartością --- */
+.loading-container {
+    background: var(--loading-surface);
+    border: 1px solid var(--loading-accent);
+    border-radius: 12px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 60px rgba(8, 255, 61, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Logo z efektem glitch --- */
+.logo-container {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.division-logo {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--loading-accent);
+    text-shadow: 0 0 15px var(--glow-color);
+    letter-spacing: 0.2em;
+    position: relative;
+    display: inline-block;
+}
+
+.division-logo::before,
+.division-logo::after {
+    content: "303";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--loading-accent);
+    overflow: hidden;
+    clip: rect(0, 0, 100%, 100%);
+}
+
+.division-logo::before {
+    left: -2px;
+    text-shadow: -2px 0 var(--loading-warning);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.division-logo::after {
+    left: 2px;
+    text-shadow: 2px 0 #00ff08ff;
+    animation: glitch-anim 1.5s infinite linear alternate;
+}
+
+.division-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--loading-text);
+    text-shadow: 0 0 10px var(--glow-color);
+    letter-spacing: 0.1em;
+    margin-top: -0.5rem;
+}
+
+/* --- Pasek postępu --- */
+.progress-container {
+    width: 100%;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    --loading-accent: #0dff00ff;
+    background: linear-gradient(90deg, var(--loading-accent), #00d4ff);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--loading-accent);
+}
+
+.progress-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { left: -30px; }
+    100% { left: calc(100% + 30px); }
+}
+
+.progress-percentage {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--loading-accent);
+    margin-top: 0.5rem;
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+/* --- Status ładowania --- */
+.loading-status {
+    font-size: 1rem;
+    color: var(--loading-text);
+    margin: 1rem 0;
+    min-height: 1.2rem;
+}
+
+/* --- Animowane kropki --- */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--loading-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--glow-color);
+}
+
+.dot:nth-child(1) {
+    animation: pulse 1.5s infinite 0.5s;
+}
+
+.dot:nth-child(2) {
+    animation: pulse 1.5s infinite 1s;
+}
+
+.dot:nth-child(3) {
+    animation: pulse 1.5s infinite 1.5s;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* --- Panel z informacjami systemowymi --- */
+.system-info {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--loading-text);
+    opacity: 0.7;
+    font-family: monospace;
+    text-align: left;
+    border-top: 1px solid rgba(0, 255, 76, 1);
+    padding-top: 1rem;
+}
+
+.info-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.info-label {
+    color: var(--loading-accent);
+}
+
+.info-value {
+    color: var(--loading-text);
+}
+
+.status-active {
+    color: var(--loading-accent);
+    animation: status-blink 1.5s infinite;
+}
+
+@keyframes status-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* --- Efekt glitch --- */
+@keyframes glitch-anim {
+    0% { clip: rect(42px, 0, 10px, 0, 100%); }
+    25% { clip: rect(12px, 0, 10px, 0, 100%); }
+    50% { clip: rect(60px, 0, 10px, 0, 100%); }
+    75% { clip: rect(85px, 0, 10px, 0, 100%); }
+    100% { clip: rect(100px, 0, 10px, 0, 100%); }
+}
+
+/* --- Resposywność --- */
+@media (max-width: 768px) {
+    .loading-container {
+        width: 95%;
+        padding: 2rem;
+    }
+    
+    .division-logo {
+        font-size: 4rem;
+    }
+    
+    .division-text {
+        font-size: 1.5rem;
+    }
+    
+    .system-info {
+        font-size: 0.7rem;
+    }
+}

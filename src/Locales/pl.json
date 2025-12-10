@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Strona Główna",
+    "about": "Czym jest 303rd Division?",
+    "regulations": "Regulamin",
+    "qa": "Q&A",
+    "staff": "Kadra"
+  },
+  "hero": {
+    "title": "303rd Division",
+    "welcome": "Witaj na oficjalnej stronie 303rd Division. Poznaj naszą historię, misje i więcej.",
+    "discord_button": "Dołącz na Discorda"
+  },
+  "langDropdown": {
+    "helpTranslate": "Pomóż w tłumaczeniu"
+  },
+  "loadingScreen": {
+    "status1": "Inicjalizacja systemów...",
+    "status2": "Ładowanie zasobów...",
+    "status3": "Ustanawianie bezpiecznego połączenia...",
+    "status4": "Przygotowywanie interfejsu...",
+    "status5": "Prawie gotowe...",
+    "statusReady": "System gotowy"
+  },
+  "regulations": {
+    "title": "Regulamin serwera 303 dywizjonu",
+    "warning": "Każdy, kto złamie zasady, poniesie konsekwencje, takie jak wyciszenie na określoną liczbę godzin, ban lub wyrzucenie z serwera. Jeśli ujawnisz dane osobowe innej osoby, możesz spodziewać się trwałego bana i dodania do 𝙺𝙾𝚂.",
+    "highlight": "Niektóre zasady będą podkreślone czego nie złamać jakiegoś regulaminu i wyładować w kos liście.",
+    "generalRulesTitle": "Sekcja 1: Ogólne zasady",
+    "voiceChatRulesTitle": "Sekcja 2: Ogólne zasady dotyczące czatu głosowego",
+    "rules": {
+      "general": [
+        "Szanuj innych: Zachowuj się z szacunkiem wobec wszystkich członków serwera, niezależnie od ich wieku, płci, pochodzenia lub poglądów.",
+        "Nie wyzywaj wyższych rang, ponieważ będziesz miał z tego konsekwencje. < -- Dotyczy to zarówno jak administratorów i jak członków.",
+        "Nie wyzywaj całej administracji i innych oraz siebie nawzajem < -- Dotyczy to zarówno jak administratorów i jak członków.",
+        "Nie zgłaszaj członków frakcji bez powodu (w Robloxie).",
+        "Nie spamuj: nie wysyłaj nadmiernej liczby wiadomości, nie udostępniaj niepotrzebnych linków ani nie używaj wielkich liter bez potrzeby.",
+        "Nie udostępniaj danych osobowych: Nie udostępniaj informacji, które mogłyby zidentyfikować Ciebie lub innych użytkowników, takich jak numer telefonu, adres e-mail lub dane bankowe. oraz adresy IP.",
+        "Nie udostępniaj treści NSFW: Nie udostępniaj treści o charakterze seksualnym, zawierających przemoc, obraźliwych oraz brutalności wysokiego stopnia.",
+        "Nie reklamuj: Nie reklamuj swoich produktów, usług ani innych stron internetowych oraz serwerów discord bez zgody administratorów. < -- Administratorzy muszą się zapytać właściciela i potem wysyłać zapro.",
+        "Nie udostępniaj treści chronionych prawem autorskim: Nie udostępniaj treści, które naruszają prawa autorskie innych osób.",
+        "Nie podszywaj się pod innych: Nie podszywaj się pod innych użytkowników ani administratorów.",
+        "Można krytykować cały naród Ukraiński (ale nie Ukrainek) i banderę."
+      ],
+      "voice": [
+        "Szanuj innych: Zachowuj się z szacunkiem wobec wszystkich członków serwera, niezależnie od ich wieku, płci, pochodzenia lub poglądów.",
+        "Nie używaj obraźliwego języka: unikaj wulgaryzmów, obraźliwych słów, mowy nienawiści i dyskryminujących wypowiedzi.",
+        "Nie krzycz: Mów spokojnie i wyraźnie, aby każdy mógł cię dobrze usłyszeć.",
+        "Nie spamuj dźwiękami: Nie odtwarzaj ciągle muzyki, dźwięków ani innych nagrań bez zgody innych.",
+        "Nie przerywaj rozmowy: jeśli ktoś mówi, poczekaj na swoją kolej, aby zabrać głos.",
+        "Nie używaj mikrofonu bez potrzeby: jeśli nie chcesz brać udziału w rozmowie, wyłącz mikrofon.",
+        "Nie odtwarzaj treści NSFW: Nie odtwarzaj treści o charakterze seksualnym, zawierających przemoc lub obraźliwych.",
+        "Nie przerywaj komuś jak ktoś nie skończył gadać.",
+        "Nie nagrywaj rozmów bez zgody: Nie nagrywaj rozmów bez zgody wszystkich uczestników.",
+        "Nie nagrywaj rozmowy bez zgody drugiej osoby."
+      ]
+    },
+    "footer": {
+      "author": "Autor regulaminu serwera DSX: @polonia.errorglitchtv (✝ DSX_EX0T1C ✝)",
+      "updateDate": "Aktualizacja regulaminu: 12.10.2025"
+    }
+  }
+}

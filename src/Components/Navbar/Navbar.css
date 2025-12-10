@@ -1,0 +1,168 @@
+/* --- Zmienne CSS --- */
+:root {
+  --navbar-bg: rgba(10, 15, 11, 0.85);
+  --navbar-border: rgba(255, 51, 0, 1);
+  --navbar-text: #ff0000ff;
+  --navbar-text-hover: var(--military-green-primary);
+}
+
+/* --- Główny kontener Navbara (NAJWAŻNIEJSZA ZMIANA!) --- */
+nav {
+    width: 100%;
+    padding: 10px 24px; /* Więcej miejsca, żeby nie był "zgrubiony" */
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center; /* Wyśrodkowujemy w pionie */
+    justify-content: space-between; /* Rozmieszczamy elementy do krawędzi */
+    z-index: 1000;
+    
+    /* Glassmorphism */
+    background: var(--navbar-bg);
+    backdrop-filter: blur(12px) saturate(1.1);
+    border-bottom: 1px solid var(--navbar-border);
+}
+
+/* --- Lewa strona (Logo i Nazwa) --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Przestrzeń między logo a nazwą */
+    flex-shrink: 0; /* Zapobiega "ściskaniu" się elementów */
+}
+
+.logo {
+    width: 50px; /* Trochę mniejsze */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.name {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.6rem; /* Trochę mniejsze */
+    font-weight: 700;
+    color: var(--navbar-text);
+    cursor: pointer;
+    text-shadow: 0 0 8px rgba(0, 255, 76, 1);
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.name:hover {
+    color: var(--navbar-text-hover);
+    background: rgba(0, 255, 76, 1);
+    transform: translateY(-1px);
+}
+
+/* --- Prawa strona (Linki i Dropdown) --- */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Przestrzeń między linkami a dropdownem */
+    flex-shrink: 0; /* Zapobiega "ściskaniu" się */
+}
+
+/* --- Lista Nawigacji --- */
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 8px; /* Zmniejszone marginesy */
+    font-size: 15px;
+    position: relative;
+}
+
+/* --- Linki w Nawigacji --- */
+nav ul li a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--navbar-text-hover);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+    color: var(--navbar-text-hover);
+    background: rgba(0, 255, 76, 1);
+    transform: translateY(-1px);
+}
+
+nav ul li a:hover::before {
+    width: 80%;
+}
+
+/* --- Stan aktywnego linku (dla dostępności) --- */
+nav ul li a.active {
+    color: var(--navbar-text-hover);
+    font-weight: 700;
+    background: rgba(0, 255, 76, 1);
+}
+
+nav ul li a.active::before {
+    width: 100%;
+}
+
+/* --- Stan focus (dla nawigacji klawiaturą) --- */
+nav ul li a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--navbar-text-hover);
+}
+
+/* --- Resposywność --- */
+@media (max-width: 768px) {
+    nav {
+        padding: 8px 16px;
+        flex-wrap: wrap; /* Zawijamy elementy, jeśli nie ma miejsca */
+        justify-content: center; /* Na mobile centrujemy wszystko */
+        gap: 10px;
+    }
+
+    .nav-left {
+        order: 1; /* Logo i nazwa na górze */
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-right {
+        order: 2; /* Linki i dropdown na dole */
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+}
