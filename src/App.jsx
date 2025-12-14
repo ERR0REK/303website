@@ -1,3 +1,5 @@
+// src/App.jsx
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -5,7 +7,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from '../src/Components/Pages/Home';
 import About from '../src/Components/Pages/About';
 import Regulations from '../src/Components/Pages/Regulations';
-import Qa from '../src/Components/Pages/Q&A'; // Uwaga na nazwę pliku
+import Qa from './Components/Pages/QA'; // Uwaga na nazwę pliku
 import Staff from '../src/Components/Pages/Staff';
 
 import LoadingScreen from '../src/Components/LoadingScreen/LoadingScreen';

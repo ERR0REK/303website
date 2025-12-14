@@ -1,14 +1,14 @@
 {
   "nav": {
     "home": "Home",
-    "about": "What's 303rd Division?",
+    "about": "What's Shadow Abyssal X?",
     "regulations": "Regulations",
     "qa": "Q&A",
     "staff": "Staff"
   },
   "hero": {
-    "title": "303rd Division",
-    "welcome": "Welcome to the official website of the 303rd Division. Explore our history, missions, and more.",
+    "title": "Shadow Abyssal X",
+    "welcome": "Welcome to the official website of the Shadow Abyssal X. Explore our history, missions, and more.",
     "discord_button": "Join Discord"
   },
   "langDropdown": {
@@ -22,8 +22,136 @@
     "status5": "Almost ready...",
     "statusReady": "System ready"
   },
+  "staffModal": {
+    "role": "Role",
+    "robloxUsername": "Roblox Username",
+    "inGameRank": "In-Game Rank",
+    "joinDate": "Joined",
+    "achievements": "Achievements",
+    "description": " is an important member of our Shadow Abyssal X organization.",
+    "close": "Close"
+  },
+  "staff": {
+    "title": "MEET THE STAFF TEAM!",
+    "noMembers": "No members in this role",
+    "descriptions": {
+      "eliza": "WIP",
+      "adioves": "WIP",
+      "tymuss": "WIP",
+      "alex": "WIP",
+      "slx_ex0t1c": "Technical specialist responsible for this website.",
+      "plantinaxii": "WIP",
+      "ash": "WIP",
+      "tipptthegamer": "WIP",
+      "g4l4xy": "WIP",
+      "miko_o1": "WIP",
+      "chillin_noodles": "WIP",
+      "silent": "WIP",
+      "tippssdad": "WIP",
+      "bob_budowniczy": "WIP",
+      "kabanos": "WHP",
+      "maverick": "WIP",
+      "r_s": "WIP",
+      "snowie": "WIP",
+      "kiepski": "WIP"
+    },
+    "roles": {
+      "factionCommand": "Faction Command",
+      "factionCoLeader": "Faction Co Leader",
+      "technicalSpecialist": "Technical Specialist",
+      "trialCoLeader": "Trial Co Leader",
+      "elder": "Elder",
+      "trialElder": "Trial Elder",
+      "intelligence": "Intelligence",
+      "headAdministrator": "Head Administrator",
+      "seniorAdministrator": "Senior Administrator",
+      "administrator": "Administrator",
+      "trialAdministrator": "Trial Administrator",
+      "seniorModerator": "Senior Moderator",
+      "moderator": "Moderator",
+      "trialModerator": "Trial Moderator"
+    }
+  },
+  "qa": {
+    "title": "QUESTIONS & ANSWERS",
+    "subtitle": "Find answers to frequently asked questions about Shadow Abyssal X",
+    "noItems": "No questions to display",
+    "faqs": [
+      {
+        "question": "How can I join Shadow Abyssal X?",
+        "answer": "To join our faction, you need to enter our Roblox server and request an invite. Contact any administrator with the required documentation."
+      },
+      {
+        "question": "What requirements do I need to meet?",
+        "answer": "Requirements may vary depending on the role you want to take. Generally, you need to be active, respect the rules, and have a microphone for server communication."
+      },
+      {
+        "question": "How do I report a problem or regulation violation?",
+        "answer": "You can report an issue through the ticket system on our Discord server or directly inform the administration. Provide as detailed information as possible about the incident."
+      },
+      {
+        "question": "Can I appeal a ban?",
+        "answer": "Yes, you can appeal a ban by sending a formal message to the administration. Prepare an explanation of why you believe the decision was unfair."
+      },
+      {
+        "question": "What language is used on the server?",
+        "answer": "We primarily use Polish and English. All members should be able to communicate in at least one of these languages at a satisfactory level."
+      },
+      {
+        "question": "Is there a minimum age requirement?",
+        "answer": "While we don't have a strictly defined minimum age requirement, we recommend that members be at least 13 years old and demonstrate maturity."
+      },
+      {
+        "question": "How do I get promoted to a higher rank?",
+        "answer": "Promotion depends on your activity, engagement, and demonstrated skills. The administration will observe your progress and consider promotion at the appropriate time."
+      },
+      {
+        "question": "Can I become a moderator or administrator?",
+        "answer": "Yes, this is possible. You need to demonstrate appropriate skills, trustworthiness, and be an active team member. The right person from administration should propose you."
+      }
+    ]
+  },
+  "about": {
+    "title": "WHAT IS SHADOW ABYSSAL X?",
+    "subtitle": "Learn about our history, mission, and how to join our community",
+    "whoAreWe": "Who are we?",
+    "whoAreWeContent": "Shadow Abyssal X is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
+    "whoAreWeContent2": "Our members come from different parts of the world, but we are united by a common passion for gaming and an interest in military matters. We create an environment where everyone can develop and achieve their goals.",
+    "ourMission": "Our Mission",
+    "ourMissionContent": "The mission of Shadow Abyssal X is to build a strong, organized, and mutually respectful community of players. We strive to:",
+    "mission1": "Provide a positive experience on the server",
+    "mission2": "Support new members in their development",
+    "mission3": "Organize events and operations for the entire faction",
+    "mission4": "Maintain high standards of professionalism and ethics",
+    "mission5": "Create a friendly and safe environment for players",
+    "values": "Our Values",
+    "valuesIntro": "Shadow Abyssal X's activities are based on the following fundamental values:",
+    "value1Title": "Respect",
+    "value1Content": " - We respect every member of our community regardless of their position.",
+    "value2Title": "Discipline",
+    "value2Content": " - We believe that discipline is the key to success and harmony in a group.",
+    "value3Title": "Community",
+    "value3Content": " - We work together for the common good and support each other.",
+    "value4Title": "Transparency",
+    "value4Content": " - We communicate openly and honestly with our members.",
+    "value5Title": "Engagement",
+    "value5Content": " - Every member is engaged in the activities of Shadow Abyssal X.",
+    "structure": "Organizational Structure",
+    "structureContent": "Shadow Abyssal X has a well-defined structure with various roles and positions. From Faction Command at the top to Trial Moderators, every role is important and supports the overall functioning of the organization.",
+    "structureContent2": "To learn more about our roles and staff members, visit the 'Staff' page.",
+    "howToJoin": "How to Join Us?",
+    "howToJoinContent": "If you are interested in joining Shadow Abyssal X, here are the basic steps:",
+    "step1": "Enter our Roblox server and familiarize yourself with our regulations",
+    "step2": "Join our Discord server to stay in touch with the community",
+    "step3": "Contact an administration member to request an invite to the faction",
+    "step4": "Go through the verification process and meet the other members",
+    "step5": "Start a new adventure with Shadow Abyssal X!",
+    "joinDiscord": "Join Discord",
+    "contact": "Contact",
+    "contactContent": "If you have questions or want to contact the administration, you can do so via:"
+  },
   "regulations": {
-    "title": "Regulations of 303rd Division Server",
+    "title": "Regulations of Shadow Abyssal X Server",
     "warning": "Anyone who breaks rules will face consequences, such as being muted for a certain number of hours, banned, or kicked off server. If you give out someone else's personal information, you can expect to receive a permanent ban and be added to ⁠𝙺𝙾𝚂.",
     "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.", 
     "generalRulesTitle": "Section 1: General Rules",

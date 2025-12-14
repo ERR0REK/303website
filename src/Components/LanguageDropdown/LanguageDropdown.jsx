@@ -1,3 +1,5 @@
+// src/Components/LanguageDropdown/LanguageDropdown.jsx
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../LanguageDropdown/LanguageDropdown.css';

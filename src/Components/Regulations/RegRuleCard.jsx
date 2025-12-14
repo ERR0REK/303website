@@ -1,3 +1,5 @@
+// src/Components/Regulations/RegRuleCard.jsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 

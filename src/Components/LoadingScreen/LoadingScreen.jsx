@@ -1,9 +1,13 @@
+// src/Components/LoadingScreen/LoadingScreen.jsx
+
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './LoadingScreen.css';
 
 const LoadingScreen = () => {
+    const { t } = useTranslation();
     const [loadingProgress, setLoadingProgress] = useState(0);
-    const [loadingText, setLoadingText] = useState("Initializing systems...");
+    const [loadingText, setLoadingText] = useState(t('loadingScreen.status1'));
     const [systemInfo, setSystemInfo] = useState({
         ip: "192.168.1.1",
         status: "ONLINE",
@@ -12,12 +16,12 @@ const LoadingScreen = () => {
   
     useEffect(() => {
         const loadingMessages = [
-            "Initializing systems...",
-            "Loading assets...",
-            "Establishing secure connection...",
-            "Preparing interface...",
-            "Almost ready...",
-            "System ready"
+            t('loadingScreen.status1'),
+            t('loadingScreen.status2'),
+            t('loadingScreen.status3'),
+            t('loadingScreen.status4'),
+            t('loadingScreen.status5'),
+            t('loadingScreen.statusReady')
         ];
     
         let messageIndex = 0;
@@ -60,8 +64,8 @@ const LoadingScreen = () => {
             <div className="loading-container">
                 {/* Logo with glitch effect */}
                 <div className="logo-container">
-                    <div className="division-logo glitch">303</div>
-                    <div className="division-text glitch">DYWIZJON</div>
+                    <div className="division-logo glitch">SLX</div>
+                    <div className="division-text glitch">Shadow Abyssal X</div>
                 </div>
                 
                 {/* Progress bar with scanner */}

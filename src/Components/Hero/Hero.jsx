@@ -1,3 +1,5 @@
+// src/Components/Hero/Hero.jsx
+
 import React from 'react'; 
 import { useTranslation } from 'react-i18next'; // Importujemy hook do tłumaczeń
 import '../Hero/Hero.css';

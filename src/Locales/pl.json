@@ -1,14 +1,14 @@
 {
   "nav": {
     "home": "Strona Główna",
-    "about": "Czym jest 303rd Division?",
+    "about": "Czym jest Shadow Abyssal X?",
     "regulations": "Regulamin",
     "qa": "Q&A",
     "staff": "Kadra"
   },
   "hero": {
-    "title": "303rd Division",
-    "welcome": "Witaj na oficjalnej stronie 303rd Division. Poznaj naszą historię, misje i więcej.",
+    "title": "Shadow Abyssal X",
+    "welcome": "Witaj na oficjalnej stronie Shadow Abyssal X. Poznaj naszą historię, misje i więcej.",
     "discord_button": "Dołącz na Discorda"
   },
   "langDropdown": {
@@ -22,8 +22,136 @@
     "status5": "Prawie gotowe...",
     "statusReady": "System gotowy"
   },
+  "staffModal": {
+    "role": "Rola",
+    "robloxUsername": "Roblox Username",
+    "inGameRank": "In-Game Rank",
+    "joinDate": "Dołączył",
+    "achievements": "Osiągnięcia",
+    "description": " to ważny członek naszej organizacji Shadow Abyssal X.",
+    "close": "Zamknij"
+  },
+  "staff": {
+    "title": "POZNAJ NASZĄ KADRĘ!",
+    "noMembers": "Brak członków w tej roli",
+    "descriptions": {
+      "eliza": "WIP",
+      "adioves": "WIP",
+      "tymuss": "WIP",
+      "alex": "WIP",
+      "slx_ex0t1c": "Specjalista techniczny odpowiedzialny za tą stronę internetową.",
+      "plantinaxii": "WIP",
+      "ash": "WIP",
+      "tipptthegamer": "WIP",
+      "g4l4xy": "WIP",
+      "miko_o1": "WIP",
+      "chillin_noodles": "WIP",
+      "silent": "WIP",
+      "tippssdad": "WIP",
+      "bob_budowniczy": "WIP",
+      "kabanos": "WIP",
+      "maverick": "WIP",
+      "r_s": "WIP",
+      "snowie": "WIP",
+      "kiepski": "WIP"
+    },
+    "roles": {
+      "factionCommand": "Faction Command",
+      "factionCoLeader": "Faction Co Leader",
+      "technicalSpecialist": "Technical Specialist",
+      "trialCoLeader": "Trial Co Leader",
+      "elder": "Elder",
+      "trialElder": "Trial Elder",
+      "intelligence": "Intelligence",
+      "headAdministrator": "Head Administrator",
+      "seniorAdministrator": "Senior Administrator",
+      "administrator": "Administrator",
+      "trialAdministrator": "Trial Administrator",
+      "seniorModerator": "Senior Moderator",
+      "moderator": "Moderator",
+      "trialModerator": "Trial Moderator"
+    }
+  },
+  "qa": {
+    "title": "PYTANIA I ODPOWIEDZI (testowanie)",
+    "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące Shadow Abyssal X",
+    "noItems": "Brak pytań do wyświetlenia",
+    "faqs": [
+      {
+        "question": "Jak mogę dołączyć do Shadow Abyssal X?",
+        "answer": "Aby dołączyć do naszej frakcji, musisz wejść na nasz serwer Roblox i poprosić o zaproszenie. Zwróć się do dowolnego członka administracji z wymaganą dokumentacją."
+      },
+      {
+        "question": "Jakie wymagania muszę spełnić?",
+        "answer": "Wymagania mogą się różnić w zależności od roli, którą chcesz pełnić. Zasadniczo musisz być aktywny, szanować regulamin i posiadać mikrofon do komunikacji na serwerze."
+      },
+      {
+        "question": "Jak zgłaszam problem lub złamanie regulaminu?",
+        "answer": "Możesz zgłosić problem poprzez system ticketów na naszym serwerze Discord lub bezpośrednio poinformować administrację. Podaj możliwie szczegółowe informacje o incydencie."
+      },
+      {
+        "question": "Czy mogę odwołać się od bana?",
+        "answer": "Tak, możesz odwołać się od bana poprzez wysłanie formalnej wiadomości do administracji. Przygotuj uzasadnienie, dlaczego uważasz, że decyzja była niesprawiedliwa."
+      },
+      {
+        "question": "Jaki język jest używany na serwerze?",
+        "answer": "Głównie używamy języka polskiego i angielskiego. Wszyscy członkowie powinni być w stanie posługiwać się co najmniej jednym z tych języków na zadowalającym poziomie."
+      },
+      {
+        "question": "Czy jest wymagany wiek minimalny?",
+        "answer": "Chociaż nie mamy ściśle określonego minimalnego wymogu wiekowego, zalecamy, aby członkowie mieli co najmniej 13 lat i wykazywali dojrzałość."
+      },
+      {
+        "question": "Jak się awansuje na wyższą rangę?",
+        "answer": "Awansowanie zależy od aktywności, zaangażowania i zademonstrowania umiejętności. Administracja będzie obserwować twoje postępy i rozpatry awans w odpowiednim czasie."
+      },
+      {
+        "question": "Czy mogę być moderatorem lub administratorem?",
+        "answer": "Tak, jest to możliwe. Musisz wykazać się odpowiednimi umiejętnościami, byciem godnym zaufania i aktywnym członkiem zespołu. Odpowiednia osoba z administracji powinna Cię zaproponować."
+      }
+    ]
+  },
+  "about": {
+    "title": "CZYM JEST SHADOW ABYSSAL X? (przykłady wymyślone lol)",
+    "subtitle": "Poznaj naszą historię, misję i jak dołączyć do naszej społeczności",
+    "whoAreWe": "Kim jesteśmy?",
+    "whoAreWeContent": "Shadow Abyssal X to dynamiczna i profesjonalna organizacja militarna działająca na serwerze Roblox. Jesteśmy zaangażowani w tworzenie przyjaznego, zdyscyplinowanego i zainteresowanego wspólnotą graczy.",
+    "whoAreWeContent2": "Nasze członkowie pochodzą z różnych części świata, ale łączy nas wspólna pasja do gier i zainteresowanie wojskowością. Tworzymy środowisko, gdzie każdy może się rozwijać i osiągać swoje cele.",
+    "ourMission": "Nasza misja",
+    "ourMissionContent": "Misją Shadow Abyssal X jest budowanie silnej, zorganizowanej i szanującej się nawzajem społeczności graczy. Dążymy do:",
+    "mission1": "Zapewniania pozytywnego doświadczenia na serwerze",
+    "mission2": "Wspierania nowych członków w ich rozwoju",
+    "mission3": "Organizowania zdarzeń i operacji dla całej frakcji",
+    "mission4": "Utrzymywania wysokich standardów profesjonalizmu i etyki",
+    "mission5": "Tworzenia przyjaznego i bezpiecznego środowiska dla graczy",
+    "values": "Nasze wartości",
+    "valuesIntro": "Działania Shadow Abyssal X opierają się na następujących fundamentalnych wartościach:",
+    "value1Title": "Szacunek",
+    "value1Content": " - Szanujemy każdego członka naszej społeczności niezależnie od jego pozycji.",
+    "value2Title": "Dyscyplina",
+    "value2Content": " - Wierzymy, że dyscyplina jest kluczem do sukcesu i harmonii w grupie.",
+    "value3Title": "Wspólnota",
+    "value3Content": " - Pracujemy razem dla wspólnego dobra i wspieramy się nawzajem.",
+    "value4Title": "Przejrzystość",
+    "value4Content": " - Komunikujemy się otwarcie i uczciwą z naszymi członkami.",
+    "value5Title": "Zaangażowanie",
+    "value5Content": " - Każdy członek jest zaangażowany w działania Shadow Abyssal X.",
+    "structure": "Struktura organizacyjna",
+    "structureContent": "Shadow Abyssal X ma dobrze zdefiniowaną strukturę z różnymi rolami i stanowiskami. Od Faction Command na szczycie po Trial Moderators, każda rola jest ważna i wspiera ogólne funkcjonowanie organizacji.",
+    "structureContent2": "Aby dowiedzieć się więcej o naszych rolach i członkach kadry, odwiedź stronę 'Kadra'.",
+    "howToJoin": "Jak dołączyć do nas?",
+    "howToJoinContent": "Jeśli jesteś zainteresowany dołączeniem do Shadow Abyssal X, tutaj są podstawowe kroki:",
+    "step1": "Wejdź na nasz serwer Roblox i zapoznaj się z naszymi regulaminami",
+    "step2": "Dołącz do naszego serwera Discord aby być w kontakcie z społecznością",
+    "step3": "Zwróć się do członka administracji z prośbą o zaproszenie do frakcji",
+    "step4": "Przejdź przez proces weryfikacji i poznaj pozostałych członków",
+    "step5": "Zacznij nową przygodę z Shadow Abyssal X!",
+    "joinDiscord": "Dołącz na Discorda",
+    "contact": "Kontakt",
+    "contactContent": "Jeśli masz pytania lub chcesz się skontaktować z administracją, możesz to zrobić poprzez:"
+  },
   "regulations": {
-    "title": "Regulamin serwera 303 dywizjonu",
+    "title": "Regulamin serwera Shadow Abyssal X",
     "warning": "Każdy, kto złamie zasady, poniesie konsekwencje, takie jak wyciszenie na określoną liczbę godzin, ban lub wyrzucenie z serwera. Jeśli ujawnisz dane osobowe innej osoby, możesz spodziewać się trwałego bana i dodania do 𝙺𝙾𝚂.",
     "highlight": "Niektóre zasady będą podkreślone czego nie złamać jakiegoś regulaminu i wyładować w kos liście.",
     "generalRulesTitle": "Sekcja 1: Ogólne zasady",

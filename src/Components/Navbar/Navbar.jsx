@@ -1,3 +1,5 @@
+// src/Components/Navbar/Navbar.jsx
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +18,7 @@ const Navbar = () => {
                     <img src={logo} alt="303rd Division Logo" className='logo' />
                 </NavLink>
                 <NavLink to="/" className='name'>
-                    303rd Division
+                    Shadow Abyssal X
                 </NavLink>
             </div>
 
