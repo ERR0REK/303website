@@ -7,7 +7,12 @@ export default function CodeRainBackground() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d', { alpha: true });
+    let animationId;
+    let lastFrameTime = 0;
+    const frameInterval = 80; // 12 FPS zamiast ~20 FPS
     
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -17,34 +22,43 @@ export default function CodeRainBackground() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>{}[]';
+    const chars = 'アイウエオ0123456789ABC<>';
     const charArray = chars.split('');
     const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = new Uint16Array(columns);
+    drops.fill(1);
 
-    const draw = () => {
-      ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+    const draw = (currentTime) => {
+      if (currentTime - lastFrameTime < frameInterval) {
+        animationId = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrameTime = currentTime;
+
+      ctx.fillStyle = 'rgba(10, 10, 15, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.15)';
+      ctx.fillStyle = 'rgba(0, 240, 255, 0.12)';
       ctx.font = `${fontSize}px monospace`;
 
-      for (let i = 0; i < drops.length; i++) {
+      for (let i = 0; i < drops.length; i += 2) {
         const text = charArray[Math.floor(Math.random() * charArray.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.97) {
           drops[i] = 0;
         }
         drops[i]++;
       }
+      
+      animationId = requestAnimationFrame(draw);
     };
 
-    const interval = setInterval(draw, 50);
+    animationId = requestAnimationFrame(draw);
 
     return () => {
-      clearInterval(interval);
+      cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);

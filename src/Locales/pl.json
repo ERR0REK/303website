@@ -159,6 +159,7 @@
     "highlight": "Niektóre zasady będą podkreślone czego nie złamać jakiegoś regulaminu i wyładować w kos liście.",
     "generalRulesTitle": "Sekcja 1: Ogólne zasady",
     "voiceChatRulesTitle": "Sekcja 2: Ogólne zasady dotyczące czatu głosowego",
+    "inGameRulesTitle": "Sekcja 3: Regulamin In-Game",
     "rules": {
       "general": [
         "Szanuj innych: Zachowuj się z szacunkiem wobec wszystkich członków serwera, niezależnie od ich wieku, płci, pochodzenia lub poglądów.",
@@ -184,6 +185,16 @@
         "Nie przerywaj komuś jak ktoś nie skończył gadać.",
         "Nie nagrywaj rozmów bez zgody: Nie nagrywaj rozmów bez zgody wszystkich uczestników.",
         "Nie nagrywaj rozmowy bez zgody drugiej osoby."
+      ],
+      "inGame": [
+        "Brak flamowania: Nie prowadź kłótni ani nie atakuj innych graczy w grze.",
+        "Nie obchodzisz reguł: Przestrzegaj zasad serwera w grze i wykonuj rozkazy wyższych rang.",
+        "Teamwork: Pracuj razem z członkami zespołu dla wspólnych celów.",
+        "Nie cheatujesz: Używanie exploitów, skryptów lub jakichkolwiek form cheatingu jest surowo zabronione.",
+        "Brak griefingu: Nie niszcz budynków ani nie przeszkadzaj innym graczom.",
+        "Szanuj rangę: Posłuchaj rozkazów członków z wyższą rangą.",
+        "Bezpieczna gra: Nie wchodzić w niebezpieczne strefy bez zgody administracji.",
+        "Aktywność: Bądź aktywny i zaangażowany w działalność serwera."
       ]
     },
     "footer": {

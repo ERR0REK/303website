@@ -159,6 +159,7 @@
     "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.", 
     "generalRulesTitle": "Section 1: General Rules",
     "voiceChatRulesTitle": "Section 2: General rules in voice chat",
+    "inGameRulesTitle": "Section 3: In-Game Regulations",
     "rules": {
       "general": [
         "Respect others: Behave respectfully toward all members of server, regardless of their age, gender, background or views.",
@@ -184,6 +185,16 @@
         "Don't interrupt someone before they have finished speaking.",
         "Do not record conversations without consent: Do not record conversations without the consent of all participants.",
         "Do not record a conversation without another person's consent."
+      ],
+      "inGame": [
+        "No flaming: Do not engage in quarrels or attack other players in-game.",
+        "No rule bypassing: Follow the rules of the server in-game and follow orders from higher ranks.",
+        "Teamwork: Work together with team members for common goals.",
+        "No cheating: Using exploits, scripts, or any form of cheating is strictly forbidden.",
+        "No griefing: Do not destroy buildings or interfere with other players.",
+        "Respect rank: Listen to orders from members with higher rank.",
+        "Safe play: Do not enter dangerous areas without permission from administration.",
+        "Activity: Be active and engaged in server activities."
       ]
     },
     "footer": {

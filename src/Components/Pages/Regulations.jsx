@@ -15,6 +15,7 @@ export default function Regulations() {
 
   const generalRules = t('regulations.rules.general', { returnObjects: true });
   const voiceRules = t('regulations.rules.voice', { returnObjects: true });
+  const inGameRules = t('regulations.rules.inGame', { returnObjects: true });
 
   return (
     <div className="regulations-page">
@@ -37,11 +38,19 @@ export default function Regulations() {
                 title={t('regulations.generalRulesTitle')}
                 rules={generalRules}
                 delay={0.2}
+                number="01"
               />
               <RegRuleCard
                 title={t('regulations.voiceChatRulesTitle')}
                 rules={voiceRules}
                 delay={0.4}
+                number="02"
+              />
+              <RegRuleCard
+                title={t('regulations.inGameRulesTitle')}
+                rules={inGameRules}
+                delay={0.6}
+                number="03"
               />
             </div>
 
