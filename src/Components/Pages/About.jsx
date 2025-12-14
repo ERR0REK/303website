@@ -163,9 +163,9 @@ export default function About() {
               )}
             </p>
             <ul className="about-features-list">
-              <li>Discord: Nasz oficjalny serwer Discord</li>
-              <li>Roblox: Bezpośredni komunikat do członka administracji</li>
-              <li>Ta strona: Skorzystaj z opcji kontaktu (jeśli dostępna)</li>
+            <li>{t('about.contactDiscord')}</li>
+            <li>{t('about.contactRoblox')}</li>
+            <li>{t('about.contactWebsite')}</li>
             </ul>
           </div>
         </section>
