@@ -148,7 +148,10 @@
     "step5": "Zacznij nową przygodę z Shadow Abyssal X!",
     "joinDiscord": "Dołącz na Discorda",
     "contact": "Kontakt",
-    "contactContent": "Jeśli masz pytania lub chcesz się skontaktować z administracją, możesz to zrobić poprzez:"
+    "contactContent": "Jeśli masz pytania lub chcesz się skontaktować z administracją, możesz to zrobić poprzez:",
+    "contactDiscord": "Discord: Nasz oficjalny serwer Discord",
+    "contactRoblox": "Roblox: Bezpośredni komunikat do członka administracji",
+    "contactWebsite": "Ta strona: Skorzystaj z opcji kontaktu (jeśli dostępna)"
   },
   "regulations": {
     "title": "Regulamin serwera Shadow Abyssal X",
