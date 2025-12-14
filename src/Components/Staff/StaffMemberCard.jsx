@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const StaffMemberCard = ({ member, onMoreInfo }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [setIsHovered] = useState(false);
 
   return (
     <div

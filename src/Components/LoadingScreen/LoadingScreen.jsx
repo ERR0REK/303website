@@ -53,7 +53,7 @@ const LoadingScreen = () => {
         }, 50); // Slightly faster for a smoother feel
     
         return () => clearInterval(interval);
-    }, []);
+    }, );
 
     return (
         <div className="loading-screen">

@@ -7,12 +7,16 @@ import '../Hero/Hero.css';
 const Hero = () => {
     const { t } = useTranslation(); // Używamy hooka do tłumaczeń
 
+    const openDiscord = () => {
+        window.open('https://discord.gg/6dptZnyTf5', '_blank');
+    };
+
     return (
         <div className='hero container'>
             <div className="hero-text">
                 <h1>{t('hero.title')}</h1>
                 <p>{t('hero.welcome')}</p>
-                <button className='btn'>{t('hero.discord_button')}</button>
+                <button className='btn' onClick={openDiscord}>{t('hero.discord_button')}</button>
             </div>
         </div>
     )
