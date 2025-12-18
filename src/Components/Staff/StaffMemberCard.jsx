@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const StaffMemberCard = ({ member, onMoreInfo }) => {
-  const [setIsHovered] = useState(false);
-
   return (
     <div
       className="staff-member-card"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <img
         src={member.avatar || 'https://via.placeholder.com/120?text=No+Avatar'}

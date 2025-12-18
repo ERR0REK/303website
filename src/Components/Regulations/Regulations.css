@@ -52,7 +52,7 @@
   color: var(--reg-accent-color);
   text-shadow: 0 0 15px var(--reg-accent-color), 0 0 30px rgba(0, 255, 76, 0.5);
   letter-spacing: 0.08em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   animation: title-float 4s ease-in-out infinite;
 }
 
@@ -239,17 +239,19 @@
 }
 
 .reg-rule-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--reg-accent-color);
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
   text-align: left;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   grid-column: 1 / -1;
   position: relative;
   z-index: 1;
-  line-height: 1.2;
+  line-height: 1.4;
+  word-spacing: 0.2em;
 }
 
 .reg-rule-card:nth-child(1) .reg-rule-title {
@@ -318,12 +320,13 @@
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.9;
   color: var(--reg-text-primary);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   padding-left: 0rem;
+  font-weight: 400;
 }
 
 .reg-rule-item:hover {
@@ -495,6 +498,39 @@
   .reg-footer {
     padding: 2rem 1rem;
     font-size: 0.75rem;
+  }
+}
+
+/* TV/Large screens */
+@media (min-width: 1921px) {
+  .reg-rule-card {
+    padding: 4rem;
+    gap: 4rem;
+  }
+
+  .reg-rule-title {
+    font-size: 2.8rem;
+  }
+
+  .reg-rule-item {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+
+  .reg-rule-section-number {
+    font-size: 4.5rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .reg-rule-card {
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+
+  .reg-rule-item {
+    font-size: 1.1rem;
   }
 }
 

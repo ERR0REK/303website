@@ -258,3 +258,30 @@
     padding: 0.8rem 1rem;
   }
 }
+
+/* TV/Large screens */
+@media (min-width: 1921px) {
+  .about-hero-title {
+    font-size: 5rem;
+  }
+
+  .about-section {
+    padding: 3rem;
+  }
+
+  .about-section-content {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-section {
+    padding: 1.8rem;
+  }
+
+  .about-section-content {
+    font-size: 1.05rem;
+  }
+}

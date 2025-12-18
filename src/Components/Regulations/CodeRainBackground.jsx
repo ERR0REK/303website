@@ -9,10 +9,10 @@ export default function CodeRainBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     
-    const ctx = canvas.getContext('2d', { alpha: true });
+    const ctx = canvas.getContext('2d', { alpha: true, willReadFrequently: false });
     let animationId;
     let lastFrameTime = 0;
-    const frameInterval = 80; // 12 FPS zamiast ~20 FPS
+    const frameInterval = 100; // Ultra light - 10 FPS dla starych urządzeń
     
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -20,11 +20,12 @@ export default function CodeRainBackground() {
     };
     
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const chars = 'アイウエオ0123456789ABC<>';
+    
+    // Sprawdź czy to mobile - mniejsze canvas dla oszczędzania baterii
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const chars = isMobile ? '01アイ' : 'アイウエオ0123456789ABC<>';
     const charArray = chars.split('');
-    const fontSize = 14;
+    const fontSize = isMobile ? 12 : 14;
     const columns = Math.floor(canvas.width / fontSize);
     const drops = new Uint16Array(columns);
     drops.fill(1);
@@ -36,13 +37,14 @@ export default function CodeRainBackground() {
       }
       lastFrameTime = currentTime;
 
-      ctx.fillStyle = 'rgba(10, 10, 15, 0.08)';
+      ctx.fillStyle = isMobile ? 'rgba(10, 10, 15, 0.15)' : 'rgba(10, 10, 15, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.12)';
+      ctx.fillStyle = isMobile ? 'rgba(0, 240, 255, 0.08)' : 'rgba(0, 240, 255, 0.12)';
       ctx.font = `${fontSize}px monospace`;
 
-      for (let i = 0; i < drops.length; i += 2) {
+      // Skip co 3 zamiast co 2 dla oszczędzania
+      for (let i = 0; i < drops.length; i += isMobile ? 3 : 2) {
         const text = charArray[Math.floor(Math.random() * charArray.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
@@ -56,10 +58,19 @@ export default function CodeRainBackground() {
     };
 
     animationId = requestAnimationFrame(draw);
+    
+    // Resize listener z debounce
+    let resizeTimeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resizeCanvas, 250);
+    };
+    window.addEventListener('resize', handleResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimeout);
     };
   }, []);
 
@@ -67,7 +78,7 @@ export default function CodeRainBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.4 }}
+      style={{ opacity: 0.4, willChange: 'auto' }}
     />
   );
 }

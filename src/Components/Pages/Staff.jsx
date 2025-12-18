@@ -6,25 +6,22 @@ import StaffMemberModal from '../Staff/StaffMemberModal';
 
 /* Importowanie obrazków członków kadry */
 
-import elizaPFP from '../../Assets/StaffMembersPFP/36e5d4f5ccd2f159d1ac57fd2ab92e5e.png';
-import AdiovesPFP from '../../Assets/StaffMembersPFP/8f62a77bcce10853d9b4fd95dfb3cb09.png';
-import TymussPFP from '../../Assets/StaffMembersPFP/e1287b612a70f551b591e25e51e1cbca.png';
-import AlexPFP from '../../Assets/StaffMembersPFP/9997665ead5ed30104f179a8c12a46e2.png';
-import SLX_EX0T1CPFP from '../../Assets/StaffMembersPFP/a49246889bf4422acada8e3449840541.png';
-import PlantinaxiPFP from '../../Assets/StaffMembersPFP/4a253a9a28f3232ce1253d0c171dfdb2.png';
-import AshPFP from '../../Assets/StaffMembersPFP/df1fc1d6937c6bf0797bf29abdee53e9.png';
-import tippthegamerPFP from '../../Assets/StaffMembersPFP/7648648bfb9f62dcfd4da8c71968d863.png';
-import G4L4XYPFP from '../../Assets/StaffMembersPFP/f64423435c808532100ef3c195fa59c7.png';
-import miko_o1PFP from '../../Assets/StaffMembersPFP/ff6a77b5b7dfa9ab6e6bb951ef69af2e.png';
-import chillin_noodlesPFP from '../../Assets/StaffMembersPFP/9cce7bd866036ac68de1582f05b7ec84.png';
-import SilentPFP from '../../Assets/StaffMembersPFP/042fd81b3c68b3e97b388bc01a3dd8fe.png';
-import tippsDadPFP from '../../Assets/StaffMembersPFP/328a6fd8d926c63621da1247c86617d3.png';
-import Bob_BudowniczyPFP from '../../Assets/StaffMembersPFP/86c99d3891efb5d080759bdc75b63ccd.png';
-import kabanosPFP from '../../Assets/StaffMembersPFP/936ab1041cf0e62de55fc4071574e1e7.png';
-import MaverickPFP from '../../Assets/StaffMembersPFP/b2e0f9a41b665db5a51feca5ac71ea42.png';
-import R_SPFP from '../../Assets/StaffMembersPFP/647a67f5498a9219ff376f53defc46f2.png';
-import SnowiePFP from '../../Assets/StaffMembersPFP/bfba88f3e8863fefff3e1392553908eb.png';
-import KiepskiPFP from '../../Assets/StaffMembersPFP/c6969f00c3fefeaa60adbfa867a0fe60.png';
+import elizaPFP from '../../Assets/StaffMembersPFP/ElizaPFP.png';
+import TymussPFP from '../../Assets/StaffMembersPFP/TymussPFP.png';
+import AlexPFP from '../../Assets/StaffMembersPFP/AlexPFP.png';
+import SLX_EX0T1CPFP from '../../Assets/StaffMembersPFP/EX0T1CPFP.png';
+import PlantinaxiPFP from '../../Assets/StaffMembersPFP/PlantinaxiPFP.png';
+import tippthegamerPFP from '../../Assets/StaffMembersPFP/tippthegamerPFP.png';
+import G4L4XYPFP from '../../Assets/StaffMembersPFP/G4L4XYPFP.png';
+import miko_o1PFP from '../../Assets/StaffMembersPFP/Miko_o01PFP.png';
+import chillin_noodlesPFP from '../../Assets/StaffMembersPFP/chillin_noodlesPFP.png';
+import SilentPFP from '../../Assets/StaffMembersPFP/SilentPFP.png';
+import tippsDadPFP from '../../Assets/StaffMembersPFP/tippsDadPFP.png';
+import Bob_BudowniczyPFP from '../../Assets/StaffMembersPFP/Bob_budowniczyPFP.png';
+import kabanosPFP from '../../Assets/StaffMembersPFP/kabanosPFP.png';
+import MaverickPFP from '../../Assets/StaffMembersPFP/MaverickPFP.png';
+import R_SPFP from '../../Assets/StaffMembersPFP/R_SPFP.png';
+import KiepskiPFP from '../../Assets/StaffMembersPFP/KiepskiPFP.png';
 
 /* Koniec importowania obrazków */
 
@@ -43,19 +40,19 @@ export default function Staff() {
         name: 'Eliza',
         role: 'Faction Command',
         avatar: elizaPFP,
-        robloxUsername: '',
-        robloxUserId: '', // Dodaj ID profilu
+        robloxUsername: 'XxIsaacBestPlayerxX',
+        robloxUserId: '5640334840',
         inGameRank: 'Leader'
       },
-      {
-        id: 11,
-        name: 'Adioves',
+        {
+        id: 12,
+        name: 'Alex',
         role: 'Faction Command',
-        avatar: AdiovesPFP,
-        robloxUsername: 'Adioves',
-        robloxUserId: '2340877754', // Dodaj ID profilu
+        avatar: AlexPFP,
+        robloxUsername: 'atfg333',
+        robloxUserId: '5163504964',
         inGameRank: ''
-      }
+      },
     ],
     factionCoLeader: [
       {
@@ -67,15 +64,6 @@ export default function Staff() {
         robloxUserId: '782408287',
         inGameRank: ''
       },
-      {
-        id: 12,
-        name: 'Alex',
-        role: 'Faction Co Leader',
-        avatar: AlexPFP,
-        robloxUsername: '',
-        robloxUserId: '',
-        inGameRank: ''
-      }
     ],
     technicalSpecialist: [
       {
@@ -83,8 +71,8 @@ export default function Staff() {
         name: 'SLX_EX0T1C',
         role: 'Technical Specialist',
         avatar: SLX_EX0T1CPFP,
-        robloxUsername: '',
-        robloxUserId: '',
+        robloxUsername: 'ERR0R_Gl1tch',
+        robloxUserId: '2537111023',
         inGameRank: ''
       },
     ],
@@ -96,19 +84,10 @@ export default function Staff() {
             name: 'Plantinaxi',
             role: 'Trial Elder',
             avatar: PlantinaxiPFP,
-            robloxUsername: '',
-            robloxUserId: '',
+            robloxUsername: 'Plantinaxi',
+            robloxUserId: '1157506780',
             inGameRank: ''
         },
-        {
-            id: 13,
-            name: 'Ash',
-            role: 'Trial Elder',
-            avatar: AshPFP,
-            robloxUsername: '',
-            robloxUserId: '',
-            inGameRank: ''
-        }
     ],
     intelligence: [],
     headAdministrator: [
@@ -117,8 +96,8 @@ export default function Staff() {
             name: 'tippthegamer',
             role: 'Head Administrator',
             avatar: tippthegamerPFP,
-            robloxUsername: '',
-            robloxUserId: '',
+            robloxUsername: 'tipppppp48',
+            robloxUserId: '7344436951',
             inGameRank: ''
         }
     ],
@@ -129,8 +108,8 @@ export default function Staff() {
         name: 'G4L4XY',
         role: 'Administrator',
         avatar: G4L4XYPFP,
-        robloxUsername: '',
-        robloxUserId: '',
+        robloxUsername: 'Chrismoldova111',
+        robloxUserId: '5223007921',
         inGameRank: ''
       },
       {
@@ -158,8 +137,8 @@ export default function Staff() {
             name: 'Silent',
             role: 'Trial Administrator',
             avatar: SilentPFP,
-            robloxUsername: '',
-            robloxUserId: '',
+            robloxUsername: 'Warcel09',
+            robloxUserId: '3061429272',
             inGameRank: ''
         },
         {
@@ -213,15 +192,6 @@ export default function Staff() {
         }
     ],
     trialModerator: [
-        {
-            id: 18,
-            name: 'Snowie',
-            role: 'Trial Moderator',
-            avatar: SnowiePFP,
-            robloxUsername: '',
-            robloxUserId: '',
-            inGameRank: ''
-        },
         {
             id: 19,
             name: 'Kiepski',

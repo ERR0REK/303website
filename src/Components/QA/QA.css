@@ -22,10 +22,11 @@
 /* --- Sekcja Hero / Nagłówek --- */
 .qa-hero-section {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 7rem 2rem 4rem 2rem;
   position: relative;
   z-index: 2;
   background: linear-gradient(180deg, rgba(10, 10, 15, 0.5), transparent);
+  margin-top: 2rem;
 }
 
 .qa-hero-title {
@@ -217,5 +218,32 @@
 
   .qa-toggle-icon {
     font-size: 1.2rem;
+  }
+}
+
+/* TV/Large screens */
+@media (min-width: 1921px) {
+  .qa-hero-title {
+    font-size: 5rem;
+  }
+
+  .qa-question {
+    font-size: 1.5rem;
+  }
+
+  .qa-answer-content {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .qa-question {
+    font-size: 1.15rem;
+  }
+
+  .qa-answer-content {
+    font-size: 1.1rem;
   }
 }

@@ -11,6 +11,7 @@ import Qa from './Components/Pages/QA'; // Uwaga na nazwę pliku
 import Staff from '../src/Components/Pages/Staff';
 
 import LoadingScreen from '../src/Components/LoadingScreen/LoadingScreen';
+import LanguageSelector from '../src/Components/LanguageDropdown/LanguageSelector';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,9 @@ function App() {
   }
 
   return (
-    <Router>
+    <>
+      <LanguageSelector />
+      <Router>
       <Routes>
         {/* Definiuj trasy dla każdej podstrony */}
         <Route path="/" element={<Home />} />
@@ -36,7 +39,8 @@ function App() {
         <Route path="/qa" element={<Qa />} />
         <Route path="/staff" element={<Staff />} />
       </Routes>
-    </Router>
+      </Router>
+    </>
   );
 }
 

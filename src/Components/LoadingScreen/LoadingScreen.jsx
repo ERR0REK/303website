@@ -34,13 +34,11 @@ const LoadingScreen = () => {
                     return 100;
                 }
         
-                // Change loading text based on progress
                 messageIndex = Math.floor(newProgress / 20);
                 if (messageIndex < loadingMessages.length) {
                     setLoadingText(loadingMessages[messageIndex]);
                 }
         
-                // Simulate random system status changes
                 if (Math.random() > 0.95) {
                     setSystemInfo(prev => ({
                         ...prev,
@@ -50,10 +48,10 @@ const LoadingScreen = () => {
         
                 return newProgress;
             });
-        }, 50); // Slightly faster for a smoother feel
+        }, 50);
     
         return () => clearInterval(interval);
-    }, );
+    }, [t]);
 
     return (
         <div className="loading-screen">
@@ -98,7 +96,7 @@ const LoadingScreen = () => {
                     </div>
                     <div className="info-line">
                         <span className="info-label">STATUS:</span>
-                        <span className="info-value status-active">{systemInfo.status}</span>
+                        <span className={`info-value ${systemInfo.status.toLowerCase()}`}>{systemInfo.status}</span>
                     </div>
                     <div className="info-line">
                         <span className="info-label">IP:</span>
