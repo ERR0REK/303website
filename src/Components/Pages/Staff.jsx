@@ -11,7 +11,6 @@ import TymussPFP from '../../Assets/StaffMembersPFP/TymussPFP.png';
 import AlexPFP from '../../Assets/StaffMembersPFP/AlexPFP.png';
 import SLX_EX0T1CPFP from '../../Assets/StaffMembersPFP/EX0T1CPFP.png';
 import PlantinaxiPFP from '../../Assets/StaffMembersPFP/PlantinaxiPFP.png';
-import tippthegamerPFP from '../../Assets/StaffMembersPFP/tippthegamerPFP.png';
 import G4L4XYPFP from '../../Assets/StaffMembersPFP/G4L4XYPFP.png';
 import miko_o1PFP from '../../Assets/StaffMembersPFP/Miko_o01PFP.png';
 import chillin_noodlesPFP from '../../Assets/StaffMembersPFP/chillin_noodlesPFP.png';
@@ -90,17 +89,7 @@ export default function Staff() {
         },
     ],
     intelligence: [],
-    headAdministrator: [
-        {
-            id: 14,
-            name: 'tippthegamer',
-            role: 'Head Administrator',
-            avatar: tippthegamerPFP,
-            robloxUsername: 'tipppppp48',
-            robloxUserId: '7344436951',
-            inGameRank: ''
-        }
-    ],
+    headAdministrator: [],
     seniorAdministrator: [],
     administrator: [
       {
