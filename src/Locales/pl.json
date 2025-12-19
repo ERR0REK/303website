@@ -4,7 +4,8 @@
     "about": "Czym jest Shadow Abyssal X?",
     "regulations": "Regulamin",
     "qa": "Q&A",
-    "staff": "Kadra"
+    "staff": "Kadra",
+    "changelog": "Changelog"
   },
   "hero": {
     "title": "Shadow Abyssal X",
@@ -154,6 +155,7 @@
     "contactWebsite": "Ta strona: Skorzystaj z opcji kontaktu (jeśli dostępna)"
   },
   "regulations": {
+    "serverTitle": "Regulamin serwera Shadow Abyssal X",
     "title": "Regulamin serwera Shadow Abyssal X",
     "warning": "Każdy, kto złamie zasady, poniesie konsekwencje, takie jak wyciszenie na określoną liczbę godzin, ban lub wyrzucenie z serwera. Jeśli ujawnisz dane osobowe innej osoby, możesz spodziewać się trwałego bana i dodania do 𝙺𝙾𝚂.",
     "highlight": "Niektóre zasady będą podkreślone czego nie złamać jakiegoś regulaminu i wyładować w kos liście.",
@@ -201,5 +203,9 @@
       "author": "Autor regulaminu serwera DSX: @polonia.errorglitchtv (✝ DSX_EX0T1C ✝)",
       "updateDate": "Aktualizacja regulaminu: 12.10.2025"
     }
+  },
+  "changelog": {
+    "title": "CHANGELOG",
+    "subtitle": "Zobacz historię zmian i aktualizacji Shadow Abyssal X"
   }
 }

@@ -135,6 +135,25 @@ nav ul li a:focus {
     box-shadow: 0 0 0 2px var(--navbar-text-hover);
 }
 
+/* --- Changelog Link Special Styling --- */
+nav ul li a.nav-changelog {
+    background: linear-gradient(135deg, rgba(0, 255, 76, 0.1), rgba(0, 212, 255, 0.05));
+    border: 1px solid rgba(0, 255, 76, 0.4);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+nav ul li a.nav-changelog:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 76, 0.3), rgba(0, 212, 255, 0.2));
+    border-color: var(--navbar-text-hover);
+    box-shadow: 0 0 15px rgba(0, 255, 76, 0.3);
+}
+
+nav ul li a.nav-changelog.active {
+    background: linear-gradient(135deg, rgba(0, 255, 76, 0.2), rgba(0, 212, 255, 0.1));
+    border-color: var(--navbar-text-hover);
+}
+
 /* --- Resposywność --- */
 @media (max-width: 768px) {
     nav {

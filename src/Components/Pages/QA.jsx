@@ -7,6 +7,12 @@ import '../QA/QA.css';
 export default function Qa() {
   const { t } = useTranslation();
 
+  // ===== WIP: PYTANIA I ODPOWIEDZI =====
+  // TODO: Dodaj własne pytania i odpowiedzi dla FAQ
+  // Poniższy kod jest zakomentowany - jak będziesz miał pomysł na pytania,
+  // możesz go rozkmentować i przerobić z oryginalnym kodem
+  
+  /*
   // Pytania i odpowiedzi - można je przenieść do tłumaczeń
   const faqs = [
     {
@@ -42,6 +48,10 @@ export default function Qa() {
       answer: t('qa.faqs.7.answer', 'Tak, jest to możliwe. Musisz wykazać się odpowiednimi umiejętnościami, byciem godnym zaufania i aktywnym członkiem zespołu. Odpowiednia osoba z administracji powinna Cię zaproponować.'),
     },
   ];
+  */
+
+  // Na razie pusty array - dodaj pytania gdy będziesz miał pomysł
+  const faqs = [];
 
   return (
     <div className="qa-page">
@@ -49,9 +59,9 @@ export default function Qa() {
 
       {/* --- Sekcja Hero --- */}
       <section className="qa-hero-section">
-        <h1 className="qa-hero-title">{t('qa.title', 'QUESTIONS & ANSWERS')}</h1>
+        <h1 className="qa-hero-title">{t('qa.title', 'WORK IN PROGRESS')}</h1>
         <p className="qa-hero-subtitle">
-          {t('qa.subtitle', 'Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące 303rd Division')}
+          {t('qa.subtitle', 'Ta sekcja jest w trakcie przebudowy - wróć wkrótce!')}
         </p>
         <div className="qa-hero-divider"></div>
       </section>

@@ -30,6 +30,7 @@ const Navbar = () => {
                     <li><NavLink to="/regulations">{t('nav.regulations')}</NavLink></li>
                     <li><NavLink to="/qa">{t('nav.qa')}</NavLink></li>
                     <li><NavLink to="/staff">{t('nav.staff')}</NavLink></li>
+                    <li><NavLink to="/changelog" className="nav-changelog">{t('nav.changelog', 'CHANGELOG')}</NavLink></li>
                 </ul>
                 <LanguageDropdown />
             </div>

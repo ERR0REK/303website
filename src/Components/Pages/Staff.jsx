@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import Navbar from '../Navbar/Navbar';
 import StaffRoleSection from '../Staff/StaffRoleSection';
 import StaffMemberModal from '../Staff/StaffMemberModal';
@@ -63,18 +64,17 @@ export default function Staff() {
         robloxUserId: '782408287',
         inGameRank: ''
       },
-    ],
-    technicalSpecialist: [
-      {
+        {
         id: 3,
         name: 'SLX_EX0T1C',
-        role: 'Technical Specialist',
+        role: 'Technical Specialist & Faction Co Leader',
         avatar: SLX_EX0T1CPFP,
         robloxUsername: 'ERR0R_Gl1tch',
         robloxUserId: '2537111023',
         inGameRank: ''
       },
     ],
+    technicalSpecialist: [],
     trialCoLeader: [],
     elder: [],
     trialElder: [
@@ -207,13 +207,35 @@ export default function Staff() {
       <Navbar />
 
       {/* --- Sekcja Hero --- */}
-      <section className="staff-hero-section">
-        <h1 className="staff-hero-title">{t('staff.title', 'MEET THE STAFF TEAM!')}</h1>
-        <div className="staff-hero-divider"></div>
-      </section>
+      <motion.section 
+        className="staff-hero-section"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.h1 
+          className="staff-hero-title"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          {t('staff.title', 'MEET THE STAFF TEAM!')}
+        </motion.h1>
+        <motion.div 
+          className="staff-hero-divider"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        ></motion.div>
+      </motion.section>
 
       {/* --- Główny kontener treści --- */}
-      <main className="staff-main-container">
+      <motion.main 
+        className="staff-main-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         {/* Faction Command */}
         <StaffRoleSection
           roleTitle={t('staff.roles.factionCommand', 'Faction Command')}
@@ -311,7 +333,7 @@ export default function Staff() {
           members={staffData.trialModerator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
-      </main>
+      </motion.main>
 
       {/* --- Modal Staff Member --- */}
       <StaffMemberModal member={selectedMember} onClose={closeModal} />

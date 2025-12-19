@@ -9,6 +9,7 @@ import About from '../src/Components/Pages/About';
 import Regulations from '../src/Components/Pages/Regulations';
 import Qa from './Components/Pages/QA'; // Uwaga na nazwę pliku
 import Staff from '../src/Components/Pages/Staff';
+import Changelog from '../src/Components/Pages/Changelog';
 
 import LoadingScreen from '../src/Components/LoadingScreen/LoadingScreen';
 import LanguageSelector from '../src/Components/LanguageDropdown/LanguageSelector';
@@ -38,6 +39,7 @@ function App() {
         <Route path="/regulations" element={<Regulations />} />
         <Route path="/qa" element={<Qa />} />
         <Route path="/staff" element={<Staff />} />
+        <Route path="/changelog" element={<Changelog />} />
       </Routes>
       </Router>
     </>

@@ -12,7 +12,7 @@ export default function CodeRainBackground() {
     const ctx = canvas.getContext('2d', { alpha: true, willReadFrequently: false });
     let animationId;
     let lastFrameTime = 0;
-    const frameInterval = 100; // Ultra light - 10 FPS dla starych urządzeń
+    const frameInterval = 150; // 6.67 FPS - jeszcze lżejszy dla starych urządzeń
     
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -37,14 +37,15 @@ export default function CodeRainBackground() {
       }
       lastFrameTime = currentTime;
 
-      ctx.fillStyle = isMobile ? 'rgba(10, 10, 15, 0.15)' : 'rgba(10, 10, 15, 0.08)';
+      // Jeszcze mniejsza opacidad dla mniejszych lagów
+      ctx.fillStyle = isMobile ? 'rgba(10, 10, 15, 0.12)' : 'rgba(10, 10, 15, 0.06)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = isMobile ? 'rgba(0, 240, 255, 0.08)' : 'rgba(0, 240, 255, 0.12)';
+      ctx.fillStyle = isMobile ? 'rgba(0, 240, 255, 0.06)' : 'rgba(0, 240, 255, 0.1)';
       ctx.font = `${fontSize}px monospace`;
 
-      // Skip co 3 zamiast co 2 dla oszczędzania
-      for (let i = 0; i < drops.length; i += isMobile ? 3 : 2) {
+      // Skip co 4 zamiast co 3 dla mniejszych lagów
+      for (let i = 0; i < drops.length; i += isMobile ? 4 : 3) {
         const text = charArray[Math.floor(Math.random() * charArray.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 

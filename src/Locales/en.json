@@ -4,7 +4,8 @@
     "about": "What's Shadow Abyssal X?",
     "regulations": "Regulations",
     "qa": "Q&A",
-    "staff": "Staff"
+    "staff": "Staff",
+    "changelog": "Changelog"
   },
   "hero": {
     "title": "Shadow Abyssal X",
@@ -154,6 +155,7 @@
     "contactWebsite": "This website: Use the contact option (if available)"
   },
   "regulations": {
+    "serverTitle": "Regulations of Shadow Abyssal X Server",
     "title": "Regulations of Shadow Abyssal X Server",
     "warning": "Anyone who breaks rules will face consequences, such as being muted for a certain number of hours, banned, or kicked off server. If you give out someone else's personal information, you can expect to receive a permanent ban and be added to ⁠𝙺𝙾𝚂.",
     "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.", 
@@ -201,5 +203,9 @@
       "author": "Author of DSX server regulations: @polonia.errorglitchtv (✝ DSX_EX0T1C ✝)",
       "updateDate": "Regulations update: 12.10.2025"
     }
+  },
+  "changelog": {
+    "title": "CHANGELOG",
+    "subtitle": "See the history of changes and updates to Shadow Abyssal X"
   }
 }

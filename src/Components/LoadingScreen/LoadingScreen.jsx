@@ -11,7 +11,11 @@ const LoadingScreen = () => {
     const [systemInfo, setSystemInfo] = useState({
         ip: "192.168.1.1",
         status: "ONLINE",
-        user: "ADMIN"
+        user: "ADMIN",
+        ram: 32,
+        cpu: 45,
+        ramText: "8GB",
+        cpuText: "45%"
     });
   
     useEffect(() => {
@@ -39,12 +43,21 @@ const LoadingScreen = () => {
                     setLoadingText(loadingMessages[messageIndex]);
                 }
         
-                if (Math.random() > 0.95) {
-                    setSystemInfo(prev => ({
+                // Aktualizuj system info dynamicznie
+                setSystemInfo(prev => {
+                    const newRam = Math.max(20, Math.min(100, prev.ram + (Math.random() - 0.5) * 15));
+                    const newCpu = Math.max(10, Math.min(100, prev.cpu + (Math.random() - 0.5) * 20));
+                    const newStatus = Math.random() > 0.85 ? (prev.status === "ONLINE" ? "SCANNING" : "ONLINE") : prev.status;
+                    
+                    return {
                         ...prev,
-                        status: prev.status === "ONLINE" ? "SCANNING" : "ONLINE"
-                    }));
-                }
+                        status: newStatus,
+                        ram: Math.round(newRam),
+                        cpu: Math.round(newCpu),
+                        ramText: `${Math.round((newRam / 100) * 16)}GB`,
+                        cpuText: `${Math.round(newCpu)}%`
+                    };
+                });
         
                 return newProgress;
             });
@@ -101,6 +114,34 @@ const LoadingScreen = () => {
                     <div className="info-line">
                         <span className="info-label">IP:</span>
                         <span className="info-value">{systemInfo.ip}</span>
+                    </div>
+                    
+                    {/* RAM with animated bar */}
+                    <div className="info-line-bar">
+                        <div className="info-line-header">
+                            <span className="info-label">RAM:</span>
+                            <span className="info-value">{systemInfo.ramText}</span>
+                        </div>
+                        <div className="system-bar">
+                            <div 
+                                className="system-bar-fill ram-bar" 
+                                style={{ width: `${systemInfo.ram}%` }}
+                            ></div>
+                        </div>
+                    </div>
+                    
+                    {/* CPU with animated bar */}
+                    <div className="info-line-bar">
+                        <div className="info-line-header">
+                            <span className="info-label">CPU:</span>
+                            <span className="info-value">{systemInfo.cpuText}</span>
+                        </div>
+                        <div className="system-bar">
+                            <div 
+                                className="system-bar-fill cpu-bar" 
+                                style={{ width: `${systemInfo.cpu}%` }}
+                            ></div>
+                        </div>
                     </div>
                 </div>
             </div>

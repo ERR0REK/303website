@@ -4,7 +4,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Navbar from '../Navbar/Navbar';
-import CodeRainBackground from '../Regulations/CodeRainBackground';
 import RegHeroSection from '../Regulations/RegHeroSection';
 import RegWarningPanel from '../Regulations/RegWarningPanel';
 import RegRuleCard from '../Regulations/RegRuleCard';
@@ -19,7 +18,6 @@ export default function Regulations() {
 
   return (
     <div className="regulations-page">
-      <CodeRainBackground />
       <Navbar />
 
       <main className="reg-main-container">
