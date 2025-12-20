@@ -10,7 +10,7 @@ import StaffMemberModal from '../Staff/StaffMemberModal';
 import elizaPFP from '../../Assets/StaffMembersPFP/ElizaPFP.png';
 import TymussPFP from '../../Assets/StaffMembersPFP/TymussPFP.png';
 import AlexPFP from '../../Assets/StaffMembersPFP/AlexPFP.png';
-import SLX_EX0T1CPFP from '../../Assets/StaffMembersPFP/EX0T1CPFP.png';
+import SLX_EX0T1CPFP from '../../Assets/StaffMembersPFP/EX0T1CPFP.jpg';
 import PlantinaxiPFP from '../../Assets/StaffMembersPFP/PlantinaxiPFP.png';
 import G4L4XYPFP from '../../Assets/StaffMembersPFP/G4L4XYPFP.png';
 import miko_o1PFP from '../../Assets/StaffMembersPFP/Miko_o01PFP.png';
