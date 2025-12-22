@@ -1,3 +1,5 @@
+/* src/Components/Pages/Changelog.jsx */
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -49,121 +51,6 @@ export default function Changelog() {
         }
       ]
     },
-    {
-      version: '1.4.0',
-      date: '15 grudnia 2025',
-      changes: [
-        {
-          type: 'feature',
-          title: 'QA Section WIP',
-          description: 'Zakomentowany kod FAQ - gotowy do implementacji gdy pojawi się pomysł'
-        },
-        {
-          type: 'improvement',
-          title: 'Navbar Responsiveness',
-          description: 'Ulepszona responsywność na urządzeniach mobilnych'
-        },
-        {
-          type: 'bugfix',
-          title: 'StaffMemberCard Fix',
-          description: 'Naprawiony błąd setState w komponencie Staff'
-        }
-      ]
-    },
-    {
-      version: '1.3.0',
-      date: '10 grudnia 2025',
-      changes: [
-        {
-          type: 'feature',
-          title: 'LanguageSelector Component',
-          description: 'Oddzielny komponent do wyboru języka z localStorage persistence'
-        },
-        {
-          type: 'improvement',
-          title: 'Loading Screen Cleanup',
-          description: 'Przesunięcie logiki wyboru języka z LoadingScreen'
-        },
-        {
-          type: 'improvement',
-          title: 'i18n System',
-          description: '195+ kluczy tłumaczeń dla PL/EN'
-        }
-      ]
-    },
-    {
-      version: '1.2.0',
-      date: '5 grudnia 2025',
-      changes: [
-        {
-          type: 'feature',
-          title: 'Regulations Page',
-          description: '3 sekcje regulamin (General, Voice, In-Game) z animacjami'
-        },
-        {
-          type: 'improvement',
-          title: 'CSS Animations',
-          description: 'Dodane KeyFrame animacje dla wszystkich sekcji'
-        },
-        {
-          type: 'improvement',
-          title: 'Responsive Design',
-          description: 'TV support (1921px+) oraz mobile/tablet optymalizacja'
-        },
-        {
-          type: 'feature',
-          title: 'CodeRainBackground',
-          description: 'Ultra-optymalizowana animacja tła z mobile detection'
-        }
-      ]
-    },
-    {
-      version: '1.1.0',
-      date: '28 listopada 2025',
-      changes: [
-        {
-          type: 'feature',
-          title: 'Staff Page',
-          description: '19 członków z modalami, Roblox linkami i opisami'
-        },
-        {
-          type: 'feature',
-          title: 'Hero Animations',
-          description: 'Animowane tytuły z efektem glow'
-        },
-        {
-          type: 'improvement',
-          title: 'Branding',
-          description: 'Zmiana z "303rd Division" na "Shadow Abyssal X"'
-        }
-      ]
-    },
-    {
-      version: '1.0.0',
-      date: '20 listopada 2025',
-      changes: [
-        {
-          type: 'feature',
-          title: 'Website Launch',
-          description: 'Oficjalne otwarcie strony Shadow Abyssal X'
-        },
-        {
-          type: 'feature',
-          title: 'Core Pages',
-          description: 'Home, About, Regulations, Q&A, Staff'
-        },
-        {
-          type: 'feature',
-          title: 'i18n System',
-          description: 'Wsparcie dla języka polskiego i angielskiego'
-        },
-        {
-          type: 'feature',
-          title: 'Loading Screen',
-          description: 'Animowany loading screen z progress bar'
-        }
-      ]
-    }
   ];
 
   const getIcon = (type) => {

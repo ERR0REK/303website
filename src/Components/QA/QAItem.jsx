@@ -1,3 +1,5 @@
+/* src/Components/QA/QAItem.jsx */
+
 import React, { useState } from 'react';
 
 const QAItem = ({ question, answer, index }) => {

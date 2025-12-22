@@ -1,3 +1,5 @@
+/* src/Components/Pages/About.jsx */
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../Navbar/Navbar';
