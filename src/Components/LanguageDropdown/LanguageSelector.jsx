@@ -5,7 +5,6 @@ import './LanguageSelector.css';
 const LanguageSelector = () => {
     const { i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
-    const [scrollPos, setScrollPos] = useState(0);
 
     // === LISTA JĘZYKÓW ===
     // Aby dodać nowy język:
