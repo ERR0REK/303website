@@ -197,7 +197,6 @@ export default function Staff() {
 
   const handleMemberMoreInfo = (member) => {
     setSelectedMember(member);
-    console.log("Wybrany członek:", member);
   };
 
   const closeModal = () => {
@@ -206,6 +205,15 @@ export default function Staff() {
 
   return (
     <div className="staff-page">
+      {/* Background Elements */}
+      <div className="staff-bg-container">
+        <div className="staff-bg-grid"></div>
+        <div className="staff-bg-nodes"></div>
+        <div className="staff-bg-overlay"></div>
+        <div className="staff-bg-circle staff-bg-circle-1"></div>
+        <div className="staff-bg-circle staff-bg-circle-2"></div>
+      </div>
+
       <Navbar />
 
       {/* --- Sekcja Hero --- */}
@@ -310,8 +318,7 @@ export default function Staff() {
         {/* Administrator */}
         <StaffRoleSection
           roleTitle={t(
-            "staff.roles.administrator",
-            "Administrator (6 members)"
+            "staff.roles.administrator"
           )}
           members={staffData.administrator}
           onMemberMoreInfo={handleMemberMoreInfo}
@@ -319,28 +326,28 @@ export default function Staff() {
 
         {/* Trial Administrator */}
         <StaffRoleSection
-          roleTitle={t("staff.roles.trialAdministrator", "Trial Administrator")}
+          roleTitle={t("staff.roles.trialAdministrator")}
           members={staffData.trialAdministrator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
         {/* Senior Moderator */}
         <StaffRoleSection
-          roleTitle={t("staff.roles.seniorModerator", "Senior Moderator")}
+          roleTitle={t("staff.roles.seniorModerator")}
           members={staffData.seniorModerator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
         {/* Moderator */}
         <StaffRoleSection
-          roleTitle={t("staff.roles.moderator", "Moderator")}
+          roleTitle={t("staff.roles.moderator")}
           members={staffData.moderator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
         {/* Trial Moderator */}
         <StaffRoleSection
-          roleTitle={t("staff.roles.trialModerator", "Trial Moderator")}
+          roleTitle={t("staff.roles.trialModerator")}
           members={staffData.trialModerator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />

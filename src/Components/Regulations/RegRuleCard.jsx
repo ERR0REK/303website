@@ -3,7 +3,6 @@
 import React from 'react';
 
 export default function RegRuleCard({ title, rules, delay = 0, number = '' }) {
-
   return (
     <div className="reg-rule-card">
       {number && <div className="reg-rule-section-number">{number}</div>}

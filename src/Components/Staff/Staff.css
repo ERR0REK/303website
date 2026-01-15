@@ -1,20 +1,13 @@
-/* --- Zmienne CSS --- */
 :root {
-  --staff-bg-color: #0a0a0f;
-  --staff-surface-color: rgba(20, 20, 30, 0.9);
-  --staff-border-color: rgba(0, 255, 76, 0.3);
-  --staff-text-primary: #e0e0e0;
-  --staff-text-secondary: #b0b0b0;
-  --staff-accent-color: var(--military-green-primary, #00ff4c);
-  --staff-cyan-color: #00d4ff;
+  --staff-surface: var(--bg-alt);
+  --staff-accent: var(--military-green);
+  --staff-cyber: var(--cyber-blue);
 }
 
-/* --- Główny kontener strony --- */
 .staff-page {
   min-height: 100vh;
-  background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--staff-bg-color) 50%);
-  color: var(--staff-text-primary);
-  font-family: 'Orbitron', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
   position: relative;
   overflow-x: hidden;
 }
@@ -22,44 +15,42 @@
 /* --- Sekcja Hero / Nagłówek --- */
 .staff-hero-section {
   text-align: center;
-  padding: 6rem 2rem 4rem 2rem;
+  padding: 8rem 2rem 4rem 2rem;
   position: relative;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.3));
-  border-bottom: 2px solid rgba(0, 255, 76, 0.2);
 }
 
 .staff-hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 900;
-  color: var(--staff-accent-color);
-  text-shadow: 0 0 15px var(--staff-accent-color), 0 0 30px rgba(0, 255, 76, 0.5);
-  letter-spacing: 0.05em;
+  color: #fff;
+  text-shadow:
+    3px 3px 0px var(--staff-accent),
+    -1px -1px 0px var(--staff-cyber);
+  letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  animation: title-glow 2s ease-in-out infinite;
-  background: linear-gradient(135deg, #00ff4c, #00d4ff, #00ff4c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 @keyframes title-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 15px var(--staff-accent-color), 0 0 30px rgba(0, 255, 76, 0.5);
   }
+
   50% {
     text-shadow: 0 0 25px var(--staff-accent-color), 0 0 50px rgba(0, 255, 76, 0.8);
   }
 }
 
 .staff-hero-divider {
-  width: 100%;
-  max-width: 800px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--staff-accent-color), transparent);
+  width: 150px;
+  height: 4px;
+  background: var(--staff-cyber);
   margin: 0 auto 2rem;
-  box-shadow: 0 0 10px var(--staff-accent-color);
+  box-shadow: 0 0 15px var(--staff-cyber);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
 }
 
 /* --- Główny kontener treści --- */
@@ -80,6 +71,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -87,33 +79,22 @@
 }
 
 .staff-role-title {
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  color: var(--staff-cyan-color);
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--staff-border-color);
-  position: relative;
-  display: inline-block;
-  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.staff-role-title::after {
+.staff-role-title::before {
   content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
+  width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, var(--staff-cyan-color), var(--staff-accent-color));
-  animation: expand-width 0.8s ease-out forwards;
-}
-
-@keyframes expand-width {
-  to {
-    width: 100%;
-  }
+  background: var(--staff-cyber);
 }
 
 /* --- Kontener dla kart członków (Members Grid) --- */
@@ -124,51 +105,48 @@
   margin-bottom: 3rem;
 }
 
-/* --- Karta członka kadry --- */
+/* --- Karta członka kadry (Tactical HUD) --- */
 .staff-member-card {
-  background: linear-gradient(135deg, rgba(25, 25, 40, 0.9), rgba(15, 15, 30, 0.9));
-  border: 1px solid var(--staff-border-color);
-  border-radius: 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   padding: 0;
   text-align: center;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(15px);
-  box-shadow: 
-    0 8px 24px rgba(0, 255, 76, 0.08),
-    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px),
+      calc(100% - 20px) 100%, 0 100%);
 }
 
+/* Tactical Brackets for Cards */
 .staff-member-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0, 255, 76, 0.15), rgba(0, 212, 255, 0.08));
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(0, 243, 255, 0.05);
   pointer-events: none;
   z-index: 1;
 }
 
 .staff-member-card::after {
-  content: '';
+  content: 'SECURED DATA_';
   position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: all 0.6s ease;
-  pointer-events: none;
+  bottom: 4px;
+  right: 25px;
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  color: var(--military-green);
+  opacity: 0.4;
+  letter-spacing: 1px;
 }
 
 .staff-member-card:hover {
   border-color: var(--staff-cyan-color);
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(0, 255, 76, 0.25),
     inset 0 1px 1px rgba(255, 255, 255, 0.1),
     0 0 40px rgba(0, 212, 255, 0.15);
@@ -189,47 +167,89 @@
   z-index: 2;
 }
 
-/* --- Avatar / PFP --- */
-.staff-member-avatar {
-  width: 130px;
-  height: 130px;
+/* --- Avatar / PFP (Tactical Frame) --- */
+.staff-member-avatar-container {
+  width: 140px;
+  height: 140px;
   margin: 0 auto 1.5rem;
-  border-radius: 10px;
-  border: 3px solid var(--staff-accent-color);
+  position: relative;
+  padding: 8px;
+  background: rgba(75, 83, 32, 0.2);
+  clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
+}
+
+.staff-member-avatar {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  box-shadow: 
-    0 0 20px rgba(0, 255, 76, 0.4),
-    inset 0 0 10px rgba(0, 212, 255, 0.1);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  display: block;
+  clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
+  border: 2px solid var(--military-green);
+  transition: all 0.4s ease;
 }
 
 .staff-member-card:hover .staff-member-avatar {
-  box-shadow: 
-    0 0 30px rgba(0, 255, 76, 0.7),
-    0 0 50px rgba(0, 212, 255, 0.4),
-    inset 0 0 10px rgba(0, 212, 255, 0.2);
+  border-color: var(--cyber-blue);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
 }
 
-/* --- Nick/Nazwa --- */
+/* --- Nick / Nazwa --- */
 .staff-member-name {
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: var(--staff-text-primary);
-  margin-bottom: 0.7rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-shadow: 0 0 8px rgba(0, 255, 76, 0.3);
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
 }
 
-/* --- Rola w tekście --- */
+.staff-member-card:hover .staff-member-name {
+  color: var(--cyber-blue);
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
 .staff-member-role {
   font-size: 0.85rem;
-  color: var(--staff-cyan-color);
-  margin-bottom: 1.3rem;
-  font-style: italic;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  color: #aaa;
+  /* Brighter default */
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Role-Specific Colors (Staff UI 2.0) */
+.role-command {
+  color: #ffcc00 !important;
+  /* Gold */
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+}
+
+.role-coleader {
+  color: var(--cyber-blue) !important;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+}
+
+.role-admin {
+  color: #ff8c00 !important;
+  /* Orange */
+  text-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
+}
+
+.role-mod {
+  color: #00ff66 !important;
+  /* Bright Mod Green */
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+.role-elder {
+  color: #bc8f8f !important;
+  /* Rosy Brown / Bronze */
 }
 
 /* --- Przycisk More Info --- */
@@ -360,6 +380,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -369,24 +390,38 @@
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
 }
 
 .staff-modal-content {
-  background: linear-gradient(135deg, rgba(20, 20, 35, 0.98), rgba(15, 15, 28, 0.98));
-  border: 2px solid var(--staff-cyan-color);
-  border-radius: 18px;
-  max-width: 650px;
-  width: 90%;
-  padding: 2.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--glass-border);
+  border-top: 4px solid var(--cyber-blue);
+  max-width: 800px;
+  width: 95%;
+  padding: 3rem;
   position: relative;
-  box-shadow: 
-    0 20px 60px rgba(0, 212, 255, 0.4),
-    0 0 80px rgba(0, 255, 76, 0.25),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.9);
+  animation: slideIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  clip-path: polygon(0 0,
+      calc(100% - 30px) 0, 100% 30px,
+      100% 100%,
+      30px 100%, 0 calc(100% - 30px));
+}
+
+/* Dossier Header Styling */
+.staff-modal-content::before {
+  content: 'FILE_NO: 303-DSD-XX';
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--cyber-blue);
+  opacity: 0.5;
 }
 
 .staff-modal-content.closing {
@@ -398,6 +433,7 @@
     opacity: 0;
     transform: scale(0.8) translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -409,6 +445,7 @@
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+
   to {
     opacity: 0;
     transform: scale(0.8) translateY(-30px);
@@ -451,17 +488,39 @@
 }
 
 .staff-modal-avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 14px;
-  border: 4px solid var(--staff-accent-color);
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  box-shadow: 
-    0 0 25px rgba(0, 255, 76, 0.5),
-    0 0 50px rgba(0, 212, 255, 0.3),
-    inset 0 0 15px rgba(0, 212, 255, 0.1);
-  flex-shrink: 0;
-  transition: transform 0.35s ease;
+  border: 2px solid var(--military-green);
+  clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
+  box-shadow: 0 0 30px var(--military-green-glow);
+  position: relative;
+}
+
+/* Scanning Line Overlay for Modal Image */
+.staff-img-scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--cyber-blue);
+  box-shadow: 0 0 15px var(--cyber-blue);
+  animation: scan-move 3s ease-in-out infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes scan-move {
+
+  0%,
+  100% {
+    top: 15%;
+  }
+
+  50% {
+    top: 85%;
+  }
 }
 
 .staff-modal-avatar:hover {
@@ -473,19 +532,14 @@
 }
 
 .staff-modal-name {
-  font-size: 1.95rem;
+  font-family: var(--font-header);
+  font-size: 1.8rem;
   font-weight: 900;
-  color: var(--staff-text-primary);
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 2px;
   margin-bottom: 0.8rem;
-  text-shadow: 
-    0 0 15px var(--staff-accent-color),
-    0 0 30px rgba(0, 212, 255, 0.3);
-  background: linear-gradient(135deg, #00ff4c, #00d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: 3px 3px 0 var(--staff-accent);
 }
 
 .staff-modal-role {
@@ -506,7 +560,7 @@
   color: var(--staff-text-secondary);
   line-height: 1.9;
   margin-bottom: 2rem;
-  font-size: 0.98rem;
+  font-size: 1.4rem;
   padding: 1.5rem;
   background: rgba(0, 255, 76, 0.05);
   border-left: 4px solid var(--staff-accent-color);
@@ -541,7 +595,7 @@
   font-weight: 800;
   color: var(--staff-accent-color);
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
   letter-spacing: 0.08em;
 }
 

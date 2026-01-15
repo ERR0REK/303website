@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './LanguageSelector.css';
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ onSelect, forceShow = false }) => {
     const { i18n } = useTranslation();
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(forceShow);
 
     // === LISTA JĘZYKÓW ===
     // Aby dodać nowy język:
@@ -15,7 +15,7 @@ const LanguageSelector = () => {
     // Przykład: { code: 'fr', name: 'Français', flag: '🇫🇷' }
     const languages = [
         { code: 'en', name: 'English', flag: '🇬🇧' },
-        { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+        { code: 'pl', name: 'Polish', flag: '🇵🇱' },
         // { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
         // { code: 'fr', name: 'Français', flag: '🇫🇷' },
         // { code: 'es', name: 'Español', flag: '🇪🇸' },
@@ -25,19 +25,16 @@ const LanguageSelector = () => {
     ];
 
     useEffect(() => {
-        const savedLanguage = localStorage.getItem('selectedLanguage');
-        if (!savedLanguage) {
-            const timer = setTimeout(() => {
-                setShowModal(true);
-            }, 500);
-            return () => clearTimeout(timer);
+        if (forceShow) {
+            setShowModal(true);
         }
-    }, []);
+    }, [forceShow]);
 
     const handleLanguageSelect = (lang) => {
         localStorage.setItem('selectedLanguage', lang);
         i18n.changeLanguage(lang);
         setShowModal(false);
+        if (onSelect) onSelect(lang);
     };
 
     const scroll = (direction) => {
@@ -57,10 +54,10 @@ const LanguageSelector = () => {
             {showModal && (
                 <div className="language-modal-overlay">
                     <div className="language-modal">
-                        <h2 className="language-modal-title">SELECT LANGUAGE / WYBIERZ JĘZYK</h2>
-                        
+                        <h2 className="language-modal-title">SELECT INTERFACE LANGUAGE</h2>
+
                         <div className="language-carousel-wrapper">
-                            <button 
+                            <button
                                 className="carousel-btn carousel-btn-left"
                                 onClick={() => scroll('left')}
                                 aria-label="Poprzedni język"
@@ -70,7 +67,7 @@ const LanguageSelector = () => {
 
                             <div className="language-carousel">
                                 {languages.map((lang) => (
-                                    <button 
+                                    <button
                                         key={lang.code}
                                         className="lang-btn"
                                         onClick={() => handleLanguageSelect(lang.code)}
@@ -81,7 +78,7 @@ const LanguageSelector = () => {
                                 ))}
                             </div>
 
-                            <button 
+                            <button
                                 className="carousel-btn carousel-btn-right"
                                 onClick={() => scroll('right')}
                                 aria-label="Następny język"
@@ -90,7 +87,7 @@ const LanguageSelector = () => {
                             </button>
                         </div>
 
-                        <p className="language-hint">💡 {languages.length > 2 ? 'Przesuń aby zobaczyć więcej' : 'Wybierz język aby kontynuować'}</p>
+                        <p className="language-hint">💡 {languages.length > 2 ? 'Scroll to see more' : 'Choose a language to continue'}</p>
                     </div>
                 </div>
             )}

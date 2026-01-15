@@ -1,16 +1,18 @@
 {
   "nav": {
     "home": "Strona Główna",
-    "about": "Czym jest Shadow Abyssal X?",
+    "about": "Czym jest InterPolishForces?",
     "regulations": "Regulamin",
     "qa": "Q&A",
     "staff": "Kadra",
     "changelog": "Changelog"
   },
   "hero": {
-    "title": "Shadow Abyssal X",
-    "welcome": "Witaj na oficjalnej stronie Shadow Abyssal X. Poznaj naszą historię, misje i więcej.",
-    "discord_button": "Dołącz na Discorda"
+    "title": "InterPolishForces",
+    "welcome": "Witaj na oficjalnej stronie InterPolishForces. Poznaj naszą historię, misje i więcej.",
+    "discord_button": "Dołącz na Discorda",
+    "youtube_button": "YouTube",
+    "tiktok_button": "TikTok"
   },
   "langDropdown": {
     "helpTranslate": "Pomóż w tłumaczeniu"
@@ -21,20 +23,29 @@
     "status3": "Ustanawianie bezpiecznego połączenia...",
     "status4": "Przygotowywanie interfejsu...",
     "status5": "Prawie gotowe...",
-    "statusReady": "System gotowy"
+    "statusReady": "System gotowy",
+    "userLabel": "UŻYTKOWNIK",
+    "statusLabel": "STATUS",
+    "ipLabel": "IP",
+    "ramLabel": "RAM",
+    "cpuLabel": "CPU",
+    "online": "ONLINE",
+    "scanning": "SKANOWANIE",
+    "admin": "ADMIN"
   },
   "staffModal": {
     "role": "Rola",
-    "robloxUsername": "Roblox Username",
-    "inGameRank": "In-Game Rank",
+    "robloxUsername": "Nazwa Użytkownika Roblox",
+    "inGameRank": "Ranga w Grze",
     "joinDate": "Dołączył",
     "achievements": "Osiągnięcia",
-    "description": " to ważny członek naszej organizacji Shadow Abyssal X.",
+    "description": " to ważny członek naszej organizacji InterPolishForces.",
     "close": "Zamknij"
   },
   "staff": {
     "title": "POZNAJ NASZĄ KADRĘ!",
     "noMembers": "Brak członków w tej roli",
+    "viewDossier": "ZOBACZ AKTA",
     "descriptions": {
       "eliza": "WIP",
       "adioves": "WIP",
@@ -59,27 +70,27 @@
     "roles": {
       "factionCommand": "Faction Command",
       "factionCoLeader": "Faction Co Leader",
-      "technicalSpecialist": "Technical Specialist",
+      "technicalSpecialist": "Specjalista Techniczny",
       "trialCoLeader": "Trial Co Leader",
       "elder": "Elder",
       "trialElder": "Trial Elder",
-      "intelligence": "Intelligence",
-      "headAdministrator": "Head Administrator",
-      "seniorAdministrator": "Senior Administrator",
+      "intelligence": "Wywiad",
+      "headAdministrator": "Główny Administrator",
+      "seniorAdministrator": "Starszy Administrator",
       "administrator": "Administrator",
       "trialAdministrator": "Trial Administrator",
-      "seniorModerator": "Senior Moderator",
+      "seniorModerator": "Starszy Moderator",
       "moderator": "Moderator",
       "trialModerator": "Trial Moderator"
     }
   },
   "qa": {
-    "title": "PYTANIA I ODPOWIEDZI (testowanie)",
-    "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące Shadow Abyssal X",
+    "title": "PYTANIA I ODPOWIEDZI",
+    "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące InterPolishForces",
     "noItems": "Brak pytań do wyświetlenia",
     "faqs": [
       {
-        "question": "Jak mogę dołączyć do Shadow Abyssal X?",
+        "question": "Jak mogę dołączyć do InterPolishForces?",
         "answer": "Aby dołączyć do naszej frakcji, musisz wejść na nasz serwer Roblox i poprosić o zaproszenie. Zwróć się do dowolnego członka administracji z wymaganą dokumentacją."
       },
       {
@@ -113,13 +124,13 @@
     ]
   },
   "about": {
-    "title": "CZYM JEST SHADOW ABYSSAL X? (przykłady wymyślone lol)",
+    "title": "CZYM JEST INTERPOLISHFORCES?",
     "subtitle": "Poznaj naszą historię, misję i jak dołączyć do naszej społeczności",
     "whoAreWe": "Kim jesteśmy?",
-    "whoAreWeContent": "Shadow Abyssal X to dynamiczna i profesjonalna organizacja militarna działająca na serwerze Roblox. Jesteśmy zaangażowani w tworzenie przyjaznego, zdyscyplinowanego i zainteresowanego wspólnotą graczy.",
+    "whoAreWeContent": "InterPolishForces to dynamiczna i profesjonalna organizacja militarna działająca na serwerze Roblox. Jesteśmy zaangażowani w tworzenie przyjaznego, zdyscyplinowanego i zainteresowanego wspólnotą graczy.",
     "whoAreWeContent2": "Nasze członkowie pochodzą z różnych części świata, ale łączy nas wspólna pasja do gier i zainteresowanie wojskowością. Tworzymy środowisko, gdzie każdy może się rozwijać i osiągać swoje cele.",
     "ourMission": "Nasza misja",
-    "ourMissionContent": "Misją Shadow Abyssal X jest budowanie silnej, zorganizowanej i szanującej się nawzajem społeczności graczy. Dążymy do:",
+    "ourMissionContent": "Misją InterPolishForces jest budowanie silnej, zorganizowanej i szanującej się nawzajem społeczności graczy. Dążymy do:",
     "mission1": "Zapewniania pozytywnego doświadczenia na serwerze",
     "mission2": "Wspierania nowych członków w ich rozwoju",
     "mission3": "Organizowania zdarzeń i operacji dla całej frakcji",
@@ -136,17 +147,17 @@
     "value4Title": "Przejrzystość",
     "value4Content": " - Komunikujemy się otwarcie i uczciwą z naszymi członkami.",
     "value5Title": "Zaangażowanie",
-    "value5Content": " - Każdy członek jest zaangażowany w działania Shadow Abyssal X.",
+    "value5Content": " - Każdy członek jest zaangażowany w działania InterPolishForces.",
     "structure": "Struktura organizacyjna",
-    "structureContent": "Shadow Abyssal X ma dobrze zdefiniowaną strukturę z różnymi rolami i stanowiskami. Od Faction Command na szczycie po Trial Moderators, każda rola jest ważna i wspiera ogólne funkcjonowanie organizacji.",
+    "structureContent": "InterPolishForces ma dobrze zdefiniowaną strukturę z różnymi rolami i stanowiskami. Od Faction Command na szczycie po Trial Moderators, każda rola jest ważna i wspiera ogólne funkcjonowanie organizacji.",
     "structureContent2": "Aby dowiedzieć się więcej o naszych rolach i członkach kadry, odwiedź stronę 'Kadra'.",
     "howToJoin": "Jak dołączyć do nas?",
-    "howToJoinContent": "Jeśli jesteś zainteresowany dołączeniem do Shadow Abyssal X, tutaj są podstawowe kroki:",
+    "howToJoinContent": "Jeśli jesteś zainteresowany dołączeniem do InterPolishForces, tutaj są podstawowe kroki:",
     "step1": "Wejdź na nasz serwer Roblox i zapoznaj się z naszymi regulaminami",
     "step2": "Dołącz do naszego serwera Discord aby być w kontakcie z społecznością",
     "step3": "Zwróć się do członka administracji z prośbą o zaproszenie do frakcji",
     "step4": "Przejdź przez proces weryfikacji i poznaj pozostałych członków",
-    "step5": "Zacznij nową przygodę z Shadow Abyssal X!",
+    "step5": "Zacznij nową przygodę z InterPolishForces!",
     "joinDiscord": "Dołącz na Discorda",
     "contact": "Kontakt",
     "contactContent": "Jeśli masz pytania lub chcesz się skontaktować z administracją, możesz to zrobić poprzez:",
@@ -154,9 +165,14 @@
     "contactRoblox": "Roblox: Bezpośredni komunikat do członka administracji",
     "contactWebsite": "Ta strona: Skorzystaj z opcji kontaktu (jeśli dostępna)"
   },
+  "common": {
+    "orgName": "InterPolishForces",
+    "na": "N/D",
+    "noDescription": "Brak opisu"
+  },
   "regulations": {
-    "serverTitle": "Regulamin serwera Shadow Abyssal X",
-    "title": "Regulamin serwera Shadow Abyssal X",
+    "serverTitle": "Regulamin serwera InterPolishForces",
+    "title": "Regulamin serwera InterPolishForces",
     "warning": "Każdy, kto złamie zasady, poniesie konsekwencje, takie jak wyciszenie na określoną liczbę godzin, ban lub wyrzucenie z serwera. Jeśli ujawnisz dane osobowe innej osoby, możesz spodziewać się trwałego bana i dodania do 𝙺𝙾𝚂.",
     "highlight": "Niektóre zasady będą podkreślone czego nie złamać jakiegoś regulaminu i wyładować w kos liście.",
     "generalRulesTitle": "Sekcja 1: Ogólne zasady",
@@ -206,6 +222,48 @@
   },
   "changelog": {
     "title": "CHANGELOG",
-    "subtitle": "Zobacz historię zmian i aktualizacji Shadow Abyssal X"
+    "subtitle": "Zobacz historię zmian i aktualizacji Shadow Abyssal X",
+    "footer": {
+      "thankYou": "💚 Dziękujemy za używanie Shadow Abyssal X!",
+      "suggest": "Chcesz zasugerować nową funkcję? Skontaktuj się z nami na Discord!"
+    },
+    "data": [
+      {
+        "version": "1.5.0",
+        "date": "19 grudnia 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Language Carousel",
+            "description": "Nowy system wyboru języka z suwakiem dla przyszłych języków"
+          },
+          {
+            "type": "feature",
+            "title": "Social Media Links",
+            "description": "Dodane linki do YouTube i TikTok na stronie głównej"
+          },
+          {
+            "type": "improvement",
+            "title": "Regulations Banner",
+            "description": "Prominentny baner 'Regulamin serwera' na górze strony Regulamin"
+          },
+          {
+            "type": "improvement",
+            "title": "Performance Optimization",
+            "description": "Zmniejszona FPS animacji tła w Regulaminie (6.67 FPS) dla lepszej wydajności"
+          },
+          {
+            "type": "feature",
+            "title": "Anti-Cheat Measures",
+            "description": "Zabezpieczenie przed inspekcją kodu (F12, prawe kliknięcie)"
+          },
+          {
+            "type": "improvement",
+            "title": "Text Selection",
+            "description": "Wyłączony user-select na całej stronie dla lepszego UX"
+          }
+        ]
+      }
+    ]
   }
 }

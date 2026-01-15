@@ -15,14 +15,32 @@ import LoadingScreen from '../src/Components/LoadingScreen/LoadingScreen';
 import LanguageSelector from '../src/Components/LanguageDropdown/LanguageSelector';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLanguageSelected, setIsLanguageSelected] = useState(!!localStorage.getItem('selectedLanguage'));
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Jeśli język jest już wybrany, od razu odpalamy loading
+    if (isLanguageSelected) {
+      handleStartLoading();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleStartLoading = () => {
+    setIsLoading(true);
+    setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  };
+
+  const handleLanguageChosen = () => {
+    setIsLanguageSelected(true);
+    handleStartLoading();
+  };
+
+  if (!isLanguageSelected) {
+    return <LanguageSelector onSelect={handleLanguageChosen} forceShow={true} />;
+  }
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -32,15 +50,14 @@ function App() {
     <>
       <LanguageSelector />
       <Router>
-      <Routes>
-        {/* Definiuj trasy dla każdej podstrony */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/regulations" element={<Regulations />} />
-        <Route path="/qa" element={<Qa />} />
-        <Route path="/staff" element={<Staff />} />
-        <Route path="/changelog" element={<Changelog />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/regulations" element={<Regulations />} />
+          <Route path="/qa" element={<Qa />} />
+          <Route path="/staff" element={<Staff />} />
+          <Route path="/changelog" element={<Changelog />} />
+        </Routes>
       </Router>
     </>
   );

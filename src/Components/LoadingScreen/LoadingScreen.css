@@ -1,10 +1,7 @@
-/* --- Zmienne CSS --- */
 :root {
-  --loading-bg-color: #0a0a0f;
-  --loading-surface: rgba(22, 30, 20, 0.9);
-  --loading-text: #0dff00ff;
-  --loading-warning: #0dff00ff;
-  --glow-color: rgba(0, 255, 76, 1);
+    --loading-bg: var(--bg-color);
+    --loading-accent: var(--military-green);
+    --loading-cyber: var(--cyber-blue);
 }
 
 /* --- Główny kontener --- */
@@ -14,13 +11,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--loading-bg-color);
+    background-color: var(--loading-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     overflow: hidden;
-    font-family: "Orbitron", monospace;
+    font-family: var(--font-header);
 }
 
 /* --- Tło z animowaną siatką --- */
@@ -30,31 +27,80 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        linear-gradient(rgba(0, 255, 76, 0) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 76, 0) 1px, transparent 1px);
-    background-size: 20px 20px;
-    animation: bg-move 10s linear infinite;
+    background-image:
+        linear-gradient(rgba(75, 83, 32, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(75, 83, 32, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(5, 5, 5, 0), var(--bg-color));
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    animation: bg-move 20s linear infinite;
+    z-index: 1;
+}
+
+.loading-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 160px 160px;
+    animation: bg-move-reverse 30s linear infinite;
 }
 
 @keyframes bg-move {
-    0% { background-position: 0 0; }
-    100% { background-position: 20px 20px; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+@keyframes bg-move-reverse {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -160px -160px;
+    }
+}
+
+/* HUD Corners */
+.loading-screen::before {
+    content: '';
+    position: absolute;
+    inset: 2rem;
+    border: 1px solid rgba(75, 83, 32, 0.2);
+    pointer-events: none;
+    z-index: 10;
+    clip-path: polygon(0 0, 100px 0, 100px 2px, 2px 2px, 2px 100px, 0 100px,
+            0 100%, 0 calc(100% - 100px), 2px calc(100% - 100px), 2px calc(100% - 2px), 100px calc(100% - 2px), 100px 100%, 0 100%,
+            100% 100%, calc(100% - 100px) 100%, calc(100% - 100px) calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) calc(100% - 100px), 100% calc(100% - 100px),
+            100% 0, 100% 100px, calc(100% - 2px) 100px, calc(100% - 2px) 2px, calc(100% - 100px) 2px, calc(100% - 100px) 0);
 }
 
 /* --- Kontener z zawartością --- */
 .loading-container {
-    background: var(--loading-surface);
-    border: 1px solid var(--loading-accent);
-    border-radius: 12px;
-    padding: 3rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--loading-accent);
+    border-right: 4px solid var(--loading-accent);
+    padding: 3.5rem;
     width: 90%;
-    max-width: 600px;
+    max-width: 650px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 60px rgba(8, 255, 61, 0.5);
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 0 50px rgba(0, 0, 0, 0.8),
+        0 0 30px var(--military-green-glow);
     position: relative;
     overflow: hidden;
+    clip-path: polygon(0 15px, 15px 0,
+            calc(100% - 15px) 0, 100% 15px,
+            100% calc(100% - 15px), calc(100% - 15px) 100%,
+            15px 100%, 0 calc(100% - 15px));
 }
 
 /* --- Logo z efektem glitch --- */
@@ -64,13 +110,14 @@
 }
 
 .division-logo {
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: 900;
     color: var(--loading-accent);
-    text-shadow: 0 0 15px var(--glow-color);
-    letter-spacing: 0.2em;
+    text-shadow: 0 0 20px var(--military-green-glow);
+    letter-spacing: 0.3em;
     position: relative;
     display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
 .division-logo::before,
@@ -81,29 +128,32 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--loading-accent);
+    background: transparent;
+    /* Fixed the boxy background issue */
     overflow: hidden;
-    clip: rect(0, 0, 100%, 100%);
 }
 
 .division-logo::before {
-    left: -2px;
-    text-shadow: -2px 0 var(--loading-warning);
-    animation: glitch-anim 2s infinite linear alternate-reverse;
+    left: -3px;
+    text-shadow: -2px 0 var(--cyber-blue);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
 }
 
 .division-logo::after {
-    left: 2px;
-    text-shadow: 2px 0 #00ff08ff;
-    animation: glitch-anim 1.5s infinite linear alternate;
+    left: 3px;
+    text-shadow: 2px 0 var(--cyber-orange);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-2 2s infinite linear alternate;
 }
 
 .division-text {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--loading-text);
-    text-shadow: 0 0 10px var(--glow-color);
-    letter-spacing: 0.1em;
+    color: var(--text-main);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     margin-top: -0.5rem;
 }
 
@@ -125,11 +175,10 @@
 
 .progress-fill {
     height: 100%;
-    --loading-accent: #0dff00ff;
-    background: linear-gradient(90deg, var(--loading-accent), #00d4ff);
+    background: linear-gradient(90deg, var(--loading-accent), var(--loading-cyber));
     width: 0%;
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px var(--loading-accent);
+    box-shadow: 0 0 15px var(--military-green-glow);
 }
 
 .progress-scanner {
@@ -143,8 +192,13 @@
 }
 
 @keyframes scan {
-    0% { left: -30px; }
-    100% { left: calc(100% + 30px); }
+    0% {
+        left: -30px;
+    }
+
+    100% {
+        left: calc(100% + 30px);
+    }
 }
 
 .progress-percentage {
@@ -192,8 +246,17 @@
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.3; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* --- Panel z informacjami systemowymi --- */
@@ -254,18 +317,21 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-size: 200% 100%;
-    background-position: 0% 0%;
+    background-size: 20px 100%;
+    background-image: repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1) 2px,
+            transparent 2px,
+            transparent 20px);
 }
 
 /* RAM Bar - Green gradient */
 .ram-bar {
-    background: linear-gradient(90deg, 
-        rgba(0, 255, 76, 0.4),
-        rgba(0, 255, 76, 0.9),
-        rgba(0, 212, 255, 0.6)
-    );
-    box-shadow: 
+    background: linear-gradient(90deg,
+            rgba(0, 255, 76, 0.4),
+            rgba(0, 255, 76, 0.9),
+            rgba(0, 212, 255, 0.6));
+    box-shadow:
         0 0 8px rgba(0, 255, 76, 0.5),
         inset 0 0 4px rgba(255, 255, 255, 0.2);
 }
@@ -277,22 +343,20 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     animation: bar-shine 1.5s ease-in-out infinite;
 }
 
 /* CPU Bar - Orange/Red gradient */
 .cpu-bar {
     background: linear-gradient(90deg,
-        rgba(255, 100, 0, 0.4),
-        rgba(255, 165, 0, 0.9),
-        rgba(255, 100, 0, 0.6)
-    );
-    box-shadow: 
+            rgba(255, 100, 0, 0.4),
+            rgba(255, 165, 0, 0.9),
+            rgba(255, 100, 0, 0.6));
+    box-shadow:
         0 0 8px rgba(255, 100, 0, 0.5),
         inset 0 0 4px rgba(255, 255, 255, 0.2);
 }
@@ -305,17 +369,19 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
     animation: bar-shine 1.8s ease-in-out infinite;
 }
 
 @keyframes bar-shine {
-    0%, 100% {
+
+    0%,
+    100% {
         left: -100%;
     }
+
     50% {
         left: 100%;
     }
@@ -327,17 +393,108 @@
 }
 
 @keyframes status-blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 /* --- Efekt glitch --- */
-@keyframes glitch-anim {
-    0% { clip: rect(42px, 0, 10px, 0, 100%); }
-    25% { clip: rect(12px, 0, 10px, 0, 100%); }
-    50% { clip: rect(60px, 0, 10px, 0, 100%); }
-    75% { clip: rect(85px, 0, 10px, 0, 100%); }
-    100% { clip: rect(100px, 0, 10px, 0, 100%); }
+@keyframes glitch-anim-1 {
+    0% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    10% {
+        clip: rect(10px, 9999px, 80px, 0);
+    }
+
+    20% {
+        clip: rect(60px, 9999px, 40px, 0);
+    }
+
+    30% {
+        clip: rect(20px, 9999px, 90px, 0);
+    }
+
+    40% {
+        clip: rect(50px, 9999px, 30px, 0);
+    }
+
+    50% {
+        clip: rect(10px, 9999px, 50px, 0);
+    }
+
+    60% {
+        clip: rect(80px, 9999px, 20px, 0);
+    }
+
+    70% {
+        clip: rect(40px, 9999px, 70px, 0);
+    }
+
+    80% {
+        clip: rect(30px, 9999px, 10px, 0);
+    }
+
+    90% {
+        clip: rect(90px, 9999px, 40px, 0);
+    }
+
+    100% {
+        clip: rect(20px, 9999px, 60px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(10px, 9999px, 30px, 0);
+    }
+
+    10% {
+        clip: rect(80px, 9999px, 10px, 0);
+    }
+
+    20% {
+        clip: rect(40px, 9999px, 60px, 0);
+    }
+
+    30% {
+        clip: rect(90px, 9999px, 20px, 0);
+    }
+
+    40% {
+        clip: rect(30px, 9999px, 50px, 0);
+    }
+
+    50% {
+        clip: rect(50px, 9999px, 10px, 0);
+    }
+
+    60% {
+        clip: rect(20px, 9999px, 80px, 0);
+    }
+
+    70% {
+        clip: rect(70px, 9999px, 40px, 0);
+    }
+
+    80% {
+        clip: rect(10px, 9999px, 30px, 0);
+    }
+
+    90% {
+        clip: rect(40px, 9999px, 90px, 0);
+    }
+
+    100% {
+        clip: rect(60px, 9999px, 20px, 0);
+    }
 }
 
 /* --- Resposywność --- */
@@ -346,15 +503,15 @@
         width: 95%;
         padding: 2rem;
     }
-    
+
     .division-logo {
         font-size: 4rem;
     }
-    
+
     .division-text {
         font-size: 1.5rem;
     }
-    
+
     .system-info {
         font-size: 0.7rem;
     }

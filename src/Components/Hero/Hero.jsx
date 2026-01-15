@@ -1,6 +1,6 @@
 // src/Components/Hero/Hero.jsx
 
-import React from 'react'; 
+import React from 'react';
 import { useTranslation } from 'react-i18next'; // Importujemy hook do tłumaczeń
 import '../Hero/Hero.css';
 
@@ -22,14 +22,16 @@ const Hero = () => {
     };
 
     return (
-        <div className='hero container'>
-            <div className="hero-text">
-                <h1>{t('hero.title')}</h1>
-                <p>{t('hero.welcome')}</p>
-                <div className="hero-buttons-group">
-                    <button className='btn' onClick={openDiscord}>{t('hero.discord_button')}</button>
-                    <button className='btn btn-youtube' onClick={openYouTube}>YouTube</button>
-                    <button className='btn btn-tiktok' onClick={openTikTok}>TikTok</button>
+        <div className='hero'>
+            <div className="container">
+                <div className="hero-text">
+                    <h1>{t('hero.title')}</h1>
+                    <p>{t('hero.welcome')}</p>
+                    <div className="hero-buttons-group">
+                        <button className='btn' onClick={openDiscord}>{t('hero.discord_button')}</button>
+                        <button className='btn btn-youtube' onClick={openYouTube}>{t('hero.youtube_button')}</button>
+                        <button className='btn btn-tiktok' onClick={openTikTok}>{t('hero.tiktok_button')}</button>
+                    </div>
                 </div>
             </div>
         </div>

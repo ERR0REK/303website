@@ -1,16 +1,18 @@
 {
   "nav": {
     "home": "Home",
-    "about": "What's Shadow Abyssal X?",
+    "about": "What's InterPolishForces?",
     "regulations": "Regulations",
     "qa": "Q&A",
     "staff": "Staff",
     "changelog": "Changelog"
   },
   "hero": {
-    "title": "Shadow Abyssal X",
-    "welcome": "Welcome to the official website of the Shadow Abyssal X. Explore our history, missions, and more.",
-    "discord_button": "Join Discord"
+    "title": "InterPolishForces",
+    "welcome": "Welcome to the official website of the InterPolishForces. Explore our history, missions, and more.",
+    "discord_button": "Join Discord",
+    "youtube_button": "YouTube",
+    "tiktok_button": "TikTok"
   },
   "langDropdown": {
     "helpTranslate": "Help Translate"
@@ -21,7 +23,15 @@
     "status3": "Establishing secure connection...",
     "status4": "Preparing interface...",
     "status5": "Almost ready...",
-    "statusReady": "System ready"
+    "statusReady": "System ready",
+    "userLabel": "USER",
+    "statusLabel": "STATUS",
+    "ipLabel": "IP",
+    "ramLabel": "RAM",
+    "cpuLabel": "CPU",
+    "online": "ONLINE",
+    "scanning": "SCANNING",
+    "admin": "ADMIN"
   },
   "staffModal": {
     "role": "Role",
@@ -29,12 +39,13 @@
     "inGameRank": "In-Game Rank",
     "joinDate": "Joined",
     "achievements": "Achievements",
-    "description": " is an important member of our Shadow Abyssal X organization.",
+    "description": " is an important member of our InterPolishForces organization.",
     "close": "Close"
   },
   "staff": {
     "title": "MEET THE STAFF TEAM!",
     "noMembers": "No members in this role",
+    "viewDossier": "VIEW DOSSIER",
     "descriptions": {
       "eliza": "WIP",
       "adioves": "WIP",
@@ -75,11 +86,11 @@
   },
   "qa": {
     "title": "QUESTIONS & ANSWERS",
-    "subtitle": "Find answers to frequently asked questions about Shadow Abyssal X",
+    "subtitle": "Find answers to frequently asked questions about InterPolishForces",
     "noItems": "No questions to display",
     "faqs": [
       {
-        "question": "How can I join Shadow Abyssal X?",
+        "question": "How can I join InterPolishForces?",
         "answer": "To join our faction, you need to enter our Roblox server and request an invite. Contact any administrator with the required documentation."
       },
       {
@@ -113,13 +124,13 @@
     ]
   },
   "about": {
-    "title": "WHAT IS SHADOW ABYSSAL X?",
+    "title": "WHAT IS INTERPOLISHFORCES?",
     "subtitle": "Learn about our history, mission, and how to join our community",
     "whoAreWe": "Who are we?",
-    "whoAreWeContent": "Shadow Abyssal X is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
+    "whoAreWeContent": "InterPolishForces is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
     "whoAreWeContent2": "Our members come from different parts of the world, but we are united by a common passion for gaming and an interest in military matters. We create an environment where everyone can develop and achieve their goals.",
     "ourMission": "Our Mission",
-    "ourMissionContent": "The mission of Shadow Abyssal X is to build a strong, organized, and mutually respectful community of players. We strive to:",
+    "ourMissionContent": "The mission of InterPolishForces is to build a strong, organized, and mutually respectful community of players. We strive to:",
     "mission1": "Provide a positive experience on the server",
     "mission2": "Support new members in their development",
     "mission3": "Organize events and operations for the entire faction",
@@ -136,17 +147,17 @@
     "value4Title": "Transparency",
     "value4Content": " - We communicate openly and honestly with our members.",
     "value5Title": "Engagement",
-    "value5Content": " - Every member is engaged in the activities of Shadow Abyssal X.",
+    "value5Content": " - Every member is engaged in the activities of InterPolishForces.",
     "structure": "Organizational Structure",
-    "structureContent": "Shadow Abyssal X has a well-defined structure with various roles and positions. From Faction Command at the top to Trial Moderators, every role is important and supports the overall functioning of the organization.",
+    "structureContent": "InterPolishForces has a well-defined structure with various roles and positions. From Faction Command at the top to Trial Moderators, every role is important and supports the overall functioning of the organization.",
     "structureContent2": "To learn more about our roles and staff members, visit the 'Staff' page.",
     "howToJoin": "How to Join Us?",
-    "howToJoinContent": "If you are interested in joining Shadow Abyssal X, here are the basic steps:",
+    "howToJoinContent": "If you are interested in joining InterPolishForces, here are the basic steps:",
     "step1": "Enter our Roblox server and familiarize yourself with our regulations",
     "step2": "Join our Discord server to stay in touch with the community",
     "step3": "Contact an administration member to request an invite to the faction",
     "step4": "Go through the verification process and meet the other members",
-    "step5": "Start a new adventure with Shadow Abyssal X!",
+    "step5": "Start a new adventure with InterPolishForces!",
     "joinDiscord": "Join Discord",
     "contact": "Contact",
     "contactContent": "If you have questions or want to contact the administration, you can do so via:",
@@ -154,11 +165,16 @@
     "contactRoblox": "Roblox: Direct message to an administration member",
     "contactWebsite": "This website: Use the contact option (if available)"
   },
+  "common": {
+    "orgName": "InterPolishForces",
+    "na": "N/A",
+    "noDescription": "No description"
+  },
   "regulations": {
-    "serverTitle": "Regulations of Shadow Abyssal X Server",
-    "title": "Regulations of Shadow Abyssal X Server",
+    "serverTitle": "Regulations of InterPolishForces Server",
+    "title": "Regulations of InterPolishForces Server",
     "warning": "Anyone who breaks rules will face consequences, such as being muted for a certain number of hours, banned, or kicked off server. If you give out someone else's personal information, you can expect to receive a permanent ban and be added to ⁠𝙺𝙾𝚂.",
-    "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.", 
+    "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.",
     "generalRulesTitle": "Section 1: General Rules",
     "voiceChatRulesTitle": "Section 2: General rules in voice chat",
     "inGameRulesTitle": "Section 3: In-Game Regulations",
@@ -206,6 +222,48 @@
   },
   "changelog": {
     "title": "CHANGELOG",
-    "subtitle": "See the history of changes and updates to Shadow Abyssal X"
+    "subtitle": "See the history of changes and updates to InterPolishForces",
+    "footer": {
+      "thankYou": "💚 Thanks for using InterPolishForces!",
+      "suggest": "Want to suggest a new feature? Contact us on Discord!"
+    },
+    "data": [
+      {
+        "version": "1.5.0",
+        "date": "December 19, 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Language Carousel",
+            "description": "New language selection system with slider for future languages"
+          },
+          {
+            "type": "feature",
+            "title": "Social Media Links",
+            "description": "Added YouTube and TikTok links on the home page"
+          },
+          {
+            "type": "improvement",
+            "title": "Regulations Banner",
+            "description": "Prominent 'Server Regulations' banner at the top of the Regulations page"
+          },
+          {
+            "type": "improvement",
+            "title": "Performance Optimization",
+            "description": "Reduced background animation FPS in Regulations (6.67 FPS) for better performance"
+          },
+          {
+            "type": "feature",
+            "title": "Anti-Cheat Measures",
+            "description": "Protection against code inspection (F12, right-click)"
+          },
+          {
+            "type": "improvement",
+            "title": "Text Selection",
+            "description": "Disabled user-select globally for better UX"
+          }
+        ]
+      }
+    ]
   }
 }

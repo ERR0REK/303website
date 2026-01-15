@@ -27,23 +27,23 @@ const StaffMemberModal = ({ member, onClose }) => {
   return (
     <AnimatePresence>
       {member && (
-        <motion.div 
-          className={`staff-modal-overlay ${isClosing ? 'closing' : ''}`} 
+        <motion.div
+          className={`staff-modal-overlay ${isClosing ? 'closing' : ''}`}
           onClick={handleBackdropClick}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <motion.div 
+          <motion.div
             className={`staff-modal-content ${isClosing ? 'closing' : ''}`}
             initial={{ opacity: 0, scale: 0.8, y: -30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: -30 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <motion.button 
-              className="staff-modal-close" 
+            <motion.button
+              className="staff-modal-close"
               onClick={handleClose}
               whileHover={{ rotate: 90, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -52,21 +52,24 @@ const StaffMemberModal = ({ member, onClose }) => {
               ✕
             </motion.button>
 
-            <motion.div 
+            <motion.div
               className="staff-modal-header"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <motion.img
-                src={member.avatar || 'https://via.placeholder.com/150'}
-                alt={member.name}
-                className="staff-modal-avatar"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
+              <div style={{ position: 'relative' }}>
+                <div className="staff-img-scanner"></div>
+                <motion.img
+                  src={member.avatar || 'https://via.placeholder.com/150'}
+                  alt={member.name}
+                  className="staff-modal-avatar"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
               <div className="staff-modal-info">
-                <motion.h2 
+                <motion.h2
                   className="staff-modal-name"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -74,7 +77,7 @@ const StaffMemberModal = ({ member, onClose }) => {
                 >
                   {member.name}
                 </motion.h2>
-                <motion.p 
+                <motion.p
                   className="staff-modal-role"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -85,31 +88,31 @@ const StaffMemberModal = ({ member, onClose }) => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="staff-modal-body"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="staff-modal-description">
-                {t(`staff.descriptions.${member.name.toLowerCase()}`, 'Brak opisu')}
+                {t(`staff.descriptions.${member.name.toLowerCase()}`, t('common.noDescription'))}
               </p>
 
-              <motion.div 
+              <motion.div
                 className="staff-modal-details"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
-                <motion.div 
+                <motion.div
                   className="staff-modal-detail-item"
                   whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="staff-modal-label">{t('staffModal.robloxUsername', 'Roblox Username')}:</span>
+                  <span className="staff-modal-label">{t('staffModal.robloxUsername')}:</span>
                   <span className="staff-modal-value">
                     {member.robloxUsername && member.robloxUserId ? (
-                      <a 
+                      <a
                         href={`https://www.roblox.com/users/${member.robloxUserId}/profile`}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -118,28 +121,28 @@ const StaffMemberModal = ({ member, onClose }) => {
                         {member.robloxUsername}
                       </a>
                     ) : (
-                      member.robloxUsername || 'N/A'
+                      member.robloxUsername || t('common.na')
                     )}
                   </span>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="staff-modal-detail-item"
                   whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="staff-modal-label">{t('staffModal.inGameRank', 'In-Game Rank')}:</span>
-                  <span className="staff-modal-value">{member.inGameRank || 'N/A'}</span>
+                  <span className="staff-modal-label">{t('staffModal.inGameRank')}:</span>
+                  <span className="staff-modal-value">{member.inGameRank || t('common.na')}</span>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="staff-modal-detail-item"
                   whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="staff-modal-label">{t('staffModal.role', 'Rola')}:</span>
+                  <span className="staff-modal-label">{t('staffModal.role')}:</span>
                   <span className="staff-modal-value">{member.role}</span>
                 </motion.div>
                 {member.joinDate && (
-                  <motion.div 
+                  <motion.div
                     className="staff-modal-detail-item"
                     whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
                     transition={{ duration: 0.2 }}
@@ -149,7 +152,7 @@ const StaffMemberModal = ({ member, onClose }) => {
                   </motion.div>
                 )}
                 {member.achievements && (
-                  <motion.div 
+                  <motion.div
                     className="staff-modal-detail-item"
                     whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
                     transition={{ duration: 0.2 }}
@@ -161,20 +164,20 @@ const StaffMemberModal = ({ member, onClose }) => {
               </motion.div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="staff-modal-footer"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.35 }}
             >
-              <motion.button 
-                className="staff-modal-button-close" 
+              <motion.button
+                className="staff-modal-button-close"
                 onClick={handleClose}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('staffModal.close', 'Zamknij')}
+                {t('staffModal.close')}
               </motion.button>
             </motion.div>
           </motion.div>

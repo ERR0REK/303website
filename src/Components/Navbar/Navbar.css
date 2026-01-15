@@ -1,39 +1,46 @@
 /* --- Zmienne CSS --- */
 :root {
-  --navbar-bg: rgba(10, 15, 11, 0.85);
-  --navbar-border: rgba(255, 51, 0, 1);
-  --navbar-text: #ff0000ff;
-  --navbar-text-hover: var(--military-green-primary);
+    --navbar-bg: rgba(10, 15, 11, 0.85);
+    --navbar-border: rgba(255, 51, 0, 1);
+    --navbar-text: #ff0000ff;
+    --navbar-text-hover: var(--military-green-primary);
 }
 
 /* --- Główny kontener Navbara (NAJWAŻNIEJSZA ZMIANA!) --- */
 nav {
     width: 100%;
-    padding: 10px 24px; /* Więcej miejsca, żeby nie był "zgrubiony" */
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center; /* Wyśrodkowujemy w pionie */
-    justify-content: space-between; /* Rozmieszczamy elementy do krawędzi */
     z-index: 1000;
-    
-    /* Glassmorphism */
-    background: var(--navbar-bg);
-    backdrop-filter: blur(12px) saturate(1.1);
-    border-bottom: 1px solid var(--navbar-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    max-width: 100%;
+    padding: 0 20px;
+    /* More flush with the edges */
 }
 
 /* --- Lewa strona (Logo i Nazwa) --- */
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 15px; /* Przestrzeń między logo a nazwą */
-    flex-shrink: 0; /* Zapobiega "ściskaniu" się elementów */
+    gap: 15px;
+    /* Przestrzeń między logo a nazwą */
+    flex-shrink: 0;
+    /* Zapobiega "ściskaniu" się elementów */
 }
 
 .logo {
-    width: 50px; /* Trochę mniejsze */
+    width: 50px;
+    /* Trochę mniejsze */
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -43,30 +50,28 @@ nav {
 }
 
 .name {
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.6rem; /* Trochę mniejsze */
+    font-family: var(--font-header);
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--navbar-text);
-    cursor: pointer;
-    text-shadow: 0 0 8px rgba(0, 255, 76, 1);
-    letter-spacing: 0.05em;
+    color: var(--text-main);
+    letter-spacing: 2.5px;
+    text-shadow: 0 0 10px var(--military-green-glow);
     transition: all 0.3s ease;
-    padding: 4px 8px;
-    border-radius: 6px;
 }
 
 .name:hover {
-    color: var(--navbar-text-hover);
-    background: rgba(0, 255, 76, 1);
-    transform: translateY(-1px);
+    color: var(--cyber-blue);
+    text-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
 }
 
 /* --- Prawa strona (Linki i Dropdown) --- */
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 20px; /* Przestrzeń między linkami a dropdownem */
-    flex-shrink: 0; /* Zapobiega "ściskaniu" się */
+    gap: 20px;
+    /* Przestrzeń między linkami a dropdownem */
+    flex-shrink: 0;
+    /* Zapobiega "ściskaniu" się */
 }
 
 /* --- Lista Nawigacji --- */
@@ -79,54 +84,45 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 8px; /* Zmniejszone marginesy */
-    font-size: 15px;
+    margin: 0 12px;
+    font-size: 17px;
     position: relative;
 }
 
 /* --- Linki w Nawigacji --- */
 nav ul li a {
-    color: var(--navbar-text);
+    color: var(--text-dim);
     text-decoration: none;
     font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 10px 15px;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-nav ul li a::before {
+nav ul li a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 0;
     width: 0;
-    height: 2px;
-    background: var(--navbar-text-hover);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+    height: 1px;
+    background: var(--cyber-blue);
+    transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--navbar-text-hover);
-    background: rgba(0, 255, 76, 1);
-    transform: translateY(-1px);
+    color: var(--text-main);
 }
 
-nav ul li a:hover::before {
-    width: 80%;
-}
-
-/* --- Stan aktywnego linku (dla dostępności) --- */
-nav ul li a.active {
-    color: var(--navbar-text-hover);
-    font-weight: 700;
-    background: rgba(0, 255, 76, 1);
-}
-
-nav ul li a.active::before {
+nav ul li a:hover::after,
+nav ul li a.active::after {
     width: 100%;
+}
+
+nav ul li a.active {
+    color: var(--cyber-blue);
 }
 
 /* --- Stan focus (dla nawigacji klawiaturą) --- */
@@ -158,20 +154,24 @@ nav ul li a.nav-changelog.active {
 @media (max-width: 768px) {
     nav {
         padding: 8px 16px;
-        flex-wrap: wrap; /* Zawijamy elementy, jeśli nie ma miejsca */
-        justify-content: center; /* Na mobile centrujemy wszystko */
+        flex-wrap: wrap;
+        /* Zawijamy elementy, jeśli nie ma miejsca */
+        justify-content: center;
+        /* Na mobile centrujemy wszystko */
         gap: 10px;
     }
 
     .nav-left {
-        order: 1; /* Logo i nazwa na górze */
+        order: 1;
+        /* Logo i nazwa na górze */
         width: 100%;
         justify-content: center;
         margin-bottom: 10px;
     }
 
     .nav-right {
-        order: 2; /* Linki i dropdown na dole */
+        order: 2;
+        /* Linki i dropdown na dole */
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;

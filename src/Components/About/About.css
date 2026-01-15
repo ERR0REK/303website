@@ -1,68 +1,80 @@
-/* --- Zmienne CSS --- */
 :root {
-  --about-bg-color: #0a0a0f;
-  --about-surface-color: rgba(20, 20, 30, 0.9);
-  --about-border-color: rgba(0, 255, 76, 0.3);
-  --about-text-primary: #e0e0e0;
-  --about-text-secondary: #b0b0b0;
-  --about-accent-color: var(--military-green-primary, #00ff4c);
-  --about-cyan-color: #00d4ff;
+  --about-surface: var(--bg-alt);
+  --about-accent: var(--military-green);
+  --about-cyber: var(--cyber-blue);
 }
 
-/* --- Główny kontener strony --- */
 .about-page {
   min-height: 100vh;
-  background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--about-bg-color) 50%);
-  color: var(--about-text-primary);
-  font-family: 'Orbitron', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
   position: relative;
   overflow-x: hidden;
+}
+
+/* Background HUD Effect */
+.about-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(75, 83, 32, 0.05), transparent 70%),
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+  background-size: 100% 100%, 100% 4px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* --- Sekcja Hero / Nagłówek --- */
 .about-hero-section {
   text-align: center;
-  padding: 6rem 2rem 4rem 2rem;
+  padding: 8rem 2rem 4rem 2rem;
   position: relative;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(10, 10, 15, 0.5), transparent);
 }
 
 .about-hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 900;
-  color: var(--about-accent-color);
-  text-shadow: 0 0 15px var(--about-accent-color), 0 0 30px rgba(0, 255, 76, 0.5);
-  letter-spacing: 0.05em;
+  color: #fff;
+  text-shadow:
+    3px 3px 0px var(--about-accent),
+    -1px -1px 0px var(--about-cyber);
+  letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  animation: about-title-glow 2s ease-in-out infinite;
 }
 
 @keyframes about-title-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 15px var(--about-accent-color), 0 0 30px rgba(0, 255, 76, 0.5);
   }
+
   50% {
     text-shadow: 0 0 25px var(--about-accent-color), 0 0 50px rgba(0, 255, 76, 0.8);
   }
 }
 
 .about-hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--about-text-secondary);
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .about-hero-divider {
-  width: 100%;
-  max-width: 800px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--about-accent-color), transparent);
+  width: 100px;
+  height: 4px;
+  background: var(--about-cyber);
   margin: 2rem auto;
-  box-shadow: 0 0 10px var(--about-accent-color);
+  box-shadow: 0 0 15px var(--about-cyber);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
 }
 
 /* --- Główny kontener treści --- */
@@ -74,53 +86,50 @@
 
 /* --- Sekcja zawartości --- */
 .about-section {
-  background: rgba(30, 30, 40, 0.8);
-  border: 1px solid var(--about-border-color);
-  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--about-accent);
   padding: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   backdrop-filter: blur(10px);
-  animation: fadeInUp 0.6s ease-out;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, transparent 50%, var(--about-accent) 50%);
+  opacity: 0.2;
 }
 
 .about-section:hover {
-  border-color: var(--about-cyan-color);
-  box-shadow: 0 8px 20px rgba(0, 255, 76, 0.2);
+  border-color: var(--about-cyber);
+  transform: translateX(10px);
 }
 
 /* --- Tytuł sekcji --- */
 .about-section-title {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  color: var(--about-cyan-color);
-  margin-bottom: 1.5rem;
+  font-family: var(--font-header);
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 0.75rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.about-section-title::after {
+.about-section-title::before {
   content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 30px;
   height: 2px;
-  background: var(--about-accent-color);
-  animation: expand-width 0.8s ease-out forwards;
+  background: var(--about-cyber);
 }
 
 @keyframes expand-width {
@@ -130,10 +139,11 @@
 }
 
 /* --- Tekst zawartości --- */
-.about-content {
+.about-content p {
   color: var(--about-text-secondary);
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-content p {
@@ -167,6 +177,7 @@
   position: relative;
   color: var(--about-text-secondary);
   line-height: 1.6;
+  font-size: 1.35rem;
 }
 
 .about-features-list li::before {

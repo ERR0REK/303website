@@ -1,9 +1,10 @@
 /* --- Zmienne lokalne dla dropdowna --- */
 :root {
-  --dropdown-bg: rgba(20, 20, 30, 0.95);
-  --dropdown-border: rgba(0, 255, 76, 0.4);
-  --dropdown-text: #00ff48ff;
-  --dropdown-hover-bg: rgba(0, 255, 76, 0.1);
+    --dropdown-bg: rgba(10, 15, 10, 0.96);
+    --dropdown-border: #00ff66;
+    --dropdown-text: #e0ffe0;
+    --dropdown-hover-bg: rgba(0, 255, 102, 0.15);
+    --military-green-glow: rgba(0, 255, 102, 0.6);
 }
 
 /* --- Główny kontener --- */
@@ -11,31 +12,54 @@
     position: relative;
     margin-left: 20px;
     z-index: 1000;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 /* --- Przycisk główny --- */
 .dropdown-button {
+    background: rgba(0, 20, 0, 0.6);
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    color: var(--dropdown-text);
+    padding: 8px 18px;
+    cursor: pointer;
+    font-family: inherit;
     display: flex;
     align-items: center;
     gap: 12px;
-    background: var(--dropdown-bg);
-    border: 1px solid var(--dropdown-border);
-    color: var(--dropdown-text);
-    padding: 10px 16px;
-    font-family: "Orbitron", sans-serif;
-    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-weight: 600;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scanline on button hover */
+.dropdown-button::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 255, 102, 0.4), transparent);
+    transition: top 0.5s;
+    opacity: 0;
+}
+
+.dropdown-button:hover::after {
+    top: 150%;
+    opacity: 1;
+    transition: top 0.6s linear, opacity 0.1s;
 }
 
 .dropdown-button:hover {
-    transform: translateY(-2px) scale(1.03);
-    border-color: var(--military-green-primary);
-    box-shadow: 0 6px 20px rgba(0, 255, 76, 0.2);
+    border-color: var(--dropdown-border);
+    background: rgba(0, 30, 0, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.8);
+    letter-spacing: 3px;
 }
 
 /* --- Strzałka --- */
@@ -44,8 +68,9 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid var(--dropdown-text);
-    transition: transform 0.3s ease;
+    border-top: 5px solid var(--dropdown-border);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    filter: drop-shadow(0 0 2px var(--dropdown-border));
 }
 
 .arrow.open {
@@ -55,95 +80,149 @@
 /* --- Menu rozwijane --- */
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px); /* 8px przerwy */
+    top: calc(100% + 12px);
     right: 0;
     margin: 0;
     background: var(--dropdown-bg);
+    /* Grid pattern background */
+    background-image:
+        linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
     border: 1px solid var(--dropdown-border);
-    border-radius: 8px;
     list-style: none;
-    padding: 8px 0;
-    min-width: 180px;
+    padding: 10px 0;
+    min-width: 200px;
     z-index: 1001;
-    
-    /* Ustawienia animacji */
+    display: block;
+    /* Setup for visibility toggle */
+
+    /* Ukryte domyślnie */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    backdrop-filter: blur(15px) saturate(1.2);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: perspective(500px) rotateX(-15deg) translateY(-10px);
+    transform-origin: top center;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(0, 255, 102, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.8);
+
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
 }
 
+/* Standard smooth entry instead of glitch */
 .dropdown-menu.open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: perspective(500px) rotateX(0deg) translateY(0);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* HUD Corner Brackets (using pseudo-elements on internal items might be cleaner, but let's try li borders) */
+/* Moving Scanline inside menu */
+.dropdown-menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 255, 102, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+    animation: menuScan 3s linear infinite;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+@keyframes menuScan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
 }
 
 /* --- Elementy listy --- */
 .dropdown-menu li {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    color: var(--dropdown-text);
+    gap: 15px;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
+    border-left: 2px solid transparent;
+}
+
+.dropdown-menu li .flag {
+    filter: grayscale(0.8);
+    transition: filter 0.3s;
+    font-size: 1.2em;
 }
 
 .dropdown-menu li:hover {
     background: var(--dropdown-hover-bg);
-    transform: translateX(5px);
+    color: #fff;
+    border-left: 2px solid var(--dropdown-border);
+    padding-left: 25px;
+    /* Slide effect */
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
 }
 
-.dropdown-menu li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--dropdown-border);
-    transform: scaleX(0);
-    transition: transform 0.2s ease;
-}
-
-.dropdown-menu li:hover::before {
-    transform: scaleX(1);
+.dropdown-menu li:hover .flag {
+    filter: grayscale(0) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    transform: scale(1.1);
 }
 
 /* --- Separator --- */
 .dropdown-menu .divider {
     height: 1px;
-    background: var(--military-green-primary);
-    margin: 4px 0;
+    background: linear-gradient(90deg, transparent, var(--dropdown-border), transparent);
+    margin: 6px 0;
+    padding: 0;
     cursor: default;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 0 5px var(--military-green-primary);
-}
-
-.dropdown-menu .divider:hover {
-    opacity: 0.7;
+    opacity: 0.4;
+    border: none;
 }
 
 /* --- Link do tłumaczeń --- */
 .dropdown-menu .help-translate {
-    color: #ffffff;
-    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-menu .help-translate .icon {
+    font-size: 1.1em;
+    animation: spinSlow 10s linear infinite;
+}
+
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .dropdown-menu .help-translate:hover {
-    background: var(--dropdown-hover-bg);
-    transform: translateX(5px);
+    background: rgba(0, 255, 102, 0.05);
 }
-
-.dropdown-menu .icon {
-    font-size: 16px;
-}
-
-
-
-
-/* src/Components/LanguageDropDown/LanguageDropDown.css */

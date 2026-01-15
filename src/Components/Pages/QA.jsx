@@ -13,7 +13,7 @@ export default function Qa() {
   // TODO: Dodaj własne pytania i odpowiedzi dla FAQ
   // Poniższy kod jest zakomentowany - jak będziesz miał pomysł na pytania,
   // możesz go rozkmentować i przerobić z oryginalnym kodem
-  
+
   /*
   // Pytania i odpowiedzi - można je przenieść do tłumaczeń
   const faqs = [
@@ -61,9 +61,9 @@ export default function Qa() {
 
       {/* --- Sekcja Hero --- */}
       <section className="qa-hero-section">
-        <h1 className="qa-hero-title">{t('qa.title', 'WORK IN PROGRESS')}</h1>
+        <h1 className="qa-hero-title">{t('qa.title')}</h1>
         <p className="qa-hero-subtitle">
-          {t('qa.subtitle', 'Ta sekcja jest w trakcie przebudowy - wróć wkrótce!')}
+          {t('qa.subtitle')}
         </p>
         <div className="qa-hero-divider"></div>
       </section>
@@ -81,7 +81,7 @@ export default function Qa() {
               />
             ))
           ) : (
-            <p className="qa-no-items">{t('qa.noItems', 'Brak pytań do wyświetlenia')}</p>
+            <p className="qa-no-items">{t('qa.noItems')}</p>
           )}
         </div>
       </main>

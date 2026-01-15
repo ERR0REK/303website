@@ -11,47 +11,7 @@ export default function Changelog() {
   const [expandedVersion, setExpandedVersion] = useState(null);
 
   // === CHANGELOG DATA ===
-  // Format: { version, date, changes: [{ type, title, description }] }
-  // Types: 'feature' (✨), 'bugfix' (🐛), 'improvement' (⚡), 'security' (🔒)
-  const changelogData = [
-    {
-      version: '1.5.0',
-      date: '19 grudnia 2025',
-      highlight: true,
-      changes: [
-        {
-          type: 'feature',
-          title: 'Language Carousel',
-          description: 'Nowy system wyboru języka z suwakiem dla przyszłych języków'
-        },
-        {
-          type: 'feature',
-          title: 'Social Media Links',
-          description: 'Dodane linki do YouTube i TikTok na stronie głównej'
-        },
-        {
-          type: 'improvement',
-          title: 'Regulations Banner',
-          description: 'Prominentny baner "Regulamin serwera" na górze strony Regulamin'
-        },
-        {
-          type: 'improvement',
-          title: 'Performance Optimization',
-          description: 'Zmniejszona FPS animacji tła w Regulaminie (6.67 FPS) dla lepszej wydajności'
-        },
-        {
-          type: 'feature',
-          title: 'Anti-Cheat Measures',
-          description: 'Zabezpieczenie przed inspekcją kodu (F12, prawe kliknięcie)'
-        },
-        {
-          type: 'improvement',
-          title: 'Text Selection',
-          description: 'Wyłączony user-select na całej stronie dla lepszego UX'
-        }
-      ]
-    },
-  ];
+  const changelogData = t('changelog.data', { returnObjects: true }) || [];
 
   const getIcon = (type) => {
     const icons = {
@@ -122,8 +82,8 @@ export default function Changelog() {
 
         {/* Footer */}
         <footer className="changelog-footer">
-          <p>💚 Dziękujemy za używanie Shadow Abyssal X!</p>
-          <p>Chcesz zasugerować nową funkcję? Skontaktuj się z nami na Discord!</p>
+          <p>{t('changelog.footer.thankYou')}</p>
+          <p>{t('changelog.footer.suggest')}</p>
         </footer>
       </main>
     </div>

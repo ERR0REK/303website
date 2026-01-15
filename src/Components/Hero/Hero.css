@@ -1,81 +1,69 @@
-.hero{
+.hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(8,0,58,0.8), rgba(20,0,80,0.8)), url('../../Assets/976320.jpg');
+    background:
+        linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.8)),
+        url('../../Assets/976320.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff;
+    background-attachment: fixed;
+    /* Parallax effect */
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
 }
 
-.hero-text{
-    text-align: center;
-    max-width: 800px;
+/* Scanline / Grid Overlay Effect */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-text {
+    max-width: 900px;
     z-index: 10;
     position: relative;
-    animation: fadeInUp 1s ease-out;
+    text-align: left;
+    /* Tactical look often looks better left-aligned or center-aligned with brackets */
 }
 
-.hero-text h1{
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+.hero-text h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
     margin-bottom: 20px;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    color: var(--military-green-primary);
-    text-shadow: 0 0 15px var(--military-green-primary), 0 0 30px rgba(0, 255, 76, 0.6), 0 0 50px rgba(0, 255, 76, 0.3);
-    letter-spacing: 0.05em;
-    animation: heroTitleGlow 2.5s ease-in-out infinite;
+    color: #fff;
+    text-shadow:
+        3px 3px 0px var(--military-green),
+        -1px -1px 0px var(--cyber-blue);
+    position: relative;
+    display: inline-block;
 }
 
-.hero-text p{
-    font-size: clamp(1rem, 2vw, 1.5rem);
+.hero-text p {
+    font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-    animation: fadeIn 1.5s ease-out 0.3s backwards;
-    color: #e0e0e0;
+    margin-bottom: 2.5rem;
+    color: var(--text-dim);
+    border-left: 3px solid var(--cyber-blue);
+    padding-left: 20px;
+    max-width: 700px;
 }
 
-.hero-text .btn {
-    background: linear-gradient(135deg, rgba(0, 255, 76, 0.2), rgba(0, 212, 255, 0.2));
-    border: 2px solid var(--military-green-primary);
-    color: var(--military-green-primary);
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    box-shadow: 0 0 15px rgba(0, 255, 76, 0.3), inset 0 0 15px rgba(0, 255, 76, 0.1);
-    animation: buttonPulse 2s ease-in-out infinite;
-}
-
-.hero-text .btn:hover {
-    background: linear-gradient(135deg, rgba(0, 255, 76, 0.3), rgba(0, 212, 255, 0.3));
-    border-color: #00d4ff;
-    color: #00d4ff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(0, 255, 76, 0.5), 0 0 20px rgba(0, 212, 255, 0.4);
-}
-
-.hero-text .btn:active {
-    transform: translateY(-1px);
-}
-
-/* Grupa przycisków */
 .hero-buttons-group {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    gap: 20px;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    animation: fadeIn 1.8s ease-out 0.6s backwards;
 }
 
 /* YouTube button */
@@ -110,9 +98,12 @@
 
 /* Animacje */
 @keyframes heroTitleGlow {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 15px var(--military-green-primary), 0 0 30px rgba(0, 255, 76, 0.6), 0 0 50px rgba(0, 255, 76, 0.3);
     }
+
     50% {
         text-shadow: 0 0 25px var(--military-green-primary), 0 0 50px rgba(0, 255, 76, 0.8), 0 0 80px rgba(0, 255, 76, 0.5);
     }
@@ -123,6 +114,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -133,15 +125,19 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 0.95;
     }
 }
 
 @keyframes buttonPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 15px rgba(0, 255, 76, 0.3), inset 0 0 15px rgba(0, 255, 76, 0.1);
     }
+
     50% {
         box-shadow: 0 0 25px rgba(0, 255, 76, 0.5), inset 0 0 20px rgba(0, 255, 76, 0.2);
     }

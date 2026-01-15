@@ -1,38 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
 
-*{
+:root {
+  /* Tactical Palette - Enhanced Visibility */
+  --bg-color: #1a1d1a;
+  --bg-alt: #222822;
+  --military-green: #00ff66;
+  /* Vibrant Tactical Green */
+  --military-green-glow: rgba(0, 255, 102, 0.4);
+  --cyber-blue: #00f3ff;
+  --cyber-orange: #ff8c00;
+  --text-main: #ffffff;
+  --text-dim: #b0b0b0;
+
+  /* UI Elements */
+  --glass-bg: rgba(10, 12, 10, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --cyber-border: 1px solid var(--cyber-blue);
+
+  /* Fonts */
+  --font-header: "Orbitron", sans-serif;
+  --font-ui: "Chakra Petch", sans-serif;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--font-ui);
   user-select: none;
 }
 
-body{
-  background: $F5F5F5;
+body {
+  background: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+  font-size: 18px;
+  /* Balanced base size */
 }
 
-a{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+a {
   text-decoration: none;
   color: inherit;
   line-height: inherit;
   cursor: pointer;
 }
 
-.container{
-  padding-left: 15px;
-  padding-right: 15px;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-.btn{
-  background: #fdfafaff;
-  clolor: 212121;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 10px;
+.btn {
+  background: transparent;
+  color: var(--text-main);
+  padding: 16px 36px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid var(--military-green);
+  border-radius: 0;
+  /* Cyberpunk style uses sharp edges or clips */
   cursor: pointer;
-  border: 0;
   outline: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  background: var(--military-green);
+  color: #fff;
+  box-shadow: 0 0 15px var(--military-green-glow);
+  transform: translateY(-2px);
+}
+
+.btn-cyber {
+  border-color: var(--cyber-blue);
+}
+
+.btn-cyber:hover {
+  background: var(--cyber-blue);
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
 }
 
 /* src/index.css */
