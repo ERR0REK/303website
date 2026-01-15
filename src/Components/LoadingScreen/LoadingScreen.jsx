@@ -75,8 +75,8 @@ const LoadingScreen = () => {
             <div className="loading-container">
                 {/* Logo with glitch effect */}
                 <div className="logo-container">
-                    <div className="division-logo glitch">SLX</div>
-                    <div className="division-text glitch">Shadow Abyssal X</div>
+                    <div className="division-logo glitch">IPF</div>
+                    <div className="division-text glitch">InterPolishForces</div>
                 </div>
 
                 {/* Progress bar with scanner */}
