@@ -167,6 +167,7 @@
   },
   "common": {
     "orgName": "InterPolishForces",
+    "comingSoon": "WKRÓTCE",
     "na": "N/D",
     "noDescription": "Brak opisu"
   },
@@ -265,5 +266,41 @@
         ]
       }
     ]
+  },
+  "warLogs": {
+    "title": "WOJENNE LOGI",
+    "readMore": "DOSTĘP DO DANYCH",
+    "modalTitle": "RAPORT Z MISJI",
+    "briefing": "SZCZEGÓŁY ODPRAWY",
+    "labels": {
+      "warWith": "Wojna z {{opponent}}",
+      "reason": "Powód Wojny",
+      "result": "Wynik",
+      "duration": "Czas Wojny",
+      "members": "Członkowie",
+      "mvp": "MVP('s)"
+    },
+    "results": {
+      "WIN": "Wygrana",
+      "LOSS": "Przegrana",
+      "EASY_WIN": "Łatwa Wygrana",
+      "DRAW": "Remis"
+    },
+    "log1": {
+      "desc": "Intensywne walki miejskie w Cyber City Delta. Próby oskrzydlenia przez wroga zostały zneutralizowane przez nasze jednostki awangardowe.",
+      "details": "Nasz oddział wykorzystał wertykalność terenu, by zdobyć przewagę. MVP 'Commander Shepard' sprawnie zabezpieczył kluczowe punkty."
+    },
+    "log2": {
+      "desc": "Blokada obronna na Posterunku Pustkowia. Mimo ciężkiego oporu, Iron Legion przełamał nasze możliwości perymetryczne.",
+      "details": "Awaria przekaźników komunikacyjnych w sektorze 7 doprowadziła do niekorzystnej sytuacji taktycznej. Wymagane przegrupowanie do kontr-środków."
+    },
+    "log3": {
+      "desc": "Konflikt patowy w Rdzeniu Centrum Danych. Obie strony wyczerpały zasoby bez zdobycia znaczącego terenu.",
+      "details": "Wskaźniki strat w granicach akceptowalnych norm. Zbieranie wywiadu zakończone sukcesem pomimo remisu."
+    },
+    "log4": {
+      "desc": "Całkowita dominacja na Stacji Orbitalnej. Cybernetic Front nie był przygotowany na naszą taktykę zero-g.",
+      "details": "Bezbledna egzekucja przez wszystkie jednostki. Wynik 300-0 odzwierciedla absolutną kontrolę nad punktami strategicznymi."
+    }
   }
 }

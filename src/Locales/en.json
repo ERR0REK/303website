@@ -167,6 +167,7 @@
   },
   "common": {
     "orgName": "InterPolishForces",
+    "comingSoon": "COMING SOON",
     "na": "N/A",
     "noDescription": "No description"
   },
@@ -265,5 +266,41 @@
         ]
       }
     ]
+  },
+  "warLogs": {
+    "title": "WAR LOGS",
+    "readMore": "ACCESS DATA",
+    "modalTitle": "MISSION REPORT",
+    "briefing": "BRIEFING DETAILS",
+    "labels": {
+      "warWith": "War with {{opponent}}",
+      "reason": "War Reason",
+      "result": "Result",
+      "duration": "War Duration",
+      "members": "Members",
+      "mvp": "MVP('s)"
+    },
+    "results": {
+      "WIN": "Victory",
+      "LOSS": "Defeat",
+      "EASY_WIN": "Easy Victory",
+      "DRAW": "Draw"
+    },
+    "log1": {
+      "desc": "High-intensity urban warfare in Cyber City Delta. Enemy attempts to flank were neutralized by our vanguard units.",
+      "details": "Our squad utilized verticality to gain advantage. MVP 'Commander Shepard' secured vital checkpoints efficiently."
+    },
+    "log2": {
+      "desc": "Defensive blockade at Wasteland Outpost. Despite heavy resistance, the Iron Legion breached our perimeter capabilities.",
+      "details": "Failure in sector 7 communication relays led to tactical disadvantage. Regrouping required for counter-measures."
+    },
+    "log3": {
+      "desc": "A stalemate conflict in the Data Center Core. Both sides exhausted resources without gaining significant ground.",
+      "details": "Attrition rates were within acceptable limits. Intelligence gathering was successful despite the draw."
+    },
+    "log4": {
+      "desc": "Total dominance in Orbital Station. The Cybernetic Front was unprepared for our zero-g tactics.",
+      "details": "Flawless execution by all units. 300-0 score reflects absolute control over the objective points."
+    }
   }
 }
