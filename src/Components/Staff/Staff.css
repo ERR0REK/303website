@@ -20,6 +20,18 @@
   z-index: 2;
 }
 
+@media (max-width: 768px) {
+  .staff-hero-section {
+    padding: 5rem 1.5rem 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .staff-hero-section {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+}
+
 .staff-hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 900;
@@ -30,6 +42,20 @@
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .staff-hero-title {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .staff-hero-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 0.8rem;
+  }
 }
 
 @keyframes title-glow {
@@ -58,6 +84,18 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .staff-main-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .staff-main-container {
+    padding: 1rem;
+  }
 }
 
 /* --- Sekcja roli (Role Section) --- */
@@ -103,6 +141,22 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .staff-members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .staff-members-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* --- Karta członka kadry (Tactical HUD) --- */
@@ -165,6 +219,18 @@
   padding: 1.8rem 1.5rem;
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .staff-card-inner {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .staff-card-inner {
+    padding: 1.2rem 1rem;
+  }
 }
 
 /* --- Avatar / PFP (Tactical Frame) --- */

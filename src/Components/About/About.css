@@ -34,6 +34,21 @@
   padding: 8rem 2rem 4rem 2rem;
   position: relative;
   z-index: 2;
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .about-hero-section {
+    padding: 5rem 1.5rem 3rem 1.5rem;
+    margin-top: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-section {
+    padding: 3rem 1rem 2rem 1rem;
+    margin-top: 60px;
+  }
 }
 
 .about-hero-title {
@@ -46,6 +61,20 @@
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .about-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
 }
 
 @keyframes about-title-glow {
@@ -68,6 +97,19 @@
   line-height: 1.7;
 }
 
+@media (max-width: 768px) {
+  .about-hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
 .about-hero-divider {
   width: 100px;
   height: 4px;
@@ -84,6 +126,18 @@
   padding: 2rem;
 }
 
+@media (max-width: 768px) {
+  .about-main-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-main-container {
+    padding: 1rem;
+  }
+}
+
 /* --- Sekcja zawartości --- */
 .about-section {
   background: var(--glass-bg);
@@ -94,6 +148,20 @@
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .about-section::before {
@@ -125,6 +193,21 @@
   gap: 15px;
 }
 
+@media (max-width: 768px) {
+  .about-section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+}
+
 .about-section-title::before {
   content: '';
   width: 30px;
@@ -144,6 +227,21 @@
   line-height: 1.7;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
 
 .about-content p {
@@ -180,6 +278,22 @@
   font-size: 1.35rem;
 }
 
+@media (max-width: 768px) {
+  .about-features-list li {
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    padding-left: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-features-list li {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+}
+
 .about-features-list li::before {
   content: '►';
   position: absolute;
@@ -211,6 +325,22 @@
   margin-top: 1rem;
   font-family: 'Orbitron', sans-serif;
   box-shadow: 0 4px 15px rgba(114, 137, 218, 0.3);
+}
+
+@media (max-width: 768px) {
+  .about-discord-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-discord-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 .about-discord-button:hover {

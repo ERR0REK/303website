@@ -59,6 +59,21 @@
   padding: 5rem 2rem 2rem 2rem;
   position: relative;
   z-index: 2;
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .reg-scrollable-part {
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    margin-top: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-scrollable-part {
+    padding: 2rem 1rem 1rem 1rem;
+    margin-top: 60px;
+  }
 }
 
 /* --- Sekcja Hero --- */
@@ -78,6 +93,30 @@
   letter-spacing: 0.1em;
   margin-bottom: 2.5rem;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .reg-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: 
+      2px 2px 0px var(--reg-accent),
+      -1px -1px 0px #00ff66;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-hero-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    word-spacing: -0.1em;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-shadow: 
+      1px 1px 0px #00ff66,
+      2px 2px 0px #00aa44;
+  }
 }
 
 @keyframes title-float {
@@ -101,6 +140,20 @@
   font-weight: 300;
 }
 
+@media (max-width: 768px) {
+  .reg-hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-hero-subtitle {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    line-height: 1.4;
+  }
+}
+
 /* --- Panel Ostrzegawczy --- */
 .reg-warning-panel {
   display: flex;
@@ -117,6 +170,23 @@
   box-shadow: 0 12px 40px rgba(255, 77, 77, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+@media (max-width: 768px) {
+  .reg-warning-panel {
+    padding: 2rem;
+    margin: 2rem auto;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-warning-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+}
+
 .reg-warning-icon {
   color: #ff4d4d;
   flex-shrink: 0;
@@ -129,6 +199,20 @@
   color: var(--reg-text-primary);
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .reg-warning-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-warning-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
 
 /* --- WIZUALNY SEPARATOR (Zoptymalizowany) --- */
@@ -176,6 +260,18 @@
   padding: 3rem 2rem 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .reg-sticky-content {
+    padding: 2rem 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-sticky-content {
+    padding: 1.5rem 1rem 0.75rem;
+  }
+}
+
 /* --- Karta z Zasadami (SUPER DOPRACOWANA) --- */
 .rules-container {
   display: flex;
@@ -183,6 +279,18 @@
   gap: 2.5rem;
   padding-bottom: 1rem;
   will-change: contents;
+}
+
+@media (max-width: 768px) {
+  .rules-container {
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rules-container {
+    gap: 1.3rem;
+  }
 }
 
 .reg-rule-card {
@@ -280,6 +388,22 @@
   word-spacing: 0.2em;
 }
 
+@media (max-width: 768px) {
+  .reg-rule-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-rule-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+}
+
 .reg-rule-card:nth-child(1) .reg-rule-title {
   color: var(--color-1);
   text-shadow: 0 0 20px rgba(0, 255, 76, 0.3);
@@ -307,6 +431,21 @@
   z-index: 1;
   letter-spacing: 0.2em;
   transition: opacity 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .reg-rule-section-number {
+    font-size: 2.2rem;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-rule-section-number {
+    font-size: 1.8rem;
+    min-width: auto;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .reg-rule-card:nth-child(1) .reg-rule-section-number {
@@ -353,6 +492,22 @@
   position: relative;
   padding-left: 0rem;
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .reg-rule-item {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-rule-item {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    gap: 0.8rem;
+  }
 }
 
 .reg-rule-item:hover {
@@ -452,6 +607,20 @@
   color: var(--reg-text-secondary);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .reg-footer {
+    padding: 2rem 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reg-footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.7rem;
+  }
 }
 
 .reg-footer p {

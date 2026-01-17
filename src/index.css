@@ -65,6 +65,20 @@ a {
   padding-right: 30px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .btn {
   background: transparent;
   color: var(--text-main);
@@ -82,6 +96,20 @@ a {
   position: relative;
   overflow: hidden;
   clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 
 .btn::before {

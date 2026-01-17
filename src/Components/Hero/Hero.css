@@ -14,6 +14,22 @@
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        padding-top: 70px;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 60px;
+        background-position: 70% center;
+    }
+}
+
 /* Scanline / Grid Overlay Effect */
 .hero::after {
     content: '';
@@ -35,7 +51,22 @@
     z-index: 10;
     position: relative;
     text-align: left;
+    padding: 0 30px;
     /* Tactical look often looks better left-aligned or center-aligned with brackets */
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        padding: 0 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        padding: 0 15px;
+    }
 }
 
 .hero-text h1 {
@@ -49,6 +80,21 @@
     display: inline-block;
 }
 
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+        margin-bottom: 15px;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        margin-bottom: 12px;
+    }
+}
+
 .hero-text p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -59,11 +105,60 @@
     max-width: 700px;
 }
 
+@media (max-width: 768px) {
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        border-left: none;
+        border-bottom: 2px solid var(--cyber-blue);
+        padding-left: 0;
+        padding-bottom: 15px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        padding-bottom: 12px;
+    }
+}
+
 .hero-buttons-group {
     display: flex;
     gap: 20px;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .hero-buttons-group {
+        gap: 15px;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-text .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons-group {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .hero-text .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
 }
 
 /* YouTube button */

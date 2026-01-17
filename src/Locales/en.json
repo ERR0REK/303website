@@ -124,7 +124,7 @@
     ]
   },
   "about": {
-    "title": "WHAT IS INTERPOLISHFORCES?",
+    "title": "WHAT IS IPF?",
     "subtitle": "Learn about our history, mission, and how to join our community",
     "whoAreWe": "Who are we?",
     "whoAreWeContent": "InterPolishForces is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
@@ -221,52 +221,6 @@
       "updateDate": "Regulations update: 12.10.2025"
     }
   },
-  "changelog": {
-    "title": "CHANGELOG",
-    "subtitle": "See the history of changes and updates to InterPolishForces",
-    "footer": {
-      "thankYou": "💚 Thanks for using InterPolishForces!",
-      "suggest": "Want to suggest a new feature? Contact us on Discord!"
-    },
-    "data": [
-      {
-        "version": "1.5.0",
-        "date": "December 19, 2025",
-        "changes": [
-          {
-            "type": "feature",
-            "title": "Language Carousel",
-            "description": "New language selection system with slider for future languages"
-          },
-          {
-            "type": "feature",
-            "title": "Social Media Links",
-            "description": "Added YouTube and TikTok links on the home page"
-          },
-          {
-            "type": "improvement",
-            "title": "Regulations Banner",
-            "description": "Prominent 'Server Regulations' banner at the top of the Regulations page"
-          },
-          {
-            "type": "improvement",
-            "title": "Performance Optimization",
-            "description": "Reduced background animation FPS in Regulations (6.67 FPS) for better performance"
-          },
-          {
-            "type": "feature",
-            "title": "Anti-Cheat Measures",
-            "description": "Protection against code inspection (F12, right-click)"
-          },
-          {
-            "type": "improvement",
-            "title": "Text Selection",
-            "description": "Disabled user-select globally for better UX"
-          }
-        ]
-      }
-    ]
-  },
   "warLogs": {
     "title": "WAR LOGS",
     "readMore": "ACCESS DATA",
@@ -302,5 +256,44 @@
       "desc": "Total dominance in Orbital Station. The Cybernetic Front was unprepared for our zero-g tactics.",
       "details": "Flawless execution by all units. 300-0 score reflects absolute control over the objective points."
     }
+  },
+  "changelog": {
+    "title": "CHANGELOG",
+    "subtitle": "See the history of changes and updates to InterPolishForces",
+    "footer": {
+      "thankYou": "Thank you for following our development!",
+      "suggest": "Have suggestions? Join our Discord!"
+    },
+    "tabs": {
+      "dev": "DEV Versions",
+      "release": "Release Versions"
+    },
+    "badges": {
+      "dev": "DEV",
+      "release": "RELEASE"
+    },
+    "dev": [
+      { "version": "0.0.11.7", "date": "Jan 18, 2026", "changes": [{ "type": "improvement", "title": "Changelog i18n Integration", "description": "Moved all changelog data to i18n JSON files - removed duplication with single source of truth approach" }, { "type": "improvement", "title": "Multi-language Changelog", "description": "Full translations for all 17 dev versions and descriptions in both English and Polish locales" }, { "type": "improvement", "title": "Dynamic Data Loading", "description": "Implemented i18n.getResourceBundle() to load changelog data dynamically - supports language switching without page reload" }, { "type": "improvement", "title": "(Almost)Full Mobile Phone Support", "description": "Complete mobile responsiveness for all components - optimized for phones ≤480px with proper spacing, typography scaling, and touch-friendly interactions" }, { "type": "bugfix", "title": "Fixed Data Type Handling", "description": "Added proper type fallback for entry badges - prevents undefined errors when loading from nested i18n objects" }] },
+      { "version": "0.0.11.6", "date": "Jan 16, 2026", "changes": [{ "type": "improvement", "title": "About & Regulations Mobile Fix", "description": "Fixed title overflow under navbar on mobile devices - adjusted margin-top and padding for hero sections" }, { "type": "improvement", "title": "Typography Scaling", "description": "Improved font sizing with clamp() for responsive text - titles scale between 1rem-1.2rem on phones" }, { "type": "bugfix", "title": "Hero Title Positioning", "description": "Added margin-top to prevent text from hiding behind fixed navbar (80px desktop, 65px tablet, 60px mobile)" }] },
+      { "version": "0.0.11.5.1", "date": "Jan 15, 2026", "changes": [{ "type": "bugfix", "title": "Navbar Hamburger Breakpoint", "description": "Fixed critical issue where hamburger menu appeared on desktop (was @media 960px, now correctly @media 768px)" }, { "type": "improvement", "title": "Responsive Navbar Heights", "description": "Optimized navbar heights: 80px (desktop >768px), 65px (tablet 481-768px), 60px (mobile ≤480px)" }, { "type": "improvement", "title": "Logo Scaling", "description": "Logo sizes adjusted: 45px → 32px → 28px across breakpoints for better mobile display" }] },
+      { "version": "0.0.11.5", "date": "Jan 15, 2026", "changes": [{ "type": "feature", "title": "War Logs System Complete", "description": "Added War Logs page with expandable cards showing opponent, map, result (WIN/LOSS/EASY_WIN), duration, MVP, and reason" }, { "type": "feature", "title": "War Log Modal Details", "description": "Implemented modal view with two-column layout (sidebar with image + stats, main content with members grid and briefing)" }, { "type": "improvement", "title": "Responsive Grid Layout", "description": "War logs grid: auto-fill (350px min) → single column on mobile with optimized card padding" }, { "type": "improvement", "title": "Global Responsive Padding", "description": "Standardized padding across all components: 30px → 20px → 15px on breakpoints 768px and 480px" }] },
+      { "version": "0.0.11.4", "date": "Dec 22, 2025", "changes": [{ "type": "feature", "title": "LoadingScreen Redesign", "description": "Replaced terminal-style loading with graphical interface: pulsing logo, progress bar (0-100%), 8-stage progress messages" }, { "type": "improvement", "title": "Loading Animation Effects", "description": "Added pulseLogo animation on logo, glitch effect on title, scan line animation across screen, radial gradient background" }, { "type": "improvement", "title": "Progress Messages", "description": "Implemented 8 status messages cycling as progress increases: Initializing → Connecting → Loading Assets → etc." }] },
+      { "version": "0.0.11.3", "date": "Dec 22, 2025", "changes": [{ "type": "feature", "title": "Staff System Implementation", "description": "Built complete staff directory with 14+ role categories: Faction Command, Co-Leaders, Administrators, Moderators, etc." }, { "type": "feature", "title": "Staff Member Data Structure", "description": "Created staffData with: id, name, role, avatar image, robloxUsername, robloxUserId, inGameRank for each member" }, { "type": "feature", "title": "Staff Member Modal", "description": "Added detailed view modals with sidebar (avatar, profile stats) and main content (description, achievements, rank information)" }, { "type": "improvement", "title": "Staff Grid Layout", "description": "Responsive grid with auto-fill and minmax: 280px (desktop) → 250px (tablet) → single column (mobile)" }] },
+      { "version": "0.0.11.2", "date": "Dec 20, 2025", "changes": [{ "type": "feature", "title": "Regulations Page", "description": "Built comprehensive regulations/server rules page with 3 color-coded rule sections (green, cyan, pink) and sticky footer" }, { "type": "feature", "title": "Rule Cards System", "description": "Created rule cards with section numbers, color-coded bullets, hover animations, animated item entrance" }, { "type": "feature", "title": "Warning Panel", "description": "Added red warning panel highlighting critical rules about consequences and KOS (Kill on Sight) list" }, { "type": "improvement", "title": "Glass Morphism Effects", "description": "Enhanced UI with blur effects, gradient overlays, neon glows, and backdrop-filter for modern look" }] },
+      { "version": "0.0.11.1", "date": "Dec 19, 2025", "changes": [{ "type": "feature", "title": "Q&A/FAQ System", "description": "Added expandable Q&A page with FAQ items showing question/answer pairs with smooth animations" }, { "type": "improvement", "title": "i18n Full Integration", "description": "Integrated i18next for Polish/English support with localStorage persistence (i18nextLng key)" }, { "type": "feature", "title": "Language Selector", "description": "Created LanguageSelector component with flag buttons for quick language switching" }] },
+      { "version": "0.0.11", "date": "Dec 18, 2025", "changes": [{ "type": "feature", "title": "About Page", "description": "Built About page with hero section, 'Who Are We?' content, feature list, organizational information, and Discord button" }, { "type": "improvement", "title": "Dark Neon Aesthetic", "description": "Applied #00ff66 military green theme with cyan accents, neon glows (text-shadow), glass morphism, and cyberpunk styling" }, { "type": "improvement", "title": "Typography Setup", "description": "Configured fonts: Orbitron (headers), Chakra Petch (UI), Share Tech Mono (monospace) with proper fallbacks" }] },
+      { "version": "0.0.10", "date": "Dec 18, 2025", "changes": [{ "type": "feature", "title": "Hero Section", "description": "Created landing page hero with organization name, welcome text, and 3 CTA buttons (Discord, YouTube, TikTok)" }, { "type": "feature", "title": "Responsive Navbar", "description": "Built fixed navbar with logo, organization name, navigation links (Home, About, Staff, etc.), language dropdown" }, { "type": "feature", "title": "Hamburger Menu", "description": "Implemented mobile hamburger menu that toggles nav links on small screens with smooth slide animation" }] },
+      { "version": "0.0.9.4", "date": "Dec 14, 2025", "changes": [{ "type": "bugfix", "title": "Layout & Spacing Fixes", "description": "Fixed margin and padding inconsistencies across components - corrected misaligned elements and white space issues" }, { "type": "bugfix", "title": "CSS Grid Alignment", "description": "Fixed CSS Grid alignment issues in staff and rules components - proper row/column spanning" }, { "type": "improvement", "title": "Component Consistency", "description": "Standardized component spacing and sizing for unified visual appearance across pages" }] },
+      { "version": "0.0.9.3", "date": "Dec 14, 2025", "changes": [{ "type": "bugfix", "title": "React Component Issues", "description": "Fixed component rendering bugs - corrected state management issues and re-render problems" }, { "type": "bugfix", "title": "Modal Close Behavior", "description": "Fixed modals not closing properly - added proper event handlers and cleanup functions" }, { "type": "improvement", "title": "React Hooks Usage", "description": "Optimized useEffect and useState calls - removed unnecessary dependencies and memory leaks" }] },
+      { "version": "0.0.9.2", "date": "Dec 14, 2025", "changes": [{ "type": "bugfix", "title": "CSS Styling Corrections", "description": "Fixed styling issues: wrong colors, missing borders, incorrect shadows - cleaned up CSS override conflicts" }, { "type": "bugfix", "title": "Color Scheme Issues", "description": "Corrected color values: military-green references, text colors, background gradients now consistent" }, { "type": "improvement", "title": "Breakpoint Fine-tuning", "description": "Adjusted responsive breakpoints for better tablet/mobile experience - optimized 768px and 480px media queries" }] },
+      { "version": "0.0.9.1", "date": "Dec 14, 2025", "changes": [{ "type": "bugfix", "title": "Minor Bug Fixes", "description": "Fixed small issues: typos in text, incorrect image paths, broken links in navigation" }, { "type": "bugfix", "title": "Console Error Cleanup", "description": "Removed console warnings about missing keys in lists, deprecated lifecycle methods, prop validation errors" }, { "type": "improvement", "title": "Code Quality", "description": "Improved code consistency and removed dead code branches left from previous iterations" }] },
+      { "version": "0.0.9", "date": "Dec 10, 2025", "changes": [{ "type": "bugfix", "title": "Framer Motion Optimization", "description": "Removed unused Framer Motion animations from components to reduce bundle size and improve performance" }, { "type": "improvement", "title": "Bundle Size Reduction", "description": "Eliminated unnecessary motion variants and animation configs - reduced ~50KB from build output" }, { "type": "improvement", "title": "Performance Boost", "description": "Simplified animations focused on critical sections - improved Core Web Vitals scores" }] },
+      { "version": "0.0.8.3", "date": "Dec 10, 2025", "changes": [{ "type": "improvement", "title": "Second Round Testing", "description": "Comprehensive testing phase 2: tested all pages, modals, responsive breakpoints on different devices" }, { "type": "bugfix", "title": "Edge Case Fixes", "description": "Fixed issues found during testing: mobile layout breaks, modal interaction bugs, language switching problems" }, { "type": "improvement", "title": "User Experience Testing", "description": "Tested user flows: navigation, form interactions, modal opens/closes - verified smooth experience" }] },
+      { "version": "0.0.8.2", "date": "Dec 10, 2025", "changes": [{ "type": "improvement", "title": "First Round Testing", "description": "Initial comprehensive testing phase 1: verified component rendering, navigation flows, responsive design" }, { "type": "bugfix", "title": "Critical Issues Found", "description": "Identified and documented critical issues for fixing: hamburger menu, modal behavior, responsive gaps" }, { "type": "improvement", "title": "Quality Assurance", "description": "Set up testing procedures and created test cases for future QA iterations" }] },
+      { "version": "0.0.8.1", "date": "Dec 10, 2025", "changes": [{ "type": "feature", "title": "Testing Infrastructure", "description": "Set up Jest + React Testing Library with setupTests.js configuration for unit testing" }, { "type": "feature", "title": "QA Framework", "description": "Implemented quality assurance framework with test utilities, mock data, and test patterns" }, { "type": "improvement", "title": "Development Process", "description": "Established testing workflow and automated check procedures before production builds" }] }
+    ],
+    "release": [
+      { "version": "1.0.0", "date": "Coming Soon", "changes": [{ "type": "feature", "title": "Production Launch", "description": "Official public release of InterPolishForces website" }, { "type": "feature", "title": "Final Polish", "description": "Bug fixes and performance optimization" }, { "type": "feature", "title": "Live Backend", "description": "Integration with live server APIs and databases" }] }
+    ]
   }
 }
