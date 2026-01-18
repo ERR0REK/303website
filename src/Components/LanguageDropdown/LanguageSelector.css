@@ -12,10 +12,28 @@
 }
 
 @keyframes tacticalGlitchIn {
-    0% { opacity: 0; transform: scale(1.1) skew(10deg); filter: hue-rotate(90deg) brightness(2); }
-    20% { opacity: 0.5; transform: scale(0.98) skew(-5deg); filter: hue-rotate(0deg) brightness(1.5); }
-    40% { opacity: 0.8; transform: scale(1.02) skew(2deg); }
-    100% { opacity: 1; transform: scale(1) skew(0deg); filter: brightness(1); }
+    0% {
+        opacity: 0;
+        transform: scale(1.1) skew(10deg);
+        filter: hue-rotate(90deg) brightness(2);
+    }
+
+    20% {
+        opacity: 0.5;
+        transform: scale(0.98) skew(-5deg);
+        filter: hue-rotate(0deg) brightness(1.5);
+    }
+
+    40% {
+        opacity: 0.8;
+        transform: scale(1.02) skew(2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) skew(0deg);
+        filter: brightness(1);
+    }
 }
 
 .language-modal {
@@ -43,30 +61,51 @@
             40px 100%, 0 calc(100% - 40px));
 }
 
-/* Bright Tactical Brackets */
-.language-modal::before,
-.language-modal::after {
-    content: '';
+/* HUD Corners for Language Modal */
+.lang-hud-tl,
+.lang-hud-tr,
+.lang-hud-bl,
+.lang-hud-br {
     position: absolute;
-    width: 70px;
-    height: 70px;
-    border: 4px solid #00ff66;
-    pointer-events: none;
-    filter: drop-shadow(0 0 15px rgba(0, 255, 102, 0.6));
+    width: 40px;
+    height: 40px;
+    border: 3px solid #00ff66;
+    z-index: 10;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 102, 0.4));
 }
 
-.language-modal::before {
-    top: 20px;
-    left: 20px;
+.lang-hud-tl {
+    top: 30px;
+    left: 30px;
     border-right: none;
     border-bottom: none;
 }
 
-.language-modal::after {
-    bottom: 20px;
-    right: 20px;
+.lang-hud-tr {
+    top: 30px;
+    right: 30px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.lang-hud-bl {
+    bottom: 30px;
+    left: 30px;
+    border-right: none;
+    border-top: none;
+}
+
+.lang-hud-br {
+    bottom: 30px;
+    right: 30px;
     border-left: none;
     border-top: none;
+}
+
+.language-header-group {
+    margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 5;
 }
 
 .language-modal-title {
@@ -75,16 +114,19 @@
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin-bottom: 3.5rem;
-    position: relative;
-    display: inline-block;
-    text-shadow:
-        0 0 10px rgba(0, 255, 102, 0.5),
-        2px 2px #000;
-    z-index: 5;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
 }
 
-.language-modal-title::after {
+.language-modal-desc {
+    font-family: 'Share Tech Mono', monospace;
+    color: #00ff66;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.language-header-group::after {
     content: '';
     position: absolute;
     bottom: -15px;

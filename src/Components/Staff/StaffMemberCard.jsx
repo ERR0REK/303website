@@ -1,56 +1,50 @@
 /* src/Components/Staff/StaffMemberCard.jsx */
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { motion } from "framer-motion";
 
-const StaffMemberCard = ({ member, onMoreInfo }) => {
-  const { t } = useTranslation();
-
-  const getRoleClass = (role) => {
-    const r = role.toLowerCase();
-    if (r.includes('command')) return 'role-command';
-    if (r.includes('co leader')) return 'role-coleader';
-    if (r.includes('administrator')) return 'role-admin';
-    if (r.includes('moderator')) return 'role-mod';
-    if (r.includes('elder')) return 'role-elder';
-    return '';
-  };
+export default function StaffMemberCard({ member, onMoreInfo }) {
+  if (!member) return null;
 
   return (
     <motion.div
-      className="staff-member-card"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true }}
+      className="staff-card"
+      onClick={() => onMoreInfo(member)}
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
       whileHover={{ y: -5 }}
     >
-      <div className="staff-card-inner">
-
-
-        <div className="staff-member-avatar-container">
+      <div className="card-top">
+        <div className="avatar-container">
+          <div className="avatar-frame"></div>
           <img
-            src={member.avatar || 'https://via.placeholder.com/150'}
+            src={member.avatar || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"}
             alt={member.name}
-            className="staff-member-avatar"
+            className="staff-pfp"
           />
         </div>
-        <h3 className="staff-member-name">{member.name}</h3>
-        <p className={`staff-member-role ${getRoleClass(member.role)}`}>
-          <span>[</span> {member.role} <span>]</span>
-        </p>
-        <motion.button
-          className="staff-member-button"
-          onClick={() => onMoreInfo && onMoreInfo(member)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {t('staff.viewDossier', 'View Dossier')}
-        </motion.button>
+        <div className="info-container">
+          <h3 className="member-name">{member.name}</h3>
+          <p className="member-role">{member.role}</p>
+        </div>
       </div>
+
+      <div className="card-meta">
+        <div className="meta-item">
+          <span className="meta-label">ID_SCAN:</span>
+          <span className="meta-val">#{member.id.toString().padStart(4, '0')}</span>
+        </div>
+        <div className="meta-item">
+          <span className="meta-label">STATUS:</span>
+          <span className="meta-val" style={{ color: '#00ff66' }}>ACTIVE</span>
+        </div>
+      </div>
+
+      {/* HUD Decos */}
+      <div className="scan-line"></div>
+      <div className="c-tl"></div><div className="c-tr"></div>
+      <div className="c-bl"></div><div className="c-br"></div>
     </motion.div>
   );
-};
-
-export default StaffMemberCard;
+}

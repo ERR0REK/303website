@@ -20,6 +20,9 @@ export default function Regulations() {
     <div className="regulations-page">
       <Navbar />
 
+      <div className="reg-overlay"></div>
+      <div className="reg-scanlines"></div>
+
       <main className="reg-main-container">
         {/* --- Część przewijana --- */}
         <section className="reg-scrollable-part">

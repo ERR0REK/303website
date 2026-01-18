@@ -1,24 +1,70 @@
 /* src/Components/Pages/QA.jsx */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  ChevronDown,
+  ChevronUp,
+  Cpu,
+  Terminal,
+  Search,
+  BookOpen
+} from 'lucide-react';
 import Navbar from '../Navbar/Navbar';
-import QAItem from '../QA/QAItem';
 import '../QA/QA.css';
+
+const FAQItem = ({ question, answer, index }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div
+      className={`qa-item ${isOpen ? 'active' : ''}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+    >
+      <button
+        className="qa-question"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+      >
+        <div className="q-tag">Q_{index + 1}</div>
+        <span className="q-text">{question}</span>
+        <div className="q-icon">
+          {isOpen ? <ChevronUp /> : <ChevronDown />}
+        </div>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="qa-answer-wrapper"
+          >
+            <div className="qa-answer">
+              <div className="a-tag">SYSTEM_RESPONSE</div>
+              <div className="a-content">{answer}</div>
+              <div className="a-decoration"></div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="qa-glow"></div>
+    </motion.div>
+  );
+};
 
 export default function Qa() {
   const { t } = useTranslation();
 
-  // ===== WIP: PYTANIA I ODPOWIEDZI =====
-  // TODO: Dodaj własne pytania i odpowiedzi dla FAQ
-  // Poniższy kod jest zakomentowany - jak będziesz miał pomysł na pytania,
-  // możesz go rozkmentować i przerobić z oryginalnym kodem
-
-  /*
-  // Pytania i odpowiedzi - można je przenieść do tłumaczeń
+  // FAQ Data - Moved into component for reactivity
   const faqs = [
     {
-      question: t('qa.faqs.0.question', 'Jak mogę dołączyć do 303rd Division?'),
+      question: t('qa.faqs.0.question', 'Jak mogę dołączyć do InterPolishForces?'),
       answer: t('qa.faqs.0.answer', 'Aby dołączyć do naszej frakcji, musisz wejść na nasz serwer Roblox i poprosić o zaproszenie. Zwróć się do dowolnego członka administracji z wymaganą dokumentacją.'),
     },
     {
@@ -50,41 +96,56 @@ export default function Qa() {
       answer: t('qa.faqs.7.answer', 'Tak, jest to możliwe. Musisz wykazać się odpowiednimi umiejętnościami, byciem godnym zaufania i aktywnym członkiem zespołu. Odpowiednia osoba z administracji powinna Cię zaproponować.'),
     },
   ];
-  */
-
-  // Na razie pusty array - dodaj pytania gdy będziesz miał pomysł
-  const faqs = [];
 
   return (
     <div className="qa-page">
       <Navbar />
 
-      {/* --- Sekcja Hero --- */}
-      <section className="qa-hero-section">
-        <h1 className="qa-hero-title">{t('qa.title')}</h1>
-        <p className="qa-hero-subtitle">
-          {t('qa.subtitle')}
+      <div className="qa-overlay"></div>
+      <div className="qa-scanlines"></div>
+
+      {/* --- Hero Section --- */}
+      <section className="qa-hero">
+        <div className="hero-decoration">
+          <Search size={16} />
+          <span>KNOWLEDGE_BASE_v2.0</span>
+          <Cpu size={16} />
+        </div>
+        <h1 className="qa-title glitch-text" data-text={t('qa.title', 'FAQ')}>
+          {t('qa.title', 'FAQ')}
+        </h1>
+        <p className="qa-subtitle">
+          {t('qa.subtitle', 'Najczęściej zadawane pytania i odpowiedzi dotyczące InterPolishForces')}
         </p>
-        <div className="qa-hero-divider"></div>
+        <div className="hero-divider">
+          <span></span><Terminal size={20} /><span></span>
+        </div>
       </section>
 
-      {/* --- Główny kontener treści --- */}
-      <main className="qa-main-container">
-        <div className="qa-faq-container">
-          {faqs && faqs.length > 0 ? (
-            faqs.map((faq, index) => (
-              <QAItem
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-                index={index}
-              />
-            ))
-          ) : (
-            <p className="qa-no-items">{t('qa.noItems')}</p>
-          )}
+      {/* --- FAQ List --- */}
+      <main className="qa-container">
+        <div className="qa-list-header">
+          <BookOpen size={20} />
+          <h2>{t('qa.availableFaqs', 'DOSTĘPNE INFORMACJE')}</h2>
+        </div>
+
+        <div className="qa-faq-list">
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              index={index}
+            />
+          ))}
         </div>
       </main>
+
+      <footer className="qa-footer">
+        <div className="footer-deco">
+          <span></span><span></span><span></span>
+        </div>
+      </footer>
     </div>
   );
 }

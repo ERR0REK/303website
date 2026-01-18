@@ -54,7 +54,14 @@ const LanguageSelector = ({ onSelect, forceShow = false }) => {
             {showModal && (
                 <div className="language-modal-overlay">
                     <div className="language-modal">
-                        <h2 className="language-modal-title">SELECT INTERFACE LANGUAGE</h2>
+                        {/* HUD Elements */}
+                        <div className="lang-hud-tl"></div><div className="lang-hud-tr"></div>
+                        <div className="lang-hud-bl"></div><div className="lang-hud-br"></div>
+
+                        <div className="language-header-group">
+                            <h2 className="language-modal-title">SELECT INTERFACE LANGUAGE</h2>
+                            <p className="language-modal-desc">Unauthorized access restricted. Choose a secure translation uplink to proceed.</p>
+                        </div>
 
                         <div className="language-carousel-wrapper">
                             <button

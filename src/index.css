@@ -107,8 +107,9 @@ a {
 
 @media (max-width: 480px) {
   .btn {
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
 }
 

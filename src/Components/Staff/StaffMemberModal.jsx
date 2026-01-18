@@ -3,6 +3,15 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+  X,
+  ExternalLink,
+  Shield,
+  User,
+  Activity,
+  Database,
+  Terminal
+} from 'lucide-react';
 
 const StaffMemberModal = ({ member, onClose }) => {
   const { t } = useTranslation();
@@ -28,88 +37,60 @@ const StaffMemberModal = ({ member, onClose }) => {
     <AnimatePresence>
       {member && (
         <motion.div
-          className={`staff-modal-overlay ${isClosing ? 'closing' : ''}`}
+          className="staff-modal-overlay"
           onClick={handleBackdropClick}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
         >
           <motion.div
-            className={`staff-modal-content ${isClosing ? 'closing' : ''}`}
-            initial={{ opacity: 0, scale: 0.8, y: -30 }}
+            className="staff-modal-content"
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: -30 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
-            <motion.button
-              className="staff-modal-close"
-              onClick={handleClose}
-              whileHover={{ rotate: 90, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-            >
-              ✕
-            </motion.button>
+            {/* HUD Elements */}
+            <div className="m-tl"></div><div className="m-tr"></div>
+            <div className="m-bl"></div><div className="m-br"></div>
+            <div className="modal-scanner-line"></div>
 
-            <motion.div
-              className="staff-modal-header"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            <button className="staff-modal-close" onClick={handleClose}>
+              <X size={20} />
+            </button>
+
+            <div className="staff-modal-header">
               <div style={{ position: 'relative' }}>
                 <div className="staff-img-scanner"></div>
-                <motion.img
+                <img
                   src={member.avatar || 'https://via.placeholder.com/150'}
                   alt={member.name}
                   className="staff-modal-avatar"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
                 />
               </div>
               <div className="staff-modal-info">
-                <motion.h2
-                  className="staff-modal-name"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.15 }}
-                >
-                  {member.name}
-                </motion.h2>
-                <motion.p
-                  className="staff-modal-role"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
-                >
-                  {member.role}
-                </motion.p>
+                <div className="dossier-tag">SUBJECT_DOSSIER_v4.2</div>
+                <h2 className="staff-modal-name">{member.name}</h2>
+                <p className="staff-modal-role">{member.role}</p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="staff-modal-body"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <p className="staff-modal-description">
-                {t(`staff.descriptions.${member.name.toLowerCase()}`, t('common.noDescription'))}
-              </p>
+            <div className="staff-modal-body">
+              <div className="staff-modal-description">
+                <div className="bio-label">
+                  <Terminal size={14} />
+                  <span>INTEL_SUMMARY</span>
+                </div>
+                <p>
+                  {t(`staff.descriptions.${member.name.toLowerCase()}`, t('common.noDescription', 'No description available in the database.'))}
+                </p>
+              </div>
 
-              <motion.div
-                className="staff-modal-details"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
-                <motion.div
-                  className="staff-modal-detail-item"
-                  whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span className="staff-modal-label">{t('staffModal.robloxUsername')}:</span>
+              <div className="staff-modal-details">
+                <div className="staff-modal-detail-item">
+                  <span className="staff-modal-label">
+                    <User size={16} /> {t('staffModal.robloxUsername', 'ROBLOX_UID')}
+                  </span>
                   <span className="staff-modal-value">
                     {member.robloxUsername && member.robloxUserId ? (
                       <a
@@ -118,68 +99,42 @@ const StaffMemberModal = ({ member, onClose }) => {
                         rel="noopener noreferrer"
                         className="staff-modal-link"
                       >
-                        {member.robloxUsername}
+                        {member.robloxUsername} <ExternalLink size={12} style={{ marginLeft: 5 }} />
                       </a>
                     ) : (
-                      member.robloxUsername || t('common.na')
+                      member.robloxUsername || t('common.na', 'N/D')
                     )}
                   </span>
-                </motion.div>
-                <motion.div
-                  className="staff-modal-detail-item"
-                  whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span className="staff-modal-label">{t('staffModal.inGameRank')}:</span>
-                  <span className="staff-modal-value">{member.inGameRank || t('common.na')}</span>
-                </motion.div>
-                <motion.div
-                  className="staff-modal-detail-item"
-                  whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span className="staff-modal-label">{t('staffModal.role')}:</span>
-                  <span className="staff-modal-value">{member.role}</span>
-                </motion.div>
-                {member.joinDate && (
-                  <motion.div
-                    className="staff-modal-detail-item"
-                    whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="staff-modal-label">{t('staffModal.joinDate', 'Dołączył')}:</span>
-                    <span className="staff-modal-value">{member.joinDate}</span>
-                  </motion.div>
-                )}
-                {member.achievements && (
-                  <motion.div
-                    className="staff-modal-detail-item"
-                    whileHover={{ x: 5, backgroundColor: 'rgba(0, 255, 76, 0.15)' }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="staff-modal-label">{t('staffModal.achievements', 'Osiągnięcia')}:</span>
-                    <span className="staff-modal-value">{member.achievements}</span>
-                  </motion.div>
-                )}
-              </motion.div>
-            </motion.div>
+                </div>
 
-            <motion.div
-              className="staff-modal-footer"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.35 }}
-            >
-              <motion.button
-                className="staff-modal-button-close"
-                onClick={handleClose}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                {t('staffModal.close')}
-              </motion.button>
-            </motion.div>
+                <div className="staff-modal-detail-item">
+                  <span className="staff-modal-label">
+                    <Shield size={16} /> {t('staffModal.inGameRank', 'FACTION_RANK')}
+                  </span>
+                  <span className="staff-modal-value">{member.inGameRank || t('common.na', 'N/D')}</span>
+                </div>
+
+                <div className="staff-modal-detail-item">
+                  <span className="staff-modal-label">
+                    <Activity size={16} /> {t('staffModal.role', 'ASSIGNMENT')}
+                  </span>
+                  <span className="staff-modal-value">{member.role}</span>
+                </div>
+
+                <div className="staff-modal-detail-item">
+                  <span className="staff-modal-label">
+                    <Database size={16} /> {t('staffModal.status', 'CLEARANCE')}
+                  </span>
+                  <span className="staff-modal-value" style={{ color: '#00ff66' }}>VERIFIED_STAFF</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="staff-modal-footer">
+              <button className="staff-modal-button-close" onClick={handleClose}>
+                {t('common.close', 'ZAMKNIJ')}
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       )}

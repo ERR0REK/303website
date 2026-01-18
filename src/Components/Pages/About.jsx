@@ -5,46 +5,71 @@ import { useTranslation } from 'react-i18next';
 import Navbar from '../Navbar/Navbar';
 import '../About/About.css';
 import { motion } from 'framer-motion';
+import {
+  Target,
+  Shield,
+  Users,
+  Zap,
+  Trophy,
+  Cpu,
+  Radio,
+  Globe,
+  Terminal,
+  MessageSquare,
+  Gamepad2
+} from 'lucide-react';
 
 export default function About() {
   const { t } = useTranslation();
 
-  // Animation variants
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
-
-  const listVariants = {
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 }
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4 }
+    }
   };
 
   return (
     <div className="about-page">
       <Navbar />
 
-      {/* --- Sekcja Hero --- */}
+      <div className="about-overlay"></div>
+      <div className="about-scanlines"></div>
+
+      {/* --- Hero Section --- */}
       <motion.section
-        className="about-hero-section"
+        className="about-hero"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
+        <div className="hero-decoration">
+          <Terminal size={16} className="hero-icon" />
+          <span className="hero-tag">FACTION_MANIFESTO</span>
+        </div>
         <motion.h1
-          className="about-hero-title"
+          className="about-title glitch-text"
+          data-text={t('about.title')}
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
@@ -52,115 +77,148 @@ export default function About() {
           {t('about.title')}
         </motion.h1>
         <motion.p
-          className="about-hero-subtitle"
+          className="about-subtitle"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
           {t('about.subtitle')}
         </motion.p>
-        <div className="about-hero-divider"></div>
+        <div className="hero-divider">
+          <span></span><Cpu size={20} /><span></span>
+        </div>
       </motion.section>
 
-      {/* --- Główny kontener treści --- */}
-      <main className="about-main-container">
-
-        {/* --- Sekcja: Kim jesteśmy? --- */}
-        <motion.section
-          className="about-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <h2 className="about-section-title">{t('about.whoAreWe')}</h2>
-          <div className="about-content">
+      {/* --- Main Content --- */}
+      <motion.main
+        className="about-container"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {/* Kim jesteśmy? */}
+        <motion.section className="about-card" variants={sectionVariants}>
+          <div className="card-header">
+            <Users className="card-icon" />
+            <h2 className="card-title">{t('about.whoAreWe')}</h2>
+          </div>
+          <div className="card-body">
             <p>{t('about.whoAreWeContent')}</p>
             <p>{t('about.whoAreWeContent2')}</p>
           </div>
+          <div className="card-scanner"></div>
+          <div className="corner tl"></div><div className="corner tr"></div>
+          <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* --- Sekcja: Nasza misja --- */}
-        <motion.section
-          className="about-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <h2 className="about-section-title">{t('about.ourMission')}</h2>
-          <div className="about-content">
+        {/* Nasza misja */}
+        <motion.section className="about-card highlight" variants={sectionVariants}>
+          <div className="card-header">
+            <Target className="card-icon" />
+            <h2 className="card-title">{t('about.ourMission')}</h2>
+          </div>
+          <div className="card-body">
             <p>{t('about.ourMissionContent')}</p>
-            <motion.ul className="about-features-list" variants={listVariants}>
-              <motion.li variants={itemVariants}>{t('about.mission1')}</motion.li>
-              <motion.li variants={itemVariants}>{t('about.mission2')}</motion.li>
-              <motion.li variants={itemVariants}>{t('about.mission3')}</motion.li>
-              <motion.li variants={itemVariants}>{t('about.mission4')}</motion.li>
-              <motion.li variants={itemVariants}>{t('about.mission5')}</motion.li>
-            </motion.ul>
+            <div className="features-grid">
+              {[1, 2, 3, 4, 5].map((num) => (
+                <motion.div key={num} className="feature-item" variants={itemVariants}>
+                  <Zap size={18} className="feature-icon" />
+                  <span>{t(`about.mission${num}`)}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
+          <div className="card-scanner"></div>
+          <div className="corner tl"></div><div className="corner tr"></div>
+          <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* --- Sekcja: Wartości --- */}
-        <motion.section
-          className="about-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <h2 className="about-section-title">{t('about.values')}</h2>
-          <div className="about-content">
-            <p>{t('about.valuesIntro')}</p>
-            <motion.ul className="about-features-list" variants={listVariants}>
-              <motion.li variants={itemVariants}><strong>{t('about.value1Title')}</strong>{t('about.value1Content')}</motion.li>
-              <motion.li variants={itemVariants}><strong>{t('about.value2Title')}</strong>{t('about.value2Content')}</motion.li>
-              <motion.li variants={itemVariants}><strong>{t('about.value3Title')}</strong>{t('about.value3Content')}</motion.li>
-              <motion.li variants={itemVariants}><strong>{t('about.value4Title')}</strong>{t('about.value4Content')}</motion.li>
-              <motion.li variants={itemVariants}><strong>{t('about.value5Title')}</strong>{t('about.value5Content')}</motion.li>
-            </motion.ul>
+        {/* Wartości */}
+        <motion.section className="about-card" variants={sectionVariants}>
+          <div className="card-header">
+            <Shield className="card-icon" />
+            <h2 className="card-title">{t('about.values')}</h2>
           </div>
+          <div className="card-body">
+            <p className="intro-text">{t('about.valuesIntro')}</p>
+            <div className="values-list">
+              {[1, 2, 3, 4, 5].map((num) => (
+                <motion.div key={num} className="value-entry" variants={itemVariants}>
+                  <div className="value-header">
+                    <Radio size={16} />
+                    <span className="value-title">{t(`about.value${num}Title`)}</span>
+                  </div>
+                  <p className="value-desc">{t(`about.value${num}Content`)}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="card-scanner"></div>
+          <div className="corner tl"></div><div className="corner tr"></div>
+          <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* --- Sekcja: Struktura organizacyjna --- */}\
-        <motion.section
-          className="about-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <h2 className="about-section-title">{t('about.structure')}</h2>
-          <div className="about-content">
+        {/* Struktura */}
+        <motion.section className="about-card" variants={sectionVariants}>
+          <div className="card-header">
+            <Globe className="card-icon" />
+            <h2 className="card-title">{t('about.structure')}</h2>
+          </div>
+          <div className="card-body">
             <p>{t('about.structureContent')}</p>
             <p>{t('about.structureContent2')}</p>
           </div>
+          <div className="card-scanner"></div>
+          <div className="corner tl"></div><div className="corner tr"></div>
+          <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* --- Sekcja: Kontakt i Dołącz --- */}\
-        <motion.section
-          className="about-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <h2 className="about-section-title">{t('about.howToJoin')}</h2>
-          <div className="about-content">
-            <p>{t('about.howToJoinContent')}</p>
-            <button className="about-discord-button" onClick={() => window.open('https://discord.gg/your-link', '_blank')}>
-              {t('about.joinDiscord')}
-            </button>
-            <div style={{ marginTop: '30px' }}>
-              <h3>{t('about.contact')}</h3>
-              <ul className="about-features-list">
-                <li>{t('about.contactDiscord')}</li>
-                <li>{t('about.contactRoblox')}</li>
-              </ul>
+        {/* Kontakt i Dołącz */}
+        <motion.section className="about-card join-card" variants={sectionVariants}>
+          <div className="card-header">
+            <MessageSquare className="card-icon" />
+            <h2 className="card-title">{t('about.howToJoin')}</h2>
+          </div>
+          <div className="card-body join-layout">
+            <div className="join-info">
+              <p>{t('about.howToJoinContent')}</p>
+              <motion.button
+                className="join-btn"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 255, 102, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.open('https://discord.gg/your-link', '_blank')}
+              >
+                <div className="btn-glow"></div>
+                <span>{t('about.joinDiscord')}</span>
+              </motion.button>
+            </div>
+
+            <div className="contact-info">
+              <h3 className="contact-title">{t('about.contact')}</h3>
+              <div className="contact-links">
+                <div className="link-item">
+                  <Terminal size={14} />
+                  <span>{t('about.contactDiscord')}</span>
+                </div>
+                <div className="link-item">
+                  <Gamepad2 size={14} />
+                  <span>{t('about.contactRoblox')}</span>
+                </div>
+              </div>
             </div>
           </div>
+          <div className="card-scanner"></div>
+          <div className="corner tl"></div><div className="corner tr"></div>
+          <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
-      </main>
+      </motion.main>
+
+      <footer className="about-footer">
+        <div className="footer-decoration">
+          <span></span><Trophy size={18} /><span></span>
+        </div>
+      </footer>
     </div>
   );
 }

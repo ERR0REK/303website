@@ -2,7 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Sparkles,
+  Bug,
+  Zap,
+  ShieldCheck,
+  FileText,
+  Rocket,
+  Cpu,
+  ChevronRight,
+  ChevronDown,
+  Info
+} from 'lucide-react';
 import Navbar from '../Navbar/Navbar';
 import '../Changelog/Changelog.css';
 
@@ -17,7 +29,7 @@ export default function Changelog() {
   useEffect(() => {
     const devData = i18n.getResourceBundle(i18n.language, 'translation')?.changelog?.dev;
     const releaseData = i18n.getResourceBundle(i18n.language, 'translation')?.changelog?.release;
-    
+
     if (Array.isArray(devData)) setDevVersions(devData);
     if (Array.isArray(releaseData)) setReleaseVersions(releaseData);
   }, [i18n.language]);
@@ -25,22 +37,33 @@ export default function Changelog() {
   const currentVersions = activeCategory === 'dev' ? devVersions : releaseVersions;
 
   const getIcon = (type) => {
-    const icons = {
-      'feature': '✨',
-      'bugfix': '🐛',
-      'improvement': '⚡',
-      'security': '🔒'
-    };
-    return icons[type] || '📝';
+    switch (type) {
+      case 'feature': return <Sparkles className="icon-main" />;
+      case 'bugfix': return <Bug className="icon-main" />;
+      case 'improvement': return <Zap className="icon-main" />;
+      case 'security': return <ShieldCheck className="icon-main" />;
+      case 'info': return <Info className="icon-main" />;
+      default: return <FileText className="icon-main" />;
+    }
   };
 
   return (
     <div className="changelog-page">
       <Navbar />
 
+      <div className="changelog-overlay"></div>
+      <div className="changelog-scanlines"></div>
+
       {/* Hero Section */}
       <section className="changelog-hero">
-        <h1 className="changelog-title">{t('changelog.title', 'CHANGELOG')}</h1>
+        <div className="hero-decoration-top">
+          <span className="line"></span>
+          <span className="tag">DATABASE_LOGS</span>
+          <span className="line"></span>
+        </div>
+        <h1 className="changelog-title glitch-text" data-text={t('changelog.title', 'CHANGELOG')}>
+          {t('changelog.title', 'CHANGELOG')}
+        </h1>
         <p className="changelog-subtitle">
           {t('changelog.subtitle', 'See the history of changes and updates to InterPolishForces')}
         </p>
@@ -52,14 +75,16 @@ export default function Changelog() {
           className={`tab-button ${activeCategory === 'dev' ? 'active' : ''}`}
           onClick={() => setActiveCategory('dev')}
         >
-          <span className="tab-icon">⚙️</span>
+          <div className="tab-glow"></div>
+          <Cpu className="tab-icon" />
           <span className="tab-label">{t('changelog.tabs.dev', 'DEV Versions')}</span>
         </button>
         <button
           className={`tab-button ${activeCategory === 'release' ? 'active' : ''}`}
           onClick={() => setActiveCategory('release')}
         >
-          <span className="tab-icon">🚀</span>
+          <div className="tab-glow"></div>
+          <Rocket className="tab-icon" />
           <span className="tab-label">{t('changelog.tabs.release', 'Release Versions')}</span>
         </button>
       </section>
@@ -70,52 +95,89 @@ export default function Changelog() {
           {currentVersions.map((entry, index) => (
             <motion.div
               key={entry.version}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className={`changelog-entry ${entry.type}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05, duration: 0.5 }}
+              className={`changelog-entry-wrapper ${expandedVersion === entry.version ? 'expanded' : ''}`}
             >
               <div
-                className="changelog-header"
+                className={`changelog-entry ${entry.type || activeCategory}`}
                 onClick={() => setExpandedVersion(expandedVersion === entry.version ? null : entry.version)}
               >
-                <div className="version-info">
-                  <h2 className="version-number">v{entry.version}</h2>
-                  <span className="version-date">{entry.date}</span>
-                  <span className={`version-badge ${entry.type || activeCategory}`}>
-                    {t(`changelog.badges.${entry.type || activeCategory}`, (entry.type || activeCategory).toUpperCase())}
-                  </span>
-                </div>
-                <div className="expand-icon">
-                  {expandedVersion === entry.version ? '▼' : '▶'}
-                </div>
-              </div>
+                <div className="entry-header">
+                  <div className="version-tag">
+                    <span className="v-label">VER</span>
+                    <span className="v-num">{entry.version}</span>
+                  </div>
 
-              {expandedVersion === entry.version && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  className="changelog-changes"
-                >
-                  {entry.changes.map((change, changeIndex) => (
-                    <div key={changeIndex} className={`change-item change-${change.type}`}>
-                      <span className="change-icon">{getIcon(change.type)}</span>
-                      <div className="change-content">
-                        <h3 className="change-title">{change.title}</h3>
-                        <p className="change-description">{change.description}</p>
+                  <div className="version-info">
+                    <span className="version-date">{entry.date}</span>
+                    <span className={`version-type-badge ${entry.type || activeCategory}`}>
+                      {t(`changelog.badges.${entry.type || activeCategory}`, (entry.type || activeCategory).toUpperCase())}
+                    </span>
+                  </div>
+
+                  <div className="expand-indicator">
+                    {expandedVersion === entry.version ? <ChevronDown /> : <ChevronRight />}
+                  </div>
+                </div>
+
+                <AnimatePresence>
+                  {expandedVersion === entry.version && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="changelog-details"
+                    >
+                      <div className="details-inner">
+                        <div className="corner tl"></div>
+                        <div className="corner tr"></div>
+                        <div className="corner bl"></div>
+                        <div className="corner br"></div>
+
+                        <div className="changes-list">
+                          {entry.changes.map((change, changeIndex) => (
+                            <motion.div
+                              key={changeIndex}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: changeIndex * 0.1 }}
+                              className={`change-item type-${change.type}`}
+                            >
+                              <div className="change-icon-box">
+                                {getIcon(change.type)}
+                              </div>
+                              <div className="change-content">
+                                <h3 className="change-title">{change.title}</h3>
+                                <p className="change-description">{change.description}</p>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </motion.div>
-              )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <div className="entry-background"></div>
+                <div className="entry-scanner"></div>
+              </div>
             </motion.div>
           ))}
         </div>
 
         {/* Footer */}
         <footer className="changelog-footer">
-          <p>{t('changelog.footer.thankYou', 'Thank you for following our development!')}</p>
-          <p>{t('changelog.footer.suggest', 'Have suggestions? Join our Discord!')}</p>
+          <div className="footer-line"></div>
+          <div className="footer-content">
+            <p className="footer-thanks">{t('changelog.footer.thankYou', 'Thank you for following our development!')}</p>
+            <p className="footer-discord">{t('changelog.footer.suggest', 'Have suggestions? Join our Discord!')}</p>
+          </div>
+          <div className="footer-decoration">
+            <span></span><span></span><span></span>
+          </div>
         </footer>
       </main>
     </div>

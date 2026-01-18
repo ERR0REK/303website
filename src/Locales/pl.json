@@ -221,52 +221,6 @@
       "updateDate": "Aktualizacja regulaminu: 12.10.2025"
     }
   },
-  "changelog": {
-    "title": "CHANGELOG",
-    "subtitle": "Zobacz historię zmian i aktualizacji InterPolishForces",
-    "footer": {
-      "thankYou": "💚 Dziękujemy za używanie InterPolishForces!",
-      "suggest": "Chcesz zasugerować nową funkcję? Skontaktuj się z nami na Discord!"
-    },
-    "data": [
-      {
-        "version": "1.5.0",
-        "date": "19 grudnia 2025",
-        "changes": [
-          {
-            "type": "feature",
-            "title": "Language Carousel",
-            "description": "Nowy system wyboru języka z suwakiem dla przyszłych języków"
-          },
-          {
-            "type": "feature",
-            "title": "Social Media Links",
-            "description": "Dodane linki do YouTube i TikTok na stronie głównej"
-          },
-          {
-            "type": "improvement",
-            "title": "Regulations Banner",
-            "description": "Prominentny baner 'Regulamin serwera' na górze strony Regulamin"
-          },
-          {
-            "type": "improvement",
-            "title": "Performance Optimization",
-            "description": "Zmniejszona FPS animacji tła w Regulaminie (6.67 FPS) dla lepszej wydajności"
-          },
-          {
-            "type": "feature",
-            "title": "Anti-Cheat Measures",
-            "description": "Zabezpieczenie przed inspekcją kodu (F12, prawe kliknięcie)"
-          },
-          {
-            "type": "improvement",
-            "title": "Text Selection",
-            "description": "Wyłączony user-select na całej stronie dla lepszego UX"
-          }
-        ]
-      }
-    ]
-  },
   "warLogs": {
     "title": "WOJENNE LOGI",
     "readMore": "DOSTĘP DO DANYCH",
@@ -286,21 +240,25 @@
       "EASY_WIN": "Łatwa Wygrana",
       "DRAW": "Remis"
     },
-    "log1": {
-      "desc": "Intensywne walki miejskie w Cyber City Delta. Próby oskrzydlenia przez wroga zostały zneutralizowane przez nasze jednostki awangardowe.",
-      "details": "Nasz oddział wykorzystał wertykalność terenu, by zdobyć przewagę. MVP 'Commander Shepard' sprawnie zabezpieczył kluczowe punkty."
+    "tabs": {
+      "info": "INFO",
+      "enemyKD": "KD WROGÓW",
+      "memberKD": "KD CZŁONKÓW"
     },
-    "log2": {
-      "desc": "Blokada obronna na Posterunku Pustkowia. Mimo ciężkiego oporu, Iron Legion przełamał nasze możliwości perymetryczne.",
-      "details": "Awaria przekaźników komunikacyjnych w sektorze 7 doprowadziła do niekorzystnej sytuacji taktycznej. Wymagane przegrupowanie do kontr-środków."
+    "kd": {
+      "titleEnemy": "STATYSTYKI PRZECIWNIKÓW",
+      "titleMember": "STATYSTYKI FRAKCJI",
+      "player": "GRACZ",
+      "member": "CZŁONEK",
+      "kills": "KILLS",
+      "deaths": "DEATHS",
+      "ratio": "K/D"
     },
-    "log3": {
-      "desc": "Konflikt patowy w Rdzeniu Centrum Danych. Obie strony wyczerpały zasoby bez zdobycia znaczącego terenu.",
-      "details": "Wskaźniki strat w granicach akceptowalnych norm. Zbieranie wywiadu zakończone sukcesem pomimo remisu."
-    },
-    "log4": {
-      "desc": "Całkowita dominacja na Stacji Orbitalnej. Cybernetic Front nie był przygotowany na naszą taktykę zero-g.",
-      "details": "Bezbledna egzekucja przez wszystkie jednostki. Wynik 300-0 odzwierciedla absolutną kontrolę nad punktami strategicznymi."
+    "war1": {
+      "opponent": "ESF (Elite Strike Forces)",
+      "reason": "raid bez powodu",
+      "duration": "4 godziny 30 minut",
+      "members": "@SAMISALAMI7, @Hejhej01928, @Pioter_M200, @Polskaexe_v3, @Tygosaures10"
     }
   },
   "changelog": {
@@ -319,27 +277,473 @@
       "release": "STABILNA"
     },
     "dev": [
-      { "version": "0.0.11.7", "date": "18 sty 2026", "changes": [{ "type": "improvement", "title": "Integracja i18n Changelog", "description": "Przeniesienie wszystkich danych changelog do plików i18n JSON - usunięcie duplikacji z podejściem single source of truth" }, { "type": "improvement", "title": "Changelog wielojęzyczny", "description": "Pełne tłumaczenia dla wszystkich 17 wersji dev i opisów w obu lokalizacjach angielskiej i polskiej" }, { "type": "improvement", "title": "Dynamiczne ładowanie danych", "description": "Wdrożone i18n.getResourceBundle() do dynamicznego ładowania danych changelog - wsparcie przełączania języka bez przeładowania" }, { "type": "improvement", "title": "(Prawie) Pełna obsługa telefonów", "description": "Kompletna responsywność dla wszystkich komponentów - zoptymalizowane dla telefonów ≤480px z prawidłowym spacing, skalowaniem typografii i interakcjami przyjazną dla dotyku" }, { "type": "bugfix", "title": "Naprawa obsługi typu danych", "description": "Dodano fallback typu dla badge'ów entry - zapobiega błędom undefined przy ładowaniu z zagnieżdżonych obiektów i18n" }] },
-      { "version": "0.0.11.6", "date": "16 sty 2026", "changes": [{ "type": "improvement", "title": "Naprawa mobilna About & Regulations", "description": "Naprawiono przepełnienie tytułu pod navbarem na urządzeniach mobilnych - dostosowano margin-top i padding dla sekcji hero" }, { "type": "improvement", "title": "Skalowanie typografii", "description": "Ulepszone skalowanie fontów za pomocą clamp() dla tekstu responsywnego - tytuły skalują się między 1rem-1.2rem na telefonach" }, { "type": "bugfix", "title": "Pozycjonowanie tytułu hero", "description": "Dodano margin-top aby zapobiec ukryciu tekstu pod fixed navbar (80px desktop, 65px tablet, 60px mobile)" }] },
-      { "version": "0.0.11.5.1", "date": "15 sty 2026", "changes": [{ "type": "bugfix", "title": "Breakpoint hamburgera navbara", "description": "Naprawiono krytyczny błąd gdzie menu hamburgera pojawiało się na desktopie (było @media 960px, teraz @media 768px)" }, { "type": "improvement", "title": "Responsywne wysokości navbara", "description": "Zoptymalizowane wysokości navbar: 80px (desktop >768px), 65px (tablet 481-768px), 60px (mobile ≤480px)" }, { "type": "improvement", "title": "Skalowanie logo", "description": "Rozmiary logo dostosowane: 45px → 32px → 28px na breakpointach dla lepszego wyświetlania na mobilach" }] },
-      { "version": "0.0.11.5", "date": "15 sty 2026", "changes": [{ "type": "feature", "title": "System War Logs - Kompletny", "description": "Dodana strona War Logs z rozszerzalnymi kartami pokazującymi przeciwnika, mapę, wynik (WIN/LOSS/EASY_WIN), czas trwania, MVP i powód" }, { "type": "feature", "title": "Szczegóły War Log Modal", "description": "Wdrożony widok modal z dwukolumnowym layoutem (sidebar z obrazem + statistyką, główna zawartość z siatką członków i briefingiem)" }, { "type": "improvement", "title": "Responsywny layout siatki", "description": "Siatka war logs: auto-fill (350px min) → jedna kolumna na mobilach z zoptymalizowanym paddingiem kart" }, { "type": "improvement", "title": "Globalny responsywny padding", "description": "Ustandaryzowany padding na wszystkich komponentach: 30px → 20px → 15px na breakpointach 768px i 480px" }] },
-      { "version": "0.0.11.4", "date": "22 gru 2025", "changes": [{ "type": "feature", "title": "Przeprojektowanie LoadingScreen", "description": "Zastąpiono terminal-style loading graficznym interfejsem: pulsującym logo, paskiem postępu (0-100%), 8-stopniowymi komunikatami postępu" }, { "type": "improvement", "title": "Efekty animacji ładowania", "description": "Dodano animację pulseLogo na logo, efekt glitch na tytule, animację linii skanowania na ekranie, tło gradientu radialnego" }, { "type": "improvement", "title": "Komunikaty postępu", "description": "Wdrożono 8 komunikatów statusu cyklujących się wraz ze wzrostem postępu: Initializing → Connecting → Loading Assets → itd." }] },
-      { "version": "0.0.11.3", "date": "22 gru 2025", "changes": [{ "type": "feature", "title": "Wdrożenie systemu Staff", "description": "Zbudowany kompletny katalog pracowników z 14+ kategoriami ról: Faction Command, Co-Leaders, Administrators, Moderators, itd." }, { "type": "feature", "title": "Struktura danych członka kadry", "description": "Utworzono staffData z: id, imię, rola, obraz avatar, nazwa użytkownika Roblox, identyfikator użytkownika Roblox, ranga w grze" }, { "type": "feature", "title": "Modal członka kadry", "description": "Dodano szczegółowe widoki modalne z sidezbarem (avatar, statystyki profilu) i główną zawartością (opis, osiągnięcia, informacje o randze)" }, { "type": "improvement", "title": "Layout siatki kadry", "description": "Responsywna siatka z auto-fill i minmax: 280px (desktop) → 250px (tablet) → jedna kolumna (mobile)" }] },
-      { "version": "0.0.11.2", "date": "20 gru 2025", "changes": [{ "type": "feature", "title": "Strona Regulamin", "description": "Zbudowana kompleksowa strona regulaminu/zasad serwera z 3 kolorowymi sekcjami reguł (zielona, cyan, różowa) i sticky footer" }, { "type": "feature", "title": "System kart reguł", "description": "Utworzono karty reguł z numerami sekcji, kolorowymi punktorami, animacjami hover, animowanym wjazdem elementu" }, { "type": "feature", "title": "Panel ostrzegawczy", "description": "Dodano czerwony panel ostrzegawczy podkreślający krytyczne reguły dotyczące konsekwencji i listy KOS (Kill on Sight)" }, { "type": "improvement", "title": "Efekty glass morphism", "description": "Ulepszony interfejs z efektami rozmycia, gradientami nakładki, świeceniami neon i backdrop-filter na nowoczesny wygląd" }] },
-      { "version": "0.0.11.1", "date": "19 gru 2025", "changes": [{ "type": "feature", "title": "System Q&A/FAQ", "description": "Dodana rozszerzalna strona Q&A z elementami FAQ pokazującymi pary pytań/odpowiedzi z gładkimi animacjami" }, { "type": "improvement", "title": "Pełna integracja i18n", "description": "Zintegrowany i18next dla wsparcia polskiego/angielskiego z persistencją localStorage (klucz i18nextLng)" }, { "type": "feature", "title": "Selektor języka", "description": "Utworzony komponent LanguageSelector z przyciskami flag dla szybkiego przełączania języka" }] },
-      { "version": "0.0.11", "date": "18 gru 2025", "changes": [{ "type": "feature", "title": "Strona About", "description": "Zbudowana strona About z sekcją hero, zawartością 'Kim jesteśmy?', listą funkcji, informacjami organizacyjnymi i przyciskiem Discorda" }, { "type": "improvement", "title": "Estetyka Dark Neon", "description": "Zastosowany schemat kolorów #00ff66 zielony militarny z akcentami cyan, świeceniami neon (text-shadow), glass morphism i stylem cyberpunk" }, { "type": "improvement", "title": "Setup typografii", "description": "Skonfigurowane czcionki: Orbitron (nagłówki), Chakra Petch (interfejs), Share Tech Mono (monospace) z odpowiednimi fallbackami" }] },
-      { "version": "0.0.10", "date": "18 gru 2025", "changes": [{ "type": "feature", "title": "Sekcja Hero", "description": "Stworzony hero landing page z nazwą organizacji, tekstem powitalnym i 3 przyciskami CTA (Discord, YouTube, TikTok)" }, { "type": "feature", "title": "Responsywny Navbar", "description": "Zbudowany fixed navbar z logo, nazwą organizacji, linkami nawigacyjnymi (Home, About, Staff, itd.), dropdown języków" }, { "type": "feature", "title": "Menu hamburgera", "description": "Wdrożone mobilne menu hamburgera które przełącza linki nawigacyjne na małych ekranach z gładką animacją slide" }] },
-      { "version": "0.0.9.4", "date": "14 gru 2025", "changes": [{ "type": "bugfix", "title": "Naprawy layoutu i spacing", "description": "Naprawiono niespójności marginesów i paddingu na komponentach - skorygowano misaligned elementy i problemy białej przestrzeni" }, { "type": "bugfix", "title": "Alignment CSS Grid", "description": "Naprawiono problemy alignment CSS Grid w komponentach staff i rules - prawidłowe spanning wierszy/kolumn" }, { "type": "improvement", "title": "Konsystencja komponentów", "description": "Ustandaryzowana spacing i sizing komponentów dla ujednoliconego wyglądu na wszystkich stronach" }] },
-      { "version": "0.0.9.3", "date": "14 gru 2025", "changes": [{ "type": "bugfix", "title": "Problemy React Component", "description": "Naprawiono błędy renderowania komponentów - skorygowano problemy zarządzania stanem i re-render" }, { "type": "bugfix", "title": "Zachowanie zamknięcia modal", "description": "Naprawiono modals nie zamykające się poprawnie - dodano odpowiednie event handlery i funkcje czyszczenia" }, { "type": "improvement", "title": "Użycie React Hooks", "description": "Zoptymalizowane useEffect i useState calls - usunięto niepotrzebne zależności i memory leaks" }] },
-      { "version": "0.0.9.2", "date": "14 gru 2025", "changes": [{ "type": "bugfix", "title": "Korekty stylowania CSS", "description": "Naprawiono problemy stylowania: złe kolory, brakujące obramowania, nieprawidłowe cienie - czyszczenie konfliktów CSS" }, { "type": "bugfix", "title": "Problemy schematu kolorów", "description": "Skorygowane wartości kolorów: referencje military-green, kolory tekstu, gradienty tła teraz konsystentne" }, { "type": "improvement", "title": "Fine-tuning breakpoint", "description": "Dostosowane responsive breakpoints dla lepszego doświadczenia tablet/mobile - zoptymalizowane media queries 768px i 480px" }] },
-      { "version": "0.0.9.1", "date": "14 gru 2025", "changes": [{ "type": "bugfix", "title": "Drobne poprawki błędów", "description": "Naprawiono małe problemy: typo w tekście, nieprawidłowe ścieżki obrazów, przerwane linki nawigacyjne" }, { "type": "bugfix", "title": "Czyszczenie błędów konsoli", "description": "Usunięto ostrzeżenia konsoli o brakujących kluczach w listach, przestarzałych metodach lifecycle, błędach walidacji propów" }, { "type": "improvement", "title": "Jakość kodu", "description": "Ulepszona konsystencja kodu i usunięte martwe gałęzie kodu pozostawione z poprzednich iteracji" }] },
-      { "version": "0.0.9", "date": "10 gru 2025", "changes": [{ "type": "bugfix", "title": "Optymalizacja Framer Motion", "description": "Usunięto nieużywane animacje Framer Motion z komponentów aby zmniejszyć rozmiar bundle i poprawić wydajność" }, { "type": "improvement", "title": "Redukcja wielkości bundle", "description": "Wyeliminowano zbędne warianty motion i konfiguracje animacji - zmniejszono ~50KB z outputu build" }, { "type": "improvement", "title": "Boost wydajności", "description": "Uproszczone animacje skoncentrowane na sekcjach krytycznych - ulepszone wyniki Core Web Vitals" }] },
-      { "version": "0.0.8.3", "date": "10 gru 2025", "changes": [{ "type": "improvement", "title": "Druga runda testowania", "description": "Kompleksowa faza testowania 2: przetestowano wszystkie strony, modale, responsive breakpoints na różnych urządzeniach" }, { "type": "bugfix", "title": "Naprawy edge case", "description": "Naprawiono problemy znalezione podczas testowania: mobile layout breaks, modal interaction bugs, problemy przełączania języka" }, { "type": "improvement", "title": "Testowanie doświadczenia użytkownika", "description": "Przetestowano user flows: nawigacja, interakcje formularzy, otwieranie/zamykanie modali - zweryfikowano gładkie doświadczenie" }] },
-      { "version": "0.0.8.2", "date": "10 gru 2025", "changes": [{ "type": "improvement", "title": "Pierwsza runda testowania", "description": "Inicjalna kompleksowa faza testowania 1: zweryfikowano renderowanie komponentów, przepływy nawigacji, responsive design" }, { "type": "bugfix", "title": "Znalezione problemy krytyczne", "description": "Zidentyfikowano i udokumentowano krytyczne problemy do naprawienia: hamburger menu, zachowanie modala, responsywne przerwy" }, { "type": "improvement", "title": "Zapewnienie jakości", "description": "Ustanowiono procedury testowania i utworzono test cases dla przyszłych iteracji QA" }] },
-      { "version": "0.0.8.1", "date": "10 gru 2025", "changes": [{ "type": "feature", "title": "Infrastruktura testowania", "description": "Skonfigurowane Jest + React Testing Library z konfiguracją setupTests.js dla unit testing" }, { "type": "feature", "title": "Framework QA", "description": "Wdrożony framework quality assurance z test utilities, mock data i test patterns" }, { "type": "improvement", "title": "Proces rozwoju", "description": "Ustanowiony workflow testowania i automatyczne procedury sprawdzania przed production builds" }] }
+      {
+        "version": "0.0.11.7 Part II",
+        "date": "18 sty 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Rebranding: InterPolishForces",
+            "description": "Oficjalna zmiana nazwy z '303rd Division' na 'InterPolishForces' w całym projekcie, w tym w systemie tłumaczeń, nagłówkach i powiadomieniach systemowych."
+          },
+          {
+            "type": "feature",
+            "title": "Tactical Command Center",
+            "description": "Transformacja strony głównej w system dowodzenia HUD. Dodano panele danych (Status Połączenia, Uprawnienia), animację bootowania systemu oraz Mission Ticker."
+          },
+          {
+            "type": "feature",
+            "title": "War Log System v2",
+            "description": "Rozbudowany system logów wojennych z nowym layoutem dwukolumnowym, statystykami MVP oraz szczegółowymi raportami w formie terminala."
+          },
+          {
+            "type": "feature",
+            "title": "System Security & Anti-Cheat",
+            "description": "Wdrożenie warstwy ochronnej blokującej dostęp do kodu (F12, Right-Click) z autorskim systemem ostrzeżeń HUD: SECURITY_BREACH_DETECTED."
+          },
+          {
+            "type": "improvement",
+            "title": "Global Tactical UI Overhaul",
+            "description": "Pełna modernizacja wizualna stron About, QA, Staff i Regulamin. Dodano scanlines, neonowe obramowania i interaktywne elementy HUD."
+          },
+          {
+            "type": "improvement",
+            "title": "Final Mobile Optimization",
+            "description": "Naprawiono błędy z-index menu, ulepszono skalowanie tytułów (clamp) oraz dopasowano przyciski dla ekranów poniżej 480px. Menu mobilne otrzymało wyraźną ikonę 'X'."
+          },
+          {
+            "type": "improvement",
+            "title": "UX i Nav-System",
+            "description": "Ulepszony mobile menu UX z bezpiecznymi marginesami dla selektora języka oraz animacjami nawigacji 'Unit Navigation System'."
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.7",
+        "date": "18 sty 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Integracja i18n Changelog",
+            "description": "Przeniesienie wszystkich danych changelog do plików i18n JSON - usunięcie duplikacji z podejściem single source of truth"
+          },
+          {
+            "type": "improvement",
+            "title": "Changelog wielojęzyczny",
+            "description": "Pełne tłumaczenia dla wszystkich 17 wersji dev i opisów w obu lokalizacjach angielskiej i polskiej"
+          },
+          {
+            "type": "improvement",
+            "title": "Dynamiczne ładowanie danych",
+            "description": "Wdrożone i18n.getResourceBundle() do dynamicznego ładowania danych changelog - wsparcie przełączania języka bez przeładowania"
+          },
+          {
+            "type": "improvement",
+            "title": "(Prawie) Pełna obsługa telefonów",
+            "description": "Kompletna responsywność dla wszystkich komponentów - zoptymalizowane dla telefonów ≤480px z prawidłowym spacing, skalowaniem typografii i interakcjami przyjazną dla dotyku"
+          },
+          {
+            "type": "bugfix",
+            "title": "Naprawa obsługi typu danych",
+            "description": "Dodano fallback typu dla badge'ów entry - zapobiega błędom undefined przy ładowaniu z zagnieżdżonych obiektów i18n"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.6",
+        "date": "16 sty 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Naprawa mobilna About & Regulations",
+            "description": "Naprawiono przepełnienie tytułu pod navbarem na urządzeniach mobilnych - dostosowano margin-top i padding dla sekcji hero"
+          },
+          {
+            "type": "improvement",
+            "title": "Skalowanie typografii",
+            "description": "Ulepszone skalowanie fontów za pomocą clamp() dla tekstu responsywnego - tytuły skalują się między 1rem-1.2rem na telefonach"
+          },
+          {
+            "type": "bugfix",
+            "title": "Pozycjonowanie tytułu hero",
+            "description": "Dodano margin-top aby zapobiec ukryciu tekstu pod fixed navbar (80px desktop, 65px tablet, 60px mobile)"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.5.1",
+        "date": "15 sty 2026",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Breakpoint hamburgera navbara",
+            "description": "Naprawiono krytyczny błąd gdzie menu hamburgera pojawiało się na desktopie (było @media 960px, teraz @media 768px)"
+          },
+          {
+            "type": "improvement",
+            "title": "Responsywne wysokości navbara",
+            "description": "Zoptymalizowane wysokości navbar: 80px (desktop >768px), 65px (tablet 481-768px), 60px (mobile ≤480px)"
+          },
+          {
+            "type": "improvement",
+            "title": "Skalowanie logo",
+            "description": "Rozmiary logo dostosowane: 45px → 32px → 28px na breakpointach dla lepszego wyświetlania na mobilach"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.5",
+        "date": "15 sty 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "System War Logs - Kompletny",
+            "description": "Dodana strona War Logs z rozszerzalnymi kartami pokazującymi przeciwnika, mapę, wynik (WIN/LOSS/EASY_WIN), czas trwania, MVP i powód"
+          },
+          {
+            "type": "feature",
+            "title": "Szczegóły War Log Modal",
+            "description": "Wdrożony widok modal z dwukolumnowym layoutem (sidebar z obrazem + statistyką, główna zawartość z siatką członków i briefingiem)"
+          },
+          {
+            "type": "improvement",
+            "title": "Responsywny layout siatki",
+            "description": "Siatka war logs: auto-fill (350px min) → jedna kolumna na mobilach z zoptymalizowanym paddingiem kart"
+          },
+          {
+            "type": "improvement",
+            "title": "Globalny responsywny padding",
+            "description": "Ustandaryzowany padding na wszystkich komponentach: 30px → 20px → 15px na breakpointach 768px i 480px"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.4",
+        "date": "22 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Przeprojektowanie LoadingScreen",
+            "description": "Zastąpiono terminal-style loading graficznym interfejsem: pulsującym logo, paskiem postępu (0-100%), 8-stopniowymi komunikatami postępu"
+          },
+          {
+            "type": "improvement",
+            "title": "Efekty animacji ładowania",
+            "description": "Dodano animację pulseLogo na logo, efekt glitch na tytule, animację linii skanowania na ekranie, tło gradientu radialnego"
+          },
+          {
+            "type": "improvement",
+            "title": "Komunikaty postępu",
+            "description": "Wdrożono 8 komunikatów statusu cyklujących się wraz ze wzrostem postępu: Initializing → Connecting → Loading Assets → itd."
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.3",
+        "date": "22 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Wdrożenie systemu Staff",
+            "description": "Zbudowany kompletny katalog pracowników z 14+ kategoriami ról: Faction Command, Co-Leaders, Administrators, Moderators, itd."
+          },
+          {
+            "type": "feature",
+            "title": "Struktura danych członka kadry",
+            "description": "Utworzono staffData z: id, imię, rola, obraz avatar, nazwa użytkownika Roblox, identyfikator użytkownika Roblox, ranga w grze"
+          },
+          {
+            "type": "feature",
+            "title": "Modal członka kadry",
+            "description": "Dodano szczegółowe widoki modalne z sidezbarem (avatar, statystyki profilu) i główną zawartością (opis, osiągnięcia, informacje o randze)"
+          },
+          {
+            "type": "improvement",
+            "title": "Layout siatki kadry",
+            "description": "Responsywna siatka z auto-fill i minmax: 280px (desktop) → 250px (tablet) → jedna kolumna (mobile)"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.2",
+        "date": "20 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Strona Regulamin",
+            "description": "Zbudowana kompleksowa strona regulaminu/zasad serwera z 3 kolorowymi sekcjami reguł (zielona, cyan, różowa) i sticky footer"
+          },
+          {
+            "type": "feature",
+            "title": "System kart reguł",
+            "description": "Utworzono karty reguł z numerami sekcji, kolorowymi punktorami, animacjami hover, animowanym wjazdem elementu"
+          },
+          {
+            "type": "feature",
+            "title": "Panel ostrzegawczy",
+            "description": "Dodano czerwony panel ostrzegawczy podkreślający krytyczne reguły dotyczące konsekwencji i listy KOS (Kill on Sight)"
+          },
+          {
+            "type": "improvement",
+            "title": "Efekty glass morphism",
+            "description": "Ulepszony interfejs z efektami rozmycia, gradientami nakładki, świeceniami neon i backdrop-filter na nowoczesny wygląd"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.1",
+        "date": "19 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "System Q&A/FAQ",
+            "description": "Dodana rozszerzalna strona Q&A z elementami FAQ pokazującymi pary pytań/odpowiedzi z gładkimi animacjami"
+          },
+          {
+            "type": "improvement",
+            "title": "Pełna integracja i18n",
+            "description": "Zintegrowany i18next dla wsparcia polskiego/angielskiego z persistencją localStorage (klucz i18nextLng)"
+          },
+          {
+            "type": "feature",
+            "title": "Selektor języka",
+            "description": "Utworzony komponent LanguageSelector z przyciskami flag dla szybkiego przełączania języka"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11",
+        "date": "18 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Strona About",
+            "description": "Zbudowana strona About z sekcją hero, zawartością 'Kim jesteśmy?', listą funkcji, informacjami organizacyjnymi i przyciskiem Discorda"
+          },
+          {
+            "type": "improvement",
+            "title": "Estetyka Dark Neon",
+            "description": "Zastosowany schemat kolorów #00ff66 zielony militarny z akcentami cyan, świeceniami neon (text-shadow), glass morphism i stylem cyberpunk"
+          },
+          {
+            "type": "improvement",
+            "title": "Setup typografii",
+            "description": "Skonfigurowane czcionki: Orbitron (nagłówki), Chakra Petch (interfejs), Share Tech Mono (monospace) z odpowiednimi fallbackami"
+          }
+        ]
+      },
+      {
+        "version": "0.0.10",
+        "date": "18 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Sekcja Hero",
+            "description": "Stworzony hero landing page z nazwą organizacji, tekstem powitalnym i 3 przyciskami CTA (Discord, YouTube, TikTok)"
+          },
+          {
+            "type": "feature",
+            "title": "Responsywny Navbar",
+            "description": "Zbudowany fixed navbar z logo, nazwą organizacji, linkami nawigacyjnymi (Home, About, Staff, itd.), dropdown języków"
+          },
+          {
+            "type": "feature",
+            "title": "Menu hamburgera",
+            "description": "Wdrożone mobilne menu hamburgera które przełącza linki nawigacyjne na małych ekranach z gładką animacją slide"
+          }
+        ]
+      },
+      {
+        "version": "0.0.9.4",
+        "date": "14 gru 2025",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Naprawy layoutu i spacing",
+            "description": "Naprawiono niespójności marginesów i paddingu na komponentach - skorygowano misaligned elementy i problemy białej przestrzeni"
+          },
+          {
+            "type": "bugfix",
+            "title": "Alignment CSS Grid",
+            "description": "Naprawiono problemy alignment CSS Grid w komponentach staff i rules - prawidłowe spanning wierszy/kolumn"
+          },
+          {
+            "type": "improvement",
+            "title": "Konsystencja komponentów",
+            "description": "Ustandaryzowana spacing i sizing komponentów dla ujednoliconego wyglądu na wszystkich stronach"
+          }
+        ]
+      },
+      {
+        "version": "0.0.9.3",
+        "date": "14 gru 2025",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Problemy React Component",
+            "description": "Naprawiono błędy renderowania komponentów - skorygowano problemy zarządzania stanem i re-render"
+          },
+          {
+            "type": "bugfix",
+            "title": "Zachowanie zamknięcia modal",
+            "description": "Naprawiono modals nie zamykające się poprawnie - dodano odpowiednie event handlery i funkcje czyszczenia"
+          },
+          {
+            "type": "improvement",
+            "title": "Użycie React Hooks",
+            "description": "Zoptymalizowane useEffect i useState calls - usunięto niepotrzebne zależności i memory leaks"
+          }
+        ]
+      },
+      {
+        "version": "0.0.9.2",
+        "date": "14 gru 2025",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Korekty stylowania CSS",
+            "description": "Naprawiono problemy stylowania: złe kolory, brakujące obramowania, nieprawidłowe cienie - czyszczenie konfliktów CSS"
+          },
+          {
+            "type": "bugfix",
+            "title": "Problemy schematu kolorów",
+            "description": "Skorygowane wartości kolorów: referencje military-green, kolory tekstu, gradienty tła teraz konsystentne"
+          },
+          {
+            "type": "improvement",
+            "title": "Fine-tuning breakpoint",
+            "description": "Dostosowane responsive breakpoints dla lepszego doświadczenia tablet/mobile - zoptymalizowane media queries 768px i 480px"
+          }
+        ]
+      },
+      {
+        "version": "0.0.9.1",
+        "date": "14 gru 2025",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Drobne poprawki błędów",
+            "description": "Naprawiono małe problemy: typo w tekście, nieprawidłowe ścieżki obrazów, przerwane linki nawigacyjne"
+          },
+          {
+            "type": "bugfix",
+            "title": "Czyszczenie błędów konsoli",
+            "description": "Usunięto ostrzeżenia konsoli o brakujących kluczach w listach, przestarzałych metodach lifecycle, błędach walidacji propów"
+          },
+          {
+            "type": "improvement",
+            "title": "Jakość kodu",
+            "description": "Ulepszona konsystencja kodu i usunięte martwe gałęzie kodu pozostawione z poprzednich iteracji"
+          }
+        ]
+      },
+      {
+        "version": "0.0.9",
+        "date": "10 gru 2025",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Optymalizacja Framer Motion",
+            "description": "Usunięto nieużywane animacje Framer Motion z komponentów aby zmniejszyć rozmiar bundle i poprawić wydajność"
+          },
+          {
+            "type": "improvement",
+            "title": "Redukcja wielkości bundle",
+            "description": "Wyeliminowano zbędne warianty motion i konfiguracje animacji - zmniejszono ~50KB z outputu build"
+          },
+          {
+            "type": "improvement",
+            "title": "Boost wydajności",
+            "description": "Uproszczone animacje skoncentrowane na sekcjach krytycznych - ulepszone wyniki Core Web Vitals"
+          }
+        ]
+      },
+      {
+        "version": "0.0.8.3",
+        "date": "10 gru 2025",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Druga runda testowania",
+            "description": "Kompleksowa faza testowania 2: przetestowano wszystkie strony, modale, responsive breakpoints na różnych urządzeniach"
+          },
+          {
+            "type": "bugfix",
+            "title": "Naprawy edge case",
+            "description": "Naprawiono problemy znalezione podczas testowania: mobile layout breaks, modal interaction bugs, problemy przełączania języka"
+          },
+          {
+            "type": "improvement",
+            "title": "Testowanie doświadczenia użytkownika",
+            "description": "Przetestowano user flows: nawigacja, interakcje formularzy, otwieranie/zamykanie modali - zweryfikowano gładkie doświadczenie"
+          }
+        ]
+      },
+      {
+        "version": "0.0.8.2",
+        "date": "10 gru 2025",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Pierwsza runda testowania",
+            "description": "Inicjalna kompleksowa faza testowania 1: zweryfikowano renderowanie komponentów, przepływy nawigacji, responsive design"
+          },
+          {
+            "type": "bugfix",
+            "title": "Znalezione problemy krytyczne",
+            "description": "Zidentyfikowano i udokumentowano krytyczne problemy do naprawienia: hamburger menu, zachowanie modala, responsywne przerwy"
+          },
+          {
+            "type": "improvement",
+            "title": "Zapewnienie jakości",
+            "description": "Ustanowiono procedury testowania i utworzono test cases dla przyszłych iteracji QA"
+          }
+        ]
+      },
+      {
+        "version": "0.0.8.1",
+        "date": "10 gru 2025",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Infrastruktura testowania",
+            "description": "Skonfigurowane Jest + React Testing Library z konfiguracją setupTests.js dla unit testing"
+          },
+          {
+            "type": "feature",
+            "title": "Framework QA",
+            "description": "Wdrożony framework quality assurance z test utilities, mock data i test patterns"
+          },
+          {
+            "type": "improvement",
+            "title": "Proces rozwoju",
+            "description": "Ustanowiony workflow testowania i automatyczne procedury sprawdzania przed production builds"
+          }
+        ]
+      }
     ],
     "release": [
-      { "version": "1.0.0", "date": "Wkrótce", "changes": [{ "type": "feature", "title": "Uruchomienie produkcji", "description": "Oficjalne publiczne uruchomienie strony InterPolishForces" }, { "type": "feature", "title": "Ostateczne dopracowanie", "description": "Poprawki błędów i optymalizacja wydajności" }, { "type": "feature", "title": "Live Backend", "description": "Integracja z live server APIs i bazami danych" }] }
+      {
+        "version": "1.0.0",
+        "date": "Wkrótce",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Uruchomienie produkcji",
+            "description": "Oficjalne publiczne uruchomienie strony InterPolishForces"
+          },
+          {
+            "type": "feature",
+            "title": "Ostateczne dopracowanie",
+            "description": "Poprawki błędów i optymalizacja wydajności"
+          },
+          {
+            "type": "feature",
+            "title": "Live Backend",
+            "description": "Integracja z live server APIs i bazami danych"
+          }
+        ]
+      }
     ]
   }
 }

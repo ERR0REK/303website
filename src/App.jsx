@@ -11,6 +11,7 @@ import Qa from './Components/Pages/QA'; // Uwaga na nazwę pliku
 import Staff from '../src/Components/Pages/Staff';
 import Changelog from '../src/Components/Pages/Changelog';
 import WarLogs from './Components/WarLogs/WarLogs';
+import SecurityLayer from './Components/Security/SecurityLayer';
 
 import LoadingScreen from '../src/Components/LoadingScreen/LoadingScreen';
 import LanguageSelector from '../src/Components/LanguageDropdown/LanguageSelector';
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+      <SecurityLayer />
       <LanguageSelector />
       <Router>
         <Routes>
