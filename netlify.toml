@@ -3,3 +3,7 @@
 
 [build.environment]
   CI = "false"
+
+[build]
+  command = "npm run build"
+  publish = "dist"
