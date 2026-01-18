@@ -32,7 +32,7 @@ export default function Changelog() {
 
     if (Array.isArray(devData)) setDevVersions(devData);
     if (Array.isArray(releaseData)) setReleaseVersions(releaseData);
-  }, [i18n.language]);
+  }, [i18n.language, i18n]);
 
   const currentVersions = activeCategory === 'dev' ? devVersions : releaseVersions;
 

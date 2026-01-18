@@ -1,6 +1,6 @@
 /* src/Components/Staff/StaffMemberModal.jsx */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -15,15 +15,12 @@ import {
 
 const StaffMemberModal = ({ member, onClose }) => {
   const { t } = useTranslation();
-  const [isClosing, setIsClosing] = useState(false);
 
   if (!member) return null;
 
   const handleClose = () => {
-    setIsClosing(true);
     setTimeout(() => {
       onClose();
-      setIsClosing(false);
     }, 300);
   };
 
