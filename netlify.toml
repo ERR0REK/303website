@@ -1,2 +1,5 @@
 [build.environment]
   NPM_FLAGS = "--legacy-peer-deps"
+
+[build.environment]
+  CI = "false"
