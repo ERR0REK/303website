@@ -18,12 +18,12 @@
     "helpTranslate": "Pomóż w tłumaczeniu"
   },
   "loadingScreen": {
-    "status1": "Inicjalizacja systemów...",
-    "status2": "Ładowanie zasobów...",
-    "status3": "Ustanawianie bezpiecznego połączenia...",
-    "status4": "Przygotowywanie interfejsu...",
-    "status5": "Prawie gotowe...",
-    "statusReady": "System gotowy",
+    "status1": "Inicjalizacja systemów... ",
+    "status2": "Ładowanie zasobów... ",
+    "status3": "Ustanawianie bezpiecznego połączenia... ",
+    "status4": "Przygotowywanie interfejsu... ",
+    "status5": "Prawie gotowe... ",
+    "statusReady": "System gotowy... ",
     "userLabel": "UŻYTKOWNIK",
     "statusLabel": "STATUS",
     "ipLabel": "IP",
@@ -285,6 +285,10 @@
               "type": "bugfix",
               "title": "Poprawki UI na mobile",
               "description": "Naprawiono błąd, przez który nagłówek i przyciski wystawały poza krawędź ekranu na telefonach."
+            },
+            {
+            "title": "Drobna poprawka w loading screen",
+            "description": "Poprawiono tekst w loading screen (dodano 3 brakujące kropki w System gotowy)"
             }
           ]
         },

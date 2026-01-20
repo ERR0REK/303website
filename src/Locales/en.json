@@ -23,7 +23,7 @@
     "status3": "Establishing secure connection...",
     "status4": "Preparing interface...",
     "status5": "Almost ready...",
-    "statusReady": "System ready",
+    "statusReady": "System ready...",
     "userLabel": "USER",
     "statusLabel": "STATUS",
     "ipLabel": "IP",
@@ -285,6 +285,10 @@
             "type": "bugfix",
             "title": "Mobile UI Fixes",
             "description": "Fixed layout overflow issues where the main title and buttons were extending beyond the screen width on mobile devices."
+          },
+          {
+            "title": "Minor fix in the loading screen",
+            "description": "Fixed text in loading screen (added 3 missing dots in System Ready)"
           }
         ]
       },
