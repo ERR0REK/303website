@@ -278,6 +278,17 @@
     },
     "dev": [
       {
+        "version": "0.0.11.7 Part III",
+        "date": "Jan 20, 2026",
+        "changes": [
+          {
+            "type": "bugfix",
+            "title": "Mobile UI Fixes",
+            "description": "Fixed layout overflow issues where the main title and buttons were extending beyond the screen width on mobile devices."
+          }
+        ]
+      },
+      {
         "version": "0.0.11.7 Part II",
         "date": "Jan 18, 2026",
         "changes": [

@@ -452,4 +452,9 @@
   .reg-rule-title {
     font-size: 1.4rem;
   }
+
+  .reg-hero-title {
+    font-size: clamp(1.2rem, 6vw, 1.2rem);
+}
+
 }

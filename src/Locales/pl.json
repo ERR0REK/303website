@@ -278,6 +278,17 @@
     },
     "dev": [
       {
+        "version": "0.0.11.7 Part III",
+        "date": "20 sty 2026",
+        "changes": [
+            {
+              "type": "bugfix",
+              "title": "Poprawki UI na mobile",
+              "description": "Naprawiono błąd, przez który nagłówek i przyciski wystawały poza krawędź ekranu na telefonach."
+            }
+          ]
+        },
+      {
         "version": "0.0.11.7 Part II",
         "date": "18 sty 2026",
         "changes": [
