@@ -12,8 +12,8 @@ import Staff from '../src/Components/Pages/Staff';
 import Changelog from '../src/Components/Pages/Changelog';
 import WarLogs from './Components/WarLogs/WarLogs';
 import SecurityLayer from './Components/Security/SecurityLayer';
-import AuthGuard from './Components/Auth/AuthGuard';
-import DiscordCallback from './Components/Auth/DiscordCallback';
+//import AuthGuard from './Components/Auth/AuthGuard';
+//import DiscordCallback from './Components/Auth/DiscordCallback';
 import History from './Components/Pages/History';
 import KOS from './Components/Pages/KOS';
 

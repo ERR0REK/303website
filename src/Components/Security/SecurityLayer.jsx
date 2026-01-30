@@ -10,20 +10,20 @@ const SecurityLayer = () => {
     const [violationType, setViolationType] = useState('');
 
     // Whitelist for admins/devs to bypass anticheat and test localStorage
-    const AUTHORIZED_ADMIN_IDS = ["687701665771814939"]; // User's ID from Discord
+    //const AUTHORIZED_ADMIN_IDS = ["687701665771814939"]; // User's ID from Discord
 
     useEffect(() => {
-        const session = JSON.parse(localStorage.getItem('NFS_auth_session'));
-        const isAdmin = session && AUTHORIZED_ADMIN_IDS.includes(session.user_id);
+        //const session = JSON.parse(localStorage.getItem('NFS_auth_session'));
+        //const isAdmin = session && AUTHORIZED_ADMIN_IDS.includes(session.user_id);
 
         const handleContextMenu = (e) => {
-            if (isAdmin) return; // Bypass for admins
+            //if (isAdmin) return; // Bypass for admins
             e.preventDefault();
             triggerAlert('UNAUTHORIZED_ACCESS_CONTEXT_MENU');
         };
 
         const handleKeyDown = (e) => {
-            if (isAdmin) return; // Bypass for admins
+            //if (isAdmin) return; // Bypass for admins
             // Block F12
             if (e.keyCode === 123) {
                 e.preventDefault();
