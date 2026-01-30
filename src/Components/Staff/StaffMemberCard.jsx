@@ -19,25 +19,25 @@ export default function StaffMemberCard({ member, onMoreInfo }) {
         <div className="avatar-container">
           <div className="avatar-frame"></div>
           <img
-            src={member.avatar || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"}
+            src={member.avatar || member.image || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"}
             alt={member.name}
             className="staff-pfp"
           />
         </div>
         <div className="info-container">
           <h3 className="member-name">{member.name}</h3>
-          <p className="member-role">{member.role}</p>
+          <p className="member-role">{member.role || member.rank}</p>
         </div>
       </div>
 
       <div className="card-meta">
         <div className="meta-item">
           <span className="meta-label">ID_SCAN:</span>
-          <span className="meta-val">#{member.id.toString().padStart(4, '0')}</span>
+          <span className="meta-val mono-text">#{member.id?.toString().padStart(4, '0') || '0000'}</span>
         </div>
         <div className="meta-item">
           <span className="meta-label">STATUS:</span>
-          <span className="meta-val" style={{ color: '#00ff66' }}>ACTIVE</span>
+          <span className="meta-val mono-text" style={{ color: 'var(--nfs-blue)' }}>ACTIVE</span>
         </div>
       </div>
 

@@ -64,7 +64,7 @@ export default function Qa() {
   // FAQ Data - Moved into component for reactivity
   const faqs = [
     {
-      question: t('qa.faqs.0.question', 'Jak mogę dołączyć do InterPolishForces?'),
+      question: t('qa.faqs.0.question', 'Jak mogę dołączyć do Nightfall Squadron?'),
       answer: t('qa.faqs.0.answer', 'Aby dołączyć do naszej frakcji, musisz wejść na nasz serwer Roblox i poprosić o zaproszenie. Zwróć się do dowolnego członka administracji z wymaganą dokumentacją.'),
     },
     {
@@ -115,7 +115,7 @@ export default function Qa() {
           {t('qa.title', 'FAQ')}
         </h1>
         <p className="qa-subtitle">
-          {t('qa.subtitle', 'Najczęściej zadawane pytania i odpowiedzi dotyczące InterPolishForces')}
+          {t('qa.subtitle', 'Najczęściej zadawane pytania i odpowiedzi dotyczące Nightfall Squadron')}
         </p>
         <div className="hero-divider">
           <span></span><Terminal size={20} /><span></span>

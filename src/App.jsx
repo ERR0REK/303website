@@ -12,9 +12,14 @@ import Staff from '../src/Components/Pages/Staff';
 import Changelog from '../src/Components/Pages/Changelog';
 import WarLogs from './Components/WarLogs/WarLogs';
 import SecurityLayer from './Components/Security/SecurityLayer';
+import AuthGuard from './Components/Auth/AuthGuard';
+import DiscordCallback from './Components/Auth/DiscordCallback';
+import History from './Components/Pages/History';
+import KOS from './Components/Pages/KOS';
 
 import LoadingScreen from '../src/Components/LoadingScreen/LoadingScreen';
 import LanguageSelector from '../src/Components/LanguageDropdown/LanguageSelector';
+import SpaceBackground from './Components/Shared/SpaceBackground';
 
 function App() {
   const [isLanguageSelected, setIsLanguageSelected] = useState(!!localStorage.getItem('selectedLanguage'));
@@ -48,19 +53,48 @@ function App() {
     return <LoadingScreen />;
   }
 
+  /* 
+  // Force render DiscordCallback if the hash contains access_token 
+  // (Fixes HashRouter conflict with dual-hash Discord fragments)
+  if (window.location.hash.includes('access_token=')) {
+    return (
+      <Router>
+        <DiscordCallback />
+      </Router>
+    );
+  }
+  */
+
   return (
     <>
+      <SpaceBackground />
       <SecurityLayer />
       <LanguageSelector />
       <Router>
         <Routes>
+          {/* Public Auth Callback - Wildcard to handle appended Discord fragments */}
+          {/* <Route path="/auth/callback" element={<DiscordCallback />} /> */}
+
+          {/* All Routes are now Public (AuthGuard disabled temporarily) */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/regulations" element={<Regulations />} />
           <Route path="/qa" element={<Qa />} />
           <Route path="/staff" element={<Staff />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/kos" element={<KOS />} />
           <Route path="/war-logs" element={<WarLogs />} />
           <Route path="/changelog" element={<Changelog />} />
+
+          {/* Keep AuthGuard code structure for easy reactivation if needed
+          <Route path="/*" element={
+            <AuthGuard>
+              <Routes>
+                ...
+              </Routes>
+            </AuthGuard>
+          } /> 
+          */}
         </Routes>
       </Router>
     </>

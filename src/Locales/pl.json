@@ -1,18 +1,27 @@
 {
   "nav": {
     "home": "Strona Główna",
-    "about": "Czym jest InterPolishForces?",
+    "about": "Czym jest Nightfall Squadron?",
     "regulations": "Regulamin",
     "qa": "Q&A",
     "staff": "Kadra",
+    "history": "Historia Frakcji",
+    "kos": "KOS",
     "changelog": "Changelog"
   },
   "hero": {
-    "title": "InterPolishForces",
-    "welcome": "Witaj na oficjalnej stronie InterPolishForces. Poznaj naszą historię, misje i więcej.",
+    "title": "Nightfall Squadron",
+    "welcome": "Witaj na oficjalnej stronie Nightfall Squadron. Poznaj naszą historię, misje i więcej.",
     "discord_button": "Dołącz na Discorda",
     "youtube_button": "YouTube",
     "tiktok_button": "TikTok"
+  },
+  "ticker": {
+    "line1": "// OPERACJE TRENINGOWE: AKTYWNE",
+    "line2": "// REKRUTACJA JEDNOSTEK: OTWARTA",
+    "line3": "// STATUS SERWERA: OPTYMALNY",
+    "line4": "// RAPORT: Nightfall Squadron ROZMIESZCZONY",
+    "line5": "// SZYFROWANIE: MIL-SPEC_V2"
   },
   "langDropdown": {
     "helpTranslate": "Pomóż w tłumaczeniu"
@@ -39,8 +48,60 @@
     "inGameRank": "Ranga w Grze",
     "joinDate": "Dołączył",
     "achievements": "Osiągnięcia",
-    "description": " to ważny członek naszej organizacji InterPolishForces.",
+    "description": " to ważny członek naszej organizacji Nightfall Squadron.",
     "close": "Zamknij"
+  },
+  "history": {
+    "title": "ARCHIWA OPERACYJNE",
+    "subtitle": "Chronologiczny zapis operacji i kamieni milowych Nightfall Squadron.",
+    "event1": {
+      "title": "PROTOKÓŁ_INICJACJI",
+      "content": "Pierwsza dywizja została sformowana pod kryptonimem Nightfall Squadron. Cel: Jedność i taktyczna dominacja."
+    },
+    "event2": {
+      "title": "PIERWSZE_ROZMIESZCZENIE",
+      "content": "Udział w pierwszej dużej operacji. Znaczące zwycięstwo osiągnięte dzięki skoordynowanym atakom dronów."
+    },
+    "event3": {
+      "title": "FAZA_FORTYFIKACJI",
+      "content": "Rozszerzenie cyfrowej bazy danych i rekrutacja elitarnych specjalistów."
+    },
+    "event4": {
+      "title": "WZNIESIENIE_DOWODZENIA",
+      "content": "Modernizacja interfejsu Web-Command i pełna integracja z globalnymi sieciami wywiadowczymi."
+    }
+  },
+  "kos": {
+    "title": "BAZA DANYCH KOS",
+    "subtitle": "Oficjalna lista osób i podmiotów stanowiących zagrożenie dla Nightfall Squadron.",
+    "search": "SZUKAJ PO NAZWIE...",
+    "reasonLabel": "POWÓD",
+    "lastSeenLabel": "OSTATNIO WIDZIANY",
+    "statusLabel": "STATUS",
+    "viewIntel": "ZOBACZ AKTA",
+    "noResults": "BRAK PASUJĄCYCH ZAGROŻEŃ W ARCHIWACH",
+    "personalSection": "OSOBY",
+    "factionSection": "FRAKCJE",
+    "reason1": "Kradzież danych wywiadowczych i sabotaż serwera.",
+    "reason2": "Skoordynowane rajdy i szerzenie propagandy.",
+    "reason3": "Korzystanie z nieautoryzowanego oprogramowania zewnętrznego."
+  },
+  "login": {
+    "prompt": "ZALOGUJ SIĘ, ABY KONTYNUOWAĆ",
+    "subtitle": "Autoryzuj swoje konto, aby uzyskać dostęp do panelu taktycznego.",
+    "with_discord": "ZALOGUJ PRZEZ DISCORD",
+    "requirements_title": "WYMAGANIA DOSTĘPU",
+    "req1": "Ważne konto Discord",
+    "req2": "Przynależność do oficjalnego serwera NFS",
+    "req3": "Zweryfikowany status operacyjny",
+    "notice": "Logowanie przez Discord jest wymagane do weryfikacji statusu członka oraz zabezpieczenia sesji.",
+    "tos": "Warunki Korzystania",
+    "privacy": "Polityka Prywatności",
+    "success_title": "DOSTĘP PRZYZNANY",
+    "success_body": "Weryfikacja zakończona sukcesem. Witaj w systemie Nightfall Squadron.",
+    "error_no_server": "DOSTĘP ZABLOKOWANY: Nie należysz do oficjalnego serwera Discord frakcji.",
+    "error_api": "BŁĄD SYSTEMU: Nie udało się zweryfikować Twojego konta.",
+    "redirecting": "Przekierowywanie do bazy danych..."
   },
   "staff": {
     "title": "POZNAJ NASZĄ KADRĘ!",
@@ -86,11 +147,11 @@
   },
   "qa": {
     "title": "PYTANIA I ODPOWIEDZI",
-    "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące InterPolishForces",
+    "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące Nightfall Squadron",
     "noItems": "Brak pytań do wyświetlenia",
     "faqs": [
       {
-        "question": "Jak mogę dołączyć do InterPolishForces?",
+        "question": "Jak mogę dołączyć do Nightfall Squadron?",
         "answer": "Aby dołączyć do naszej frakcji, musisz wejść na nasz serwer Roblox i poprosić o zaproszenie. Zwróć się do dowolnego członka administracji z wymaganą dokumentacją."
       },
       {
@@ -124,20 +185,20 @@
     ]
   },
   "about": {
-    "title": "CZYM JEST IPF?",
+    "title": "CZYM JEST NFS?",
     "subtitle": "Poznaj naszą historię, misję i jak dołączyć do naszej społeczności",
     "whoAreWe": "Kim jesteśmy?",
-    "whoAreWeContent": "InterPolishForces to dynamiczna i profesjonalna organizacja militarna działająca na serwerze Roblox. Jesteśmy zaangażowani w tworzenie przyjaznego, zdyscyplinowanego i zainteresowanego wspólnotą graczy.",
+    "whoAreWeContent": "Nightfall Squadron to dynamiczna i profesjonalna organizacja militarna działająca na serwerze Roblox. Jesteśmy zaangażowani w tworzenie przyjaznego, zdyscyplinowanego i zainteresowanego wspólnotą graczy.",
     "whoAreWeContent2": "Nasze członkowie pochodzą z różnych części świata, ale łączy nas wspólna pasja do gier i zainteresowanie wojskowością. Tworzymy środowisko, gdzie każdy może się rozwijać i osiągać swoje cele.",
     "ourMission": "Nasza misja",
-    "ourMissionContent": "Misją InterPolishForces jest budowanie silnej, zorganizowanej i szanującej się nawzajem społeczności graczy. Dążymy do:",
+    "ourMissionContent": "Misją Nightfall Squadron jest budowanie silnej, zorganizowanej i szanującej się nawzajem społeczności graczy. Dążymy do:",
     "mission1": "Zapewniania pozytywnego doświadczenia na serwerze",
     "mission2": "Wspierania nowych członków w ich rozwoju",
     "mission3": "Organizowania zdarzeń i operacji dla całej frakcji",
     "mission4": "Utrzymywania wysokich standardów profesjonalizmu i etyki",
     "mission5": "Tworzenia przyjaznego i bezpiecznego środowiska dla graczy",
     "values": "Nasze wartości",
-    "valuesIntro": "Działania Shadow Abyssal X opierają się na następujących fundamentalnych wartościach:",
+    "valuesIntro": "Działania Nightfall Squadron opierają się na następujących fundamentalnych wartościach:",
     "value1Title": "Szacunek",
     "value1Content": " - Szanujemy każdego członka naszej społeczności niezależnie od jego pozycji.",
     "value2Title": "Dyscyplina",
@@ -147,17 +208,17 @@
     "value4Title": "Przejrzystość",
     "value4Content": " - Komunikujemy się otwarcie i uczciwą z naszymi członkami.",
     "value5Title": "Zaangażowanie",
-    "value5Content": " - Każdy członek jest zaangażowany w działania InterPolishForces.",
+    "value5Content": " - Każdy członek jest zaangażowany w działania Nightfall Squadron.",
     "structure": "Struktura organizacyjna",
-    "structureContent": "InterPolishForces ma dobrze zdefiniowaną strukturę z różnymi rolami i stanowiskami. Od Faction Command na szczycie po Trial Moderators, każda rola jest ważna i wspiera ogólne funkcjonowanie organizacji.",
+    "structureContent": "Nightfall Squadron ma dobrze zdefiniowaną strukturę z różnymi rolami i stanowiskami. Od Faction Command na szczycie po Trial Moderators, każda rola jest ważna i wspiera ogólne funkcjonowanie organizacji.",
     "structureContent2": "Aby dowiedzieć się więcej o naszych rolach i członkach kadry, odwiedź stronę 'Kadra'.",
     "howToJoin": "Jak dołączyć do nas?",
-    "howToJoinContent": "Jeśli jesteś zainteresowany dołączeniem do InterPolishForces, tutaj są podstawowe kroki:",
+    "howToJoinContent": "Jeśli jesteś zainteresowany dołączeniem do Nightfall Squadron, tutaj są podstawowe kroki:",
     "step1": "Wejdź na nasz serwer Roblox i zapoznaj się z naszymi regulaminami",
     "step2": "Dołącz do naszego serwera Discord aby być w kontakcie z społecznością",
     "step3": "Zwróć się do członka administracji z prośbą o zaproszenie do frakcji",
     "step4": "Przejdź przez proces weryfikacji i poznaj pozostałych członków",
-    "step5": "Zacznij nową przygodę z InterPolishForces!",
+    "step5": "Zacznij nową przygodę z Nightfall Squadron!",
     "joinDiscord": "Dołącz na Discorda",
     "contact": "Kontakt",
     "contactContent": "Jeśli masz pytania lub chcesz się skontaktować z administracją, możesz to zrobić poprzez:",
@@ -166,14 +227,14 @@
     "contactWebsite": "Ta strona: Skorzystaj z opcji kontaktu (jeśli dostępna)"
   },
   "common": {
-    "orgName": "InterPolishForces",
+    "orgName": "Nightfall Squadron",
     "comingSoon": "WKRÓTCE",
     "na": "N/D",
     "noDescription": "Brak opisu"
   },
   "regulations": {
-    "serverTitle": "Regulamin serwera InterPolishForces",
-    "title": "Regulamin serwera InterPolishForces",
+    "serverTitle": "Regulamin serwera Nightfall Squadron",
+    "title": "Regulamin serwera Nightfall Squadron",
     "warning": "Każdy, kto złamie zasady, poniesie konsekwencje, takie jak wyciszenie na określoną liczbę godzin, ban lub wyrzucenie z serwera. Jeśli ujawnisz dane osobowe innej osoby, możesz spodziewać się trwałego bana i dodania do 𝙺𝙾𝚂.",
     "highlight": "Niektóre zasady będą podkreślone czego nie złamać jakiegoś regulaminu i wyładować w kos liście.",
     "generalRulesTitle": "Sekcja 1: Ogólne zasady",
@@ -263,7 +324,7 @@
   },
   "changelog": {
     "title": "CHANGELOG",
-    "subtitle": "Zobacz historię zmian i aktualizacji InterPolishForces",
+    "subtitle": "Zobacz historię zmian i aktualizacji Nightfall Squadron",
     "footer": {
       "thankYou": "Dziękujemy za obserwowanie naszego rozwoju!",
       "suggest": "Masz jakieś sugestie? Dołącz do naszego Discorda!"
@@ -278,28 +339,65 @@
     },
     "dev": [
       {
+        "version": "0.0.11.9",
+        "date": "30 sty 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Ulepszenie stylizacji strony internetowej",
+            "description": "Ulepszono wygląd strony internetowej, aby wyglądał podobnie do logu frakcji. Oraz dodano elementy sci-fi związane z kosmosem itd"
+          },
+          {
+            "type": "improvement",
+            "title": "Drobna zmiana w KOS",
+            "description": "Dodano do KOS'u frakcję"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.8",
+        "date": "25 sty 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Discord Auth Gate",
+            "description": "Zaimplementowano system logowania przez Discord wymagający członkostwa w oficjalnym serwerze frakcji. Cała strona jest ukryta za bramką bezpieczeństwa."
+          },
+          {
+            "type": "feature",
+            "title": "Historia Frakcji",
+            "description": "Dodano nową stronę z interaktywną linią czasu przedstawiającą historię operacyjną Nightfall Squadron."
+          },
+          {
+            "type": "feature",
+            "title": "Baza Danych KOS",
+            "description": "Wdrożono system śledzenia zagrożeń (KOS) z możliwością wyszukiwania i filtrowania celów wysokiego priorytetu."
+          }
+        ]
+      },
+      {
         "version": "0.0.11.7 Part III",
         "date": "20 sty 2026",
         "changes": [
-            {
-              "type": "bugfix",
-              "title": "Poprawki UI na mobile",
-              "description": "Naprawiono błąd, przez który nagłówek i przyciski wystawały poza krawędź ekranu na telefonach."
-            },
-            {
+          {
+            "type": "bugfix",
+            "title": "Poprawki UI na mobile",
+            "description": "Naprawiono błąd, przez który nagłówek i przyciski wystawały poza krawędź ekranu na telefonach."
+          },
+          {
             "title": "Drobna poprawka w loading screen",
             "description": "Poprawiono tekst w loading screen (dodano 3 brakujące kropki w System gotowy)"
-            }
-          ]
-        },
+          }
+        ]
+      },
       {
         "version": "0.0.11.7 Part II",
         "date": "18 sty 2026",
         "changes": [
           {
             "type": "feature",
-            "title": "Rebranding: InterPolishForces",
-            "description": "Oficjalna zmiana nazwy z '303rd Division' na 'InterPolishForces' w całym projekcie, w tym w systemie tłumaczeń, nagłówkach i powiadomieniach systemowych."
+            "title": "Rebranding: Nightfall Squadron",
+            "description": "Oficjalna zmiana nazwy z '303rd Division' na 'Nightfall Squadron' w całym projekcie, w tym w systemie tłumaczeń, nagłówkach i powiadomieniach systemowych."
           },
           {
             "type": "feature",
@@ -745,7 +843,7 @@
           {
             "type": "feature",
             "title": "Uruchomienie produkcji",
-            "description": "Oficjalne publiczne uruchomienie strony InterPolishForces"
+            "description": "Oficjalne publiczne uruchomienie strony Nightfall Squadron"
           },
           {
             "type": "feature",

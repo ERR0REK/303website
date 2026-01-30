@@ -1,0 +1,276 @@
+/* src/Components/Pages/History.css */
+
+.history-page {
+    min-height: 100vh;
+    background: transparent;
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    overflow-x: hidden;
+}
+
+.history-overlay, .history-scanlines {
+    display: none; /* Using global SpaceBackground */
+}
+
+.history-hero {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--nfs-blue);
+    margin-bottom: 20px;
+}
+
+.hero-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 4px 15px;
+    border-left: 2px solid var(--nfs-blue);
+    color: var(--starlight-white);
+}
+
+.history-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 20px;
+    font-family: var(--font-header);
+    background: linear-gradient(90deg, var(--starlight-white), var(--nfs-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+    letter-spacing: 8px;
+}
+
+.history-subtitle {
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.hero-divider span {
+    height: 1px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, var(--nfs-blue), transparent);
+}
+
+/* Timeline Container */
+.history-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    z-index: 3;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 40px; /* Moved to the left for dossier style */
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--nfs-blue), transparent);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 80px;
+    position: relative;
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.timeline-item.right {
+    padding-left: 80px;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.badge-outer {
+    width: 44px;
+    height: 44px;
+    background: rgba(15, 15, 25, 0.8);
+    border: 1px solid var(--nfs-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--nfs-blue);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+/* Timeline Card */
+.timeline-card {
+    background: rgba(15, 15, 25, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    clip-path: none; /* Removed the complex clip-path for cleaner tactical look */
+}
+
+.timeline-card:hover {
+    border-color: var(--nfs-purple);
+    background: rgba(168, 85, 247, 0.08);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2);
+    transform: translateX(10px);
+}
+
+.card-header {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-year {
+    color: var(--nfs-blue);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-family: var(--font-header);
+    color: var(--starlight-white);
+    letter-spacing: 2px;
+}
+
+.card-body p {
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+/* HUD Elements */
+.card-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--nfs-purple), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.timeline-card:hover .card-scanner {
+    opacity: 1;
+    animation: scanVertical 3s linear infinite;
+}
+
+.corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--nfs-blue);
+    opacity: 0.3;
+}
+
+.corner.tl {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.corner.tr {
+    top: 0;
+    right: 0;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.corner.bl {
+    bottom: 0;
+    left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+.corner.br {
+    bottom: 0;
+    right: 0;
+    border-left: 0;
+    border-top: 0;
+}
+
+.history-footer {
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.footer-line {
+    width: 60px;
+    height: 2px;
+    background: var(--nfs-purple);
+    margin: 0 auto 15px;
+}
+
+.footer-tag {
+    font-family: var(--font-header);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+}
+
+@keyframes scanVertical {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-item,
+    .timeline-item.right {
+        padding-left: 70px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+
+    .timeline-badge {
+        left: 30px;
+    }
+
+    .timeline-card {
+        width: 100%;
+    }
+}

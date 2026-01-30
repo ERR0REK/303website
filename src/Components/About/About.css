@@ -1,11 +1,11 @@
 /* src/Components/About/About.css */
 
 :root {
-  --abt-primary: #00ff66;
-  --abt-secondary: #00d4ff;
-  --abt-bg: #050a05;
-  --abt-card: rgba(10, 20, 10, 0.4);
-  --abt-border: rgba(0, 255, 102, 0.2);
+  --abt-primary: var(--military-green);
+  --abt-secondary: var(--cyber-blue);
+  --abt-bg: var(--bg-color);
+  --abt-card: var(--bg-alt);
+  --abt-border: var(--military-green-glow);
 }
 
 .about-page {
@@ -22,8 +22,8 @@
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 50%, rgba(0, 255, 102, 0.05) 0%, transparent 70%),
-    linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 255, 102, 0.02) 50%);
+    radial-gradient(circle at 50% 50%, var(--military-green-glow) 0%, transparent 70%),
+    linear-gradient(rgba(0, 0, 0, 0) 50%, var(--military-green-glow) 50%);
   background-size: 100% 100%, 100% 4px;
   z-index: 1;
   pointer-events: none;
@@ -34,7 +34,7 @@
   inset: 0;
   background: linear-gradient(to bottom,
       transparent,
-      rgba(0, 255, 102, 0.05) 50%,
+      var(--military-green-glow) 50%,
       transparent);
   background-size: 100% 100px;
   animation: scanMoveAbout 8s linear infinite;
@@ -81,13 +81,13 @@
   color: #fff;
   letter-spacing: 5px;
   margin-bottom: 15px;
-  text-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+  text-shadow: 0 0 20px var(--military-green-glow);
 }
 
 .about-subtitle {
   font-family: 'Share Tech Mono', monospace;
   font-size: 1.2rem;
-  color: #aaffaa;
+  color: var(--text-dim);
   opacity: 0.7;
   max-width: 700px;
   margin: 0 auto;
@@ -134,12 +134,12 @@
 .about-card:hover {
   border-color: var(--abt-primary);
   background: rgba(10, 25, 15, 0.6);
-  box-shadow: 0 0 40px rgba(0, 255, 102, 0.1);
+  box-shadow: 0 0 40px var(--military-green-glow);
 }
 
 .about-card.highlight {
   border-left: 4px solid var(--abt-primary);
-  background: linear-gradient(90deg, rgba(0, 255, 102, 0.05), transparent);
+  background: linear-gradient(90deg, var(--military-green-glow), transparent);
 }
 
 .card-header {
@@ -196,7 +196,7 @@
 }
 
 .feature-item:hover {
-  background: rgba(0, 255, 102, 0.05);
+  background: var(--military-green-glow);
   border-color: var(--abt-primary);
   transform: translateY(-2px);
 }
@@ -250,7 +250,7 @@
 
 .join-btn {
   margin-top: 30px;
-  background: rgba(0, 255, 102, 0.1);
+  background: var(--military-green-glow);
   border: 1px solid var(--abt-primary);
   padding: 15px 40px;
   color: var(--abt-primary);

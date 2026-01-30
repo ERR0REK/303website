@@ -6,24 +6,9 @@ import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
 import StaffRoleSection from "../Staff/StaffRoleSection";
 import StaffMemberModal from "../Staff/StaffMemberModal";
+import DecodedText from "../Shared/DecodedText";
 
 /* Importowanie obrazków członków kadry */
-
-import elizaPFP from "../../Assets/StaffMembersPFP/ElizaPFP.png";
-import TymussPFP from "../../Assets/StaffMembersPFP/TymussPFP.png";
-import tippthegamerPFP from "../../Assets/StaffMembersPFP/tippthegamerPFP.png";
-import AlexPFP from "../../Assets/StaffMembersPFP/AlexPFP.png";
-import SLX_EX0T1CPFP from "../../Assets/StaffMembersPFP/EX0T1CPFP.jpg";
-import PlantinaxiPFP from "../../Assets/StaffMembersPFP/PlantinaxiPFP.png";
-import G4L4XYPFP from "../../Assets/StaffMembersPFP/G4L4XYPFP.png";
-import miko_o1PFP from "../../Assets/StaffMembersPFP/Miko_o01PFP.png";
-import chillin_noodlesPFP from "../../Assets/StaffMembersPFP/chillin_noodlesPFP.png";
-import SilentPFP from "../../Assets/StaffMembersPFP/SilentPFP.png";
-import Bob_BudowniczyPFP from "../../Assets/StaffMembersPFP/Bob_budowniczyPFP.png";
-import kabanosPFP from "../../Assets/StaffMembersPFP/kabanosPFP.png";
-import MaverickPFP from "../../Assets/StaffMembersPFP/MaverickPFP.png";
-import R_SPFP from "../../Assets/StaffMembersPFP/R_SPFP.png";
-import KiepskiPFP from "../../Assets/StaffMembersPFP/KiepskiPFP.png";
 
 /* Koniec importowania obrazków */
 
@@ -39,160 +24,25 @@ export default function Staff() {
     factionCommand: [
       {
         id: 1,
-        name: "Eliza",
-        role: "Faction Command",
-        avatar: elizaPFP,
-        robloxUsername: "XxIsaacBestPlayerxX",
-        robloxUserId: "5640334840",
-        inGameRank: "Leader",
-      },
-      {
-        id: 12,
-        name: "Alex",
-        role: "Faction Command",
-        avatar: AlexPFP,
-        robloxUsername: "atfg333",
-        robloxUserId: "5163504964",
-        inGameRank: "",
+        name: "John Doe",
+        rank: "Faction Command",
+        image: "https://via.placeholder.com/150",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus vel ante feugiat placerat. Nullam nec metus vel ante feugiat placerat.",
       },
     ],
-    factionCoLeader: [
-      {
-        id: 2,
-        name: "Tymuss",
-        role: "Faction Co Leader",
-        avatar: TymussPFP,
-        robloxUsername: "SAMISALAMI7",
-        robloxUserId: "782408287",
-        inGameRank: "",
-      },
-      {
-        id: 3,
-        name: "SLX_EX0T1C",
-        role: "Technical Specialist & Faction Co Leader",
-        avatar: SLX_EX0T1CPFP,
-        robloxUsername: "ERR0R_Gl1tch",
-        robloxUserId: "2537111023",
-        inGameRank: "",
-      },
-    ],
+    factionCoLeader: [],
     technicalSpecialist: [],
     trialCoLeader: [],
-    elder: [
-      {
-        id: 4,
-        name: "Plantinaxi",
-        role: "Trial Elder",
-        avatar: PlantinaxiPFP,
-        robloxUsername: "Plantinaxi",
-        robloxUserId: "1157506780",
-        inGameRank: "",
-      },
-    ],
+    elder: [],
     trialElder: [],
     intelligence: [],
     headAdministrator: [],
     seniorAdministrator: [],
-    administrator: [
-      {
-        id: 5,
-        name: "G4L4XY",
-        role: "Administrator",
-        avatar: G4L4XYPFP,
-        robloxUsername: "Chrismoldova111",
-        robloxUserId: "5223007921",
-        inGameRank: "",
-      },
-      {
-        id: 7,
-        name: "chillin_noodles",
-        role: "Administrator",
-        avatar: chillin_noodlesPFP,
-        robloxUsername: "GreatThunder1",
-        robloxUserId: "4583825013",
-        inGameRank: "",
-      },
-      {
-        id: 8,
-        name: "Silent",
-        role: "Administrator",
-        avatar: SilentPFP,
-        robloxUsername: "Warcel09",
-        robloxUserId: "3061429272",
-        inGameRank: "",
-      },
-    ],
-    trialAdministrator: [
-      {
-        id: 6,
-        name: "miko_o01",
-        role: "Administrator",
-        avatar: miko_o1PFP,
-        robloxUsername: "",
-        robloxUserId: "",
-        inGameRank: "",
-      },
-      {
-        id: 11,
-        name: "tippthegamer",
-        role: "Administrator",
-        avatar: tippthegamerPFP,
-        robloxUsername: "",
-        robloxUserId: "",
-        inGameRank: "",
-      },
-    ],
-    seniorModerator: [
-      {
-        id: 10,
-        name: "Bob_Budowniczy",
-        role: "Senior Moderator",
-        avatar: Bob_BudowniczyPFP,
-        robloxUsername: "Bob_Budowniczy",
-        robloxUserId: "7383324814",
-        inGameRank: "",
-      },
-    ],
-    moderator: [
-      {
-        id: 15,
-        name: "kabanos",
-        role: "Moderator",
-        avatar: kabanosPFP,
-        robloxUsername: "",
-        robloxUserId: "",
-        inGameRank: "",
-      },
-      {
-        id: 16,
-        name: "Maverick",
-        role: "Moderator",
-        avatar: MaverickPFP,
-        robloxUsername: "",
-        robloxUserId: "",
-        inGameRank: "",
-      },
-      {
-        id: 17,
-        name: "R_S",
-        role: "Moderator",
-        avatar: R_SPFP,
-        robloxUsername: "",
-        robloxUserId: "",
-        inGameRank: "",
-      },
-    ],
-    trialModerator: [
-      {
-        id: 19,
-        name: "Kiepski",
-        role: "Trial Moderator",
-        avatar: KiepskiPFP,
-        robloxUsername: "Kiepsky",
-        robloxUserId: "643059035",
-        inGameRank: "",
-      },
-    ],
+    administrator: [],
+    trialAdministrator: [],
+    seniorModerator: [],
+    moderator: [],
+    trialModerator: [],
   };
 
   const handleMemberMoreInfo = (member) => {
@@ -210,8 +60,6 @@ export default function Staff() {
         <div className="staff-bg-grid"></div>
         <div className="staff-bg-nodes"></div>
         <div className="staff-bg-overlay"></div>
-        <div className="staff-bg-circle staff-bg-circle-1"></div>
-        <div className="staff-bg-circle staff-bg-circle-2"></div>
       </div>
 
       <Navbar />
@@ -223,14 +71,12 @@ export default function Staff() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <motion.h1
-          className="staff-hero-title"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-        >
-          {t("staff.title", "MEET THE STAFF TEAM!")}
-        </motion.h1>
+        <h1 className="staff-hero-title">
+          <DecodedText 
+            text={t("staff.title", "MEET THE STAFF TEAM!")} 
+            delay={0.2} 
+          />
+        </h1>
         <motion.div
           className="staff-hero-divider"
           initial={{ scaleX: 0 }}
@@ -242,9 +88,18 @@ export default function Staff() {
       {/* --- Główny kontener treści --- */}
       <motion.main
         className="staff-main-container"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.15,
+            }
+          }
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.05 }}
       >
         {/* Faction Command */}
         <StaffRoleSection

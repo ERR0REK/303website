@@ -1,13 +1,13 @@
 /* src/Components/Changelog/Changelog.css */
 
 :root {
-  --log-primary: #00ff66;
-  --log-secondary: #00d4ff;
-  --log-warning: #ffcc00;
+  --log-primary: var(--military-green);
+  --log-secondary: var(--cyber-blue);
+  --log-warning: var(--cyber-orange);
   --log-danger: #ff4d4d;
-  --log-bg-dark: #050a05;
-  --log-glass: rgba(0, 255, 102, 0.03);
-  --log-border: rgba(0, 255, 102, 0.2);
+  --log-bg-dark: var(--bg-color);
+  --log-glass: var(--military-green-glow);
+  --log-border: var(--military-green-glow);
 }
 
 .changelog-page {
@@ -23,8 +23,8 @@
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 50%, rgba(0, 255, 102, 0.05) 0%, transparent 70%),
-    linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 255, 102, 0.02) 50%);
+    radial-gradient(circle at 50% 50%, var(--military-green-glow) 0%, transparent 70%),
+    linear-gradient(rgba(0, 0, 0, 0) 50%, var(--military-green-glow) 50%);
   background-size: 100% 100%, 100% 4px;
   z-index: 1;
   pointer-events: none;
@@ -97,7 +97,7 @@
 .changelog-subtitle {
   font-family: 'Share Tech Mono', monospace;
   font-size: 1.1rem;
-  color: #aaffaa;
+  color: var(--text-dim);
   opacity: 0.7;
   max-width: 600px;
   margin: 0 auto;

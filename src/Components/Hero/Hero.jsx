@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import {
     MessageSquare,
     Youtube,
@@ -12,9 +12,14 @@ import {
     ShieldCheck,
     Cpu,
     Wifi,
-    Navigation
+    Navigation,
+    Target
 } from 'lucide-react';
 import LinkErrorModal from './LinkErrorModal';
+import DecodedText from '../Shared/DecodedText';
+import heroBg from '../../Assets/976320.jpg';
+import CyberParticles from './CyberParticles';
+import LiveTerminal from './LiveTerminal';
 import '../Hero/Hero.css';
 
 const Hero = () => {
@@ -23,22 +28,50 @@ const Hero = () => {
     const [selectedPlatform, setSelectedPlatform] = useState('');
     const [bootSequence, setBootSequence] = useState(0);
 
-    // Simulation of boot sequence
+    // Parallax Motion Values
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    // Smooth transition springs
+    const springConfig = { stiffness: 100, damping: 30 };
+    const smX = useSpring(mouseX, springConfig);
+    const smY = useSpring(mouseY, springConfig);
+
+    // Dynamic transforms for different layers
+    const bgX = useTransform(smX, [-500, 500], [15, -15]);
+    const bgY = useTransform(smY, [-500, 500], [15, -15]);
+    const hudX = useTransform(smX, [-500, 500], [-25, 25]);
+    const hudY = useTransform(smY, [-500, 500], [-25, 25]);
+    const textX = useTransform(smX, [-500, 500], [-10, 10]);
+    const textY = useTransform(smY, [-500, 500], [-10, 10]);
+
     useEffect(() => {
+        const handleMouseMove = (e) => {
+            const { clientX, clientY } = e;
+            const moveX = clientX - window.innerWidth / 2;
+            const moveY = clientY - window.innerHeight / 2;
+            mouseX.set(moveX);
+            mouseY.set(moveY);
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        
         const timer1 = setTimeout(() => setBootSequence(1), 500);
         const timer2 = setTimeout(() => setBootSequence(2), 1000);
         const timer3 = setTimeout(() => setBootSequence(3), 1500);
+        
         return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
             clearTimeout(timer1);
             clearTimeout(timer2);
             clearTimeout(timer3);
         };
-    }, []);
+    }, [mouseX, mouseY]);
 
     const links = {
         discord: '',
-        youtube: '', // Empty to test error
-        tiktok: '',  // Empty to test error
+        youtube: 'https://www.youtube.com/channel/UCMmoYakrPiV0LwdPAunqJpQ', 
+        tiktok: '', 
     };
 
     const handleLinkDispatch = (platform) => {
@@ -53,12 +86,44 @@ const Hero = () => {
 
     return (
         <div className='hero'>
-            {/* Background Overlays */}
+            <CyberParticles />
+            
+            {/* Background Layer with Parallax */}
+            <motion.div 
+                className="hero-bg-container"
+                style={{ 
+                    backgroundImage: `url(${heroBg})`,
+                    x: bgX,
+                    y: bgY,
+                    scale: 1.1
+                }}
+            >
+                <div className="hero-image-overlay"></div>
+            </motion.div>
+
             <div className="hero-grid-overlay"></div>
             <div className="hero-scanline"></div>
 
-            {/* --- HUD Corners --- */}
-            <div className="hud-panel hud-tl">
+            {/* --- Targeting Reticle Decoration --- */}
+            <div className="reticle-container">
+                <motion.div 
+                    className="targeting-reticle"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                    <Target size={400} strokeWidth={0.5} opacity={0.1} />
+                </motion.div>
+                <motion.div 
+                    className="targeting-reticle-inner"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                >
+                    <Target size={250} strokeWidth={1} opacity={0.05} />
+                </motion.div>
+            </div>
+
+            {/* --- HUD Corners with Parallax --- */}
+            <motion.div className="hud-panel hud-tl" style={{ x: hudX, y: hudY }}>
                 <div className="hud-line"></div>
                 <div className="hud-data">
                     <div className="data-item">
@@ -70,9 +135,9 @@ const Hero = () => {
                         <span>LOAD: 12%</span>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="hud-panel hud-tr">
+            <motion.div className="hud-panel hud-tr" style={{ x: hudX, y: hudY }}>
                 <div className="hud-line"></div>
                 <div className="hud-data">
                     <div className="data-item">
@@ -84,11 +149,14 @@ const Hero = () => {
                         <span>LINK: SECURE</span>
                     </div>
                 </div>
-            </div>
+            </motion.div>
+
+            <LiveTerminal />
 
             <div className="container">
                 <motion.div
                     className="hero-text"
+                    style={{ x: textX, y: textY }}
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -102,14 +170,9 @@ const Hero = () => {
                         <span>FACTION_MAIN_TERMINAL_v4.0.1</span>
                     </motion.div>
 
-                    <motion.h1
-                        className="glitch-text"
-                        data-text={t('hero.title')}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: bootSequence >= 2 ? 1 : 0, scale: bootSequence >= 2 ? 1 : 0.9 }}
-                    >
-                        {t('hero.title')}
-                    </motion.h1>
+                    <h1 className="glitch-text">
+                        <DecodedText text={t('hero.title')} delay={1} />
+                    </h1>
 
                     <motion.div
                         className="hero-desc-wrapper"
@@ -125,18 +188,33 @@ const Hero = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: bootSequence >= 3 ? 1 : 0 }}
                     >
-                        <button className='btn btn-discord' onClick={() => handleLinkDispatch('discord')}>
+                        <motion.button 
+                            className='btn btn-discord' 
+                            onClick={() => handleLinkDispatch('discord')}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
                             <MessageSquare size={18} />
                             <span>{t('hero.discord_button')}</span>
-                        </button>
-                        <button className='btn btn-youtube' onClick={() => handleLinkDispatch('youtube')}>
+                        </motion.button>
+                        <motion.button 
+                            className='btn btn-youtube' 
+                            onClick={() => handleLinkDispatch('youtube')}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
                             <Youtube size={18} />
                             <span>{t('hero.youtube_button')}</span>
-                        </button>
-                        <button className='btn btn-tiktok' onClick={() => handleLinkDispatch('tiktok')}>
+                        </motion.button>
+                        <motion.button 
+                            className='btn btn-tiktok' 
+                            onClick={() => handleLinkDispatch('tiktok')}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
                             <Video size={18} />
                             <span>{t('hero.tiktok_button')}</span>
-                        </button>
+                        </motion.button>
                     </motion.div>
                 </motion.div>
             </div>
@@ -149,22 +227,20 @@ const Hero = () => {
                 </div>
                 <div className="ticker-content">
                     <div className="ticker-track">
-                        <span>{"// TRAINING OPERATIONS: ACTIVE"}</span>
-                        <span>{"// UNIT RECRUITMENT: OPEN"}</span>
-                        <span>{"// SERVER STATUS: OPTIMAL"}</span>
-                        <span>{"// LATEST INTEL: InterPolishForces DEPLOYED"}</span>
-                        <span>{"// ENCRYPTION: MIL-SPEC_V2"}</span>
-                        {/* Duplicate for seamless loop */}
-                        <span>{"// TRAINING OPERATIONS: ACTIVE"}</span>
-                        <span>{"// UNIT RECRUITMENT: OPEN"}</span>
-                        <span>{"// SERVER STATUS: OPTIMAL"}</span>
-                        <span>{"// LATEST INTEL: InterPolishForces DEPLOYED"}</span>
-                        <span>{"// ENCRYPTION: MIL-SPEC_V2"}</span>
+                        <span>{t('ticker.line1')}</span>
+                        <span>{t('ticker.line2')}</span>
+                        <span>{t('ticker.line3')}</span>
+                        <span>{t('ticker.line4')}</span>
+                        <span>{t('ticker.line5')}</span>
+                        <span>{t('ticker.line1')}</span>
+                        <span>{t('ticker.line2')}</span>
+                        <span>{t('ticker.line3')}</span>
+                        <span>{t('ticker.line4')}</span>
+                        <span>{t('ticker.line5')}</span>
                     </div>
                 </div>
             </div>
 
-            {/* --- Link Dispatcher Modal --- */}
             <LinkErrorModal
                 isOpen={isErrorOpen}
                 onClose={() => setIsErrorOpen(false)}

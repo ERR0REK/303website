@@ -21,6 +21,13 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    /* Logout button disabled temporarily
+    const handleLogout = () => {
+        localStorage.removeItem('NFS_auth_session');
+        window.location.href = "/";
+    };
+    */
+
     return (
         <nav>
             <div className="nav-container">
@@ -49,8 +56,18 @@ const Navbar = () => {
                         <li><NavLink to="/regulations">{t('nav.regulations')}</NavLink></li>
                         <li><NavLink to="/qa">{t('nav.qa')}</NavLink></li>
                         <li><NavLink to="/staff">{t('nav.staff')}</NavLink></li>
+                        <li><NavLink to="/history">{t('nav.history', 'HISTORIA')}</NavLink></li>
+                        <li><NavLink to="/kos">{t('nav.kos', 'KOS')}</NavLink></li>
                         <li><NavLink to="/war-logs">{t('nav.warLogs', 'WAR LOGS')}</NavLink></li>
                         <li><NavLink to="/changelog" className="nav-changelog">{t('nav.changelog', 'CHANGELOG')}</NavLink></li>
+                        {/* Logout button disabled temporarily
+                        <li className="nav-logout-li">
+                            <button onClick={handleLogout} className="nav-logout-btn">
+                                <LogOut size={16} />
+                                <span>{t('nav.logout', 'LOGOUT')}</span>
+                            </button>
+                        </li>
+                        */}
                     </ul>
                     <div className="nav-lang-mobile">
                         <LanguageDropdown />

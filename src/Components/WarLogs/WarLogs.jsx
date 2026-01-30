@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "../Navbar/Navbar";
 import WarLogCard from "./WarLogCard";
 import WarLogModal from "./WarLogModal";
+import DecodedText from "../Shared/DecodedText";
 import "./WarLogs.css";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -21,7 +22,7 @@ const WarLogs = () => {
       mvp: "@Hejhej01928, @Polskaexe_v3",
       reason: t("warLogs.war1.reason"),
       members: t("warLogs.war1.members"),
-      victoryImg: "https://via.placeholder.com/1200x600?text=Victory+Celebration+303",
+      victoryImg: "https://via.placeholder.com/1200x600?text=Victory+Celebration+Nightfall",
       enemyKD: [
         { name: "@Rushwinter", kills: 1, deaths: 10 },
         { name: "@imsocool_leon", kills: 2, deaths: 3 },
@@ -45,13 +46,25 @@ const WarLogs = () => {
       <Navbar />
       <div className="warlogs-bg"></div>
 
-      <div className="warlogs-container">
+      <motion.div 
+        className="warlogs-container"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1 }
+          }
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.05 }}
+      >
         <header className="warlogs-header">
           <h1
             className="glitch-text"
             data-text={t("warLogs.title", "WAR LOGS")}
           >
-            {t("warLogs.title", "WAR LOGS")}
+            <DecodedText text={t("warLogs.title", "WAR LOGS")} delay={0.2} />
           </h1>
           <div className="header-decoration">
             <span className="deco-line"></span>
@@ -93,7 +106,7 @@ const WarLogs = () => {
             </p>
           </motion.div>
         )}
-      </div>
+      </motion.div>
 
       <AnimatePresence>
         {selectedLog && (

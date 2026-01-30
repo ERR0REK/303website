@@ -1,18 +1,27 @@
 {
   "nav": {
     "home": "Home",
-    "about": "What's InterPolishForces?",
+    "about": "What's Nightfall Squadron?",
     "regulations": "Regulations",
     "qa": "Q&A",
     "staff": "Staff",
+    "history": "Faction History",
+    "kos": "KOS",
     "changelog": "Changelog"
   },
   "hero": {
-    "title": "InterPolishForces",
-    "welcome": "Welcome to the official website of the InterPolishForces. Explore our history, missions, and more.",
+    "title": "Nightfall Squadron",
+    "welcome": "Welcome to the official website of the Nightfall Squadron. Explore our history, missions, and more.",
     "discord_button": "Join Discord",
     "youtube_button": "YouTube",
     "tiktok_button": "TikTok"
+  },
+  "ticker": {
+    "line1": "// TRAINING OPERATIONS: ACTIVE",
+    "line2": "// UNIT RECRUITMENT: OPEN",
+    "line3": "// SERVER STATUS: OPTIMAL",
+    "line4": "// LATEST INTEL: Nightfall Squadron DEPLOYED",
+    "line5": "// ENCRYPTION: MIL-SPEC_V2"
   },
   "langDropdown": {
     "helpTranslate": "Help Translate"
@@ -39,8 +48,60 @@
     "inGameRank": "In-Game Rank",
     "joinDate": "Joined",
     "achievements": "Achievements",
-    "description": " is an important member of our InterPolishForces organization.",
+    "description": " is an important member of our Nightfall Squadron organization.",
     "close": "Close"
+  },
+  "history": {
+    "title": "OPERATIONAL ARCHIVES",
+    "subtitle": "Chronological record of Nightfall Squadron operations and milestones.",
+    "event1": {
+      "title": "INITIATION_PROTOCOL",
+      "content": "The first division was formed under the codename Nightfall Squadron. Goal: Unity and tactical dominance."
+    },
+    "event2": {
+      "title": "FIRST_DEPLOYMENT",
+      "content": "Engagement in the first major operation. Significant victory achieved through coordinated drone strikes."
+    },
+    "event3": {
+      "title": "FORTIFICATION_PHASE",
+      "content": "Expansion of the digital database and recruitment of elite specialists."
+    },
+    "event4": {
+      "title": "COMMAND_ASCENSION",
+      "content": "Modernization of the Web-Command interface and full integration with global intelligence networks."
+    }
+  },
+  "kos": {
+    "title": "KOS DATABASE",
+    "subtitle": "Official watchlist of individuals and entities posing a threat to Nightfall Squadron.",
+    "search": "SEARCH BY NAME...",
+    "reasonLabel": "REASON",
+    "lastSeenLabel": "LAST SEEN",
+    "statusLabel": "STATUS",
+    "viewIntel": "VIEW INTEL",
+    "noResults": "NO MATCHING THREATS FOUND IN ARCHIVE",
+    "personalSection": "PERSONAL TARGETS",
+    "factionSection": "FACTION TARGETS",
+    "reason1": "Intelligence theft and server sabotage.",
+    "reason2": "Coordinated raids and propaganda spreading.",
+    "reason3": "Use of unauthorized third-party software."
+  },
+  "login": {
+    "prompt": "LOGIN_TO_CONTINUE",
+    "subtitle": "Please authorize your account to access the tactical dashboard.",
+    "with_discord": "LOGIN_WITH_DISCORD",
+    "requirements_title": "ENTRY_REQUIREMENTS",
+    "req1": "Valid Discord Account",
+    "req2": "Membership in official NFS Server",
+    "req3": "Verified Identity Status",
+    "notice": "Discord login is required to verify your operative status and clear your session.",
+    "tos": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "success_title": "ACCESS GRANTED",
+    "success_body": "Verification successful. Welcome to the Nightfall Squadron system.",
+    "error_no_server": "ACCESS DENIED: You are not a member of the official faction server.",
+    "error_api": "SYSTEM ERROR: Failed to verify your account.",
+    "redirecting": "Redirecting to database..."
   },
   "staff": {
     "title": "MEET THE STAFF TEAM!",
@@ -86,11 +147,11 @@
   },
   "qa": {
     "title": "QUESTIONS & ANSWERS",
-    "subtitle": "Find answers to frequently asked questions about InterPolishForces",
+    "subtitle": "Find answers to frequently asked questions about Nightfall Squadron",
     "noItems": "No questions to display",
     "faqs": [
       {
-        "question": "How can I join InterPolishForces?",
+        "question": "How can I join Nightfall Squadron?",
         "answer": "To join our faction, you need to enter our Roblox server and request an invite. Contact any administrator with the required documentation."
       },
       {
@@ -124,20 +185,20 @@
     ]
   },
   "about": {
-    "title": "WHAT IS IPF?",
+    "title": "WHAT IS NFS?",
     "subtitle": "Learn about our history, mission, and how to join our community",
     "whoAreWe": "Who are we?",
-    "whoAreWeContent": "InterPolishForces is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
+    "whoAreWeContent": "Nightfall Squadron is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
     "whoAreWeContent2": "Our members come from different parts of the world, but we are united by a common passion for gaming and an interest in military matters. We create an environment where everyone can develop and achieve their goals.",
     "ourMission": "Our Mission",
-    "ourMissionContent": "The mission of InterPolishForces is to build a strong, organized, and mutually respectful community of players. We strive to:",
+    "ourMissionContent": "The mission of Nightfall Squadron is to build a strong, organized, and mutually respectful community of players. We strive to:",
     "mission1": "Provide a positive experience on the server",
     "mission2": "Support new members in their development",
     "mission3": "Organize events and operations for the entire faction",
     "mission4": "Maintain high standards of professionalism and ethics",
     "mission5": "Create a friendly and safe environment for players",
     "values": "Our Values",
-    "valuesIntro": "Shadow Abyssal X's activities are based on the following fundamental values:",
+    "valuesIntro": "Nightfall Squadron activities are based on the following fundamental values:",
     "value1Title": "Respect",
     "value1Content": " - We respect every member of our community regardless of their position.",
     "value2Title": "Discipline",
@@ -147,17 +208,17 @@
     "value4Title": "Transparency",
     "value4Content": " - We communicate openly and honestly with our members.",
     "value5Title": "Engagement",
-    "value5Content": " - Every member is engaged in the activities of InterPolishForces.",
+    "value5Content": " - Every member is engaged in the activities of Nightfall Squadron.",
     "structure": "Organizational Structure",
-    "structureContent": "InterPolishForces has a well-defined structure with various roles and positions. From Faction Command at the top to Trial Moderators, every role is important and supports the overall functioning of the organization.",
+    "structureContent": "Nightfall Squadron has a well-defined structure with various roles and positions. From Faction Command at the top to Trial Moderators, every role is important and supports the overall functioning of the organization.",
     "structureContent2": "To learn more about our roles and staff members, visit the 'Staff' page.",
     "howToJoin": "How to Join Us?",
-    "howToJoinContent": "If you are interested in joining InterPolishForces, here are the basic steps:",
+    "howToJoinContent": "If you are interested in joining Nightfall Squadron, here are the basic steps:",
     "step1": "Enter our Roblox server and familiarize yourself with our regulations",
     "step2": "Join our Discord server to stay in touch with the community",
     "step3": "Contact an administration member to request an invite to the faction",
     "step4": "Go through the verification process and meet the other members",
-    "step5": "Start a new adventure with InterPolishForces!",
+    "step5": "Start a new adventure with Nightfall Squadron!",
     "joinDiscord": "Join Discord",
     "contact": "Contact",
     "contactContent": "If you have questions or want to contact the administration, you can do so via:",
@@ -166,14 +227,14 @@
     "contactWebsite": "This website: Use the contact option (if available)"
   },
   "common": {
-    "orgName": "InterPolishForces",
+    "orgName": "Nightfall Squadron",
     "comingSoon": "COMING SOON",
     "na": "N/A",
     "noDescription": "No description"
   },
   "regulations": {
-    "serverTitle": "Regulations of InterPolishForces Server",
-    "title": "Regulations of InterPolishForces Server",
+    "serverTitle": "Regulations of Nightfall Squadron Server",
+    "title": "Regulations of Nightfall Squadron Server",
     "warning": "Anyone who breaks rules will face consequences, such as being muted for a certain number of hours, banned, or kicked off server. If you give out someone else's personal information, you can expect to receive a permanent ban and be added to ⁠𝙺𝙾𝚂.",
     "highlight": "Some rules will be highlighted to avoid breaking any regulations and ending up on the kos-list.",
     "generalRulesTitle": "Section 1: General Rules",
@@ -263,7 +324,7 @@
   },
   "changelog": {
     "title": "CHANGELOG",
-    "subtitle": "See the history of changes and updates to InterPolishForces",
+    "subtitle": "See the history of changes and updates to Nightfall Squadron",
     "footer": {
       "thankYou": "Thank you for following our development!",
       "suggest": "Have suggestions? Join our Discord!"
@@ -277,6 +338,27 @@
       "release": "RELEASE"
     },
     "dev": [
+      {
+        "version": "0.0.11.8",
+        "date": "Jan 25, 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Discord Auth Gate",
+            "description": "Implemented a Discord login system requiring official server membership. The entire site is now secured behind an authentication gate."
+          },
+          {
+            "type": "feature",
+            "title": "Faction History",
+            "description": "Added a new page featuring an interactive timeline of Nightfall Squadron operational history."
+          },
+          {
+            "type": "feature",
+            "title": "KOS Database",
+            "description": "Deployed a threat tracking system (KOS) with search and filtering capabilities for high-priority targets."
+          }
+        ]
+      },
       {
         "version": "0.0.11.7 Part III",
         "date": "Jan 20, 2026",
@@ -298,8 +380,8 @@
         "changes": [
           {
             "type": "feature",
-            "title": "Rebranding: InterPolishForces",
-            "description": "Official transition from '303rd Division' to 'InterPolishForces' project-wide, including translation system, headers, and system alerts."
+            "title": "Rebranding: Nightfall Squadron",
+            "description": "Official transition from '303rd Division' to 'Nightfall Squadron' project-wide, including translation system, headers, and system alerts."
           },
           {
             "type": "feature",
@@ -745,7 +827,7 @@
           {
             "type": "feature",
             "title": "Production Launch",
-            "description": "Official public release of InterPolishForces website"
+            "description": "Official public release of Nightfall Squadron website"
           },
           {
             "type": "feature",

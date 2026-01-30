@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-  /* Tactical Palette - Enhanced Visibility */
-  --bg-color: #1a1d1a;
-  --bg-alt: #222822;
-  --military-green: #00ff66;
-  /* Vibrant Tactical Green */
-  --military-green-glow: rgba(0, 255, 102, 0.4);
-  --cyber-blue: #00f3ff;
-  --cyber-orange: #ff8c00;
-  --text-main: #ffffff;
-  --text-dim: #b0b0b0;
+  /* Nightfall Cosmic Palette */
+  --bg-color: #05070a;
+  --bg-alt: #0a0f18;
+  --military-green: #a855f7; /* Nebula Purple */
+  --military-green-glow: rgba(168, 85, 247, 0.4);
+  --cyber-blue: #38bdf8; /* Starlight Blue */
+  --cyber-orange: #eab308; /* Galactic Gold */
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+  --starlight-white: #f0f4f8; /* Ultra-bright accent */
+  --nfs-purple: #a855f7;
+  --nfs-blue: #38bdf8;
+  --nfs-gold: #eab308;
 
   /* UI Elements */
   --glass-bg: rgba(10, 12, 10, 0.8);
@@ -49,6 +53,116 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 2px;
   line-height: 1.2;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--nfs-purple), var(--nfs-blue));
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--military-green-glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--starlight-white);
+}
+
+/* Global Utilities */
+.text-gradient {
+  background: linear-gradient(90deg, var(--nfs-blue) 0%, var(--starlight-white) 50%, var(--nfs-purple) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.mono-text {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.tactical-border {
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Global Button Styles */
+.btn {
+  position: relative;
+  overflow: hidden;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid var(--nfs-purple);
+  color: var(--starlight-white);
+  padding: 12px 24px;
+  font-family: var(--font-header);
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn:hover {
+  background: rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  border-color: var(--starlight-white);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(56, 189, 248, 0.3),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.btn:hover::before {
+  animation: btnScan 1.5s linear infinite;
+}
+
+@keyframes btnScan {
+  0% { top: -100%; }
+  100% { top: 200%; }
+}
+
+.tactical-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--nfs-blue), transparent);
+  animation: scanlineLoop 4s linear infinite;
+}
+
+@keyframes scanlineLoop {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 a {

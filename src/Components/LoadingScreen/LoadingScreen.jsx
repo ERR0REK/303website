@@ -46,16 +46,14 @@ const LoadingScreen = () => {
     return (
         <div className="loading-screen">
             <div className="loading-bg"></div>
-            <div className="scan-line"></div>
 
             <div className="loading-container">
                 <div className="logo-wrapper">
-                    <div className="logo-glow"></div>
                     <img src={logo} alt="Loading..." className="loading-logo-img" />
                 </div>
 
-                <h2 className="loading-title glitch" data-text="INTERPOLISHFORCES">
-                    INTERPOLISHFORCES
+                <h2 className="loading-title-new">
+                    NIGHTFALL SQUADRON
                 </h2>
 
                 <div className="progress-container">
@@ -64,12 +62,11 @@ const LoadingScreen = () => {
                             className="progress-fill"
                             style={{ width: `${loadingProgress}%` }}
                         ></div>
-                        <div className="progress-scanner"></div>
                     </div>
                 </div>
 
-                <div className="loading-status-text">
-                    {loadingText} <span className="percentage">{Math.round(loadingProgress)}%</span>
+                <div className="loading-status-text-new">
+                    {loadingText} :: {Math.round(loadingProgress)}%
                 </div>
             </div>
         </div>

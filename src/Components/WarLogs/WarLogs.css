@@ -2,25 +2,15 @@
 
 .warlogs-page {
     min-height: 100vh;
-    background-color: #050a05;
-    color: #e0f0e0;
+    background-color: transparent;
+    color: var(--text-main);
     position: relative;
     overflow-x: hidden;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
 }
 
 .warlogs-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: 0;
-    pointer-events: none;
+    display: none; /* Using global SpaceBackground */
 }
 
 .warlogs-container {
@@ -62,12 +52,15 @@
 }
 
 .warlogs-header h1 {
-    font-size: 3.5rem;
-    font-family: 'Orbitron', 'Chakra Petch', sans-serif;
-    color: #00ff66;
-    letter-spacing: 1px;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-family: var(--font-header);
+    background: linear-gradient(90deg, var(--starlight-white), var(--nfs-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 12px;
     text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(0, 255, 102, 0.5);
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
     margin: 0;
     position: relative;
     display: inline-block;
@@ -90,33 +83,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-    opacity: 0.8;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .deco-line {
-    width: 60px;
-    height: 2px;
-    background: #00ff66;
-    box-shadow: 0 0 8px #00ff66;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--nfs-blue), transparent);
 }
 
 .deco-tech {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.1rem;
-    color: #aaffaa;
-    letter-spacing: 2px;
+    font-size: 1rem;
+    color: var(--nfs-purple);
+    letter-spacing: 4px;
+    opacity: 0.8;
 }
 
 /* --- Empty State Styling (New) --- */
 .warlogs-empty-state {
     text-align: center;
-    padding: 60px 20px;
-    border: 1px dashed rgba(0, 255, 102, 0.3);
-    background: rgba(0, 20, 10, 0.4);
-    border-radius: 10px;
-    max-width: 600px;
+    padding: 60px 40px;
+    border: 1px solid var(--nfs-blue);
+    background: rgba(15, 15, 25, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    max-width: 650px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -136,16 +129,16 @@
 }
 
 .empty-icon-container {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 30px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 35px;
     position: relative;
     border-radius: 50%;
-    border: 2px solid rgba(0, 255, 102, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 480px) {
@@ -173,12 +166,11 @@
     top: 50%;
     left: 50%;
     width: 50%;
-    /* Half width to sweep from center */
     height: 2px;
-    background: linear-gradient(90deg, rgba(0, 255, 102, 0), rgba(0, 255, 102, 1));
+    background: linear-gradient(90deg, transparent, var(--nfs-blue));
     transform-origin: left center;
-    animation: radarSpin 2s linear infinite;
-    opacity: 0.6;
+    animation: radarSpin 3s linear infinite;
+    opacity: 0.8;
 }
 
 @keyframes radarSpin {
@@ -192,11 +184,12 @@
 }
 
 .empty-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-header);
     font-size: 2.5rem;
-    color: #00ff66;
-    margin-bottom: 10px;
+    color: var(--starlight-white);
+    margin-bottom: 12px;
     text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 @media (max-width: 768px) {
@@ -215,10 +208,10 @@
 
 .empty-subtitle {
     font-family: 'Share Tech Mono', monospace;
-    color: #aaffaa;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    color: var(--nfs-blue);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
@@ -296,7 +289,7 @@
     .modal-sidebar {
         width: 100%;
         border-right: none;
-        border-bottom: 2px solid #00ff66;
+        border-bottom: 2px solid var(--military-green);
     }
 
     .modal-image-container {
@@ -330,27 +323,29 @@
 
 /* --- WarLog Card Styles --- */
 .warlog-card {
-    background: rgba(10, 20, 10, 0.7);
-    border: 1px solid #00ff66;
+    background: rgba(15, 15, 25, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.2);
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    backdrop-filter: blur(5px);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
 }
 
 .warlog-card:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
-    border-color: #55ff99;
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2);
+    border-color: var(--nfs-purple);
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(168, 85, 247, 0.08);
 }
 
 .card-image-container {
     height: 180px;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid rgba(0, 255, 102, 0.3);
+    border-bottom: 1px solid var(--military-green-glow);
 }
 
 .card-bg-img {
@@ -385,13 +380,13 @@
 }
 
 .result-win {
-    background: #00ff66;
-    color: #000;
+    background: var(--nfs-blue);
+    color: var(--starlight-white);
 }
 
 .result-loss {
-    background: #ff3333;
-    color: #fff;
+    background: var(--nfs-purple);
+    color: var(--starlight-white);
 }
 
 .card-content {
@@ -410,11 +405,12 @@
 }
 
 .card-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
+    font-family: var(--font-header);
+    font-size: 1.4rem;
     margin: 0 0 15px 0;
-    color: #fff;
+    color: var(--starlight-white);
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .card-data-preview {
@@ -429,71 +425,45 @@
 }
 
 .preview-value.result-win {
-    color: #00ff66;
+    color: var(--nfs-blue);
 }
 
 .preview-value.result-loss {
-    color: #ff3333;
+    color: var(--nfs-purple);
 }
 
 .details-btn {
     background: transparent;
-    border: 1px solid rgba(0, 255, 102, 0.4);
-    color: #00ff66;
-    padding: 8px 16px;
+    border: 1px solid var(--nfs-blue);
+    color: var(--nfs-blue);
+    padding: 10px 16px;
     text-transform: uppercase;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     cursor: pointer;
     transition: all 0.3s;
     width: 100%;
+    letter-spacing: 2px;
 }
 
 .warlog-card:hover .details-btn {
-    background: #00ff66;
+    background: var(--nfs-blue);
     color: #000;
 }
 
 .corner {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    border: 2px solid #00ff66;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--nfs-blue);
     transition: all 0.3s;
-    opacity: 0.5;
-}
-
-.tl {
-    top: 0;
-    left: 0;
-    border-bottom: none;
-    border-right: none;
-}
-
-.tr {
-    top: 0;
-    right: 0;
-    border-bottom: none;
-    border-left: none;
-}
-
-.bl {
-    bottom: 0;
-    left: 0;
-    border-top: none;
-    border-right: none;
-}
-
-.br {
-    bottom: 0;
-    right: 0;
-    border-top: none;
-    border-left: none;
+    opacity: 0.3;
 }
 
 .warlog-card:hover .corner {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     opacity: 1;
+    border-color: var(--starlight-white);
 }
 
 /* --- Modal Styles (Polished) --- */
@@ -513,23 +483,24 @@
 }
 
 .warlog-modal {
-    background: #0f140f;
-    border: 1px solid #00ff66;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--nfs-blue);
     width: 100%;
-    max-width: 950px;
+    max-width: 1000px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    box-shadow: 0 0 60px rgba(0, 255, 102, 0.1);
+    box-shadow: 0 0 60px rgba(56, 189, 248, 0.3);
     display: flex;
     flex-direction: column;
 }
 
 /* Richer Header */
 .modal-header {
-    background: linear-gradient(90deg, rgba(0, 255, 102, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    border-bottom: 1px solid #00ff66;
-    padding: 15px 25px;
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+    border-bottom: 1px solid var(--nfs-blue);
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -537,15 +508,15 @@
 
 .modal-header h2 {
     margin: 0;
-    font-family: 'Chakra Petch', sans-serif;
-    color: #00ff66;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+    font-family: var(--font-header);
+    color: var(--starlight-white);
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
 }
 
 .close-btn {
     font-size: 2.5rem;
-    color: #00ff66;
+    color: var(--military-green);
     cursor: pointer;
     line-height: 0.6;
     transition: transform 0.2s;
@@ -565,15 +536,15 @@
         repeating-linear-gradient(45deg,
             rgba(0, 0, 0, 0) 0px,
             rgba(0, 0, 0, 0) 10px,
-            rgba(0, 255, 102, 0.01) 10px,
-            rgba(0, 255, 102, 0.01) 11px);
+            rgba(168, 85, 247, 0.02) 10px,
+            rgba(168, 85, 247, 0.02) 11px);
 }
 
 /* Sidebar Styling - Polished */
 .modal-sidebar {
-    width: 340px;
-    background: rgba(0, 10, 0, 0.6);
-    border-right: 1px solid rgba(0, 255, 102, 0.2);
+    width: 360px;
+    background: rgba(5, 5, 10, 0.6);
+    border-right: 1px solid rgba(56, 189, 248, 0.2);
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -583,7 +554,7 @@
     height: 220px;
     width: 100%;
     position: relative;
-    border-bottom: 1px solid rgba(0, 255, 102, 0.3);
+    border-bottom: 1px solid var(--military-green-glow);
     overflow: hidden;
 }
 
@@ -623,17 +594,17 @@
 }
 
 .stat-label {
-    color: #88aa88;
+    color: var(--text-dim);
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
 .stat-value {
-    color: #fff;
+    color: var(--starlight-white);
     font-weight: bold;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 /* MVP Golden Frame - Tactical Upgrade */
@@ -690,7 +661,7 @@
 .modal-war-title {
     font-size: 2.2rem;
     margin: 0;
-    color: #00ff66;
+    color: var(--military-green);
     font-family: 'Orbitron', sans-serif;
     line-height: 1.1;
     text-transform: uppercase;
@@ -713,10 +684,10 @@
     margin-bottom: 12px;
     font-size: 1rem;
     letter-spacing: 1.5px;
-    border-left: 3px solid #00ff66;
+    border-left: 3px solid var(--military-green);
     padding-left: 12px;
     display: inline-block;
-    background: linear-gradient(90deg, rgba(0, 255, 102, 0.1), transparent);
+    background: linear-gradient(90deg, var(--military-green-glow), transparent);
     width: 100%;
 }
 
@@ -731,7 +702,7 @@
     color: #fff;
     background: rgba(255, 255, 255, 0.03);
     padding: 15px;
-    border-left: 2px solid rgba(0, 255, 102, 0.3);
+    border-left: 2px solid var(--military-green-glow);
 }
 
 /* Members Grid Tags */
@@ -743,7 +714,7 @@
 
 .member-tag {
     background: rgba(0, 20, 10, 0.8);
-    border: 1px solid rgba(0, 255, 102, 0.3);
+    border: 1px solid var(--military-green-glow);
     padding: 6px 12px;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.95rem;
@@ -759,15 +730,15 @@
     left: 0;
     width: 3px;
     height: 100%;
-    background: #00ff66;
+    background: var(--military-green);
     opacity: 0.5;
 }
 
 .member-tag:hover {
     background: rgba(0, 255, 102, 0.2);
-    border-color: #00ff66;
+    border-color: var(--military-green);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 255, 102, 0.1);
+    box-shadow: 0 4px 10px var(--military-green-glow);
 }
 
 /* --- Modal Tabs Styling --- */
@@ -797,8 +768,9 @@
 }
 
 .tab-btn.active {
-    color: #00ff66;
-    background: rgba(0, 255, 102, 0.1);
+    border-color: var(--nfs-blue);
+    color: var(--nfs-blue);
+    background: var(--nfs-blue-glow);
 }
 
 .tab-btn.active::after {
@@ -808,8 +780,8 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background: #00ff66;
-    box-shadow: 0 0 10px #00ff66;
+    background: var(--nfs-purple);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
 .tab-pane {
@@ -828,7 +800,7 @@
 
 .pane-title {
     font-family: 'Orbitron', sans-serif;
-    color: #00ff66;
+    color: var(--military-green);
     margin-bottom: 25px;
     letter-spacing: 2px;
     border-bottom: 1px solid rgba(0, 255, 102, 0.2);
@@ -845,7 +817,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     padding: 12px 20px;
-    background: rgba(0, 255, 102, 0.1);
+    background: var(--military-green-glow);
     color: #fff;
     font-family: 'Share Tech Mono', monospace;
     font-weight: bold;
@@ -865,7 +837,7 @@
 
 .kd-row:hover {
     background: rgba(0, 255, 102, 0.05);
-    border-color: rgba(0, 255, 102, 0.3);
+    border-color: var(--military-green-glow);
     transform: translateX(5px);
 }
 
@@ -880,7 +852,7 @@
 }
 
 .kills {
-    color: #00ff66;
+    color: var(--military-green);
 }
 
 .deaths {
