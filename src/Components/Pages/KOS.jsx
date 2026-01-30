@@ -10,7 +10,7 @@ import {
     AlertTriangle,
     Target,
     ShieldAlert,
-    Terminal,
+    //Terminal,
     Cpu,
     Eye
 } from 'lucide-react';

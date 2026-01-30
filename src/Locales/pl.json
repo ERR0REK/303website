@@ -53,22 +53,22 @@
   },
   "history": {
     "title": "ARCHIWA OPERACYJNE",
-    "subtitle": "Chronologiczny zapis operacji i kamieni milowych Nightfall Squadron.",
+    "subtitle": "WIP",
     "event1": {
-      "title": "PROTOKÓŁ_INICJACJI",
-      "content": "Pierwsza dywizja została sformowana pod kryptonimem Nightfall Squadron. Cel: Jedność i taktyczna dominacja."
+      "title": "WIP",
+      "content": "WIP"
     },
     "event2": {
-      "title": "PIERWSZE_ROZMIESZCZENIE",
-      "content": "Udział w pierwszej dużej operacji. Znaczące zwycięstwo osiągnięte dzięki skoordynowanym atakom dronów."
+      "title": "WIP",
+      "content": "WIP"
     },
     "event3": {
-      "title": "FAZA_FORTYFIKACJI",
-      "content": "Rozszerzenie cyfrowej bazy danych i rekrutacja elitarnych specjalistów."
+      "title": "WIP",
+      "content": "WIP"
     },
     "event4": {
-      "title": "WZNIESIENIE_DOWODZENIA",
-      "content": "Modernizacja interfejsu Web-Command i pełna integracja z globalnymi sieciami wywiadowczymi."
+      "title": "WIP",
+      "content": "WIP"
     }
   },
   "kos": {

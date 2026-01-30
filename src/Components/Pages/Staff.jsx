@@ -21,15 +21,7 @@ export default function Staff() {
   // Dane przykładowe członków kadry
   // Można je zastąpić danymi z API lub bazy danych
   const staffData = {
-    factionCommand: [
-      {
-        id: 1,
-        name: "John Doe",
-        rank: "Faction Command",
-        image: "https://via.placeholder.com/150",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus vel ante feugiat placerat. Nullam nec metus vel ante feugiat placerat.",
-      },
-    ],
+    factionCommand: [],
     factionCoLeader: [],
     technicalSpecialist: [],
     trialCoLeader: [],
