@@ -22,7 +22,8 @@ const WarLogs = () => {
       mvp: "@Hejhej01928, @Polskaexe_v3",
       reason: t("warLogs.war1.reason"),
       members: t("warLogs.war1.members"),
-      victoryImg: "https://via.placeholder.com/1200x600?text=Victory+Celebration+Nightfall",
+      victoryImg:
+        "https://placehold.co/1200x600/0a0f18/38bdf8?text=Victory+Celebration+Nightfall",
       enemyKD: [
         { name: "@Rushwinter", kills: 1, deaths: 10 },
         { name: "@imsocool_leon", kills: 2, deaths: 3 },
@@ -37,8 +38,64 @@ const WarLogs = () => {
         { name: "@Pioter_M200", kills: 0, deaths: 1 },
         { name: "@Tygosaures10", kills: 6, deaths: 0 },
         { name: "@SAMISALAMI7", kills: 17, deaths: 10 },
+      ],
+    },
+    {
+      id: 2,
+      opponent: t("warLogs.war2.opponent"),
+      date: "2026-03-06",
+      result: "EASY_WIN",
+      duration: t("warLogs.war2.duration"),
+      mvp: "@SAMISALAMI7, @kamilekbrz",
+      reason: t("warLogs.war2.reason"),
+      note: t("warLogs.war2.note"),
+      members: t("warLogs.war2.members"),
+      victoryImg:
+        "https://placehold.co/1200x600/0a0f18/38bdf8?text=Victory+Celebration+Nightfall",
+      enemyKD: [
+        { name: "@ZT_buny (Domixi)", kills: 3, deaths: 8 },
+        { name: "@xqivubf (Mrbeast)", kills: 8, deaths: 8 },
+        { name: "rip_coolboy", kills: 2, deaths: 14 },
+        { name: "@n123yup (Voltking_Cambodian)", kills: 7, deaths: 16 },
+        { name: "Jotbread", kills: 6, deaths: 13 },
+        { name: "skills", kills: 6, deaths: 11 },
+        {
+          name: "@ngodangkhoa190 lub @tuanminhiq (ngodangkhoa190)",
+          kills: 12,
+          deaths: 5,
+        },
+        { name: "@dungsimpchua (Archer)", kills: 0, deaths: 0 },
+        { name: "@Rip_iwantmagma (uwu)", kills: 2, deaths: 7 },
+      ],
+      memberKD: [
+        { name: "@SAMISALAMI7 (KeithCozart)", kills: 36, deaths: 9 },
+        { name: "@kamilekbrz (Mleszyk)", kills: 38, deaths: 8 },
+        { name: "@KralEfe9952 (Dark_Elite52)", kills: 1, deaths: 1 },
+      ],
+    },
+    {
+      id: 3,
+      opponent: t("warLogs.war3.opponent"),
+      date: "2026-03-08",
+      result: "EASY_WIN",
+      duration: t("warLogs.war3.duration"),
+      mvp: "ERR0R_Gl1tchTV",
+      reason: t("warLogs.war3.reason"),
+      note: t("warLogs.war3.note"),
+      members: t("warLogs.war3.members"),
+      victoryImg:
+        "https://placehold.co/1200x600/0a0f18/38bdf8?text=Victory+Celebration+Nightfall",
+      enemyKD: [
+        { name: "Dawid_Polska1345", kills: 6, deaths: 3 },
+        { name: "szymkoxyz", kills: 4, deaths: 5 },
+        { name: "kubixer20", kills: 14, deaths: 47 },
+      ],
+      memberKD: [
+        {name: "ERR0R_Gl1tchTV", kills: 8 , deaths: 2},
+        {name: "MICHALgalar2010", kills: 27, deaths: 17},
+        {name: "SAMISALAMI7", kills: 27, deaths: 15},
       ]
-    }
+    },
   ];
 
   return (
@@ -46,14 +103,14 @@ const WarLogs = () => {
       <Navbar />
       <div className="warlogs-bg"></div>
 
-      <motion.div 
+      <motion.div
         className="warlogs-container"
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.1 }
-          }
+            transition: { staggerChildren: 0.1 },
+          },
         }}
         initial="hidden"
         whileInView="visible"

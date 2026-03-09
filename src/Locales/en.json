@@ -92,7 +92,7 @@
     "with_discord": "LOGIN_WITH_DISCORD",
     "requirements_title": "ENTRY_REQUIREMENTS",
     "req1": "Valid Discord Account",
-    "req2": "Membership in official NFS Server",
+    "req2": "Membership in official NS Server",
     "req3": "Verified Identity Status",
     "notice": "Discord login is required to verify your operative status and clear your session.",
     "tos": "Terms of Service",
@@ -185,18 +185,18 @@
     ]
   },
   "about": {
-    "title": "WHAT IS NFS?",
+    "title": "WHAT IS NS?",
     "subtitle": "Learn about our history, mission, and how to join our community",
     "whoAreWe": "Who are we?",
-    "whoAreWeContent": "Nightfall Squadron is a dynamic and professional military organization operating on the Roblox server. We are committed to creating a friendly, disciplined, and engaged community of players.",
-    "whoAreWeContent2": "Our members come from different parts of the world, but we are united by a common passion for gaming and an interest in military matters. We create an environment where everyone can develop and achieve their goals.",
+    "whoAreWeContent": "Nightfall Squadron is a mostly Polish faction, but we also have soldiers from other countries.",
+    "whoAreWeContent2": "For us, what matters is having a good time and enjoying the game. We are a strong faction, operating every type of vehicle and weapon in War Tycoon.",
     "ourMission": "Our Mission",
-    "ourMissionContent": "The mission of Nightfall Squadron is to build a strong, organized, and mutually respectful community of players. We strive to:",
-    "mission1": "Provide a positive experience on the server",
-    "mission2": "Support new members in their development",
-    "mission3": "Organize events and operations for the entire faction",
-    "mission4": "Maintain high standards of professionalism and ethics",
-    "mission5": "Create a friendly and safe environment for players",
+    "ourMissionContent": "The mission of Nightfall Squadron is to strive for excellence in gaming while deriving maximum satisfaction from it. As an unyielding faction, we strive to:",
+    "mission1": "Achieve high scores and constantly improve our gaming skills",
+    "mission2": "Ensuring genuine enjoyment and fun from gameplay",
+    "mission3": "Demonstrating an unyielding attitude and fighting to the very end",
+    "mission4": "Swiftly and effectively eliminating enemy forces",
+    "mission5": "Reliably supporting our allies in every situation",
     "values": "Our Values",
     "valuesIntro": "Nightfall Squadron activities are based on the following fundamental values:",
     "value1Title": "Respect",
@@ -293,7 +293,8 @@
       "result": "Result",
       "duration": "War Duration",
       "members": "Members",
-      "mvp": "MVP('s)"
+      "mvp": "MVP('s)",
+      "note": "Note"
     },
     "results": {
       "WIN": "Victory",
@@ -321,6 +322,7 @@
       "duration": "4 hours 30 minutes",
       "members": "@SAMISALAMI7, @Hejhej01928, @Pioter_M200, @Polskaexe_v3, @Tygosaures10"
     }
+    
   },
   "changelog": {
     "title": "CHANGELOG",
@@ -338,6 +340,44 @@
       "release": "RELEASE"
     },
     "dev": [
+      {
+        "version": "0.0.12.1",
+        "date": "March 8, 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Visual Optimization & UI Clarity",
+            "description": "Reduced blur and text shadows for better readability. Standardized CSS variables (NFS -> NS) and fixed broken placeholder images."
+          }
+        ]
+      },
+      {
+        "version": "0.0.12.0",
+        "date": "March 7, 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Minor change in warlogs",
+            "description": "Added Note field to war logs"
+          }
+        ]
+      },
+      {
+        "version": "0.0.11.9",
+        "date": "Jan 30, 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Website Styling Enhancement",
+            "description": "Improved website appearance to match the faction theme. Added sci-fi elements related to space, etc."
+          },
+          {
+            "type": "improvement",
+            "title": "Minor change in KOS",
+            "description": "Added faction to KOS entries"
+          }
+        ]
+      },
       {
         "version": "0.0.11.8",
         "date": "Jan 25, 2026",

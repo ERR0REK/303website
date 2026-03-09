@@ -23,7 +23,7 @@ const Navbar = () => {
 
     /* Logout button disabled temporarily
     const handleLogout = () => {
-        localStorage.removeItem('NFS_auth_session');
+        localStorage.removeItem('NSth_session');
         window.location.href = "/";
     };
     */

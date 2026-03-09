@@ -263,25 +263,108 @@
 /* --- Responsiveness --- */
 @media (max-width: 768px) {
     .language-modal {
-        padding: 4rem 2rem;
+        padding: 2.5rem 1.5rem;
+        clip-path: polygon(0 20px, 20px 0,
+                calc(100% - 20px) 0, 100% 20px,
+                100% calc(100% - 20px), calc(100% - 20px) 100%,
+                20px 100%, 0 calc(100% - 20px));
+        border-width: 2px;
+    }
+
+    .lang-hud-tl, .lang-hud-tr, .lang-hud-bl, .lang-hud-br {
+        width: 30px;
+        height: 30px;
+        border-width: 2px;
+    }
+
+    .lang-hud-tl { top: 15px; left: 15px; }
+    .lang-hud-tr { top: 15px; right: 15px; }
+    .lang-hud-bl { bottom: 15px; left: 15px; }
+    .lang-hud-br { bottom: 15px; right: 15px; }
+
+    .language-header-group {
+        margin-bottom: 2rem;
     }
 
     .language-modal-title {
-        font-size: 1.8rem;
-        letter-spacing: 4px;
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+    }
+
+    .language-modal-desc {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .language-carousel-wrapper {
+        margin: 1.5rem 0;
+        gap: 0.8rem;
+        padding: 0 0.5rem;
+    }
+
+    .language-carousel {
+        padding: 1.5rem 0.5rem;
+        gap: 1rem;
     }
 
     .lang-btn {
-        min-width: 160px;
-        padding: 2rem;
+        min-width: 130px;
+        padding: 1.5rem 1rem;
+        gap: 0.5rem;
     }
 
     .lang-flag {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .lang-name {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
     }
 
     .carousel-btn {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .language-hint {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-modal {
+        padding: 2rem 1rem;
+    }
+
+    .language-modal-title {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .language-modal-desc {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+
+    .lang-btn {
+        min-width: 110px;
+        padding: 1.2rem 0.8rem;
+    }
+
+    .lang-flag {
+        font-size: 2rem;
+    }
+
+    .lang-name {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
     }
 }

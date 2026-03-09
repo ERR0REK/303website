@@ -14,7 +14,7 @@
 
 .security-alert-box {
     background: rgba(15, 15, 25, 0.9);
-    border: 1px solid var(--nfs-blue);
+    border: 1px solid var(--NSblue);
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -29,7 +29,7 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 1px solid var(--nfs-blue);
+    border: 1px solid var(--NS-blue);
     opacity: 0.6;
 }
 
@@ -48,8 +48,8 @@
 }
 
 .alert-icon {
-    color: var(--nfs-blue);
-    filter: drop-shadow(0 0 8px var(--nfs-blue));
+    color: var(--NS-blue);
+    filter: drop-shadow(0 0 8px var(--NS-blue));
     animation: alertBlink 1s infinite;
 }
 
@@ -73,13 +73,13 @@
     gap: 10px;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75rem;
-    color: var(--nfs-purple);
+    color: var(--NS-purple);
     background: rgba(168, 85, 247, 0.1);
     padding: 6px 12px;
     width: fit-content;
     margin-bottom: 15px;
     letter-spacing: 2px;
-    border-left: 2px solid var(--nfs-purple);
+    border-left: 2px solid var(--NS-purple);
 }
 
 .alert-desc {
@@ -110,8 +110,8 @@
     left: 0;
     height: 1px;
     width: 60px;
-    background: linear-gradient(90deg, transparent, var(--nfs-blue), transparent);
-    box-shadow: 0 0 10px var(--nfs-blue);
+    background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
+    box-shadow: 0 0 10px var(--NS-blue);
     animation: scanningBarMove 3s linear infinite;
 }
 

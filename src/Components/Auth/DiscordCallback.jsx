@@ -50,7 +50,7 @@ const DiscordCallback = () => {
 
                 if (isInGuild) {
                     // Store session with user ID
-                    localStorage.setItem('NFS_auth_session', JSON.stringify({
+                    localStorage.setItem('NS_auth_session', JSON.stringify({
                         access_token: accessToken,
                         user_id: userData.id,
                         timestamp: Date.now()
@@ -66,7 +66,7 @@ const DiscordCallback = () => {
                 } else {
                     setStatus('error');
                     setError(t('login.error_no_server'));
-                    localStorage.removeItem('NFS_auth_session');
+                    localStorage.removeItem('NS_auth_session');
                 }
             } catch (err) {
                 console.error(err);

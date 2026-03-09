@@ -107,6 +107,15 @@ const WarLogModal = ({ log, onClose }) => {
                                             ))}
                                         </div>
                                     </div>
+
+                                    {log.note && (
+                                        <div className="log-section">
+                                            <h4 className="section-title">{t('warLogs.labels.note', 'NOTATKA')}</h4>
+                                            <p className="log-text highlight-note">
+                                                {log.note}
+                                            </p>
+                                        </div>
+                                    )}
                                 </div>
                             </motion.div>
                         )}

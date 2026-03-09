@@ -13,12 +13,12 @@ const AuthGuard = ({ children }) => {
     // const REQUIRED_GUILD_ID = "1463132353814593752";
 
     useEffect(() => {
-        const session = JSON.parse(localStorage.getItem('NFS_auth_session'));
+        const session = JSON.parse(localStorage.getItem('NS_auth_session'));
 
         if (session && session.access_token) {
             if (!session.user_id) {
                 // Old session format without ID - force re-login
-                localStorage.removeItem('NFS_auth_session');
+                localStorage.removeItem('NS_auth_session');
                 setIsVerifying(false);
                 return;
             }

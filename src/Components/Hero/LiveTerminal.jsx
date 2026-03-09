@@ -6,7 +6,7 @@ const LOG_MESSAGES = [
   "INITIALIZING_QUANTUM_CORE...",
   "SECURE_CONNECTION_ESTABLISHED",
   "SCANNING_SECTOR_7G...",
-  "NFS_PROTOCOL_v4_ACTIVE",
+  "NSPROTOCOL_v4_ACTIVE",
   "ENCRYPTING_DATA_STREAMS...",
   "UPLINK_STABLE_88Mbps",
   "THREAT_LEVEL: LOW",
@@ -54,7 +54,7 @@ const LiveTerminal = () => {
         ))}
       </div>
       <div className="terminal-footer">
-        RUNNING NFS_OS v4.0.1
+        RUNNING NS_OS v4.0.1
       </div>
     </div>
   );

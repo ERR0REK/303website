@@ -37,7 +37,7 @@ export default function StaffMemberCard({ member, onMoreInfo }) {
         </div>
         <div className="meta-item">
           <span className="meta-label">STATUS:</span>
-          <span className="meta-val mono-text" style={{ color: 'var(--nfs-blue)' }}>ACTIVE</span>
+          <span className="meta-val mono-text" style={{ color: 'var(--NSue)' }}>ACTIVE</span>
         </div>
       </div>
 

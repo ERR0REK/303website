@@ -386,8 +386,12 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .about-hero {
+    padding: 80px 20px 40px;
+  }
+
   .about-card {
-    padding: 30px 20px;
+    padding: 25px 15px;
   }
 
   .join-layout {
@@ -405,5 +409,28 @@
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 70px 15px 30px;
+  }
+
+  .about-title {
+    letter-spacing: 2px;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-container {
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .about-card {
+      padding: 20px 15px;
   }
 }

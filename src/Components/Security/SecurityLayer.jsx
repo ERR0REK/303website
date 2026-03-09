@@ -13,7 +13,7 @@ const SecurityLayer = () => {
     //const AUTHORIZED_ADMIN_IDS = ["687701665771814939"]; // User's ID from Discord
 
     useEffect(() => {
-        //const session = JSON.parse(localStorage.getItem('NFS_auth_session'));
+        //const session = JSON.parse(localStorage.getItem('NSuth_session'));
         //const isAdmin = session && AUTHORIZED_ADMIN_IDS.includes(session.user_id);
 
         const handleContextMenu = (e) => {

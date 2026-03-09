@@ -1,8 +1,8 @@
 /* src/Components/Staff/Staff.css */
 
 :root {
-  --st-primary: var(--nfs-purple);
-  --st-accent: var(--nfs-blue);
+  --st-primary: var(--NS-purple);
+  --st-accent: var(--NSblue);
   --st-bg: transparent; /* Using SpaceBackground */
   --st-card: rgba(15, 15, 25, 0.4);
   --st-border: rgba(56, 189, 248, 0.2);
@@ -110,7 +110,7 @@
 }
 
 .staff-card:hover {
-  border-color: var(--nfs-blue);
+  border-color: var(--NS-blue);
   background: rgba(168, 85, 247, 0.12);
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
@@ -268,7 +268,7 @@
   }
 
   .staff-hero-section {
-    padding: 100px 20px 30px;
+    padding: 80px 20px 30px;
   }
 
   .staff-hero-title {
@@ -281,6 +281,7 @@
     padding: 25px 15px;
     max-height: 90vh;
     width: 95%;
+    overflow-y: auto;
   }
 
   .staff-modal-avatar {
@@ -313,6 +314,14 @@
 }
 
 @media (max-width: 480px) {
+  .staff-hero-section {
+    padding: 70px 15px 20px;
+  }
+
+  .staff-hero-title {
+    letter-spacing: 1px;
+  }
+
   .members-grid {
     grid-template-columns: 1fr;
   }

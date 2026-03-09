@@ -92,7 +92,7 @@
     "with_discord": "ZALOGUJ PRZEZ DISCORD",
     "requirements_title": "WYMAGANIA DOSTĘPU",
     "req1": "Ważne konto Discord",
-    "req2": "Przynależność do oficjalnego serwera NFS",
+    "req2": "Przynależność do oficjalnego serwera NS",
     "req3": "Zweryfikowany status operacyjny",
     "notice": "Logowanie przez Discord jest wymagane do weryfikacji statusu członka oraz zabezpieczenia sesji.",
     "tos": "Warunki Korzystania",
@@ -185,18 +185,18 @@
     ]
   },
   "about": {
-    "title": "CZYM JEST NFS?",
+    "title": "CZYM JEST NS?",
     "subtitle": "Poznaj naszą historię, misję i jak dołączyć do naszej społeczności",
     "whoAreWe": "Kim jesteśmy?",
-    "whoAreWeContent": "Nightfall Squadron to dynamiczna i profesjonalna organizacja militarna działająca na serwerze Roblox. Jesteśmy zaangażowani w tworzenie przyjaznego, zdyscyplinowanego i zainteresowanego wspólnotą graczy.",
-    "whoAreWeContent2": "Nasze członkowie pochodzą z różnych części świata, ale łączy nas wspólna pasja do gier i zainteresowanie wojskowością. Tworzymy środowisko, gdzie każdy może się rozwijać i osiągać swoje cele.",
+    "whoAreWeContent": "Nightfall Squadron to frakcja w większości Polska ale również posiadamy żołnierzy z innych krajów.",
+    "whoAreWeContent2": "Dla nas liczy się dobra zabawa i fun z gry, jesteśmy dobrą frakcją jeżeli chodzi o naszą siłę, opereujemy każdym typem pojazdów oraz broni w War tycoonie.",
     "ourMission": "Nasza misja",
-    "ourMissionContent": "Misją Nightfall Squadron jest budowanie silnej, zorganizowanej i szanującej się nawzajem społeczności graczy. Dążymy do:",
-    "mission1": "Zapewniania pozytywnego doświadczenia na serwerze",
-    "mission2": "Wspierania nowych członków w ich rozwoju",
-    "mission3": "Organizowania zdarzeń i operacji dla całej frakcji",
-    "mission4": "Utrzymywania wysokich standardów profesjonalizmu i etyki",
-    "mission5": "Tworzenia przyjaznego i bezpiecznego środowiska dla graczy",
+    "ourMissionContent": "Misją Nightfall Squadron jest dążenie do doskonałości w grze przy jednoczesnym czerpaniu z niej maksymalnej satysfakcji. Jako nieugięta frakcja dążymy do:",
+    "mission1": "Osiągania wysokich wyników i stałego podnoszenia poziomu gry",
+    "mission2": "Zapewnienia czerpania autentycznej radości i zabawy z rozgrywki",
+    "mission3": "Wykazywania niezłomnej postawy i walki do samego końca",
+    "mission4": "Błyskawicznego i skutecznego eliminowania sił przeciwnika",
+    "mission5": "Niezawodnego wspierania naszych sojuszników w każdej sytuacji",
     "values": "Nasze wartości",
     "valuesIntro": "Działania Nightfall Squadron opierają się na następujących fundamentalnych wartościach:",
     "value1Title": "Szacunek",
@@ -293,7 +293,8 @@
       "result": "Wynik",
       "duration": "Czas Wojny",
       "members": "Członkowie",
-      "mvp": "MVP('s)"
+      "mvp": "MVP('s)",
+      "note": "Notatka"
     },
     "results": {
       "WIN": "Wygrana",
@@ -320,6 +321,20 @@
       "reason": "raid bez powodu",
       "duration": "4 godziny 30 minut",
       "members": "@SAMISALAMI7, @Hejhej01928, @Pioter_M200, @Polskaexe_v3, @Tygosaures10"
+    },
+    "war2": {
+      "opponent": "GROM",
+      "reason": "Brak powodu",
+      "duration": "Brak danych",
+      "members": "@kamilekbrz, @SAMISALAMI7, @KralEfe9952",
+      "note": "Powinni połączyć F35 i AC130."
+    },
+    "war3": {
+      "opponent": "[A.1] alpha_1",
+      "reason": "Brak powodu",
+      "duration": "1,5h",
+      "members": "@MICHALgalar2010, @SAMISALAMI7, @ERR0R_Gl1tchTV",
+      "note": "Brak Danych"
     }
   },
   "changelog": {
@@ -338,6 +353,28 @@
       "release": "STABILNA"
     },
     "dev": [
+      {
+        "version": "0.0.12.1",
+        "date": "08 marca 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Optymalizacja wizualna i UI Clarity",
+            "description": "Zmniejszono rozmycie (blur) i cienie tekstu dla lepszej czytelności. Ustandaryzowano zmienne CSS (NFS -> NS) oraz naprawiono niedziałające obrazki typu placeholder."
+          }
+        ]
+      },
+      {
+        "version": "0.0.12.0",
+        "date": "07 marca 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Drobna zmiania w warlogach",
+            "description": "Dodano do warlogów Notatkę"
+          }
+        ]
+      },
       {
         "version": "0.0.11.9",
         "date": "30 sty 2026",

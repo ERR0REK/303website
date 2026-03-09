@@ -8,7 +8,7 @@
   border: 1px solid rgba(56, 189, 248, 0.2);
   padding: 10px;
   font-family: 'Share Tech Mono', monospace;
-  color: var(--nfs-blue);
+  color: var(--NSblue);
   z-index: 20;
   pointer-events: none;
   font-size: 0.7rem;
@@ -29,10 +29,10 @@
 .pulse-indicator {
   width: 6px;
   height: 6px;
-  background: var(--nfs-blue);
+  background: var(--NSblue);
   border-radius: 50%;
   margin-left: auto;
-  box-shadow: 0 0 8px var(--nfs-blue);
+  box-shadow: 0 0 8px var(--NS-blue);
   animation: logPulse 1.5s infinite;
 }
 
@@ -65,7 +65,7 @@
   padding-top: 5px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.6rem;
-  color: var(--nfs-purple);
+  color: var(--NS-purple);
   opacity: 0.6;
 }
 

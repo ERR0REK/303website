@@ -432,6 +432,7 @@
     flex-direction: column;
     padding: 25px;
     text-align: center;
+    gap: 20px;
   }
 
   .reg-warning-content p {
@@ -454,7 +455,38 @@
   }
 
   .reg-hero-title {
-    font-size: clamp(1.2rem, 6vw, 1.2rem);
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: 2px;
+  }
 }
 
+@media (max-width: 480px) {
+  .reg-scrollable-part {
+    padding: 70px 15px 30px;
+  }
+
+  .reg-hero-title {
+    letter-spacing: 1px;
+  }
+
+  .reg-hero-subtitle {
+     font-size: 0.9rem;
+  }
+
+  .reg-rule-item {
+      padding: 8px 10px;
+  }
+
+  .item-text {
+      font-size: 0.95rem;
+  }
+
+  /* Disable expensive effects on mobile to prevent scrolling glitch */
+  .reg-warning-panel, .reg-sticky-part, .reg-rule-card {
+    backdrop-filter: none !important;
+  }
+
+  .reg-scanlines {
+    display: none;
+  }
 }

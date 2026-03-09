@@ -69,7 +69,7 @@ const Hero = () => {
     }, [mouseX, mouseY]);
 
     const links = {
-        discord: '',
+        discord: 'https://discord.gg/3ZpR7DHjBj',
         youtube: 'https://www.youtube.com/channel/UCMmoYakrPiV0LwdPAunqJpQ', 
         tiktok: '', 
     };

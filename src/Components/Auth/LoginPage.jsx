@@ -79,7 +79,7 @@ const LoginPage = () => {
                                 </li>
                                 <li>
                                     <CheckCircle2 size={14} className="req-icon" />
-                                    <span>{t('login.req2', 'Membership in official NFS Server')}</span>
+                                    <span>{t('login.req2', 'Membership in official NS Server')}</span>
                                 </li>
                                 <li>
                                     <CheckCircle2 size={14} className="req-icon" />

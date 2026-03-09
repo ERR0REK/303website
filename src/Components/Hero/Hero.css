@@ -31,8 +31,8 @@
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(var(--nfs-blue) 0.5px, transparent 0.5px),
-        linear-gradient(90deg, var(--nfs-blue) 0.5px, transparent 0.5px);
+        linear-gradient(var(--NS-blue) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, var(--NS-blue) 0.5px, transparent 0.5px);
     background-size: 80px 80px;
     pointer-events: none;
     z-index: 1;
@@ -87,12 +87,12 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, var(--st-primary), transparent);
+    background: linear-gradient(90deg, var(--NS-blue), transparent);
     opacity: 0.4;
 }
 
 .hud-tr .hud-line {
-    background: linear-gradient(-90deg, var(--st-primary), transparent);
+    background: linear-gradient(-90deg, var(--NS-blue), transparent);
 }
 
 .hud-data {
@@ -117,8 +117,39 @@
 }
 
 .status-verified {
-    background: var(--nfs-blue);
+    background: var(--NS-blue);
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Targeting Reticle Decoration --- */
+.reticle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.targeting-reticle, .targeting-reticle-inner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.targeting-reticle {
+    color: var(--NS-purple);
+}
+
+.targeting-reticle-inner {
+    color: var(--NS-blue);
 }
 
 /* --- Hero Content --- */
@@ -133,7 +164,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--st-primary);
+    color: var(--NS-blue);
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.85rem;
     letter-spacing: 3px;
@@ -148,7 +179,7 @@
     text-transform: uppercase;
     letter-spacing: 12px;
     margin-bottom: 30px;
-    background: linear-gradient(90deg, var(--starlight-white), var(--nfs-blue));
+    background: linear-gradient(90deg, var(--starlight-white), var(--NS-blue));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -169,8 +200,8 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--st-primary), transparent);
-    box-shadow: 0 0 10px var(--st-primary);
+    background: linear-gradient(to bottom, var(--NS-blue), transparent);
+    box-shadow: 0 0 10px var(--NS-blue);
 }
 
 .live-terminal-widget {
@@ -196,15 +227,15 @@
 
 .hero .btn {
     /* Use global .btn but override specific colors */
-    border-color: var(--nfs-purple);
+    border-color: var(--NS-purple);
     background: rgba(168, 85, 247, 0.15);
     backdrop-filter: blur(8px);
 }
 
 .hero .btn-discord:hover {
-    background: var(--nfs-purple);
+    background: var(--NS-purple);
     color: #fff;
-    box-shadow: 0 0 30px var(--nfs-purple);
+    box-shadow: 0 0 30px var(--NS-purple);
 }
 
 .hero .btn-youtube {
@@ -221,16 +252,16 @@
 }
 
 .hero .btn-tiktok {
-    color: var(--nfs-blue);
+    color: var(--NS-blue);
     border-color: rgba(56, 189, 248, 0.4);
     background: rgba(56, 189, 248, 0.15);
     backdrop-filter: blur(8px);
 }
 
 .hero .btn-tiktok:hover {
-    background: var(--nfs-blue);
+    background: var(--NS-blue);
     color: #fff;
-    box-shadow: 0 0 30px var(--nfs-blue);
+    box-shadow: 0 0 30px var(--NS-blue);
 }
 
 /* --- Mission Ticker --- */
@@ -241,7 +272,7 @@
     width: 100%;
     height: 40px;
     background: rgba(168, 85, 247, 0.1);
-    border-top: 1px solid var(--nfs-purple);
+    border-top: 1px solid var(--NS-purple);
     display: flex;
     align-items: center;
     z-index: 20;
@@ -249,7 +280,7 @@
 }
 
 .ticker-label {
-    background: var(--st-primary);
+    background: var(--NS-blue);
     color: #000;
     padding: 0 20px;
     height: 100%;
@@ -277,7 +308,7 @@
 
 .ticker-track span {
     font-family: 'Share Tech Mono', monospace;
-    color: var(--nfs-purple);
+    color: var(--NS-purple);
     font-size: 0.85rem;
     opacity: 0.6;
 }
@@ -494,46 +525,80 @@
     border-left: none;
 }
 
-/* Responsive */
+/* Responsive Overrides 🎯 */
 @media (max-width: 1024px) {
-    .container {
-        padding: 0 40px;
-    }
-
-    .hud-panel {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
     .hero {
-        background-attachment: scroll;
-        padding-top: 80px;
+        justify-content: center !important;
+        text-align: center !important;
+        overflow: visible !important;
+        padding-top: 60px !important;
+        min-height: auto !important;
+        padding-bottom: 150px !important;
     }
 
     .container {
-        padding: 0 20px;
+        padding: 0 20px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .hero-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .hero-tagline {
+        justify-content: center !important;
+        margin-bottom: 20px !important;
     }
 
     .hero-text h1 {
-        font-size: clamp(1.8rem, 10vw, 2.5rem);
-        letter-spacing: 4px;
-        margin-bottom: 20px;
+        text-align: center !important;
+        width: 100% !important;
+        font-size: clamp(1.8rem, 10vw, 3rem) !important;
+        letter-spacing: 4px !important;
+    }
+
+    .hero-desc-wrapper {
+        padding: 0 !important;
+        margin: 0 auto 30px !important;
+        border: none !important;
+        text-align: center !important;
+        max-width: 500px !important;
+    }
+
+    .hero-text p {
+        text-align: center !important;
+        font-size: 1.1rem !important;
+    }
+
+    .bio-border {
+        display: none !important;
     }
 
     .hero-buttons-group {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 340px !important;
+        margin: 20px auto 0 !important;
+        gap: 15px !important;
     }
 
     .hero .btn {
-        width: 100%;
-        justify-content: center;
-        padding: 12px 15px;
-        font-size: 0.85rem;
-        white-space: normal;
-        text-align: center;
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 16px 20px !important;
     }
 
     /* Standardize buttons on mobile to outlined for better fit */
@@ -542,11 +607,11 @@
         color: #ff4d4d !important;
     }
 
-    .hero-desc-wrapper {
-        padding: 15px 0 15px 20px;
+    .hud-panel, .live-terminal-widget {
+        display: none !important;
     }
 
     .ticker-label {
-        display: none;
+        display: none !important;
     }
 }

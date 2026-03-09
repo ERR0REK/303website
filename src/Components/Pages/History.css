@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    color: var(--nfs-blue);
+    color: var(--NSlue);
     margin-bottom: 20px;
 }
 
@@ -36,7 +36,7 @@
     letter-spacing: 4px;
     background: rgba(56, 189, 248, 0.1);
     padding: 4px 15px;
-    border-left: 2px solid var(--nfs-blue);
+    border-left: 2px solid var(--NSlue);
     color: var(--starlight-white);
 }
 
@@ -44,7 +44,7 @@
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     margin-bottom: 20px;
     font-family: var(--font-header);
-    background: linear-gradient(90deg, var(--starlight-white), var(--nfs-blue));
+    background: linear-gradient(90deg, var(--starlight-white), var(--NS-blue));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,7 +69,7 @@
 .hero-divider span {
     height: 1px;
     width: 120px;
-    background: linear-gradient(90deg, transparent, var(--nfs-blue), transparent);
+    background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
 }
 
 /* Timeline Container */
@@ -87,7 +87,7 @@
     top: 0;
     bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--nfs-blue), transparent);
+    background: linear-gradient(to bottom, transparent, var(--NS-blue), transparent);
 }
 
 .timeline-item {
@@ -115,11 +115,11 @@
     width: 44px;
     height: 44px;
     background: rgba(15, 15, 25, 0.8);
-    border: 1px solid var(--nfs-blue);
+    border: 1px solid var(--NS-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--nfs-blue);
+    color: var(--NS-blue);
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
@@ -137,7 +137,7 @@
 }
 
 .timeline-card:hover {
-    border-color: var(--nfs-purple);
+    border-color: var(--NS-purple);
     background: rgba(168, 85, 247, 0.08);
     box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2);
     transform: translateX(10px);
@@ -150,7 +150,7 @@
 }
 
 .card-year {
-    color: var(--nfs-blue);
+    color: var(--NS-blue);
     font-family: 'Share Tech Mono', monospace;
     font-size: 1rem;
     margin-bottom: 8px;
@@ -176,7 +176,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--nfs-purple), transparent);
+    background: linear-gradient(90deg, transparent, var(--NS-purple), transparent);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -190,7 +190,7 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 1px solid var(--nfs-blue);
+    border: 1px solid var(--NS-blue);
     opacity: 0.3;
 }
 
@@ -232,7 +232,7 @@
 .footer-line {
     width: 60px;
     height: 2px;
-    background: var(--nfs-purple);
+    background: var(--NS-purple);
     margin: 0 auto 15px;
 }
 
