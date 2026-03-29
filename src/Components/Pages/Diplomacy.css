@@ -1,0 +1,302 @@
+/* src/Components/Pages/Diplomacy.css */
+
+.diplo-page {
+    min-height: 100vh;
+    background-color: #050505;
+    color: #fff;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.diplo-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 10%, rgba(0, 255, 102, 0.05), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.diplo-scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.diplo-hero, .diplo-sections, .diplo-footer {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.diplo-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-decoration {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    background: rgba(0, 255, 102, 0.05);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.hero-icon {
+    color: var(--NS-blue);
+}
+
+.hero-tag {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--NS-blue);
+    letter-spacing: 2px;
+}
+
+.diplo-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.diplo-subtitle {
+    font-size: 1.1rem;
+    color: #a0aab5;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.hero-divider span {
+    height: 1px;
+    width: 150px;
+    background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
+}
+
+.hero-divider svg {
+    color: var(--NS-blue);
+    opacity: 0.5;
+}
+
+/* Sections */
+.diplo-section {
+    margin-bottom: 80px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background: #fff;
+}
+
+.partnership-div { background: var(--NS-blue); box-shadow: 0 0 10px var(--NS-blue); }
+.friendly-div { background: #00ffc8; box-shadow: 0 0 10px #00ffc8; }
+.neutral-div { background: #ffaa00; box-shadow: 0 0 10px #ffaa00; }
+.enemy-div { background: #ff3c3c; box-shadow: 0 0 10px #ff3c3c; }
+
+/* Grid */
+.diplo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Cards */
+.diplo-card {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.diplo-card:hover {
+    transform: translateY(-5px);
+}
+
+.diplo-card.partnership { border-color: rgba(0, 180, 255, 0.3); }
+.diplo-card.friendly { border-color: rgba(0, 255, 200, 0.3); }
+.diplo-card.neutral { border-color: rgba(255, 170, 0, 0.3); }
+.diplo-card.enemy { border-color: rgba(255, 60, 60, 0.3); }
+
+.diplo-card:hover.partnership { box-shadow: 0 0 20px rgba(0, 180, 255, 0.15); }
+.diplo-card:hover.friendly { box-shadow: 0 0 20px rgba(0, 255, 200, 0.15); }
+.diplo-card:hover.neutral { box-shadow: 0 0 20px rgba(255, 170, 0, 0.15); }
+.diplo-card:hover.enemy { box-shadow: 0 0 20px rgba(255, 60, 60, 0.15); }
+
+.card-top {
+    margin-bottom: 20px;
+}
+
+.diplo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.partnership .diplo-icon { color: var(--NS-blue); border-color: rgba(0, 180, 255, 0.2); }
+.friendly .diplo-icon { color: #00ffc8; border-color: rgba(0, 255, 200, 0.2); }
+.neutral .diplo-icon { color: #ffaa00; border-color: rgba(255, 170, 0, 0.2); }
+.enemy .diplo-icon { color: #ff3c3c; border-color: rgba(255, 60, 60, 0.2); }
+
+.card-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #fff;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 1px;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+.info-val {
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+/* Empty State */
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    text-align: center;
+    gap: 16px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.no-results svg {
+    opacity: 0.5;
+}
+
+/* Decorations */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.diplo-card:hover .scan-line {
+    opacity: 1;
+}
+
+@keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+}
+
+.corner {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 1px solid transparent;
+    opacity: 0.5;
+}
+
+.partnership .corner { border-color: var(--NS-blue); }
+.friendly .corner { border-color: #00ffc8; }
+.neutral .corner { border-color: #ffaa00; }
+.enemy .corner { border-color: #ff3c3c; }
+
+.c-tl { top: 4px; left: 4px; border-right: none; border-bottom: none; }
+.c-tr { top: 4px; right: 4px; border-left: none; border-bottom: none; }
+.c-bl { bottom: 4px; left: 4px; border-right: none; border-top: none; }
+.c-br { bottom: 4px; right: 4px; border-left: none; border-top: none; }
+
+.diplo-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.footer-deco {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--NS-blue);
+    opacity: 0.6;
+    background: rgba(0, 255, 102, 0.05);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 102, 0.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .diplo-page { padding-top: 80px; }
+    .diplo-hero, .diplo-sections, .diplo-footer { padding: 0 20px; }
+    .hero-divider span { width: 80px; }
+}
+
+@media (max-width: 480px) {
+    .diplo-page { padding-top: 80px; }
+    .diplo-hero, .diplo-sections, .diplo-footer { padding: 0 15px; }
+    .diplo-grid { grid-template-columns: 1fr; }
+    .hero-divider span { width: 50px; }
+    .card-body h3 { font-size: 1.15rem; }
+}

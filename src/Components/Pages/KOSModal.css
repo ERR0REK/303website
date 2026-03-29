@@ -1,0 +1,244 @@
+/* src/Components/Pages/KOSModal.css */
+
+.kos-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.kos-modal-content {
+  background: rgba(10, 10, 15, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Threat Colors */
+.kos-modal-content.high {
+  border-color: rgba(255, 60, 60, 0.4);
+  box-shadow: 0 0 30px rgba(255, 60, 60, 0.1);
+}
+.kos-modal-content.medium {
+  border-color: rgba(255, 170, 0, 0.4);
+  box-shadow: 0 0 30px rgba(255, 170, 0, 0.1);
+}
+.kos-modal-content.low {
+  border-color: rgba(0, 255, 200, 0.4);
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.1);
+}
+
+.modal-header {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-left {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.header-icon {
+  color: var(--NS-blue);
+  opacity: 0.8;
+}
+
+.kos-modal-content.high .header-icon {
+  color: #ff3c3c;
+}
+
+.header-text h2 {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.security-tag {
+  font-size: 0.65rem;
+  font-family: "JetBrains Mono", monospace;
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 5px;
+}
+
+.close-btn:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.intel-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.intel-item .item-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
+  opacity: 0.6;
+  margin-bottom: 8px;
+  color: var(--NS-blue);
+}
+
+.intel-item .item-value {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.intel-item .item-value.highlight {
+  color: var(--NS-blue);
+  text-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
+}
+
+.link-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--NS-blue) !important;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.link-value:hover {
+  border-bottom-color: var(--NS-blue);
+  letter-spacing: 0.5px;
+}
+
+.note-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.threat-status-bar {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-segment {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-segment .lbl {
+  font-size: 0.65rem;
+  font-family: "JetBrains Mono", monospace;
+  opacity: 0.4;
+}
+
+.status-segment .val {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.status-segment .val.high {
+  color: #ff3c3c;
+}
+.status-segment .val.active {
+  color: #00ffc8;
+}
+
+/* Decorations */
+.corner-deco {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--NS-blue);
+  opacity: 0.5;
+}
+
+.corner-deco.tl {
+  top: 10px;
+  left: 10px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.corner-deco.tr {
+  top: 10px;
+  right: 10px;
+  border-left: 0;
+  border-bottom: 0;
+}
+.corner-deco.bl {
+  bottom: 10px;
+  left: 10px;
+  border-right: 0;
+  border-top: 0;
+}
+.corner-deco.br {
+  bottom: 10px;
+  right: 10px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.modal-scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
+  opacity: 0.3;
+  animation: modalScan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes modalScan {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .kos-modal-content {
+    max-width: 100%;
+  }
+}

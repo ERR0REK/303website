@@ -7,7 +7,8 @@
     "staff": "Kadra",
     "history": "Historia Frakcji",
     "kos": "KOS",
-    "changelog": "Changelog"
+    "changelog": "Changelog",
+    "diplomacy": "Dyplomacja"
   },
   "hero": {
     "title": "Nightfall Squadron",
@@ -52,39 +53,65 @@
     "close": "Zamknij"
   },
   "history": {
-    "title": "ARCHIWA OPERACYJNE",
-    "subtitle": "WIP",
+    "title": "HISTORIA FRAKCJI",
+    "subtitle": "Chronologiczny zapis operacji, ewolucji oraz kamieni milowych naszej frakcji.",
     "event1": {
-      "title": "WIP",
-      "content": "WIP"
+      "title": "Początki 0AC i Era InterPolishForces",
+      "content": "Wszystko zaczęło się w 2022 roku wraz z założeniem frakcji 0AC, która początkowo nie była liczna ani silna. Lider Arczi chciał osiągnąć coś większego, co zaowocowało projektem InterPolishForces (IPF). 0AC połączyło siły z AGAT, tworząc Sharpresse Co. (SHP) i zakładając serwer Sojusznicze Frakcje, który zrzeszał ponad 100 osób – co na tamte czasy było rekordem. Gdy SHP się rozrosło, zmieniono nazwę na InterPolishForces. IPF była głównie polską frakcją, drugą najsilniejszą na teatrze działań militarnych, gromadzącą także dobrych graczy anglojęzycznych. Projekt rozpadł się przez wewnętrzną rebelię 8 maja 2024 r. (zniszczenie serwera Discord, wyrzucenie załogi z gry), a ok. 95/98% frakcji dołączyło do buntu (Blue Angles, dziś CSC). Skutkowało to paniką i desperacką próbą odbudowy za sprawą lidera i lojalnych sojuszników."
     },
     "event2": {
-      "title": "WIP",
-      "content": "WIP"
+      "title": "Dzikie Knury - Krótka Reaktywacja",
+      "content": "Druga odsłona frakcji nosiła nazwę Dzikie Knury. Niestety, ta inkarnacja była pozbawiona dawnej siły. Szybko upadła z powodu wielu pochopnych decyzji dowództwa."
     },
     "event3": {
-      "title": "WIP",
-      "content": "WIP"
+      "title": "Alpha Group - Trzecia Edycja",
+      "content": "14 września 2024 roku narodziła się trzecia edycja o nazwie Alpha Group. Była to frakcja z potencjałem, która stawała się coraz silniejsza i zróżnicowana. Mimo obiecujących początków projekt rozpadł się pod koniec listopada 2024 r."
     },
     "event4": {
-      "title": "WIP",
-      "content": "WIP"
+      "title": "Valkyria Company",
+      "content": "Czwarta edycja o nazwie Valkyria Company zmagała się z wielką nieaktywnością i ogarniającą stagnacją. Projekt nie budował siły bojowej i po cichu upadł w styczniu 2025 roku."
+    },
+    "event5": {
+      "title": "Narodziny i Upadek Death Squadron X",
+      "content": "Piąta edycja pod szyldem Death Squadron X okazała się jedną z najsilniejszych odnóg i przetrwała najdłużej (do 1 listopada 2025 r.). Wewnątrz frakcji wdarły się podziały, kłótnie i spiski. Utrata kontroli w administracji, szpiedzy na wysokich stanowiskach oraz niepotrzebna toksyczność (wyzywanie Innych ras) doprowadziły do skrajności. Po niesłusznym oskarżeniu lidera nastąpiła kolejna potężna rebelia, która ostatecznie zamknęła rozdział DSX."
+    },
+    "event6": {
+      "title": "Sformowanie 303rd Division",
+      "content": "Miesiąc po przewrocie zdecydowano o utworzeniu 303rd Division (303 Dywizji). Miała ona na celu pokazanie niezłomności wobec wrogów, którzy myśleli, że pokonali osoby wierne liderowi. Frakcja upadła ostatecznie z powodu wycieńczających wojen połączonych z masowym sabotażem."
+    },
+    "event7": {
+      "title": "Zarzewie IPF i Powstanie Nightfall Squadron",
+      "content": "Do stycznia 2026 r. powstrzymywano się od prób uformowania nowego oddziału. Pozostałe grono weteranów tęskniło za starą erą — postanowiono więc o odbudowie polskiego IPF. Zmieniono jednak diametralnie plany, zmieniając profil grupy na w pełni wielonarodowy. I tak oto z popiołów narodziła się edycja Nightfall Squadron, która na tę chwilę prężnie operuje i prosperuje poprawnie w teatrze wojennym."
     }
+
+  },
+  "diplomacy": {
+    "title": "RELACJE FRAKCYJNE",
+    "subtitle": "Odczyt uwierzytelniony. Klasyfikacja sojuszy, paktów o nieagresji i aktywnych zagrożeń.",
+    "partnerships": "Official Partnerships",
+    "friendly": "Official Friendly factions of Nightfall Squadron",
+    "neutral": "Neutral Factions of Nightfall Squadron",
+    "enemy": "Enemy factions of Nightfall Squadron",
+    "noFactions": "Brak zidentyfikowanych frakcji w tym sektorze."
   },
   "kos": {
     "title": "BAZA DANYCH KOS",
     "subtitle": "Oficjalna lista osób i podmiotów stanowiących zagrożenie dla Nightfall Squadron.",
     "search": "SZUKAJ PO NAZWIE...",
     "reasonLabel": "POWÓD",
-    "lastSeenLabel": "OSTATNIO WIDZIANY",
     "statusLabel": "STATUS",
-    "viewIntel": "ZOBACZ AKTA",
+    "leaderLabel": "LIDER",
+    "noteLabel": "NOTATKA",
+    "robloxNicknameLabel": "NICK ROBLOX",
+    "viewInfo": "ZOBACZ INFORMACJE",
     "noResults": "BRAK PASUJĄCYCH ZAGROŻEŃ W ARCHIWACH",
     "personalSection": "OSOBY",
     "factionSection": "FRAKCJE",
-    "reason1": "Kradzież danych wywiadowczych i sabotaż serwera.",
-    "reason2": "Skoordynowane rajdy i szerzenie propagandy.",
-    "reason3": "Korzystanie z nieautoryzowanego oprogramowania zewnętrznego."
+    "reason1": "",
+    "reason2": "",
+    "reason3": "",
+    "note1": "",
+    "note2": ""
   },
   "login": {
     "prompt": "ZALOGUJ SIĘ, ABY KONTYNUOWAĆ",
@@ -353,6 +380,22 @@
       "release": "STABILNA"
     },
     "dev": [
+      {
+        "version": "0.0.12.2",
+        "date": "29 marca 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "System Dyplomacji",
+            "description": "Dodano nową zakładkę Dyplomacja (Relations) z podziałem na podgrupy pożądanych relacji. Strona została zabezpieczona poprzez system AuthGuard dla logowania Discord."
+          },
+          {
+            "type": "feature",
+            "title": "Wielka Aktualizacja Historii",
+            "description": "W pełni uzupełniono oficjalny zapis chronologiczny. Historia przenosi nas od początku 0AC i pierwszej ery IPF, przez losy DSX i innych wariacji, aż do powstania Nightfall Squadron."
+          }
+        ]
+      },
       {
         "version": "0.0.12.1",
         "date": "08 marca 2026",

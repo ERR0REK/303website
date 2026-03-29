@@ -7,7 +7,8 @@
     "staff": "Staff",
     "history": "Faction History",
     "kos": "KOS",
-    "changelog": "Changelog"
+    "changelog": "Changelog",
+    "diplomacy": "Diplomacy"
   },
   "hero": {
     "title": "Nightfall Squadron",
@@ -52,39 +53,64 @@
     "close": "Close"
   },
   "history": {
-    "title": "OPERATIONAL ARCHIVES",
-    "subtitle": "Chronological record of Nightfall Squadron operations and milestones.",
+    "title": "HISTORY OF FACTION",
+    "subtitle": "Chronological record of operations, evolution, and milestones of our faction.",
     "event1": {
-      "title": "INITIATION_PROTOCOL",
-      "content": "The first division was formed under the codename Nightfall Squadron. Goal: Unity and tactical dominance."
+      "title": "Origins of 0AC and the InterPolishForces Era",
+      "content": "It all began in 2022 with the founding of the 0AC faction, which initially was neither numerous nor strong. Leader Arczi aimed for something greater, leading to the InterPolishForces (IPF) project. 0AC joined forces with AGAT to form Sharpresse Co. (SHP), establishing an Allied Factions server that gathered over 100 members—a record at the time. After significant growth, SHP rebranded to InterPolishForces. IPF was primarily a Polish faction and the second strongest globally, also gathering skilled English-speaking players. The project collapsed due to an internal rebellion on May 8, 2024 (destruction of the Discord server, kicking members in-game), with roughly 95-98% of the faction joining the rebels (Blue Angles, now CSC). This led to panic and a frantic rebuild attempt by the leader and loyal allies."
     },
     "event2": {
-      "title": "FIRST_DEPLOYMENT",
-      "content": "Engagement in the first major operation. Significant victory achieved through coordinated drone strikes."
+      "title": "Dzikie Knury - A Brief Revival",
+      "content": "The second iteration of the faction was named Dzikie Knury. Unfortunately, this version lacked military strength and quickly collapsed due to a series of hasty command decisions."
     },
     "event3": {
-      "title": "FORTIFICATION_PHASE",
-      "content": "Expansion of the digital database and recruitment of elite specialists."
+      "title": "Alpha Group - The Third Iteration",
+      "content": "On September 14, 2024, the third edition of the faction, Alpha Group, was established. It began to grow strong and diverse, showing great potential. Ultimately, the project fell apart at the end of November 2024."
     },
     "event4": {
-      "title": "COMMAND_ASCENSION",
-      "content": "Modernization of the Web-Command interface and full integration with global intelligence networks."
+      "title": "Valkyria Company",
+      "content": "The fourth edition, Valkyria Company, struggled with massive inactivity and general stagnation. Failing to gather combat strength, it quietly faded away in January 2025."
+    },
+    "event5": {
+      "title": "Rise and Fall of Death Squadron X",
+      "content": "The fifth revival under Death Squadron X proved to be one of the strongest and longest-lasting projects (until November 1, 2025). However, internal disputes, conspiracies, and conflicts plagued the faction. A loss of administrative control, enemy spies in high command, and unnecessary toxicity (insulting other races) pushed everything to the edge. Following false accusations against the leader, another massive rebellion occurred, permanently closing the DSX chapter."
+    },
+    "event6": {
+      "title": "Formation of the 303rd Division",
+      "content": "A month after the coup, the 303rd Division was created. It aimed to demonstrate resilience to the enemies who believed they had defeated those loyal to the leader. The faction eventually collapsed due to exhausting wars coupled with massive, orchestrated sabotage."
+    },
+    "event7": {
+      "title": "The Spark of IPF and Nightfall Squadron",
+      "content": "Until January 2026, no further attempts were made to form a new unit. However, the remaining veterans missed the old era, so they decided to rebuild the Polish IPF. The plans were drastically changed, turning the group into a fully international faction. And so, from the ashes, Nightfall Squadron was born. Currently, the faction is operating strongly and prospering well in the theater of war."
     }
+  },
+  "diplomacy": {
+    "title": "FACTION RELATIONS",
+    "subtitle": "Authenticated readout. Classification of alliances, non-aggression pacts, and active threats.",
+    "partnerships": "Official Partnerships",
+    "friendly": "Official Friendly Factions of Nightfall Squadron",
+    "neutral": "Neutral Factions of Nightfall Squadron",
+    "enemy": "Enemy Factions of Nightfall Squadron",
+    "noFactions": "No identified factions in this sector."
   },
   "kos": {
     "title": "KOS DATABASE",
     "subtitle": "Official watchlist of individuals and entities posing a threat to Nightfall Squadron.",
     "search": "SEARCH BY NAME...",
     "reasonLabel": "REASON",
-    "lastSeenLabel": "LAST SEEN",
     "statusLabel": "STATUS",
-    "viewIntel": "VIEW INTEL",
+    "leaderLabel": "LEADER",
+    "noteLabel": "NOTE",
+    "robloxNicknameLabel": "ROBLOX NICKNAME",
+    "viewInfo": "VIEW INFORMATION",
     "noResults": "NO MATCHING THREATS FOUND IN ARCHIVE",
     "personalSection": "PERSONAL TARGETS",
     "factionSection": "FACTION TARGETS",
     "reason1": "Intelligence theft and server sabotage.",
     "reason2": "Coordinated raids and propaganda spreading.",
-    "reason3": "Use of unauthorized third-party software."
+    "reason3": "Use of unauthorized third-party software.",
+    "note1": "Used enhancements during the raid on Alpha base.",
+    "note2": "Faction responsible for a series of sabotage attacks."
   },
   "login": {
     "prompt": "LOGIN_TO_CONTINUE",
@@ -321,8 +347,21 @@
       "reason": "unprovoked raid",
       "duration": "4 hours 30 minutes",
       "members": "@SAMISALAMI7, @Hejhej01928, @Pioter_M200, @Polskaexe_v3, @Tygosaures10"
+    },
+    "war2": {
+      "opponent": "GROM",
+      "reason": "No reason provided",
+      "duration": "No data",
+      "members": "@kamilekbrz, @SAMISALAMI7, @KralEfe9952",
+      "note": "They should combine F35 and AC130."
+    },
+    "war3": {
+      "opponent": "[A.1] alpha_1",
+      "reason": "No reason provided",
+      "duration": "1.5h",
+      "members": "@MICHALgalar2010, @SAMISALAMI7, @ERR0R_Gl1tchTV",
+      "note": "No data available"
     }
-    
   },
   "changelog": {
     "title": "CHANGELOG",
@@ -340,6 +379,22 @@
       "release": "RELEASE"
     },
     "dev": [
+      {
+        "version": "0.0.12.2",
+        "date": "March 29, 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Diplomacy System",
+            "description": "Added a new Diplomacy tab displaying relations divided by status. The page is protected by the Discord AuthGuard login system."
+          },
+          {
+            "type": "feature",
+            "title": "Major History Update",
+            "description": "Fully updated the official chronological record. The timeline spans from the very beginnings of 0AC and IPF, through the eras of DSX, straight to the current Nightfall Squadron."
+          }
+        ]
+      },
       {
         "version": "0.0.12.1",
         "date": "March 8, 2026",

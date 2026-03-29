@@ -57,6 +57,7 @@ const Navbar = () => {
                         <li><NavLink to="/qa">{t('nav.qa')}</NavLink></li>
                         <li><NavLink to="/staff">{t('nav.staff')}</NavLink></li>
                         <li><NavLink to="/history">{t('nav.history', 'HISTORIA')}</NavLink></li>
+                        <li><NavLink to="/diplomacy">{t('nav.diplomacy', 'DYPLOMACJA')}</NavLink></li>
                         <li><NavLink to="/kos">{t('nav.kos', 'KOS')}</NavLink></li>
                         <li><NavLink to="/war-logs">{t('nav.warLogs', 'WAR LOGS')}</NavLink></li>
                         <li><NavLink to="/changelog" className="nav-changelog">{t('nav.changelog', 'CHANGELOG')}</NavLink></li>

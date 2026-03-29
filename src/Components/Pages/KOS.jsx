@@ -10,36 +10,43 @@ import {
     AlertTriangle,
     Target,
     ShieldAlert,
-    //Terminal,
     Cpu,
     Eye
 } from 'lucide-react';
 import DecodedText from '../Shared/DecodedText';
+import KOSModal from './KOSModal';
 import './KOS.css';
 
 const KOS = () => {
     const { t } = useTranslation();
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedTarget, setSelectedTarget] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Personal Targets (Nicki Osób)
     const personalTargets = [
         {
-            name: "???",
-            threat: "???",
-            reason: t('kos.reason1', '???'),
-            lastSeen: "???",
-            status: "???"
+            type: 'personal',
+            name: "",
+            threat: "High",
+            reason: t('kos.reason3'),
+            status: "Sought",
+            robloxNickname: "",
+            robloxLink: "",
+            note: t('kos.note1')
         },
     ];
 
     // Faction Targets (Frakcje)
     const factionTargets = [
         {
-            name: "???",
-            threat: "???",
-            reason: t('kos.reason1', '???'),
-            lastSeen: "???",
-            status: "???"
+            type: 'faction',
+            name: "",
+            threat: "Critical",
+            reason: t('kos.reason2'),
+            status: "Hostile",
+            leader: "",
+            note: t('kos.note2')
         },
     ];
 
@@ -50,6 +57,11 @@ const KOS = () => {
     const filteredFactions = factionTargets.filter(target =>
         target.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const handleViewInfo = (target) => {
+        setSelectedTarget(target);
+        setIsModalOpen(true);
+    };
 
     const renderTargetGrid = (targets, sectionType) => {
         return (
@@ -94,19 +106,18 @@ const KOS = () => {
                                         <span className="info-val">{target.reason}</span>
                                     </div>
                                     <div className="info-row">
-                                        <span className="info-label">{t('kos.lastSeenLabel', 'LAST_SEEN')}:</span>
-                                        <span className="info-val">{target.lastSeen}</span>
-                                    </div>
-                                    <div className="info-row">
                                         <span className="info-label">{t('kos.statusLabel', 'STATUS')}:</span>
-                                        <span className="info-val status-active">{target.status}</span>
+                                        <span className={`info-val status-${target.status.toLowerCase()}`}>{target.status}</span>
                                     </div>
                                 </div>
 
                                 <div className="card-footer">
-                                    <button className="view-details-btn">
+                                    <button 
+                                        className="view-details-btn"
+                                        onClick={() => handleViewInfo(target)}
+                                    >
                                         <Eye size={14} />
-                                        <span>{t('kos.viewIntel', 'VIEW_INTEL')}</span>
+                                        <span>{t('kos.viewInfo', 'VIEW_INFORMATION')}</span>
                                     </button>
                                 </div>
 
@@ -191,6 +202,12 @@ const KOS = () => {
                     </div>
                 )}
             </section>
+
+            <KOSModal 
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                target={selectedTarget}
+            />
 
             <footer className="kos-footer">
                 <div className="footer-deco">

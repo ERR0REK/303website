@@ -40,28 +40,46 @@ const History = () => {
 
     const timelineEvents = [
         {
-            year: "2023_Q3",
+            year: "2022 - Maj 2024",
             title: t('history.event1.title', 'INITIATION_PROTOCOL'),
-            content: t('history.event1.content', 'The first division was formed under the codename Nightfall Squadron. The goal: Unity and tactical dominance.'),
+            content: t('history.event1.content', 'The first division was formed under the codename Nightfall Squadron.'),
             icon: <Flag size={20} />
         },
         {
-            year: "2023_Q4",
+            year: "Połowa 2024",
             title: t('history.event2.title', 'FIRST_DEPLOYMENT'),
-            content: t('history.event2.content', 'Engagement in the first major operation. Significant victory achieved through coordinated drone strikes.'),
-            icon: <Sword size={20} />
-        },
-        {
-            year: "2024_Q1",
-            title: t('history.event3.title', 'FORTIFICATION_PHASE'),
-            content: t('history.event3.content', 'Expansion of the digital database and recruitment of elite specialists.'),
+            content: t('history.event2.content', 'Engagement in the first major operation.'),
             icon: <Shield size={20} />
         },
         {
-            year: "2024_PRESENT",
+            year: "Wrzesień 2024 - Listopad 2024",
+            title: t('history.event3.title', 'FORTIFICATION_PHASE'),
+            content: t('history.event3.content', 'Expansion of the digital database.'),
+            icon: <Sword size={20} />
+        },
+        {
+            year: "Grudzień 2024 - Styczeń 2025",
             title: t('history.event4.title', 'COMMAND_ASCENSION'),
-            content: t('history.event4.content', 'Modernization of the Web-Command interface and full integration with Global Intelligence Networks.'),
+            content: t('history.event4.content', 'Modernization of the Web-Command interface.'),
             icon: <Target size={20} />
+        },
+        {
+            year: "Początek 2025 - 1 Listopada 2025",
+            title: t('history.event5.title', 'DSX_ERA'),
+            content: t('history.event5.content', 'Death Squadron X'),
+            icon: <Sword size={20} />
+        },
+        {
+            year: "Grudzień 2025",
+            title: t('history.event6.title', '303RD_DIVISION'),
+            content: t('history.event6.content', '303rd Division'),
+            icon: <HistoryIcon size={20} />
+        },
+        {
+            year: "Styczeń 2026 - Obecnie",
+            title: t('history.event7.title', 'NIGHTFALL_SQUADRON'),
+            content: t('history.event7.content', 'Nightfall Squadron'),
+            icon: <Cpu size={20} />
         }
     ];
 
