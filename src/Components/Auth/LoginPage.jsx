@@ -16,9 +16,10 @@ import './LoginPage.css';
 const LoginPage = () => {
     const { t } = useTranslation();
 
-    // Discord Configuration (Placeholder - User needs to fill this in)
+    // Discord Configuration
     const DISCORD_CLIENT_ID = "1448793452044222586";
-    const REDIRECT_URI = encodeURIComponent(window.location.origin + "/#/auth/callback");
+    // Discord odrzuca linki ze znakiem "#", więc redirect link musi celować w bazowy adres:
+    const REDIRECT_URI = encodeURIComponent(window.location.origin + "/");
 
     // For implicit flow:
     const DISCORD_AUTH_URL = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=identify%20guilds`;
