@@ -1,4 +1,4 @@
-/* src/Components/Auth/DiscordCallback.jsx */
+
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -11,21 +11,17 @@ const DiscordCallback = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [error, setError] = useState(null);
-    const [status, setStatus] = useState('verifying'); // verifying, success, error
+    const [status, setStatus] = useState('verifying'); 
 
-    const REQUIRED_GUILD_ID = "1368589684858683453"; // Updated to match user's server ID
+    const REQUIRED_GUILD_ID = "1463132353814593752";
 
     useEffect(() => {
         const handleAuth = async () => {
-            // Because of HashRouter, the URL looks like #/auth/callback#access_token=...
-            // We need to split and get the last part
-            const fragments = window.location.hash.split('#');
-            const authHash = fragments[fragments.length - 1];
-            const params = new URLSearchParams(authHash);
-            const accessToken = params.get('access_token');
+            const tokenMatch = window.location.hash.match(/access_token=([^&]+)/);
+            const accessToken = tokenMatch ? tokenMatch[1] : null;
 
             if (!accessToken) {
-                setError("AUTHENTICATION_FAILED: NO_TOKEN_RECEIVED");
+                setError(`NO_TOKEN_RECEIVED. Debug Hash: ${window.location.hash.substring(0, 50)}`);
                 return;
             }
 
@@ -58,11 +54,14 @@ const DiscordCallback = () => {
 
                     setStatus('success');
 
-                    // Clear the Discord fragment and redirect without a hard reload
+                    const redirectPath = localStorage.getItem('NS_redirect_after_login') || '/';
+                    localStorage.removeItem('NS_redirect_after_login');
+
+                    // Szybki, bezwzględny redirect uwalniający z martwego punktu HashRoutera:
                     setTimeout(() => {
-                        window.history.replaceState(null, null, window.location.origin + window.location.pathname + "#/");
-                        navigate("/");
-                    }, 1500);
+                        window.location.href = window.location.origin + window.location.pathname + "#" + redirectPath;
+                        window.location.reload();
+                    }, 300);
                 } else {
                     setStatus('error');
                     setError(t('login.error_no_server'));

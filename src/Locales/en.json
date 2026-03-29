@@ -392,6 +392,11 @@
             "type": "feature",
             "title": "Major History Update",
             "description": "Fully updated the official chronological record. The timeline spans from the very beginnings of 0AC and IPF, through the eras of DSX, straight to the current Nightfall Squadron."
+          },
+          {
+            "type": "update",
+            "title": "Authentication Overhaul (Part 2)",
+            "description": "Massive improvements to the login gateway. Fixed strict 'invalid_redirect_uri' errors and infinite React Router routing loops from Discord. Added intent-route saving, dynamic 'TOS' and 'Privacy Policy' modals, and an enforced two-step locked verification checkpoint."
           }
         ]
       },

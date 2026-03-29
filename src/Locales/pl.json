@@ -393,6 +393,11 @@
             "type": "feature",
             "title": "Wielka Aktualizacja Historii",
             "description": "W pełni uzupełniono oficjalny zapis chronologiczny. Historia przenosi nas od początku 0AC i pierwszej ery IPF, przez losy DSX i innych wariacji, aż do powstania Nightfall Squadron."
+          },
+          {
+            "type": "update",
+            "title": "Przebudowa Autoryzacji (Część 2)",
+            "description": "Ogromne ulepszenia dla okna logowania. Rozwiązano rygorystyczny problem 'invalid_redirect_uri' oraz nieskończone pętle React Routera po stronie Discorda. Dodano zapisywanie tras, dynamiczne okna 'Zasad' i 'Prywatności', a także wymuszoną, zablokowaną 2-etapową weryfikację."
           }
         ]
       },
