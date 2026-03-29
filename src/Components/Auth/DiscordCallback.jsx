@@ -13,7 +13,7 @@ const DiscordCallback = () => {
     const [error, setError] = useState(null);
     const [status, setStatus] = useState('verifying'); // verifying, success, error
 
-    const REQUIRED_GUILD_ID = "1463132353814593752"; // Updated to match user's server ID
+    const REQUIRED_GUILD_ID = "1368589684858683453"; // Updated to match user's server ID
 
     useEffect(() => {
         const handleAuth = async () => {
