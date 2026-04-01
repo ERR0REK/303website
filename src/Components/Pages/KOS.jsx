@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
     Skull,
     Search,
-    AlertTriangle,
     Target,
     ShieldAlert,
     Cpu,
@@ -27,7 +26,7 @@ const KOS = () => {
     const personalTargets = [
         {
             type: 'personal',
-            name: "",
+            name: "No Data",
             threat: "High",
             reason: t('kos.reason3'),
             status: "Sought",
@@ -41,7 +40,7 @@ const KOS = () => {
     const factionTargets = [
         {
             type: 'faction',
-            name: "",
+            name: "No Data",
             threat: "Critical",
             reason: t('kos.reason2'),
             status: "Hostile",
@@ -90,10 +89,6 @@ const KOS = () => {
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                             >
                                 <div className="card-top">
-                                    <div className="threat-badge">
-                                        <AlertTriangle size={12} />
-                                        <span>{target.threat}</span>
-                                    </div>
                                     <div className="target-icon">
                                         <Target size={32} />
                                     </div>
@@ -178,7 +173,10 @@ const KOS = () => {
             {/* Personal Targets Section */}
             <section className="kos-section">
                 <div className="section-header">
-                    <h2>{t('kos.personalSection', 'PERSONAL TARGETS')}</h2>
+                    <div className="section-title-row">
+                        <h2>{t('kos.personalSection', 'PERSONAL TARGETS')}</h2>
+                        <span className="count-badge">{filteredPersonal.length}</span>
+                    </div>
                     <div className="section-divider"></div>
                 </div>
                 {filteredPersonal.length > 0 ? renderTargetGrid(filteredPersonal, 'personal') : (
@@ -192,7 +190,10 @@ const KOS = () => {
             {/* Faction Targets Section */}
             <section className="kos-section">
                 <div className="section-header">
-                    <h2>{t('kos.factionSection', 'FACTION TARGETS')}</h2>
+                    <div className="section-title-row">
+                        <h2>{t('kos.factionSection', 'FACTION TARGETS')}</h2>
+                        <span className="count-badge secondary">{filteredFactions.length}</span>
+                    </div>
                     <div className="section-divider"></div>
                 </div>
                 {filteredFactions.length > 0 ? renderTargetGrid(filteredFactions, 'faction') : (

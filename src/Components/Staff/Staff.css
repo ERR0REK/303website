@@ -101,7 +101,7 @@
 .staff-card {
   background: var(--st-card);
   border: 1px solid var(--st-border);
-  padding: 30px; /* Increased padding */
+  padding: 30px;
   position: relative;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
@@ -109,11 +109,39 @@
   backdrop-filter: blur(12px);
 }
 
+/* Top accent bar */
+.staff-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--NS-purple), var(--NS-blue));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.staff-card:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer */
+.staff-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.staff-card:hover::after {
+  left: 150%;
+}
+
 .staff-card:hover {
-  border-color: var(--NS-blue);
-  background: rgba(168, 85, 247, 0.12);
+  border-color: var(--NS-purple);
+  background: rgba(168, 85, 247, 0.08);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+  box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2);
 }
 
 .card-top {

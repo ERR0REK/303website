@@ -16,27 +16,47 @@
 }
 
 .kos-modal-content {
-  background: rgba(10, 10, 15, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 20, 0.98);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   width: 100%;
   max-width: 500px;
   position: relative;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.1);
   overflow: hidden;
+  backdrop-filter: blur(25px);
+}
+
+.kos-modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--NS-purple), var(--NS-blue));
 }
 
 /* Threat Colors */
+.kos-modal-content.critical {
+  border-color: rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.2);
+}
+.kos-modal-content.critical::before {
+  background: linear-gradient(90deg, #ff0000, #ff5500);
+}
+
 .kos-modal-content.high {
-  border-color: rgba(255, 60, 60, 0.4);
-  box-shadow: 0 0 30px rgba(255, 60, 60, 0.1);
+  border-color: rgba(255, 60, 60, 0.5);
+  box-shadow: 0 0 40px rgba(255, 60, 60, 0.15);
 }
+.kos-modal-content.high::before {
+  background: linear-gradient(90deg, #ff3c3c, #ff7800);
+}
+
 .kos-modal-content.medium {
-  border-color: rgba(255, 170, 0, 0.4);
-  box-shadow: 0 0 30px rgba(255, 170, 0, 0.1);
+  border-color: rgba(255, 200, 0, 0.5);
+  box-shadow: 0 0 40px rgba(255, 200, 0, 0.15);
 }
-.kos-modal-content.low {
-  border-color: rgba(0, 255, 200, 0.4);
-  box-shadow: 0 0 30px rgba(0, 255, 200, 0.1);
+.kos-modal-content.medium::before {
+  background: linear-gradient(90deg, #ffc800, #facc15);
 }
 
 .modal-header {
@@ -59,8 +79,14 @@
   opacity: 0.8;
 }
 
+.kos-modal-content.critical .header-icon {
+  color: #ff0000;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.4));
+}
+
 .kos-modal-content.high .header-icon {
   color: #ff3c3c;
+  filter: drop-shadow(0 0 8px rgba(255, 60, 60, 0.3));
 }
 
 .header-text h2 {
@@ -141,12 +167,12 @@
 }
 
 .note-box {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.4);
   padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.95rem;
   line-height: 1.6;
-  opacity: 0.9;
+  color: #cadaca;
 }
 
 .threat-status-bar {

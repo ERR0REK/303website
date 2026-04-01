@@ -136,14 +136,22 @@ const WarLogModal = ({ log, onClose }) => {
                                         <span>{t('warLogs.kd.deaths', 'DEATHS')}</span>
                                         <span>{t('warLogs.kd.ratio', 'K/D')}</span>
                                     </div>
-                                    {log.enemyKD?.map((player, idx) => (
-                                        <div className="kd-row" key={idx}>
-                                            <span className="player-name">{player.name}</span>
-                                            <span className="kills">{player.kills}</span>
-                                            <span className="deaths">{player.deaths}</span>
-                                            <span className="ratio">{(player.kills / Math.max(1, player.deaths)).toFixed(2)}</span>
-                                        </div>
-                                    ))}
+                                    {[...(log.enemyKD || [])]
+                                        .sort((a, b) => (b.kills / Math.max(1, b.deaths)) - (a.kills / Math.max(1, a.deaths)))
+                                        .map((player, idx) => {
+                                            const ratio = player.kills / Math.max(1, player.deaths);
+                                            const ratioClass = ratio > 1 ? 'ratio-positive' : ratio < 1 ? 'ratio-negative' : 'ratio-neutral';
+                                            const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : null;
+                                            const rankClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : '';
+                                            return (
+                                                <div className={`kd-row ${rankClass}`} key={idx}>
+                                                    <span className="player-name">{medal && <span className="rank-badge">{medal}</span>}{player.name}</span>
+                                                    <span className="kills">{player.kills}</span>
+                                                    <span className="deaths">{player.deaths}</span>
+                                                    <span className={`ratio ${ratioClass}`}>{ratio.toFixed(2)}</span>
+                                                </div>
+                                            );
+                                        })}
                                 </div>
                             </motion.div>
                         )}
@@ -164,14 +172,22 @@ const WarLogModal = ({ log, onClose }) => {
                                         <span>{t('warLogs.kd.deaths', 'DEATHS')}</span>
                                         <span>{t('warLogs.kd.ratio', 'K/D')}</span>
                                     </div>
-                                    {log.memberKD?.map((player, idx) => (
-                                        <div className="kd-row" key={idx}>
-                                            <span className="player-name">{player.name}</span>
-                                            <span className="kills">{player.kills}</span>
-                                            <span className="deaths">{player.deaths}</span>
-                                            <span className="ratio">{(player.kills / Math.max(1, player.deaths)).toFixed(2)}</span>
-                                        </div>
-                                    ))}
+                                    {[...(log.memberKD || [])]
+                                        .sort((a, b) => (b.kills / Math.max(1, b.deaths)) - (a.kills / Math.max(1, a.deaths)))
+                                        .map((player, idx) => {
+                                            const ratio = player.kills / Math.max(1, player.deaths);
+                                            const ratioClass = ratio > 1 ? 'ratio-positive' : ratio < 1 ? 'ratio-negative' : 'ratio-neutral';
+                                            const medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : null;
+                                            const rankClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : '';
+                                            return (
+                                                <div className={`kd-row ${rankClass}`} key={idx}>
+                                                    <span className="player-name">{medal && <span className="rank-badge">{medal}</span>}{player.name}</span>
+                                                    <span className="kills">{player.kills}</span>
+                                                    <span className="deaths">{player.deaths}</span>
+                                                    <span className={`ratio ${ratioClass}`}>{ratio.toFixed(2)}</span>
+                                                </div>
+                                            );
+                                        })}
                                 </div>
                             </motion.div>
                         )}

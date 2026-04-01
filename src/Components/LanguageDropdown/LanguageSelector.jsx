@@ -37,6 +37,8 @@ const LanguageSelector = ({ onSelect, forceShow = false }) => {
         if (onSelect) onSelect(lang);
     };
 
+    const currentLang = i18n.language;
+
     const scroll = (direction) => {
         const container = document.querySelector('.language-carousel');
         if (container) {
@@ -76,11 +78,14 @@ const LanguageSelector = ({ onSelect, forceShow = false }) => {
                                 {languages.map((lang) => (
                                     <button
                                         key={lang.code}
-                                        className="lang-btn"
+                                        className={`lang-btn ${currentLang === lang.code ? 'lang-btn-active' : ''}`}
                                         onClick={() => handleLanguageSelect(lang.code)}
                                     >
                                         <span className="lang-flag">{lang.flag}</span>
                                         <span className="lang-name">{lang.name}</span>
+                                        {currentLang === lang.code && (
+                                            <span className="lang-active-badge">ACTIVE</span>
+                                        )}
                                     </button>
                                 ))}
                             </div>

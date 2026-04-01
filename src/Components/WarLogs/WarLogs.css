@@ -345,49 +345,105 @@
     height: 180px;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--military-green-glow);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+/* Result-specific backgrounds for the hero zone */
+.card-image-container.result-win {
+    background: linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(0, 30, 60, 0.9) 100%);
+}
+.card-image-container.result-loss {
+    background: linear-gradient(135deg, rgba(15, 5, 25, 0.95) 0%, rgba(40, 0, 60, 0.9) 100%);
+}
+.card-image-container.result-draw {
+    background: linear-gradient(135deg, rgba(20, 18, 5, 0.95) 0%, rgba(50, 40, 0, 0.9) 100%);
 }
 
-.warlog-card:hover .card-bg-img {
-    transform: scale(1.1);
+/* Animated grid background for the hero zone */
+.card-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: cardGridPulse 4s ease-in-out infinite alternate;
 }
+@keyframes cardGridPulse {
+    from { opacity: 0.4; }
+    to   { opacity: 1; }
+}
+
+/* Center result display */
+.card-result-center {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.result-icon {
+    font-size: 2.8rem;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.3));
+    animation: iconFloat 3s ease-in-out infinite;
+}
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-5px); }
+}
+
+.result-big-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+.result-big-label.result-win  { color: var(--NS-blue); text-shadow: 0 0 15px rgba(56,189,248,0.6); }
+.result-big-label.result-loss { color: var(--NS-purple); text-shadow: 0 0 15px rgba(168,85,247,0.6); }
+.result-big-label.result-draw { color: var(--NS-gold); text-shadow: 0 0 15px rgba(234,179,8,0.6); }
 
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
 }
 
 .card-result-badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 5px 12px;
+    padding: 4px 10px;
     font-weight: 800;
     font-family: 'Chakra Petch', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    z-index: 2;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    font-size: 0.8rem;
+    border-radius: 2px;
 }
+.card-result-badge.result-win  { background: rgba(56,189,248,0.25); border: 1px solid var(--NS-blue); color: var(--NS-blue); }
+.card-result-badge.result-loss { background: rgba(168,85,247,0.25); border: 1px solid var(--NS-purple); color: var(--NS-purple); }
+.card-result-badge.result-draw { background: rgba(234,179,8,0.25); border: 1px solid var(--NS-gold); color: var(--NS-gold); }
 
-.result-win {
-    background: var(--NS-blue);
-    color: var(--starlight-white);
+/* Bottom accent bar */
+.card-result-bar {
+    height: 3px;
+    width: 100%;
+    flex-shrink: 0;
 }
+.card-result-bar.result-win  { background: var(--NS-blue); box-shadow: 0 0 10px rgba(56,189,248,0.5); }
+.card-result-bar.result-loss { background: var(--NS-purple); box-shadow: 0 0 10px rgba(168,85,247,0.5); }
+.card-result-bar.result-draw { background: var(--NS-gold); box-shadow: 0 0 10px rgba(234,179,8,0.5); }
 
-.result-loss {
-    background: var(--NS-purple);
-    color: var(--starlight-white);
-}
+.result-win  { color: var(--starlight-white); }
+.result-loss { color: var(--starlight-white); }
 
 .card-content {
     padding: 20px;
@@ -780,7 +836,7 @@
 .tab-btn.active {
     border-color: var(--NS-blue);
     color: var(--NS-blue);
-    background: var(--NS-blue-glow);
+    background: rgba(56, 189, 248, 0.08);
 }
 
 .tab-btn.active::after {
@@ -869,9 +925,16 @@
     color: #ff3333;
 }
 
-.ratio {
-    color: #25F4EE;
-}
+.ratio { font-weight: bold; }
+.ratio-positive { color: #00ff88; text-shadow: 0 0 8px rgba(0,255,136,0.4); }
+.ratio-negative { color: #ff4455; text-shadow: 0 0 8px rgba(255,68,85,0.4); }
+.ratio-neutral  { color: #eab308; text-shadow: 0 0 8px rgba(234,179,8,0.4); }
+
+/* KD Podium Rows */
+.kd-row.rank-1 { background: rgba(255, 215, 0, 0.08); border-color: rgba(255,215,0,0.25); }
+.kd-row.rank-2 { background: rgba(192, 192, 192, 0.06); border-color: rgba(192,192,192,0.2); }
+.kd-row.rank-3 { background: rgba(205, 127, 50, 0.06); border-color: rgba(205,127,50,0.2); }
+.rank-badge { margin-right: 6px; font-size: 1rem; }
 
 /* Responsive adjustments */
 @media (max-width: 960px) {

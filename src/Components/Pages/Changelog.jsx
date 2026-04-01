@@ -120,6 +120,9 @@ export default function Changelog() {
                   <div className="expand-indicator">
                     {expandedVersion === entry.version ? <ChevronDown /> : <ChevronRight />}
                   </div>
+                  {expandedVersion !== entry.version && (
+                    <span className="changes-count-badge">{entry.changes.length} CHANGE{entry.changes.length !== 1 ? 'S' : ''}</span>
+                  )}
                 </div>
 
                 <AnimatePresence>

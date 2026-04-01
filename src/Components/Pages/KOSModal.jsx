@@ -79,12 +79,8 @@ const KOSModal = ({ isOpen, onClose, target }) => {
                                 </div>
                             </div>
 
-                            {/* Threat Status Footer */}
+                            {/* Status Footer */}
                             <div className="threat-status-bar">
-                                <div className="status-segment">
-                                    <span className="lbl">THREAT_LEVEL:</span>
-                                    <span className={`val ${target.threat?.toLowerCase()}`}>{target.threat}</span>
-                                </div>
                                 <div className="status-segment">
                                     <span className="lbl">STATUS:</span>
                                     <span className="val active">{target.status}</span>

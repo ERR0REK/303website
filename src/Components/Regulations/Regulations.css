@@ -223,7 +223,7 @@
 
 /* --- RULE CARD --- */
 .reg-rule-card {
-  background: var(--reg-card);
+  background: rgba(5, 10, 5, 0.8);
   border: 1px solid var(--reg-border);
   padding: 40px;
   position: relative;
@@ -231,9 +231,23 @@
   transition: all 0.4s;
 }
 
+/* Shimmer on hover */
+.reg-rule-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.reg-rule-card:hover::after {
+  left: 150%;
+}
+
 .reg-rule-card:hover {
-  border-color: var(--reg-primary);
-  background: rgba(10, 25, 15, 0.6);
+  background: rgba(5, 15, 8, 0.9);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
 .reg-rule-card.type-01 {
@@ -258,20 +272,40 @@
 .icon-box {
   width: 60px;
   height: 60px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 255, 102, 0.06);
+  border: 1px solid rgba(0, 255, 102, 0.2);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--reg-primary);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.reg-rule-card:hover .icon-box {
+  background: rgba(0, 255, 102, 0.12);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
 }
 
 .type-02 .icon-box {
+  background: rgba(56, 189, 248, 0.06);
+  border-color: rgba(56, 189, 248, 0.2);
   color: var(--reg-secondary);
+}
+.type-02.reg-rule-card:hover .icon-box {
+  background: rgba(56, 189, 248, 0.12);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
 .type-03 .icon-box {
+  background: rgba(234, 179, 8, 0.06);
+  border-color: rgba(234, 179, 8, 0.2);
   color: var(--reg-caution);
+}
+.type-03.reg-rule-card:hover .icon-box {
+  background: rgba(234, 179, 8, 0.12);
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
 }
 
 .reg-rule-section-number {
@@ -342,7 +376,7 @@
 .item-text {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #889988;
+  color: #aabcaa;
 }
 
 /* --- HUD DECOS --- */

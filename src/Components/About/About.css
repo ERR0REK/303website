@@ -123,23 +123,53 @@
 
 /* --- Cards --- */
 .about-card {
-  background: var(--abt-card);
+  background: rgba(10, 15, 10, 0.75);
   border: 1px solid var(--abt-border);
+  border-top: 2px solid transparent;
   padding: 40px;
   position: relative;
   transition: all 0.4s ease;
   overflow: hidden;
 }
 
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--NS-purple), var(--NS-blue));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.about-card:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer on hover */
+.about-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.about-card:hover::after {
+  left: 150%;
+}
+
 .about-card:hover {
-  border-color: var(--abt-primary);
-  background: rgba(10, 25, 15, 0.6);
-  box-shadow: 0 0 40px var(--military-green-glow);
+  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(15, 10, 25, 0.8);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.1), 0 10px 30px rgba(0,0,0,0.4);
+  transform: translateY(-3px);
 }
 
 .about-card.highlight {
-  border-left: 4px solid var(--abt-primary);
-  background: linear-gradient(90deg, var(--military-green-glow), transparent);
+  border-left: 3px solid var(--NS-blue);
+  background: linear-gradient(90deg, rgba(56,189,248,0.05), transparent);
 }
 
 .card-header {
@@ -150,9 +180,22 @@
 }
 
 .card-icon {
-  color: var(--abt-primary);
-  width: 30px;
-  height: 30px;
+  color: var(--NS-blue);
+  width: 36px;
+  height: 36px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 6px;
+  padding: 6px;
+  box-sizing: content-box;
+  transition: all 0.3s;
+}
+
+.about-card:hover .card-icon {
+  color: var(--NS-purple);
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
 }
 
 .card-title {

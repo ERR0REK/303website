@@ -87,6 +87,7 @@
   "diplomacy": {
     "title": "FACTION RELATIONS",
     "subtitle": "Authenticated readout. Classification of alliances, non-aggression pacts, and active threats.",
+    "allies": "Official Allies of Nightfall Squadron",
     "partnerships": "Official Partnerships",
     "friendly": "Official Friendly Factions of Nightfall Squadron",
     "neutral": "Neutral Factions of Nightfall Squadron",
@@ -379,6 +380,32 @@
       "release": "RELEASE"
     },
     "dev": [
+      {
+        "version": "0.0.12.3",
+        "date": "March 31, 2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Global UI/UX Tactical Polish",
+            "description": "Complete visual overhaul across all main pages (Diplomacy, WarLogs, Staff, About, History, QA, Regulations, KOS, LoginPage). Added high-end tactical effects: animated top color bars, shimmer on hover, pulsing glows, and count badges."
+          },
+          {
+            "type": "improvement",
+            "title": "Staff & KOS Streamlining",
+            "description": "Removed redundant descriptions from Staff profiles and removed 'Threat Level' text from KOS entries to focus on core operational data."
+          },
+          {
+            "type": "improvement",
+            "title": "Language Selector Enhancement",
+            "description": "Added active language indicators and integrated a sci-fi scanning effect into the language selection interface."
+          },
+          {
+            "type": "bugfix",
+            "title": "History Timeline Fix",
+            "description": "Restored the missing vertical timeline line and added a dynamic gradient glow to the historical record interface."
+          }
+        ]
+      },
       {
         "version": "0.0.12.2",
         "date": "March 29, 2026",

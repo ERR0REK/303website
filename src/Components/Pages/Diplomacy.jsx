@@ -10,7 +10,8 @@ import {
     ThumbsUp,
     Minus,
     Swords,
-    Cpu
+    Cpu,
+    Shield
 } from 'lucide-react';
 import DecodedText from '../Shared/DecodedText';
 import './Diplomacy.css';
@@ -18,21 +19,52 @@ import './Diplomacy.css';
 const Diplomacy = () => {
     const { t } = useTranslation();
 
-    // Placeholder data
+    const allies = [
+        { name: "Moon Recon Unit [MOON]", leader: "Unknown" },
+        { name: "Military Group Response Team [MGRT]", leader: "Unknown" },
+        { name: "Poltegeist Emission [PTEM]", leader: "Unknown" },
+        { name: "Austrian Armed Forces [ATAF]", leader: "Unknown" },
+        { name: "Lebanese Command Center [LCC]", leader: "Unknown" },
+        { name: "Death Star [STAR]", leader: "Unknown" },
+        { name: "La Resistance [LRT]", leader: "Unknown" },
+        { name: "Völar Security Co. [VRC☆]", leader: "Unknown" },
+        { name: "THC", leader: "Unknown" },
+        { name: "Special Raiders X [SRX]", leader: "Unknown" },
+        { name: "Shadow Vanguards X [SVX]", leader: "Unknown" },
+        { name: "444 Nyx Company [n/a]", leader: "Unknown" },
+        { name: "Zeta Raiders X [ZRX]", leader: "Unknown" },
+        { name: "Light Vanguards [LV]", leader: "Unknown" },
+        { name: "Fallen Angels [FA]", leader: "Unknown" },
+        { name: "Turkish Ghost Forces [TSK]", leader: "Unknown" },
+        { name: "Supreme Sea Marines [SSM]", leader: "Unknown" },
+        { name: "Shadow Regiment XI [SAR]", leader: "Unknown" },
+        { name: "Van Der Lindes [VDG]", leader: "Unknown" },
+        { name: "Blood River [T.BR]", leader: "Unknown" },
+        { name: "NEXUS ONYX SOLARYX [N💫8]", leader: "Unknown" },
+    ];
+
     const partnerships = [
-        { name: "Placeholder Faction", leader: "Unknown" }
+        { name: "United Factions of War Tycoon", leader: "Unknown" }
+
     ];
 
     const friendlyFactions = [
-        { name: "Placeholder Faction", leader: "Unknown" }
+        { name: "No Data", leader: "" }
     ];
 
     const neutralFactions = [
-        { name: "Placeholder Faction", leader: "Unknown" }
+        { name: "Night Riders X [NRX]", leader: "Unknown" },
+        { name: "HydraCoalition [HDC]", leader: "Unknown" },
+
     ];
 
     const enemyFactions = [
-        { name: "Placeholder Faction", leader: "Unknown" }
+        { name: "[SPEC] (Full faction name unknown)", leader: "Unknown" },
+        { name: "Sparklyforces [SSF]", leader: "Unknown" },
+        { name: "Stormfall Company [SFC]", leader: "Unknown" },
+        { name: "WOLF 💀 [ WLF🔱 ] ", leader: "Unknown" },
+        { name: "Bundersherr [🇦🇹]", leader: "Unknown" },
+        { name: "Shadow Faction [SF]", leader: "Unknown" },
     ];
 
     const renderFactionGrid = (factions, type, icon) => {
@@ -113,10 +145,30 @@ const Diplomacy = () => {
             </header>
 
             <div className="diplo-sections">
+                {/* 0. Allies */}
+                <section className="diplo-section">
+                    <div className="section-header">
+                        <div className="section-title-row">
+                            <h2>{t('diplomacy.allies', 'Official Allies of Nightfall Squadron')}</h2>
+                            <span className="section-count allies-count">{allies.length}</span>
+                        </div>
+                        <div className="section-divider allies-div"></div>
+                    </div>
+                    {allies.length > 0 ? renderFactionGrid(allies, 'allies', <Shield size={24} />) : (
+                        <div className="no-results">
+                            <ShieldAlert size={48} />
+                            <p>{t('diplomacy.noFactions')}</p>
+                        </div>
+                    )}
+                </section>
+
                 {/* 1. Partnerships */}
                 <section className="diplo-section">
                     <div className="section-header">
-                        <h2>{t('diplomacy.partnerships')}</h2>
+                        <div className="section-title-row">
+                            <h2>{t('diplomacy.partnerships')}</h2>
+                            <span className="section-count partnership-count">{partnerships.length}</span>
+                        </div>
                         <div className="section-divider partnership-div"></div>
                     </div>
                     {partnerships.length > 0 ? renderFactionGrid(partnerships, 'partnership', <Handshake size={24} />) : (
@@ -130,7 +182,10 @@ const Diplomacy = () => {
                 {/* 2. Friendly */}
                 <section className="diplo-section">
                     <div className="section-header">
-                        <h2>{t('diplomacy.friendly')}</h2>
+                        <div className="section-title-row">
+                            <h2>{t('diplomacy.friendly')}</h2>
+                            <span className="section-count friendly-count">{friendlyFactions.length}</span>
+                        </div>
                         <div className="section-divider friendly-div"></div>
                     </div>
                     {friendlyFactions.length > 0 ? renderFactionGrid(friendlyFactions, 'friendly', <ThumbsUp size={24} />) : (
@@ -144,7 +199,10 @@ const Diplomacy = () => {
                 {/* 3. Neutral */}
                 <section className="diplo-section">
                     <div className="section-header">
-                        <h2>{t('diplomacy.neutral')}</h2>
+                        <div className="section-title-row">
+                            <h2>{t('diplomacy.neutral')}</h2>
+                            <span className="section-count neutral-count">{neutralFactions.length}</span>
+                        </div>
                         <div className="section-divider neutral-div"></div>
                     </div>
                     {neutralFactions.length > 0 ? renderFactionGrid(neutralFactions, 'neutral', <Minus size={24} />) : (
@@ -158,7 +216,10 @@ const Diplomacy = () => {
                 {/* 4. Enemy */}
                 <section className="diplo-section">
                     <div className="section-header">
-                        <h2>{t('diplomacy.enemy')}</h2>
+                        <div className="section-title-row">
+                            <h2>{t('diplomacy.enemy')}</h2>
+                            <span className="section-count enemy-count">{enemyFactions.length}</span>
+                        </div>
                         <div className="section-divider enemy-div"></div>
                     </div>
                     {enemyFactions.length > 0 ? renderFactionGrid(enemyFactions, 'enemy', <Swords size={24} />) : (

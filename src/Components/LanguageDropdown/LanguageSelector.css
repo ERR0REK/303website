@@ -37,14 +37,12 @@
 }
 
 .language-modal {
-    /* High visibility background: Deep charcoal with a bright tactical grid */
     background: var(--bg-alt);
     background-image:
         linear-gradient(var(--military-green-glow) 1px, transparent 1px),
         linear-gradient(90deg, var(--military-green-glow) 1px, transparent 1px);
     background-size: 40px 40px;
     border: 3px solid var(--military-green);
-    /* Neon tactical green */
     padding: 3rem 2rem;
     position: relative;
     width: 95%;
@@ -54,11 +52,31 @@
         inset 0 0 50px rgba(0, 0, 0, 0.8),
         0 0 0 15px rgba(0, 0, 0, 0.4);
     text-align: center;
-    overflow: visible;
+    overflow: hidden;
     clip-path: polygon(0 40px, 40px 0,
             calc(100% - 40px) 0, 100% 40px,
             100% calc(100% - 40px), calc(100% - 40px) 100%,
             40px 100%, 0 calc(100% - 40px));
+}
+
+/* Scanning line animation */
+.language-modal::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(0,255,102,0.6), transparent);
+    animation: modalScan 4s linear infinite;
+    z-index: 20;
+    pointer-events: none;
+}
+@keyframes modalScan {
+    0%   { top: -5%; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { top: 105%; opacity: 0; }
 }
 
 /* HUD Corners for Language Modal */
@@ -218,6 +236,30 @@
         0 0 30px rgba(0, 255, 102, 0.4);
     animation: neonPulse 2s infinite alternate;
     z-index: 10;
+}
+
+/* Active language button */
+.lang-btn-active {
+    border-color: #00ff66 !important;
+    background: rgba(0, 255, 102, 0.08) !important;
+    box-shadow:
+        0 0 25px rgba(0, 255, 102, 0.3),
+        inset 0 0 15px rgba(0, 255, 102, 0.05) !important;
+    position: relative;
+}
+
+.lang-active-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: #00ff66;
+    background: rgba(0, 255, 102, 0.15);
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    padding: 2px 6px;
+    border-radius: 2px;
 }
 
 @keyframes neonPulse {

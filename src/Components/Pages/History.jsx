@@ -115,8 +115,11 @@ const History = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
             >
-                {/* No central line anymore, badge is on the left */}
+                {/* Vertical timeline line */}
+                <div className="timeline-line"></div>
+
                 {timelineEvents.map((event, index) => (
+
                     <motion.div
                         key={index}
                         className="timeline-item"

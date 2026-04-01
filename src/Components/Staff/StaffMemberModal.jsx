@@ -10,7 +10,6 @@ import {
   User,
   Activity,
   Database,
-  Terminal
 } from 'lucide-react';
 
 const StaffMemberModal = ({ member, onClose }) => {
@@ -73,16 +72,6 @@ const StaffMemberModal = ({ member, onClose }) => {
             </div>
 
             <div className="staff-modal-body">
-              <div className="staff-modal-description">
-                <div className="bio-label">
-                  <Terminal size={14} />
-                  <span>INTEL_SUMMARY</span>
-                </div>
-                <p>
-                  {t(`staff.descriptions.${member.name.toLowerCase()}`, t('common.noDescription', 'No description available in the database.'))}
-                </p>
-              </div>
-
               <div className="staff-modal-details">
                 <div className="staff-modal-detail-item">
                   <span className="staff-modal-label">

@@ -83,11 +83,18 @@
 
 .timeline-line {
     position: absolute;
-    left: 40px; /* Moved to the left for dossier style */
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--NS-blue), transparent);
+    left: 40px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom,
+        transparent,
+        var(--NS-purple) 15%,
+        var(--NS-blue) 50%,
+        var(--NS-purple) 85%,
+        transparent);
+    opacity: 0.5;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
 }
 
 .timeline-item {
@@ -114,13 +121,21 @@
 .badge-outer {
     width: 44px;
     height: 44px;
-    background: rgba(15, 15, 25, 0.8);
-    border: 1px solid var(--NS-blue);
+    background: rgba(15, 15, 25, 0.9);
+    border: 1px solid var(--NS-purple);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--NS-purple);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    transition: all 0.3s;
+}
+
+.timeline-item:hover .badge-outer {
+    border-color: var(--NS-blue);
     color: var(--NS-blue);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+    transform: scale(1.1);
 }
 
 /* Timeline Card */

@@ -183,10 +183,47 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+  padding-left: 24px;
 }
 
+/* Vertical timeline line */
+.changelog-timeline::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--NS-purple) 0%, var(--NS-blue) 50%, transparent 100%);
+  opacity: 0.35;
+}
+
+/* Timeline dot per entry */
 .changelog-entry-wrapper {
   width: 100%;
+  position: relative;
+}
+
+.changelog-entry-wrapper::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 28px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--NS-purple);
+  border: 2px solid var(--bg-color);
+  box-shadow: 0 0 8px var(--NS-purple);
+  z-index: 3;
+  transition: all 0.3s;
+}
+
+.changelog-entry-wrapper.expanded::before {
+  background: var(--NS-blue);
+  box-shadow: 0 0 14px var(--NS-blue);
+  transform: scale(1.3);
 }
 
 .changelog-entry {
@@ -217,10 +254,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(0, 255, 102, 0.1);
+  background: rgba(168, 85, 247, 0.08);
   padding: 10px;
-  min-width: 80px;
-  border-right: 2px solid var(--log-primary);
+  min-width: 90px;
+  border-right: 2px solid var(--NS-purple);
+  transition: all 0.3s;
+}
+
+.changelog-entry:hover .version-tag {
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+/* Dev vs Release tag colors */
+.changelog-entry.release .version-tag {
+  background: rgba(0, 255, 102, 0.08);
+  border-right-color: var(--log-primary);
+}
+.changelog-entry.release:hover .version-tag {
+  background: rgba(0, 255, 102, 0.15);
 }
 
 .v-label {
@@ -231,7 +283,7 @@
 
 .v-num {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
 }
@@ -274,6 +326,19 @@
 .expand-indicator {
   color: var(--log-primary);
   opacity: 0.5;
+}
+
+.changes-count-badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--NS-blue);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 2px 8px;
+  border-radius: 2px;
+  opacity: 0.8;
+  white-space: nowrap;
 }
 
 /* --- Expanded Details --- */
@@ -320,14 +385,27 @@
 }
 
 .change-icon-box {
-  width: 35px;
-  height: 35px;
-  background: rgba(0, 0, 0, 0.3);
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--log-primary);
+  transition: all 0.3s;
+}
+
+.change-item:hover .change-icon-box {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px currentColor;
+}
+
+.icon-main {
+  width: 18px;
+  height: 18px;
 }
 
 .type-bugfix .change-icon-box {

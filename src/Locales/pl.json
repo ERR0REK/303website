@@ -88,10 +88,11 @@
   "diplomacy": {
     "title": "RELACJE FRAKCYJNE",
     "subtitle": "Odczyt uwierzytelniony. Klasyfikacja sojuszy, paktów o nieagresji i aktywnych zagrożeń.",
-    "partnerships": "Official Partnerships",
-    "friendly": "Official Friendly factions of Nightfall Squadron",
-    "neutral": "Neutral Factions of Nightfall Squadron",
-    "enemy": "Enemy factions of Nightfall Squadron",
+    "allies": "Oficjalni Sojusznicy Nightfall Squadron",
+    "partnerships": "Oficjalne Partnerstwa",
+    "friendly": "Oficjalnie Przyjazne Frakcje Nightfall Squadron",
+    "neutral": "Neutralne Frakcje Nightfall Squadron",
+    "enemy": "Wrogie Frakcje Nightfall Squadron",
     "noFactions": "Brak zidentyfikowanych frakcji w tym sektorze."
   },
   "kos": {
@@ -380,6 +381,32 @@
       "release": "STABILNA"
     },
     "dev": [
+      {
+        "version": "0.0.12.3",
+        "date": "31.03.2026",
+        "changes": [
+          {
+            "type": "improvement",
+            "title": "Globalny Szlif UI/UX",
+            "description": "Kompletna przebudowa wizualna wszystkich głównych stron (Dyplomacja, WarLogi, Kadra, O nas, Historia, Q&A, Regulamin, KOS, Logowanie). Dodano zaawansowane efekty taktyczne: animowane paski kolorów, efekt shimmer, pulsujące poświaty i liczniki sekcji."
+          },
+          {
+            "type": "improvement",
+            "title": "Uproszczenie Kadr i KOS",
+            "description": "Usunięto zbędne opisy z profili kadry oraz napisy poziomu zagrożenia w bazie KOS, aby skupić się na najważniejszych danych operacyjnych."
+          },
+          {
+            "type": "improvement",
+            "title": "Ulepszenie Wyboru Języka",
+            "description": "Dodano wskaźnik aktywnego języka oraz zintegrowano efekt skanowania sci-fi w menu wyboru języka."
+          },
+          {
+            "type": "bugfix",
+            "title": "Naprawa Osi Czasu Historii",
+            "description": "Przywrócono brakującą pionową linię osi czasu i dodano dynamiczną poświatę gradientową w widoku historii frakcji."
+          }
+        ]
+      },
       {
         "version": "0.0.12.2",
         "date": "29 marca 2026",

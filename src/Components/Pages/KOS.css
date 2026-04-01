@@ -102,8 +102,23 @@
 }
 
 .search-box:focus-within {
-  border-color: var(--starlight-white);
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+  border-color: var(--NS-blue);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.1);
+  background: rgba(20, 20, 40, 0.6);
+}
+
+.search-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, var(--NS-blue), var(--NS-purple));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  filter: blur(5px);
+}
+
+.search-box:focus-within .search-glow {
+  opacity: 0.3;
 }
 
 /* KOS Sections */
@@ -117,26 +132,39 @@
 
 .section-header {
   margin-bottom: 40px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.section-header h2 {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  color: var(--starlight-white);
-  font-family: var(--font-header);
-  letter-spacing: 6px;
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, var(--NS-blue), var(--starlight-white));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+.count-badge {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid var(--NS-blue);
+  color: var(--NS-blue);
+  padding: 2px 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.count-badge.secondary {
+  border-color: var(--NS-purple);
+  color: var(--NS-purple);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
 }
 
 .section-divider {
-  width: 150px;
+  width: 200px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
-  margin: 0 auto;
 }
 
 /* Grid Container */
@@ -153,20 +181,50 @@
 
 /* KOS Card */
 .kos-card {
-  background: rgba(15, 15, 25, 0.4);
+  background: rgba(10, 10, 20, 0.6);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.15);
   padding: 30px;
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* Top accent bar */
+.kos-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--NS-purple), var(--NS-blue));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* Shimmer */
+.kos-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.kos-card:hover::before {
+  opacity: 1;
+}
+
+.kos-card:hover::after {
+  left: 150%;
+}
+
 .kos-card:hover {
   transform: translateY(-8px) scale(1.02);
-  border-color: var(--NS-blue);
-  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
-  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.1);
+  background: rgba(20, 15, 35, 0.8);
 }
 
 .card-top {
@@ -180,13 +238,33 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--NS-purple);
-  color: var(--starlight-white);
-  padding: 5px 15px;
-  font-family: var(--font-header);
-  font-size: 0.8rem;
-  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+  background: rgba(255, 60, 60, 0.15);
+  border: 1px solid rgba(255, 60, 60, 0.4);
+  color: #ff3c3c;
+  padding: 4px 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
   letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.kos-card.critical .threat-badge {
+  background: rgba(255, 0, 0, 0.2);
+  border-color: #ff0000;
+  color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.kos-card.high .threat-badge {
+  background: rgba(255, 120, 0, 0.2);
+  border-color: #ff7800;
+  color: #ff7800;
+}
+
+.kos-card.medium .threat-badge {
+  background: rgba(255, 200, 0, 0.2);
+  border-color: #ffc800;
+  color: #ffc800;
 }
 
 .target-icon {

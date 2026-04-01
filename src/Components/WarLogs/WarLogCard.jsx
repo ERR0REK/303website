@@ -21,17 +21,21 @@ const WarLogCard = ({ log, onClick, delay }) => {
             onClick={onClick}
             whileHover={{ scale: 1.02, translateY: -5 }}
         >
-            <div className="card-image-container">
-                <img src={log.img} alt={`War against ${log.opponent}`} className="card-bg-img" />
-                <div className={`card-result-badge ${resultClass}`}>
-                    {resultLabel}
+            <div className={`card-image-container ${resultClass}`}>
+                <div className="card-grid-bg"></div>
+                <div className="card-result-center">
+                    <span className="result-icon">
+                        {log.result === 'WIN' || log.result === 'EASY_WIN' ? '🗡️' : log.result === 'LOSS' ? '💀' : '⚖️'}
+                    </span>
+                    <span className={`result-big-label ${resultClass}`}>{resultLabel}</span>
                 </div>
                 <div className="card-overlay"></div>
+                <div className={`card-result-badge ${resultClass}`}>{resultLabel}</div>
             </div>
 
             <div className="card-content">
                 <div className="card-header">
-                    <span className="card-date">{log.date}</span>
+                    <span className="card-date">📅 {log.date}</span>
                     <span className="card-map">{log.map}</span>
                 </div>
 
@@ -52,6 +56,8 @@ const WarLogCard = ({ log, onClick, delay }) => {
                     </button>
                 </div>
             </div>
+
+            <div className={`card-result-bar ${resultClass}`}></div>
 
             <div className="card-corners">
                 <span className="corner tl"></span>
