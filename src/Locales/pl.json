@@ -108,10 +108,10 @@
     "noResults": "BRAK PASUJĄCYCH ZAGROŻEŃ W ARCHIWACH",
     "personalSection": "OSOBY",
     "factionSection": "FRAKCJE",
-    "reason1": "",
+    "reason1": "Zaatakowanie dwóch członków NS i wielokrotne zabicie ERR0N1X'a i Bartka",
     "reason2": "",
     "reason3": "",
-    "note1": "",
+    "note1": "Brak",
     "note2": ""
   },
   "login": {
@@ -157,18 +157,17 @@
       "kiepski": "WIP"
     },
     "roles": {
-      "factionCommand": "Faction Command",
-      "factionCoLeader": "Faction Co Leader",
+      "factionCommand": "Dowództwo Frakcji",
+      "privateLeadersTranslator": "Tłumacz Prywatnego Lidera",
+      "coFactionCommand": "Współdowódca Frakcji",
+      "trialCoFactionCommand": "Próbny Współdowódzca Frakcji",
       "technicalSpecialist": "Specjalista Techniczny",
-      "trialCoLeader": "Trial Co Leader",
       "elder": "Elder",
       "trialElder": "Trial Elder",
-      "intelligence": "Wywiad",
       "headAdministrator": "Główny Administrator",
       "seniorAdministrator": "Starszy Administrator",
       "administrator": "Administrator",
       "trialAdministrator": "Trial Administrator",
-      "seniorModerator": "Starszy Moderator",
       "moderator": "Moderator",
       "trialModerator": "Trial Moderator"
     }

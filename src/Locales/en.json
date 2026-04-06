@@ -107,11 +107,11 @@
     "noResults": "NO MATCHING THREATS FOUND IN ARCHIVE",
     "personalSection": "PERSONAL TARGETS",
     "factionSection": "FACTION TARGETS",
-    "reason1": "Intelligence theft and server sabotage.",
-    "reason2": "Coordinated raids and propaganda spreading.",
-    "reason3": "Use of unauthorized third-party software.",
-    "note1": "Used enhancements during the raid on Alpha base.",
-    "note2": "Faction responsible for a series of sabotage attacks."
+    "reason1": "Attacking two members of NS and repeatedly killing ERR0N1X and Bartek",
+    "reason2": "",
+    "reason3": "",
+    "note1": "lack",
+    "note2": ""
   },
   "login": {
     "prompt": "LOGIN_TO_CONTINUE",
@@ -157,17 +157,16 @@
     },
     "roles": {
       "factionCommand": "Faction Command",
-      "factionCoLeader": "Faction Co Leader",
+      "privateLeadersTranslator": "Private Leader's Translator",
+      "coFactionCommand": "Co Faction Command",
+      "trialCoFactionCommand": "Trial Co Faction Command",
       "technicalSpecialist": "Technical Specialist",
-      "trialCoLeader": "Trial Co Leader",
       "elder": "Elder",
       "trialElder": "Trial Elder",
-      "intelligence": "Intelligence",
       "headAdministrator": "Head Administrator",
       "seniorAdministrator": "Senior Administrator",
       "administrator": "Administrator",
       "trialAdministrator": "Trial Administrator",
-      "seniorModerator": "Senior Moderator",
       "moderator": "Moderator",
       "trialModerator": "Trial Moderator"
     }

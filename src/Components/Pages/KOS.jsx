@@ -26,12 +26,12 @@ const KOS = () => {
     const personalTargets = [
         {
             type: 'personal',
-            name: "No Data",
-            threat: "High",
-            reason: t('kos.reason3'),
-            status: "Sought",
-            robloxNickname: "",
-            robloxLink: "",
+            name: "@motionsprince1 (MPGPlays)",
+            threat: "Medium",
+            reason: t('kos.reason1'),
+            status: "???",
+            robloxNickname: "motionsprince1",
+            robloxLink: "https://www.roblox.com/users/3178633705/profile",
             note: t('kos.note1')
         },
     ];

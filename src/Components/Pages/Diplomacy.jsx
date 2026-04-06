@@ -27,11 +27,7 @@ const Diplomacy = () => {
         { name: "Lebanese Command Center [LCC]", leader: "Unknown" },
         { name: "Death Star [STAR]", leader: "Unknown" },
         { name: "La Resistance [LRT]", leader: "Unknown" },
-        { name: "Völar Security Co. [VRC☆]", leader: "Unknown" },
         { name: "THC", leader: "Unknown" },
-        { name: "Special Raiders X [SRX]", leader: "Unknown" },
-        { name: "Shadow Vanguards X [SVX]", leader: "Unknown" },
-        { name: "444 Nyx Company [n/a]", leader: "Unknown" },
         { name: "Zeta Raiders X [ZRX]", leader: "Unknown" },
         { name: "Light Vanguards [LV]", leader: "Unknown" },
         { name: "Fallen Angels [FA]", leader: "Unknown" },
@@ -41,6 +37,8 @@ const Diplomacy = () => {
         { name: "Van Der Lindes [VDG]", leader: "Unknown" },
         { name: "Blood River [T.BR]", leader: "Unknown" },
         { name: "NEXUS ONYX SOLARYX [N💫8]", leader: "Unknown" },
+        { name: "Nothern Strike Group [NSG]", leader: "Unknown" },
+        { name: "The Order 52", leader: "Unknown" },
     ];
 
     const partnerships = [
@@ -53,7 +51,6 @@ const Diplomacy = () => {
     ];
 
     const neutralFactions = [
-        { name: "Night Riders X [NRX]", leader: "Unknown" },
         { name: "HydraCoalition [HDC]", leader: "Unknown" },
 
     ];
