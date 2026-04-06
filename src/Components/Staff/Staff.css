@@ -1,11 +1,11 @@
 /* src/Components/Staff/Staff.css */
 
 :root {
-  --st-primary: var(--NS-purple);
-  --st-accent: var(--NSblue);
+  --st-primary: var(--cyber-blue);
+  --st-accent: #00ff66;
   --st-bg: transparent; /* Using SpaceBackground */
-  --st-card: rgba(15, 15, 25, 0.4);
-  --st-border: rgba(56, 189, 248, 0.2);
+  --st-card: rgba(5, 10, 15, 0.6);
+  --st-border: rgba(56, 189, 248, 0.3);
 }
 
 .staff-page {
@@ -47,7 +47,7 @@
   color: var(--starlight-white);
   letter-spacing: 10px;
   margin-bottom: 20px;
-  text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 .staff-hero-divider {
@@ -88,13 +88,14 @@
   letter-spacing: 3px;
   color: var(--st-primary);
   margin: 0;
-  text-shadow: 0 0 10px var(--military-green-glow);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 450px));
   gap: 25px;
+  justify-content: flex-start;
 }
 
 /* --- Member Card --- */
@@ -115,7 +116,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--NS-purple), var(--NS-blue));
+  background: linear-gradient(90deg, var(--cyber-blue), var(--st-accent));
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -129,7 +130,7 @@
   position: absolute;
   top: 0; left: -100%;
   width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.1), transparent);
   transition: left 0.6s ease;
   pointer-events: none;
 }
@@ -138,16 +139,19 @@
 }
 
 .staff-card:hover {
-  border-color: var(--NS-purple);
-  background: rgba(168, 85, 247, 0.08);
+  border-color: var(--st-primary);
+  background: rgba(56, 189, 248, 0.08);
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
+  z-index: 10;
 }
 
 .card-top {
   display: flex;
   align-items: center;
   gap: 25px;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .avatar-container {
@@ -186,10 +190,11 @@
 
 .member-name {
   font-family: var(--font-header);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   color: var(--starlight-white);
-  margin: 0 0 5px 0;
-  letter-spacing: 2px;
+  margin: 0 0 8px 0;
+  letter-spacing: 1px;
+  word-break: break-word; /* fixes extremely long usernames */
 }
 
 .member-role {
@@ -382,7 +387,7 @@
   position: relative;
   overflow: hidden;
   padding: 40px;
-  box-shadow: 0 0 50px var(--military-green-glow);
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
 }
 
 .staff-modal-close {
@@ -418,8 +423,9 @@
   width: 120px;
   height: 120px;
   border: 2px solid var(--st-primary);
-  box-shadow: 0 0 15px var(--military-green-glow);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .staff-img-scanner {
@@ -428,10 +434,11 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--st-primary);
-  box-shadow: 0 0 10px var(--st-primary);
+  background: var(--st-accent);
+  box-shadow: 0 0 10px var(--st-accent);
   z-index: 5;
   animation: avatarScan 3s linear infinite;
+  border-radius: 50%;
 }
 
 @keyframes avatarScan {
@@ -446,11 +453,12 @@
 
 .staff-modal-name {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   margin-bottom: 5px;
+  word-break: break-word;
 }
 
 .staff-modal-role {
@@ -495,8 +503,8 @@
 }
 
 .staff-modal-detail-item:hover {
-  background: var(--military-green-glow);
-  border-color: var(--military-green-glow);
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--st-primary);
 }
 
 .staff-modal-label {
@@ -532,7 +540,7 @@
 }
 
 .staff-modal-button-close {
-  background: var(--military-green-glow);
+  background: rgba(56, 189, 248, 0.1);
   border: 1px solid var(--st-primary);
   color: var(--st-primary);
   padding: 10px 30px;

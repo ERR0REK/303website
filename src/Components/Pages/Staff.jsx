@@ -1,5 +1,3 @@
-/* src/Components/Pages/Staff.jsx */
-
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -8,7 +6,6 @@ import StaffRoleSection from "../Staff/StaffRoleSection";
 import StaffMemberModal from "../Staff/StaffMemberModal";
 import DecodedText from "../Shared/DecodedText";
 
-/* Importowanie obrazków członków kadry */
 import cygan221 from "../../Assets/StaffPFP/cygan221.png";
 import vanish from "../../Assets/StaffPFP/vanish.webp";
 import strongest from "../../Assets/StaffPFP/strongest.webp";
@@ -26,7 +23,6 @@ import neonovikorol from "../../Assets/StaffPFP/neonovikorol.webp";
 import batmangothamsaver from "../../Assets/StaffPFP/lewylewangolski.webp";
 import lars from "../../Assets/StaffPFP/lars.webp";
 import snowie from "../../Assets/StaffPFP/snowie.webp";
-/* Koniec importowania obrazków */
 
 import "../Staff/Staff.css";
 
@@ -34,8 +30,6 @@ export default function Staff() {
   const { t } = useTranslation();
   const [selectedMember, setSelectedMember] = useState(null);
 
-  // Dane przykładowe członków kadry
-  // Można je zastąpić danymi z API lub bazy danych
   const staffData = {
     factionCommand: [
       {

@@ -5,14 +5,11 @@ import { useTranslation } from 'react-i18next';
 import Navbar from '../Navbar/Navbar';
 import { motion } from 'framer-motion';
 import {
-    //Calendar,
     History as HistoryIcon,
-    //Search,
     Sword,
     Shield,
     Flag,
     Target,
-    //Terminal,
     Cpu
 } from 'lucide-react';
 import DecodedText from '../Shared/DecodedText';

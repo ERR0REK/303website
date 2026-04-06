@@ -9,7 +9,6 @@ const DecodedText = ({ text, delay = 0, duration = 1, className = "" }) => {
     let timeout;
     let iteration = 0;
     
-    // Initial delay
     timeout = setTimeout(() => {
       const interval = setInterval(() => {
         setDisplayText(
@@ -28,7 +27,7 @@ const DecodedText = ({ text, delay = 0, duration = 1, className = "" }) => {
           clearInterval(interval);
         }
 
-        iteration += 1 / 3; // Slow down the reveal slightly
+        iteration += 1 / 3;
       }, 30);
       
       return () => clearInterval(interval);

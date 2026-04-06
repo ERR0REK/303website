@@ -1,5 +1,3 @@
-// src/Components/Hero/Hero.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
@@ -28,16 +26,13 @@ const Hero = () => {
     const [selectedPlatform, setSelectedPlatform] = useState('');
     const [bootSequence, setBootSequence] = useState(0);
 
-    // Parallax Motion Values
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
-    // Smooth transition springs
     const springConfig = { stiffness: 100, damping: 30 };
     const smX = useSpring(mouseX, springConfig);
     const smY = useSpring(mouseY, springConfig);
 
-    // Dynamic transforms for different layers
     const bgX = useTransform(smX, [-500, 500], [15, -15]);
     const bgY = useTransform(smY, [-500, 500], [15, -15]);
     const hudX = useTransform(smX, [-500, 500], [-25, 25]);
@@ -88,7 +83,6 @@ const Hero = () => {
         <div className='hero'>
             <CyberParticles />
             
-            {/* Background Layer with Parallax */}
             <motion.div 
                 className="hero-bg-container"
                 style={{ 
@@ -104,7 +98,6 @@ const Hero = () => {
             <div className="hero-grid-overlay"></div>
             <div className="hero-scanline"></div>
 
-            {/* --- Targeting Reticle Decoration --- */}
             <div className="reticle-container">
                 <motion.div 
                     className="targeting-reticle"
@@ -122,7 +115,6 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            {/* --- HUD Corners with Parallax --- */}
             <motion.div className="hud-panel hud-tl" style={{ x: hudX, y: hudY }}>
                 <div className="hud-line"></div>
                 <div className="hud-data">
@@ -219,7 +211,6 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            {/* --- Mission Ticker --- */}
             <div className="mission-ticker">
                 <div className="ticker-label">
                     <Navigation size={14} />

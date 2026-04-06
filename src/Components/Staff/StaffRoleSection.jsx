@@ -36,18 +36,18 @@ const StaffRoleSection = ({ roleTitle, members, onMemberMoreInfo }) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <motion.h2 
-        className="staff-role-title"
+      <motion.div 
+        className="role-header"
         initial={{ x: -30, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        {roleTitle}
-      </motion.h2>
+        <h2 className="role-title">{roleTitle}</h2>
+      </motion.div>
       {members && members.length > 0 ? (
         <motion.div
-          className="staff-members-grid"
+          className="members-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

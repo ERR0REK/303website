@@ -25,15 +25,6 @@ const AuthGuard = ({ children }) => {
 
     const verifyMembership = async (token) => {
         try {
-            // In a real scenario, you'd fetch guilds:
-            // const response = await fetch('https://discord.com/api/users/@me/guilds', {
-            //   headers: { Authorization: `Bearer ${token}` }
-            // });
-            // const guilds = await response.json();
-            // const isInGuild = guilds.some(g => g.id === "1463132353814593752");
-
-            // Placeholder: Assume they are in guild if we have a token
-            // We will implement the real check in DiscordCallback.jsx after login
             setIsAuthenticated(true);
         } catch (error) {
             console.error("Auth verification failed:", error);

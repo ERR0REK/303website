@@ -5,7 +5,7 @@ import './WarLogs.css';
 
 const WarLogModal = ({ log, onClose }) => {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState('info'); // 'info', 'enemyKD', 'memberKD'
+    const [activeTab, setActiveTab] = useState('info');
 
     const resultClass =
         log.result === 'WIN' || log.result === 'EASY_WIN' ? 'text-win' :
@@ -30,7 +30,6 @@ const WarLogModal = ({ log, onClose }) => {
                     <span className="close-btn" onClick={onClose}>&times;</span>
                 </div>
 
-                {/* Tab Switcher */}
                 <div className="modal-tabs">
                     <button
                         className={`tab-btn ${activeTab === 'info' ? 'active' : ''}`}

@@ -380,6 +380,32 @@
     },
     "dev": [
       {
+        "version": "0.0.12.4",
+        "date": "April 6, 2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Avatars & Translation Framework",
+            "description": "Linked official Staff avatars to faction members. Added a feature in the Language Selector for community translations with automatic English failover."
+          },
+          {
+            "type": "improvement",
+            "title": "Language Selector UI/UX Redesign",
+            "description": "Completely reworked the Language Selector interface from a horizontal carousel to a sleek vertical HUD panel with sci-fi elements and neon scrollbars."
+          },
+          {
+            "type": "bugfix",
+            "title": "Staff Layout & Modal Crash Fixes",
+            "description": "Resolved a layout overlap bug in the Staff Section by reconnecting correct CSS classes. Fixed a critical crash caused by clicking SVG elements in modals. Swapped remaining legacy purple colors to the official Nightfall Squadron cyan."
+          },
+          {
+            "type": "bugfix",
+            "title": "Build & ESLint Warnings",
+            "description": "Eliminated ESLint warnings across the project allowing clean, error-free CI deployments on Netlify."
+          }
+        ]
+      },
+      {
         "version": "0.0.12.3",
         "date": "March 31, 2026",
         "changes": [

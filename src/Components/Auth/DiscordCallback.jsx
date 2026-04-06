@@ -26,7 +26,6 @@ const DiscordCallback = () => {
             }
 
             try {
-                // 1. Fetch user's profile to get their ID
                 const userResponse = await fetch('https://discord.com/api/users/@me', {
                     headers: { Authorization: `Bearer ${accessToken}` }
                 });
@@ -34,7 +33,6 @@ const DiscordCallback = () => {
                 if (!userResponse.ok) throw new Error(t('login.error_api'));
                 const userData = await userResponse.json();
 
-                // 2. Fetch user's guilds to verify membership
                 const response = await fetch('https://discord.com/api/users/@me/guilds', {
                     headers: { Authorization: `Bearer ${accessToken}` }
                 });
@@ -45,7 +43,6 @@ const DiscordCallback = () => {
                 const isInGuild = guilds.some(g => g.id === REQUIRED_GUILD_ID);
 
                 if (isInGuild) {
-                    // Store session with user ID
                     localStorage.setItem('NS_auth_session', JSON.stringify({
                         access_token: accessToken,
                         user_id: userData.id,
@@ -57,7 +54,6 @@ const DiscordCallback = () => {
                     const redirectPath = localStorage.getItem('NS_redirect_after_login') || '/';
                     localStorage.removeItem('NS_redirect_after_login');
 
-                    // Szybki, bezwzględny redirect uwalniający z martwego punktu HashRoutera:
                     setTimeout(() => {
                         window.location.href = window.location.origin + window.location.pathname + "#" + redirectPath;
                         window.location.reload();
@@ -87,7 +83,6 @@ const DiscordCallback = () => {
             position: 'relative',
             overflow: 'hidden'
         }}>
-            {/* Tactical Decorations */}
             <div style={{
                 position: 'absolute',
                 top: 0,

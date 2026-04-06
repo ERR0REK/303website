@@ -22,7 +22,7 @@ const LoadingScreen = () => {
 
         const interval = setInterval(() => {
             setLoadingProgress(prev => {
-                // Faster increment at the end
+
                 const increment = prev > 80 ? 4 : 1.5;
                 const newProgress = Math.min(prev + increment, 100);
 
@@ -32,7 +32,6 @@ const LoadingScreen = () => {
                     return 100;
                 }
 
-                // Update text based on progress
                 const messageIndex = Math.floor((newProgress / 100) * (loadingMessages.length - 1));
                 setLoadingText(loadingMessages[messageIndex]);
 

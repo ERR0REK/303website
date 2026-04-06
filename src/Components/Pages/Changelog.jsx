@@ -25,7 +25,6 @@ export default function Changelog() {
   const [devVersions, setDevVersions] = useState([]);
   const [releaseVersions, setReleaseVersions] = useState([]);
 
-  // Load versions from i18n on mount and language change
   useEffect(() => {
     const devData = i18n.getResourceBundle(i18n.language, 'translation')?.changelog?.dev;
     const releaseData = i18n.getResourceBundle(i18n.language, 'translation')?.changelog?.release;

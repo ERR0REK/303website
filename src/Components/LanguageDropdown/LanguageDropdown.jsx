@@ -1,5 +1,3 @@
-// src/Components/LanguageDropdown/LanguageDropdown.jsx
-
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../LanguageDropdown/LanguageDropdown.css';
@@ -11,7 +9,7 @@ const LanguageDropdown = () => {
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
         localStorage.setItem('i18nextLng', lng);
-        setIsOpen(false); // Zamykamy menu po zmianie języka
+        setIsOpen(false); 
     };
 
     const languages = [

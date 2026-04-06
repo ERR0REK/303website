@@ -22,7 +22,6 @@ const KOS = () => {
     const [selectedTarget, setSelectedTarget] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Personal Targets (Nicki Osób)
     const personalTargets = [
         {
             type: 'personal',
@@ -36,7 +35,6 @@ const KOS = () => {
         },
     ];
 
-    // Faction Targets (Frakcje)
     const factionTargets = [
         {
             type: 'faction',

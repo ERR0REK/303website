@@ -49,7 +49,6 @@ const CyberParticles = () => {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
         
-        // Glow effect
         ctx.shadowBlur = 10;
         ctx.shadowColor = '#38bdf8';
       }

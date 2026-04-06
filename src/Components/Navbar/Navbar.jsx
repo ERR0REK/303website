@@ -1,5 +1,3 @@
-// src/Components/Navbar/Navbar.jsx
-
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +10,6 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
-    // Close menu when route changes
     useEffect(() => {
         setIsMenuOpen(false);
     }, [location]);
@@ -21,17 +18,9 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    /* Logout button disabled temporarily
-    const handleLogout = () => {
-        localStorage.removeItem('NSth_session');
-        window.location.href = "/";
-    };
-    */
-
     return (
         <nav>
             <div className="nav-container">
-                {/* --- LEWA STRONA (Logo i Nazwa) --- */}
                 <div className="nav-left">
                     <NavLink to="/">
                         <img src={logo} alt={t('common.orgName')} className='logo' />
@@ -41,14 +30,12 @@ const Navbar = () => {
                     </NavLink>
                 </div>
 
-                {/* --- HAMBURGER MENU (Mobile) --- */}
                 <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
                 </div>
 
-                {/* --- PRAWA STRONA (Linki i Dropdown) --- */}
                 <div className={`nav-right ${isMenuOpen ? 'active' : ''}`}>
                     <ul>
                         <li><NavLink to="/">{t('nav.home')}</NavLink></li>
@@ -61,14 +48,6 @@ const Navbar = () => {
                         <li><NavLink to="/kos">{t('nav.kos', 'KOS')}</NavLink></li>
                         <li><NavLink to="/war-logs">{t('nav.warLogs', 'WAR LOGS')}</NavLink></li>
                         <li><NavLink to="/changelog" className="nav-changelog">{t('nav.changelog', 'CHANGELOG')}</NavLink></li>
-                        {/* Logout button disabled temporarily
-                        <li className="nav-logout-li">
-                            <button onClick={handleLogout} className="nav-logout-btn">
-                                <LogOut size={16} />
-                                <span>{t('nav.logout', 'LOGOUT')}</span>
-                            </button>
-                        </li>
-                        */}
                     </ul>
                     <div className="nav-lang-mobile">
                         <LanguageDropdown />

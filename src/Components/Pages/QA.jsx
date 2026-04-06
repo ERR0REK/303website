@@ -61,7 +61,6 @@ const FAQItem = ({ question, answer, index }) => {
 export default function Qa() {
   const { t } = useTranslation();
 
-  // FAQ Data - Moved into component for reactivity
   const faqs = [
     {
       question: t('qa.faqs.0.question', 'Jak mogę dołączyć do Nightfall Squadron?'),

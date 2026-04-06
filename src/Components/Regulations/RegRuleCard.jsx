@@ -1,5 +1,3 @@
-// src/Components/Regulations/RegRuleCard.jsx
-
 import React from 'react';
 import { FileText, Gavel, ShieldCheck, Zap } from 'lucide-react';
 

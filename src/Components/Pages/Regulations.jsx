@@ -1,5 +1,3 @@
-// src/Components/Pages/Regulations.jsx
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -24,15 +22,12 @@ export default function Regulations() {
       <div className="reg-scanlines"></div>
 
       <main className="reg-main-container">
-        {/* --- Część przewijana --- */}
         <section className="reg-scrollable-part">
           <RegHeroSection />
           <RegWarningPanel />
         </section>
 
-        {/* --- Część "lepka" (z dodatkowym wrapperem) --- */}
         <section className="reg-sticky-part">
-          {/* Nowy wrapper dla efektów wizualnych */}
           <div className="reg-sticky-content">
             <div className="rules-container">
               <RegRuleCard

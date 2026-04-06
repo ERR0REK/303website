@@ -1,5 +1,3 @@
-// src/Components/Hero/LinkErrorModal.jsx
-
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, WifiOff, AlertOctagon, Terminal } from 'lucide-react';
@@ -27,7 +25,6 @@ const LinkErrorModal = ({ isOpen, onClose, platform }) => {
                         exit={{ scale: 0.9, opacity: 0, y: 20 }}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* HUD Elements */}
                         <div className="error-corner tl"></div><div className="error-corner tr"></div>
                         <div className="error-corner bl"></div><div className="error-corner br"></div>
                         <div className="error-scanner-line"></div>

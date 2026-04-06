@@ -1,5 +1,3 @@
-// src/Components/Regulations/RegWarningPanel.jsx
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, ShieldAlert } from 'lucide-react';

@@ -56,7 +56,6 @@ export default function About() {
       <div className="about-overlay"></div>
       <div className="about-scanlines"></div>
 
-      {/* --- Hero Section --- */}
       <motion.section
         className="about-hero"
         initial={{ opacity: 0 }}

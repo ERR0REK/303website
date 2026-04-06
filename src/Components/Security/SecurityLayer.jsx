@@ -1,12 +1,8 @@
-// src/Components/Security/SecurityLayer.jsx
-
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldAlert, Terminal } from 'lucide-react';
 import './Security.css';
-
-// Whitelist for admins/devs to bypass anticheat and test localStorage
-const AUTHORIZED_ADMIN_IDS = ["687701665771814939"]; // Zmień to na SWOJE oficjalne ID na serwerze!
+const AUTHORIZED_ADMIN_IDS = ["687701665771814939"];
 
 const SecurityLayer = () => {
     const [showAlert, setShowAlert] = useState(false);
@@ -24,29 +20,25 @@ const SecurityLayer = () => {
         }
 
         const handleContextMenu = (e) => {
-            if (isAdmin) return; // Bypass for admins
+            if (isAdmin) return;
             e.preventDefault();
             triggerAlert('UNAUTHORIZED_ACCESS_CONTEXT_MENU');
         };
 
         const handleKeyDown = (e) => {
-            if (isAdmin) return; // Bypass for admins
-            // Block F12
+            if (isAdmin) return;
             if (e.keyCode === 123) {
                 e.preventDefault();
                 triggerAlert('UNAUTHORIZED_HARDWARE_F12');
             }
-            // Block Ctrl+Shift+I (Inspect)
             if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
                 e.preventDefault();
                 triggerAlert('INSPECTION_BYPASS_DETECTED');
             }
-            // Block Ctrl+Shift+J (Console)
             if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
                 e.preventDefault();
                 triggerAlert('CONSOLE_MANIPULATION_ATTEMPT');
             }
-            // Block Ctrl+U (View Source)
             if (e.ctrlKey && e.keyCode === 85) {
                 e.preventDefault();
                 triggerAlert('SOURCE_EXTRACTION_FAIL');

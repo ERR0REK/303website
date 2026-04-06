@@ -11,7 +11,6 @@ const WarLogs = () => {
   const { t } = useTranslation();
   const [selectedLog, setSelectedLog] = useState(null);
 
-  // Real Data with Translation Keys
   const logs = [
     {
       id: 1,

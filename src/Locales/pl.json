@@ -381,6 +381,32 @@
     },
     "dev": [
       {
+        "version": "0.0.12.4",
+        "date": "06.04.2026",
+        "changes": [
+          {
+            "type": "feature",
+            "title": "Awatary i Kanał Tłumaczy",
+            "description": "Powiązano oficjalne awatary członków kadry z sekcją. Dodano nową funkcję w oknie wyboru języka, zachęcającą społeczność do tworzenia tłumaczeń na ich języki natywne."
+          },
+          {
+            "type": "improvement",
+            "title": "Przebudowa Wizualna Wyboru Języków",
+            "description": "Zmieniono stary modal języków (w stylu karuzeli z emoji flagami) na wertykalny, mroczny panel HUD wspierający nieograniczoną ilość opcji wraz z niestandardowym scrollem."
+          },
+          {
+            "type": "bugfix",
+            "title": "Naprawa Błędów Kadry (Staff)",
+            "description": "Ogarnięto całkowicie rozsypany układ siatki na karcie kadr, przywrócono poprawne marginesy. Zamieniono zapomniany fioletowy schemat kolorów na oficjalny i kanoniczny cyjan. Wdrożono fix na całkowity 'crash' witryny wywoływany przez kliknięcie detali SVG na modalu."
+          },
+          {
+            "type": "bugfix",
+            "title": "Kwestie Wdrożenia Netlify",
+            "description": "Oczyszczono logi ESLint z ostrzeżeń, dzięki czemu platforma produkcyjna Netlify przestanie sypać fałszywymi błędami przy deployach."
+          }
+        ]
+      },
+      {
         "version": "0.0.12.3",
         "date": "31.03.2026",
         "changes": [

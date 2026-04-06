@@ -1,5 +1,3 @@
-/* src/Components/Staff/StaffMemberModal.jsx */
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,7 +22,7 @@ const StaffMemberModal = ({ member, onClose }) => {
   };
 
   const handleBackdropClick = (e) => {
-    if (e.target.className.includes('staff-modal-overlay')) {
+    if (e.target.classList && e.target.classList.contains('staff-modal-overlay')) {
       handleClose();
     }
   };
