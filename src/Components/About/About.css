@@ -1,5 +1,3 @@
-/* src/Components/About/About.css */
-
 :root {
   --abt-primary: var(--military-green);
   --abt-secondary: var(--cyber-blue);
@@ -17,7 +15,6 @@
   padding-bottom: 50px;
 }
 
-/* Background Effects */
 .about-overlay {
   position: fixed;
   inset: 0;
@@ -53,7 +50,6 @@
   }
 }
 
-/* --- Hero Section --- */
 .about-hero {
   position: relative;
   z-index: 2;
@@ -109,7 +105,6 @@
   background: linear-gradient(to right, transparent, var(--abt-primary), transparent);
 }
 
-/* --- Container --- */
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -121,7 +116,6 @@
   gap: 30px;
 }
 
-/* --- Cards --- */
 .about-card {
   background: rgba(10, 15, 10, 0.75);
   border: 1px solid var(--abt-border);
@@ -146,7 +140,6 @@
   opacity: 1;
 }
 
-/* Shimmer on hover */
 .about-card::after {
   content: '';
   position: absolute;
@@ -218,7 +211,6 @@
   margin-bottom: 0;
 }
 
-/* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -249,7 +241,6 @@
   margin-top: 2px;
 }
 
-/* Values List */
 .values-list {
   display: flex;
   flex-direction: column;
@@ -283,7 +274,6 @@
   font-size: 1rem !important;
 }
 
-/* Join Card Layout */
 .join-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -342,7 +332,6 @@
   font-size: 1.1rem;
 }
 
-/* HUD Decos */
 .corner {
   position: absolute;
   width: 15px;
@@ -406,7 +395,6 @@
   }
 }
 
-/* Footer */
 .about-footer {
   padding: 60px 20px;
   text-align: center;
@@ -427,7 +415,6 @@
   background: linear-gradient(to right, transparent, var(--abt-primary), transparent);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .about-hero {
     padding: 80px 20px 40px;

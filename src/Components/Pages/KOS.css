@@ -1,4 +1,4 @@
-/* src/Components/Pages/KOS.css */
+
 
 .kos-page {
   min-height: 100vh;
@@ -17,7 +17,7 @@
 
 .kos-overlay,
 .kos-scanlines {
-  display: none; /* Using global SpaceBackground */
+  display: none;
 }
 
 .kos-hero {
@@ -67,7 +67,7 @@
   opacity: 0.8;
 }
 
-/* Search Bar */
+
 .search-container {
   max-width: 500px;
   margin: 0 auto;
@@ -121,7 +121,7 @@
   opacity: 0.3;
 }
 
-/* KOS Sections */
+
 .kos-section {
   max-width: 1400px;
   margin: 60px auto;
@@ -167,7 +167,7 @@
   background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
 }
 
-/* Grid Container */
+
 .kos-container {
   position: relative;
   z-index: 3;
@@ -179,7 +179,7 @@
   gap: 30px;
 }
 
-/* KOS Card */
+
 .kos-card {
   background: rgba(10, 10, 20, 0.6);
   backdrop-filter: blur(12px);
@@ -190,7 +190,7 @@
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Top accent bar */
+
 .kos-card::before {
   content: '';
   position: absolute;
@@ -201,7 +201,7 @@
   transition: opacity 0.4s;
 }
 
-/* Shimmer */
+
 .kos-card::after {
   content: '';
   position: absolute;
@@ -336,7 +336,7 @@
   box-shadow: 0 0 15px var(--military-green-glow);
 }
 
-/* No Results */
+
 .no-results {
   display: flex;
   flex-direction: column;
@@ -352,7 +352,7 @@
   opacity: 0.5;
 }
 
-/* HUD Decos */
+
 .scan-line {
   position: absolute;
   top: 0;

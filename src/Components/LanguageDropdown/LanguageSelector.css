@@ -1,7 +1,6 @@
 .language-modal-overlay {
     position: fixed;
     inset: 0;
-    /* High-contrast gradient background with a tactical tint */
     background: radial-gradient(circle at 50% 50%, var(--bg-alt) 0%, var(--bg-color) 100%);
     backdrop-filter: blur(15px);
     display: flex;
@@ -59,7 +58,6 @@
             40px 100%, 0 calc(100% - 40px));
 }
 
-/* Scanning line animation */
 .language-modal::before {
     content: '';
     position: absolute;
@@ -79,7 +77,6 @@
     100% { top: 105%; opacity: 0; }
 }
 
-/* HUD Corners for Language Modal */
 .lang-hud-tl,
 .lang-hud-tr,
 .lang-hud-bl,
@@ -156,7 +153,6 @@
     box-shadow: 0 0 15px #00ff66;
 }
 
-/* === LIST WRAPPER === */
 .language-list-container {
     margin: 2.5rem 0;
     padding: 1rem;
@@ -192,7 +188,6 @@
     box-shadow: 0 0 10px #00ff66;
 }
 
-/* Language buttons - Sleek Panel */
 .lang-btn {
     display: flex;
     flex-direction: row;
@@ -219,7 +214,6 @@
     transform: translateX(5px);
 }
 
-/* Active language button */
 .lang-btn-active {
     border-color: #00ff66 !important;
     background: rgba(0, 255, 102, 0.1) !important;
@@ -277,7 +271,6 @@
     100% { left: 200%; }
 }
 
-/* Hint text - Crisp and Lighter */
 .language-footer {
     display: flex;
     flex-direction: column;
@@ -343,7 +336,6 @@
     opacity: 0.8;
 }
 
-/* --- Responsiveness --- */
 @media (max-width: 768px) {
     .language-modal {
         padding: 2.5rem 1.5rem;

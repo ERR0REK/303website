@@ -44,7 +44,6 @@ const StaffMemberModal = ({ member, onClose }) => {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
           >
-            {/* HUD Elements */}
             <div className="m-tl"></div><div className="m-tr"></div>
             <div className="m-bl"></div><div className="m-br"></div>
             <div className="modal-scanner-line"></div>

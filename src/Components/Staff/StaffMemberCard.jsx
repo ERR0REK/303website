@@ -1,5 +1,3 @@
-/* src/Components/Staff/StaffMemberCard.jsx */
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -41,7 +39,6 @@ export default function StaffMemberCard({ member, onMoreInfo }) {
         </div>
       </div>
 
-      {/* HUD Decos */}
       <div className="scan-line"></div>
       <div className="c-tl"></div><div className="c-tr"></div>
       <div className="c-bl"></div><div className="c-br"></div>

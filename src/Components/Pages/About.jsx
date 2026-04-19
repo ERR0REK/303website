@@ -1,4 +1,4 @@
-/* src/Components/Pages/About.jsx */
+
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -88,7 +88,7 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* --- Main Content --- */}
+
       <motion.main
         className="about-container"
         variants={containerVariants}
@@ -96,7 +96,7 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        {/* Kim jesteśmy? */}
+
         <motion.section className="about-card" variants={sectionVariants}>
           <div className="card-header">
             <Users className="card-icon" />
@@ -111,7 +111,7 @@ export default function About() {
           <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* Nasza misja */}
+
         <motion.section className="about-card highlight" variants={sectionVariants}>
           <div className="card-header">
             <Target className="card-icon" />
@@ -133,7 +133,7 @@ export default function About() {
           <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* Wartości */}
+
         <motion.section className="about-card" variants={sectionVariants}>
           <div className="card-header">
             <Shield className="card-icon" />
@@ -158,7 +158,7 @@ export default function About() {
           <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* Struktura */}
+
         <motion.section className="about-card" variants={sectionVariants}>
           <div className="card-header">
             <Globe className="card-icon" />
@@ -173,7 +173,7 @@ export default function About() {
           <div className="corner bl"></div><div className="corner br"></div>
         </motion.section>
 
-        {/* Kontakt i Dołącz */}
+
         <motion.section className="about-card join-card" variants={sectionVariants}>
           <div className="card-header">
             <MessageSquare className="card-icon" />

@@ -1,7 +1,7 @@
 :root {
     --loading-bg: #000000;
-    --loading-accent: #a855f7; /* Purple */
-    --loading-secondary: #38bdf8; /* Blue */
+    --loading-accent: #a855f7;
+    --loading-secondary: #38bdf8;
     --loading-text: #ffffff;
 }
 
@@ -20,7 +20,6 @@
     overflow: hidden;
 }
 
-/* --- Main Container --- */
 .loading-container {
     display: flex;
     flex-direction: column;
@@ -35,7 +34,7 @@
 .logo-wrapper {
     width: 200px;
     height: 200px;
-    margin-bottom: 60px; /* Space before title */
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +51,7 @@
     font-size: 2.5rem;
     color: var(--loading-text);
     letter-spacing: 12px;
-    margin-bottom: 60px; /* More space between title and progress bar as requested */
+    margin-bottom: 60px;
     font-weight: 500;
     text-align: center;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
@@ -77,7 +76,6 @@
 .progress-fill {
     height: 100%;
     width: 0;
-    /* Cosmic Gradient Animation */
     background: linear-gradient(90deg, 
         #a855f7 0%, 
         #38bdf8 50%, 
@@ -103,7 +101,6 @@
     opacity: 0.8;
 }
 
-/* Background Nebula Effect (Subtle) */
 .loading-bg {
     position: absolute;
     inset: 0;

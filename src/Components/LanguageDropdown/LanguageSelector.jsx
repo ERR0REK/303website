@@ -26,13 +26,11 @@ const LanguageSelector = ({ onSelect, forceShow = false }) => {
 
     const handleMissingLanguage = (e) => {
         e.preventDefault();
-        // Zymusza ustawienie języka angielskiego tymczasowo
         localStorage.setItem('selectedLanguage', 'en');
         i18n.changeLanguage('en');
         setShowModal(false);
         if (onSelect) onSelect('en');
         
-        // Tutaj wstaw docelowy link (na razie placeholder)
         window.open('https://crowdin.com/project/nightfall-squadron', '_blank', 'noopener,noreferrer');
     };
 
@@ -92,5 +90,3 @@ const LanguageSelector = ({ onSelect, forceShow = false }) => {
 };
 
 export default LanguageSelector;
-
-/* src/Components/LanguageDropdown/LanguageSelector.jsx */

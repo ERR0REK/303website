@@ -1,4 +1,4 @@
-/* src/Components/QA/QA.css */
+
 
 :root {
   --qa-primary: var(--military-green);
@@ -17,7 +17,7 @@
   padding-bottom: 80px;
 }
 
-/* Background HUD */
+
 .qa-overlay {
   position: fixed;
   inset: 0;
@@ -43,7 +43,7 @@
   opacity: 0.3;
 }
 
-/* --- Hero --- */
+
 .qa-hero {
   position: relative;
   z-index: 2;
@@ -98,7 +98,7 @@
   background: linear-gradient(to right, transparent, var(--qa-primary), transparent);
 }
 
-/* --- Container --- */
+
 .qa-container {
   max-width: 900px;
   margin: 0 auto;
@@ -123,7 +123,7 @@
   margin: 0;
 }
 
-/* --- Accordion Items --- */
+
 .qa-faq-list {
   display: flex;
   flex-direction: column;
@@ -202,7 +202,7 @@
   opacity: 1;
 }
 
-/* Answer */
+
 .qa-answer-wrapper {
   overflow: hidden;
 }
@@ -236,7 +236,7 @@
   opacity: 0.3;
 }
 
-/* Glow Effect */
+
 .qa-glow {
   position: absolute;
   bottom: 0;
@@ -253,7 +253,7 @@
   opacity: 0.5;
 }
 
-/* Footer Decoration */
+
 .qa-footer {
   padding-top: 60px;
 }
@@ -272,7 +272,7 @@
   opacity: 0.2;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .qa-hero {
     padding: 80px 20px 30px;

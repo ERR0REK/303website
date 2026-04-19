@@ -34,7 +34,6 @@ export default function RegRuleCard({ title, rules, delay = 0, number = '' }) {
         </ul>
       </div>
 
-      {/* HUD Elements */}
       <div className="card-scanner"></div>
       <div className="corner tl"></div><div className="corner tr"></div>
       <div className="corner bl"></div><div className="corner br"></div>

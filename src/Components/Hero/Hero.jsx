@@ -65,8 +65,8 @@ const Hero = () => {
 
     const links = {
         discord: 'https://discord.gg/3ZpR7DHjBj',
-        youtube: 'https://www.youtube.com/channel/UCMmoYakrPiV0LwdPAunqJpQ', 
-        tiktok: '', 
+        youtube: 'https://www.youtube.com/channel/UCMmoYakrPiV0LwdPAunqJpQ',
+        tiktok: '',
     };
 
     const handleLinkDispatch = (platform) => {

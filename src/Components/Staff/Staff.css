@@ -1,9 +1,7 @@
-/* src/Components/Staff/Staff.css */
-
 :root {
   --st-primary: var(--cyber-blue);
   --st-accent: #00ff66;
-  --st-bg: transparent; /* Using SpaceBackground */
+  --st-bg: transparent;
   --st-card: rgba(5, 10, 15, 0.6);
   --st-border: rgba(56, 189, 248, 0.3);
 }
@@ -17,9 +15,8 @@
   padding-bottom: 100px;
 }
 
-/* --- Tactical Background Overlays --- */
 .staff-bg-container {
-  display: none; /* Replaced by global SpaceBackground */
+  display: none;
 }
 
 @keyframes nodePulse {
@@ -32,7 +29,6 @@
   }
 }
 
-/* --- Hero Section --- */
 .staff-hero-section {
   position: relative;
   z-index: 2;
@@ -58,7 +54,6 @@
   box-shadow: 0 0 10px var(--st-primary);
 }
 
-/* --- Main Container --- */
 .staff-main-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -67,7 +62,6 @@
   z-index: 2;
 }
 
-/* Role Sections */
 .staff-role-section {
   margin-bottom: 60px;
 }
@@ -98,7 +92,6 @@
   justify-content: flex-start;
 }
 
-/* --- Member Card --- */
 .staff-card {
   background: var(--st-card);
   border: 1px solid var(--st-border);
@@ -110,7 +103,6 @@
   backdrop-filter: blur(12px);
 }
 
-/* Top accent bar */
 .staff-card::before {
   content: '';
   position: absolute;
@@ -124,7 +116,6 @@
   opacity: 1;
 }
 
-/* Shimmer */
 .staff-card::after {
   content: '';
   position: absolute;
@@ -156,7 +147,7 @@
 
 .avatar-container {
   position: relative;
-  width: 80px; /* Larger avatars */
+  width: 80px; 
   height: 80px;
 }
 
@@ -194,7 +185,7 @@
   color: var(--starlight-white);
   margin: 0 0 8px 0;
   letter-spacing: 1px;
-  word-break: break-word; /* fixes extremely long usernames */
+  word-break: break-word; 
 }
 
 .member-role {
@@ -226,7 +217,6 @@
   opacity: 0.8;
 }
 
-/* --- HUD Elements --- */
 .scan-line {
   position: absolute;
   top: 0;
@@ -293,7 +283,6 @@
   border-left: none;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .members-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -309,7 +298,6 @@
     letter-spacing: 3px;
   }
 
-  /* Modal Mobile */
   .staff-modal-content {
     padding: 25px 15px;
     max-height: 90vh;
@@ -342,7 +330,6 @@
   .staff-modal-value {
     font-size: 0.95rem;
     padding-left: 26px;
-    /* Align with label text which has an icon */
   }
 }
 
@@ -365,7 +352,6 @@
   }
 }
 
-/* --- Modal Overlay --- */
 .staff-modal-overlay {
   position: fixed;
   inset: 0;
@@ -378,7 +364,6 @@
   padding: 20px;
 }
 
-/* --- Modal Content / Dossier --- */
 .staff-modal-content {
   background: #0a0f0a;
   border: 1px solid var(--st-border);
@@ -558,7 +543,6 @@
   box-shadow: 0 0 20px var(--st-primary);
 }
 
-/* Modal HUD Decos */
 .m-tl,
 .m-tr,
 .m-bl,

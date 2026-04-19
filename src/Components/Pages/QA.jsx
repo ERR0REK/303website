@@ -1,4 +1,4 @@
-/* src/Components/Pages/QA.jsx */
+
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -103,7 +103,7 @@ export default function Qa() {
       <div className="qa-overlay"></div>
       <div className="qa-scanlines"></div>
 
-      {/* --- Hero Section --- */}
+
       <section className="qa-hero">
         <div className="hero-decoration">
           <Search size={16} />
@@ -121,7 +121,7 @@ export default function Qa() {
         </div>
       </section>
 
-      {/* --- FAQ List --- */}
+
       <main className="qa-container">
         <div className="qa-list-header">
           <BookOpen size={20} />

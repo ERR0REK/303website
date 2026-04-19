@@ -76,7 +76,6 @@ const SecurityLayer = () => {
                         exit={{ scale: 0.8, opacity: 0, y: -50 }}
                         transition={{ duration: 0.3, type: "spring", stiffness: 400 }}
                     >
-                        {/* HUD Elements */}
                         <div className="s-tl"></div><div className="s-tr"></div>
                         <div className="s-bl"></div><div className="s-br"></div>
 
@@ -102,7 +101,6 @@ const SecurityLayer = () => {
                         </div>
                     </motion.div>
 
-                    {/* Glitch Overlay Effect */}
                     <div className="security-glitch-bg"></div>
                 </motion.div>
             )}

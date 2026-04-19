@@ -1,5 +1,3 @@
-/* src/Components/Security/Security.css */
-
 .security-breach-overlay {
     position: fixed;
     inset: 0;
@@ -24,7 +22,6 @@
     backdrop-filter: blur(20px);
 }
 
-/* HUD Corners */
 .s-tl, .s-tr, .s-bl, .s-br {
     position: absolute;
     width: 15px;

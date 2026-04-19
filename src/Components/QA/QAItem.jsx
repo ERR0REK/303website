@@ -1,4 +1,4 @@
-/* src/Components/QA/QAItem.jsx */
+
 
 import React, { useState } from 'react';
 

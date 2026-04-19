@@ -1,4 +1,4 @@
-/* src/Components/Pages/KOS.jsx */
+
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -114,7 +114,7 @@ const KOS = () => {
                                     </button>
                                 </div>
 
-                                {/* HUD Decorations */}
+
                                 <div className="scan-line"></div>
                                 <div className="c-tl"></div><div className="c-tr"></div>
                                 <div className="c-bl"></div><div className="c-br"></div>
@@ -140,7 +140,7 @@ const KOS = () => {
             <div className="kos-overlay"></div>
             <div className="kos-scanlines"></div>
 
-            {/* Hero Section */}
+
             <section className="kos-hero">
                 <div className="hero-decoration">
                     <Skull size={16} className="hero-icon" />
@@ -153,7 +153,7 @@ const KOS = () => {
                     {t('kos.subtitle', 'Official watchlist of individuals and entities posing a threat to Nightfall Squadron.')}
                 </p>
 
-                {/* Search Bar */}
+
                 <div className="search-container">
                     <div className="search-box">
                         <Search size={18} className="search-icon" />
@@ -168,7 +168,7 @@ const KOS = () => {
                 </div>
             </section>
 
-            {/* Personal Targets Section */}
+
             <section className="kos-section">
                 <div className="section-header">
                     <div className="section-title-row">
@@ -185,7 +185,7 @@ const KOS = () => {
                 )}
             </section>
 
-            {/* Faction Targets Section */}
+
             <section className="kos-section">
                 <div className="section-header">
                     <div className="section-title-row">

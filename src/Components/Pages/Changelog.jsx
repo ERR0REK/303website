@@ -1,4 +1,4 @@
-/* src/Components/Pages/Changelog.jsx */
+
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -53,7 +53,7 @@ export default function Changelog() {
       <div className="changelog-overlay"></div>
       <div className="changelog-scanlines"></div>
 
-      {/* Hero Section */}
+
       <section className="changelog-hero">
         <div className="hero-decoration-top">
           <span className="line"></span>
@@ -68,7 +68,7 @@ export default function Changelog() {
         </p>
       </section>
 
-      {/* Category Tabs */}
+
       <section className="changelog-tabs">
         <button
           className={`tab-button ${activeCategory === 'dev' ? 'active' : ''}`}
@@ -88,7 +88,7 @@ export default function Changelog() {
         </button>
       </section>
 
-      {/* Changelog Timeline */}
+
       <main className="changelog-container">
         <div className="changelog-timeline">
           {currentVersions.map((entry, index) => (
@@ -170,7 +170,7 @@ export default function Changelog() {
           ))}
         </div>
 
-        {/* Footer */}
+
         <footer className="changelog-footer">
           <div className="footer-line"></div>
           <div className="footer-content">

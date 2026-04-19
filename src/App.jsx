@@ -4,7 +4,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from '../src/Components/Pages/Home';
 import About from '../src/Components/Pages/About';
 import Regulations from '../src/Components/Pages/Regulations';
-import Qa from './Components/Pages/QA'; 
+import Qa from './Components/Pages/QA';
 import Staff from '../src/Components/Pages/Staff';
 import Changelog from '../src/Components/Pages/Changelog';
 import WarLogs from './Components/WarLogs/WarLogs';
@@ -69,10 +69,8 @@ function App() {
       <LanguageSelector />
       <Router>
         <Routes>
-          {/* Public Auth Callback - Wildcard to handle appended Discord fragments */}
           <Route path="/auth/callback" element={<DiscordCallback />} />
 
-          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/regulations" element={<Regulations />} />
@@ -81,7 +79,6 @@ function App() {
           <Route path="/changelog" element={<Changelog />} />
           <Route path="/staff" element={<Staff />}/>
 
-          {/* Protected Routes */}
           <Route path="/diplomacy" element={<AuthGuard><Diplomacy /></AuthGuard>} />
           <Route path="/kos" element={<AuthGuard><KOS /></AuthGuard>} />
           <Route path="/war-logs" element={<AuthGuard><WarLogs /></AuthGuard>} />

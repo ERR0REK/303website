@@ -1,4 +1,4 @@
-/* src/Components/Pages/History.css */
+
 
 .history-page {
     min-height: 100vh;
@@ -10,7 +10,7 @@
 }
 
 .history-overlay, .history-scanlines {
-    display: none; /* Using global SpaceBackground */
+    display: none;
 }
 
 .history-hero {
@@ -72,7 +72,7 @@
     background: linear-gradient(90deg, transparent, var(--NS-blue), transparent);
 }
 
-/* Timeline Container */
+
 .history-container {
     position: relative;
     max-width: 1200px;
@@ -138,7 +138,7 @@
     transform: scale(1.1);
 }
 
-/* Timeline Card */
+
 .timeline-card {
     background: rgba(15, 15, 25, 0.4);
     backdrop-filter: blur(12px);
@@ -148,7 +148,7 @@
     max-width: 900px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    clip-path: none; /* Removed the complex clip-path for cleaner tactical look */
+    clip-path: none;
 }
 
 .timeline-card:hover {
@@ -184,7 +184,7 @@
     line-height: 1.6;
 }
 
-/* HUD Elements */
+
 .card-scanner {
     position: absolute;
     top: 0;
@@ -268,7 +268,7 @@
     }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .timeline-line {
         left: 30px;

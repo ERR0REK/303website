@@ -1,5 +1,3 @@
-/* src/Components/Staff/StaffRoleSection.jsx */
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';

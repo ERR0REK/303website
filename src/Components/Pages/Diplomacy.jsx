@@ -1,4 +1,4 @@
-/* src/Components/Pages/Diplomacy.jsx */
+
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -142,7 +142,7 @@ const Diplomacy = () => {
             </header>
 
             <div className="diplo-sections">
-                {/* 0. Allies */}
+
                 <section className="diplo-section">
                     <div className="section-header">
                         <div className="section-title-row">
@@ -159,7 +159,7 @@ const Diplomacy = () => {
                     )}
                 </section>
 
-                {/* 1. Partnerships */}
+
                 <section className="diplo-section">
                     <div className="section-header">
                         <div className="section-title-row">
@@ -176,7 +176,7 @@ const Diplomacy = () => {
                     )}
                 </section>
 
-                {/* 2. Friendly */}
+
                 <section className="diplo-section">
                     <div className="section-header">
                         <div className="section-title-row">
@@ -193,7 +193,7 @@ const Diplomacy = () => {
                     )}
                 </section>
 
-                {/* 3. Neutral */}
+
                 <section className="diplo-section">
                     <div className="section-header">
                         <div className="section-title-row">
@@ -210,7 +210,7 @@ const Diplomacy = () => {
                     )}
                 </section>
 
-                {/* 4. Enemy */}
+
                 <section className="diplo-section">
                     <div className="section-header">
                         <div className="section-title-row">

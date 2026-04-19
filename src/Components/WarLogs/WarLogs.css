@@ -1,5 +1,3 @@
-/* src/Components/WarLogs/WarLogs.css */
-
 .warlogs-page {
     min-height: 100vh;
     background-color: transparent;
@@ -10,7 +8,7 @@
 }
 
 .warlogs-bg {
-    display: none; /* Using global SpaceBackground */
+    display: none;
 }
 
 .warlogs-container {
@@ -33,7 +31,6 @@
     }
 }
 
-/* --- Header Styling --- */
 .warlogs-header {
     text-align: center;
     margin-bottom: 60px;
@@ -101,7 +98,6 @@
     opacity: 0.8;
 }
 
-/* --- Empty State Styling (New) --- */
 .warlogs-empty-state {
     text-align: center;
     padding: 60px 40px;
@@ -244,8 +240,6 @@
     }
 }
 
-
-/* --- Grid Layout --- */
 .warlogs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -266,7 +260,6 @@
     }
 }
 
-/* --- Responsive --- */
 @media (max-width: 768px) {
     .warlogs-header h1 {
         font-size: 2.22rem;
@@ -282,7 +275,6 @@
 
     .warlogs-modal-body {
         flex-direction: column !important;
-        /* Force stack for my sub-component if needed */
         display: flex;
     }
 
@@ -321,7 +313,6 @@
     }
 }
 
-/* --- WarLog Card Styles --- */
 .warlog-card {
     background: rgba(15, 15, 25, 0.4);
     backdrop-filter: blur(8px);
@@ -351,7 +342,6 @@
     justify-content: center;
 }
 
-/* Result-specific backgrounds for the hero zone */
 .card-image-container.result-win {
     background: linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(0, 30, 60, 0.9) 100%);
 }
@@ -362,7 +352,6 @@
     background: linear-gradient(135deg, rgba(20, 18, 5, 0.95) 0%, rgba(50, 40, 0, 0.9) 100%);
 }
 
-/* Animated grid background for the hero zone */
 .card-grid-bg {
     position: absolute;
     inset: 0;
@@ -377,7 +366,6 @@
     to   { opacity: 1; }
 }
 
-/* Center result display */
 .card-result-center {
     position: relative;
     z-index: 3;
@@ -432,7 +420,6 @@
 .card-result-badge.result-loss { background: rgba(168,85,247,0.25); border: 1px solid var(--NS-purple); color: var(--NS-purple); }
 .card-result-badge.result-draw { background: rgba(234,179,8,0.25); border: 1px solid var(--NS-gold); color: var(--NS-gold); }
 
-/* Bottom accent bar */
 .card-result-bar {
     height: 3px;
     width: 100%;
@@ -522,7 +509,6 @@
     border-color: var(--starlight-white);
 }
 
-/* --- Modal Styles (Polished) --- */
 .warlog-modal-overlay {
     position: fixed;
     top: 0;
@@ -552,7 +538,6 @@
     flex-direction: column;
 }
 
-/* Richer Header */
 .modal-header {
     background: linear-gradient(90deg, rgba(56, 189, 248, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
     border-bottom: 1px solid var(--NS-blue);
@@ -582,7 +567,6 @@
     transform: rotate(90deg);
 }
 
-/* Split Layout for Body */
 .modal-body {
     display: flex;
     flex-direction: row;
@@ -596,7 +580,6 @@
             rgba(168, 85, 247, 0.02) 11px);
 }
 
-/* Sidebar Styling - Polished */
 .modal-sidebar {
     width: 360px;
     background: rgba(5, 5, 10, 0.6);
@@ -663,7 +646,6 @@
     font-size: 1.1rem;
 }
 
-/* MVP Golden Frame - Tactical Upgrade */
 .stat-row.mvp-row {
     margin-top: 20px;
     border: 1px solid rgba(255, 215, 0, 0.3);
@@ -705,7 +687,6 @@
     word-break: break-word;
 }
 
-/* Main Content Styling */
 .modal-content-main {
     flex: 1;
     padding: 35px;
@@ -771,7 +752,6 @@
     line-height: 1.5;
 }
 
-/* Members Grid Tags */
 .members-grid {
     display: flex;
     flex-wrap: wrap;
@@ -807,7 +787,6 @@
     box-shadow: 0 4px 10px var(--military-green-glow);
 }
 
-/* --- Modal Tabs Styling --- */
 .modal-tabs {
     display: flex;
     background: rgba(0, 50, 20, 0.3);
@@ -859,7 +838,6 @@
     flex-direction: row;
 }
 
-/* KD Pane Styling */
 .kd-pane {
     padding: 30px;
 }
@@ -930,13 +908,10 @@
 .ratio-negative { color: #ff4455; text-shadow: 0 0 8px rgba(255,68,85,0.4); }
 .ratio-neutral  { color: #eab308; text-shadow: 0 0 8px rgba(234,179,8,0.4); }
 
-/* KD Podium Rows */
 .kd-row.rank-1 { background: rgba(255, 215, 0, 0.08); border-color: rgba(255,215,0,0.25); }
 .kd-row.rank-2 { background: rgba(192, 192, 192, 0.06); border-color: rgba(192,192,192,0.2); }
 .kd-row.rank-3 { background: rgba(205, 127, 50, 0.06); border-color: rgba(205,127,50,0.2); }
 .rank-badge { margin-right: 6px; font-size: 1rem; }
-
-/* Responsive adjustments */
 @media (max-width: 960px) {
     .info-pane {
         flex-direction: column;

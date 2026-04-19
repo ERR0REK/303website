@@ -1,4 +1,4 @@
-/* src/Components/Pages/History.jsx */
+
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -87,7 +87,7 @@ const History = () => {
             <div className="history-overlay"></div>
             <div className="history-scanlines"></div>
 
-            {/* Hero Section */}
+
             <section className="history-hero">
                 <div className="hero-decoration">
                     <HistoryIcon size={16} className="hero-icon" />
@@ -104,7 +104,7 @@ const History = () => {
                 </div>
             </section>
 
-            {/* Timeline Section */}
+
             <motion.main
                 className="history-container"
                 variants={containerVariants}
@@ -112,7 +112,7 @@ const History = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
             >
-                {/* Vertical timeline line */}
+
                 <div className="timeline-line"></div>
 
                 {timelineEvents.map((event, index) => (
@@ -137,7 +137,7 @@ const History = () => {
                                 <p>{event.content}</p>
                             </div>
 
-                            {/* HUD Elements */}
+
                             <div className="card-scanner"></div>
                             <div className="corner tl"></div><div className="corner tr"></div>
                             <div className="corner bl"></div><div className="corner br"></div>

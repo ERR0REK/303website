@@ -1,4 +1,4 @@
-/* src/Components/Pages/KOSModal.jsx */
+
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,7 +25,7 @@ const KOSModal = ({ isOpen, onClose, target }) => {
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
                         transition={{ type: "spring", duration: 0.5 }}
                     >
-                        {/* Header */}
+
                         <div className="modal-header">
                             <div className="header-left">
                                 <ShieldAlert className="header-icon" />
@@ -39,7 +39,7 @@ const KOSModal = ({ isOpen, onClose, target }) => {
                             </button>
                         </div>
 
-                        {/* Body */}
+
                         <div className="modal-body">
                             <div className="intel-grid">
                                 {isFaction ? (
@@ -79,7 +79,7 @@ const KOSModal = ({ isOpen, onClose, target }) => {
                                 </div>
                             </div>
 
-                            {/* Status Footer */}
+
                             <div className="threat-status-bar">
                                 <div className="status-segment">
                                     <span className="lbl">STATUS:</span>
@@ -88,7 +88,7 @@ const KOSModal = ({ isOpen, onClose, target }) => {
                             </div>
                         </div>
 
-                        {/* HUD Decorations */}
+
                         <div className="modal-scanner"></div>
                         <div className="corner-deco tl"></div>
                         <div className="corner-deco tr"></div>

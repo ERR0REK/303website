@@ -38,7 +38,7 @@ export default function Staff() {
         role: 'Faction Command',
         avatar: cygan221,
         robloxUsername: '',
-        robloxUserId: '', 
+        robloxUserId: '',
         inGameRank: 'Leader'
       },
       {
@@ -228,7 +228,7 @@ export default function Staff() {
 
   return (
     <div className="staff-page">
-      {/* Background Elements */}
+
       <div className="staff-bg-container">
         <div className="staff-bg-grid"></div>
         <div className="staff-bg-nodes"></div>
@@ -237,7 +237,7 @@ export default function Staff() {
 
       <Navbar />
 
-      {/* --- Sekcja Hero --- */}
+
       <motion.section
         className="staff-hero-section"
         initial={{ opacity: 0, y: -20 }}
@@ -258,7 +258,7 @@ export default function Staff() {
         ></motion.div>
       </motion.section>
 
-      {/* --- Główny kontener treści --- */}
+
       <motion.main
         className="staff-main-container"
         variants={{
@@ -274,91 +274,91 @@ export default function Staff() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.05 }}
       >
-        {/* Faction Command */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.factionCommand")}
           members={staffData.factionCommand}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Private Leader's Translator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.privateLeadersTranslator")}
           members={staffData.privateLeadersTranslator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Co Faction Command */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.coFactionCommand")}
           members={staffData.coFactionCommand}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Trial Co Faction Command */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.trialCoFactionCommand")}
           members={staffData.trialCoFactionCommand}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Technical Specialist */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.technicalSpecialist")}
           members={staffData.technicalSpecialist}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Elder */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.elder")}
           members={staffData.elder}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Trial Elder */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.trialElder")}
           members={staffData.trialElder}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Head Administrator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.headAdministrator")}
           members={staffData.headAdministrator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Senior Administrator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.seniorAdministrator")}
           members={staffData.seniorAdministrator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Administrator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.administrator")}
           members={staffData.administrator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Trial Administrator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.trialAdministrator")}
           members={staffData.trialAdministrator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Moderator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.moderator")}
           members={staffData.moderator}
           onMemberMoreInfo={handleMemberMoreInfo}
         />
 
-        {/* Trial Moderator */}
+
         <StaffRoleSection
           roleTitle={t("staff.roles.trialModerator")}
           members={staffData.trialModerator}
@@ -366,7 +366,7 @@ export default function Staff() {
         />
       </motion.main>
 
-      {/* --- Modal Staff Member --- */}
+
       <StaffMemberModal member={selectedMember} onClose={closeModal} />
     </div>
   );

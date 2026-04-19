@@ -1,10 +1,8 @@
-/* src/Components/Regulations/Regulations.css */
-
 :root {
   --reg-primary: var(--military-green);
   --reg-secondary: var(--cyber-blue);
   --reg-caution: var(--cyber-orange);
-  --reg-alert: #ff4d4d; /* Keep red for high alert */
+  --reg-alert: #ff4d4d;
   --reg-bg: var(--bg-color);
   --reg-card: var(--bg-alt);
   --reg-border: var(--military-green-glow);
@@ -18,7 +16,6 @@
   overflow-x: hidden;
 }
 
-/* --- OVERLAYS --- */
 .reg-overlay {
   position: fixed;
   inset: 0;
@@ -54,7 +51,6 @@
   }
 }
 
-/* --- MAIN CONTAINER --- */
 .reg-main-container {
   position: relative;
   z-index: 2;
@@ -65,7 +61,6 @@
   text-align: center;
 }
 
-/* --- HERO --- */
 .hero-decoration {
   display: flex;
   align-items: center;
@@ -114,7 +109,6 @@
   background: linear-gradient(to right, transparent, var(--reg-primary), transparent);
 }
 
-/* --- WARNING PANEL --- */
 .reg-warning-panel {
   background: rgba(255, 77, 77, 0.05);
   border: 1px solid rgba(255, 77, 77, 0.2);
@@ -201,7 +195,6 @@
   border-left: none;
 }
 
-/* --- STICKY PART --- */
 .reg-sticky-part {
   background: rgba(5, 10, 5, 0.95);
   border-top: 1px solid var(--reg-border);
@@ -221,7 +214,6 @@
   gap: 40px;
 }
 
-/* --- RULE CARD --- */
 .reg-rule-card {
   background: rgba(5, 10, 5, 0.8);
   border: 1px solid var(--reg-border);
@@ -231,7 +223,6 @@
   transition: all 0.4s;
 }
 
-/* Shimmer on hover */
 .reg-rule-card::after {
   content: '';
   position: absolute;
@@ -379,7 +370,6 @@
   color: #aabcaa;
 }
 
-/* --- HUD DECOS --- */
 .corner {
   position: absolute;
   width: 15px;
@@ -443,7 +433,6 @@
   }
 }
 
-/* --- FOOTER --- */
 .reg-footer {
   padding-top: 60px;
   text-align: center;
@@ -456,7 +445,6 @@
   margin: 5px 0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .reg-scrollable-part {
     padding: 80px 15px 40px;
@@ -515,7 +503,6 @@
       font-size: 0.95rem;
   }
 
-  /* Disable expensive effects on mobile to prevent scrolling glitch */
   .reg-warning-panel, .reg-sticky-part, .reg-rule-card {
     backdrop-filter: none !important;
   }

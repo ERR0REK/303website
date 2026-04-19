@@ -1,4 +1,4 @@
-/* src/Components/Pages/KOSModal.css */
+
 
 .kos-modal-overlay {
   position: fixed;
@@ -34,7 +34,7 @@
   background: linear-gradient(90deg, var(--NS-purple), var(--NS-blue));
 }
 
-/* Threat Colors */
+
 .kos-modal-content.critical {
   border-color: rgba(255, 0, 0, 0.5);
   box-shadow: 0 0 50px rgba(255, 0, 0, 0.2);
@@ -208,7 +208,7 @@
   color: #00ffc8;
 }
 
-/* Decorations */
+
 .corner-deco {
   position: absolute;
   width: 10px;

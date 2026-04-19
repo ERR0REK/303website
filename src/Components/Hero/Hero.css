@@ -1,5 +1,3 @@
-/* src/Components/Hero/Hero.css */
-
 .hero {
     width: 100%;
     min-height: 100vh;
@@ -12,14 +10,14 @@
 
 .hero-bg-container {
     position: absolute;
-    inset: -50px; /* Oversized for parallax */
+    inset: -50px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
 }
 
-/* --- HUD Overlays --- */
+
 .hero-image-overlay {
     position: absolute;
     inset: 0;
@@ -63,7 +61,7 @@
     }
 }
 
-/* --- HUD Panels --- */
+
 .hud-panel {
     position: absolute;
     padding: 15px 25px;
@@ -121,7 +119,6 @@
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
 }
 
-/* --- Targeting Reticle Decoration --- */
 .reticle-container {
     position: absolute;
     top: 50%;
@@ -152,9 +149,8 @@
     color: var(--NS-blue);
 }
 
-/* --- Hero Content --- */
 .container {
-    padding: 0 140px; /* Increased to avoid terminal collision */
+    padding: 0 140px;
     position: relative;
     z-index: 5;
     width: 100%;
@@ -207,8 +203,8 @@
 .live-terminal-widget {
   position: absolute;
   top: 180px;
-  right: 20px; /* Pushed closer to edge */
-  width: 240px; /* Slightly narrower */
+  right: 20px;
+  width: 240px;
 }
 
 .hero-text p {
@@ -219,14 +215,12 @@
     opacity: 0.8;
 }
 
-/* --- Buttons --- */
 .hero-buttons-group {
     display: flex;
     gap: 25px;
 }
 
 .hero .btn {
-    /* Use global .btn but override specific colors */
     border-color: var(--NS-purple);
     background: rgba(168, 85, 247, 0.15);
     backdrop-filter: blur(8px);
@@ -264,7 +258,6 @@
     box-shadow: 0 0 30px var(--NS-blue);
 }
 
-/* --- Mission Ticker --- */
 .mission-ticker {
     position: absolute;
     bottom: 0;
@@ -323,7 +316,6 @@
     }
 }
 
-/* --- LINK ERROR MODAL STYLES --- */
 .link-error-overlay {
     position: fixed;
     inset: 0;
@@ -488,7 +480,6 @@
     box-shadow: 0 0 25px rgba(255, 77, 77, 0.5);
 }
 
-/* Corners for Modal */
 .error-corner {
     position: absolute;
     width: 15px;
@@ -525,7 +516,6 @@
     border-left: none;
 }
 
-/* Responsive Overrides 🎯 */
 @media (max-width: 1024px) {
     .hero {
         justify-content: center !important;
@@ -601,7 +591,6 @@
         padding: 16px 20px !important;
     }
 
-    /* Standardize buttons on mobile to outlined for better fit */
     .hero .btn-youtube {
         background: rgba(255, 77, 77, 0.05) !important;
         color: #ff4d4d !important;
