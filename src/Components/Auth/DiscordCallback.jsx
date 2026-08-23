@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +11,7 @@ const DiscordCallback = () => {
     const [error, setError] = useState(null);
     const [status, setStatus] = useState('verifying'); 
 
-    const REQUIRED_GUILD_ID = "1463132353814593752";
+    const REQUIRED_GUILD_ID = "";
 
     useEffect(() => {
         const handleAuth = async () => {

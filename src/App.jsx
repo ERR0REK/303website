@@ -81,7 +81,7 @@ function App() {
 
           <Route path="/diplomacy" element={<AuthGuard><Diplomacy /></AuthGuard>} />
           <Route path="/kos" element={<AuthGuard><KOS /></AuthGuard>} />
-          <Route path="/war-logs" element={<AuthGuard><WarLogs /></AuthGuard>} />
+          <Route path="/war-logs" element={<WarLogs />} />
         </Routes>
       </Router>
     </>

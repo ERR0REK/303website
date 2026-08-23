@@ -21,7 +21,7 @@ const LoginPage = () => {
     const isFullyAccepted = acceptedPolicies.tos && acceptedPolicies.privacy;
     
     const [tosError, setTosError] = useState(false);
-    const DISCORD_CLIENT_ID = "1448793452044222586";
+    const DISCORD_CLIENT_ID = "";
     const REDIRECT_URI = encodeURIComponent(window.location.origin + "/#/auth/callback");
 
     const DISCORD_AUTH_URL = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=token&scope=identify%20guilds`;
